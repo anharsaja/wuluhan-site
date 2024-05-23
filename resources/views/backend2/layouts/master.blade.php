@@ -115,7 +115,7 @@
                     </li>
                     @endcan
 
-                    @can('umkm.view')
+                    {{-- @can('umkm.view')
                     <li class="nav-item"><a href="#umkm" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>UMKM<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
                     <li class="sub collapse" id="umkm">
                         <a href="ui-alerts.html" class="nav-link" data-parent="#umkm">alerts</a>
@@ -124,8 +124,12 @@
                         <a href="ui-list.html" class="nav-link" data-parent="#umkm">list</a>
                         <a href="ui-progress-bars.html" class="nav-link" data-parent="#umkm">progress</a>
                     </li>
-                    @endcan
+                    @endcan --}}
 
+
+                    @can('umkm.view')
+                    <li class="nav-item"><a href="{{ route('admin.umkm.index') }}" class="nav-link"><i class="fa fa-adjust"></i>UMKM</a></li>
+                    @endcan
 
                     @can('role.view')
                     <li class="nav-item"><a href="{{ route('admin.roles.index') }}" class="nav-link"><i class="fa fa-adjust"></i>Manage Roles</a></li>

@@ -441,163 +441,139 @@
     </div><!--==============================
 Service Area  
 ==============================-->
-    <section class="space" id="service-sec">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-md-6 col-xl-4">
-                    <div class="service-card">
-                        <div class="service-card_number">01</div>
-                        <div class="shape-icon">
-                            <img src="{{asset('img/icon/service_card_1.svg')}}" alt="Icon">
-                            <span class="dots"></span>
-                        </div>
-                        <h3 class="box-title"><a href="service-details.html">Web Development</a></h3>
-                        <p class="service-card_text">Intrinsicly redefine competitive e-business before adaptive potentialiti. Professionally build progressive users with.</p>
-                        <a href="service-details.html" class="th-btn">Read More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <div class="bg-shape">
-                            <img src="{{asset('img/bg/service_card_bg.png')}}" alt="bg">
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-6 col-xl-4">
-                    <div class="service-card">
-                        <div class="service-card_number">02</div>
-                        <div class="shape-icon">
-                            <img src="img/icon/service_card_2.svg" alt="Icon">
-                            <span class="dots"></span>
-                        </div>
-                        <h3 class="box-title"><a href="service-details.html">UI/UX Design</a></h3>
-                        <p class="service-card_text">Intrinsicly redefine competitive e-business before adaptive potentialiti. Professionally build progressive users with.</p>
-                        <a href="service-details.html" class="th-btn">Read More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <div class="bg-shape">
-                            <img src="{{asset('img/bg/service_card_bg.png')}}" alt="bg">
-                        </div>
-                    </div>
+<section class="service-area4 th-radius5 space" id="service-sec">
+    <div class="container th-container4">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <div class="title-area text-center me-xl-5 ms-xl-5">
+                    <span class="sub-title sub-title3">Our Services</span>
+                    <h2 class="sec-title">We Provide Experts cyber security services</h2>
                 </div>
-
-                <div class="col-md-6 col-xl-4">
-                    <div class="service-card">
-                        <div class="service-card_number">03</div>
-                        <div class="shape-icon">
-                            <img src="{{asset('img/icon/service_card_3.svg')}}" alt="Icon">
-                            <span class="dots"></span>
-                        </div>
-                        <h3 class="box-title"><a href="service-details.html">Digital Marketing</a></h3>
-                        <p class="service-card_text">Intrinsicly redefine competitive e-business before adaptive potentialiti. Professionally build progressive users with.</p>
-                        <a href="service-details.html" class="th-btn">Read More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <div class="bg-shape">
-                            <img src="{{asset('img/bg/service_card_bg.png')}}" alt="bg">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4">
-                    <div class="service-card">
-                        <div class="service-card_number">04</div>
-                        <div class="shape-icon">
-                            <img src="{{asset('img/icon/service_card_4.svg')}}" alt="Icon">
-                            <span class="dots"></span>
-                        </div>
-                        <h3 class="box-title"><a href="service-details.html">Business Analysis</a></h3>
-                        <p class="service-card_text">Intrinsicly redefine competitive e-business before adaptive potentialiti. Professionally build progressive users with.</p>
-                        <a href="service-details.html" class="th-btn">Read More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <div class="bg-shape">
-                            <img src="{{asset('img/bg/service_card_bg.png')}}" alt="bg">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4">
-                    <div class="service-card">
-                        <div class="service-card_number">05</div>
-                        <div class="shape-icon">
-                            <img src="{{asset('img/icon/service_card_5.svg')}}" alt="Icon">
-                            <span class="dots"></span>
-                        </div>
-                        <h3 class="box-title"><a href="service-details.html">Software Services</a></h3>
-                        <p class="service-card_text">Intrinsicly redefine competitive e-business before adaptive potentialiti. Professionally build progressive users with.</p>
-                        <a href="service-details.html" class="th-btn">Read More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <div class="bg-shape">
-                            <img src="{{asset('img/bg/service_card_bg.png')}}" alt="bg">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4">
-                    <div class="service-card">
-                        <div class="service-card_number">06</div>
-                        <div class="shape-icon">
-                            <img src="{{asset('img/icon/service_card_6.svg')}}" alt="Icon">
-                            <span class="dots"></span>
-                        </div>
-                        <h3 class="box-title"><a href="service-details.html">Machine Learning</a></h3>
-                        <p class="service-card_text">Intrinsicly redefine competitive e-business before adaptive potentialiti. Professionally build progressive users with.</p>
-                        <a href="service-details.html" class="th-btn">Read More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <div class="bg-shape">
-                            <img src="{{asset('img/bg/service_card_bg.png')}}" alt="bg">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4">
-                    <div class="service-card">
-                        <div class="service-card_number">07</div>
-                        <div class="shape-icon">
-                            <img src="{{asset('img/icon/service_card_7.svg')}}" alt="Icon">
-                            <span class="dots"></span>
-                        </div>
-                        <h3 class="box-title"><a href="service-details.html">IT Management</a></h3>
-                        <p class="service-card_text">Intrinsicly redefine competitive e-business before adaptive potentialiti. Professionally build progressive users with.</p>
-                        <a href="service-details.html" class="th-btn">Read More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <div class="bg-shape">
-                            <img src="{{asset('img/bg/service_card_bg.png')}}" alt="bg">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4">
-                    <div class="service-card">
-                        <div class="service-card_number">08</div>
-                        <div class="shape-icon">
-                            <img src="{{asset('img/icon/service_card_8.svg')}}" alt="Icon">
-                            <span class="dots"></span>
-                        </div>
-                        <h3 class="box-title"><a href="service-details.html">Cloud Computing</a></h3>
-                        <p class="service-card_text">Intrinsicly redefine competitive e-business before adaptive potentialiti. Professionally build progressive users with.</p>
-                        <a href="service-details.html" class="th-btn">Read More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <div class="bg-shape">
-                            <img src="{{asset('img/bg/service_card_bg.png')}}" alt="bg">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-xl-4">
-                    <div class="service-card">
-                        <div class="service-card_number">09</div>
-                        <div class="shape-icon">
-                            <img src="{{asset('img/icon/service_card_9.svg')}}" alt="Icon">
-                            <span class="dots"></span>
-                        </div>
-                        <h3 class="box-title"><a href="service-details.html">Backup & Recovery</a></h3>
-                        <p class="service-card_text">Intrinsicly redefine competitive e-business before adaptive potentialiti. Professionally build progressive users with.</p>
-                        <a href="service-details.html" class="th-btn">Read More<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                        <div class="bg-shape">
-                            <img src="{{asset('img/bg/service_card_bg.png')}}" alt="bg">
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </section>
+        <div class="row gy-3 justify-content-between align-items-center">
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 wow fadeInRight">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_1.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Cyber Security</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 wow fadeInRight">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_2.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Data Protection</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 wow fadeInRight">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_3.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Server Security</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 wow fadeInRight">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_4.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Network Security</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 <br />
+<b>Warning</b>:  Undefined array key 4 in <b>E:\web-dev\angfuzsoft\html\webtek-html\build\inc\sections\service-v10.php</b> on line <b>53</b><br />
+">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_5.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Data Encryption</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 <br />
+<b>Warning</b>:  Undefined array key 5 in <b>E:\web-dev\angfuzsoft\html\webtek-html\build\inc\sections\service-v10.php</b> on line <b>53</b><br />
+">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_6.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Hacking Protection</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 <br />
+<b>Warning</b>:  Undefined array key 6 in <b>E:\web-dev\angfuzsoft\html\webtek-html\build\inc\sections\service-v10.php</b> on line <b>53</b><br />
+">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_7.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Backup & Recovery</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 <br />
+<b>Warning</b>:  Undefined array key 7 in <b>E:\web-dev\angfuzsoft\html\webtek-html\build\inc\sections\service-v10.php</b> on line <b>53</b><br />
+">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Cloud Security</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!--==============================
 Cta Area  
 ==============================-->
     <section class="position-relative space">
-        <div class="th-bg-img" data-bg-src="{{asset('img/bg/cta_bg_2.jpg')}}">
-            <img src="{{asset('img/bg/bg_overlay_1.png')}}" alt="overlay">
+        <div class="th-bg-img" data-bg-src="{{asset('img/bg/papuma.jpg')}}" style="filter: brightness(50%)">
         </div>
         <div class="container z-index-common">
             <div class="row justify-content-center">
@@ -606,7 +582,6 @@ Cta Area
                         <span class="sub-title">
                             <div class="icon-masking me-2">
                                 <span class="mask-icon" data-mask-src="{{asset('img/theme-img/title_shape_2.svg')}}"></span>
-                                <img src="{{asset('img/theme-img/title_shape_2.svg')}}" alt="shape">
                             </div>
                             CONTACT US
                         </span>
@@ -616,354 +591,499 @@ Cta Area
                 </div>
             </div>
         </div>
-    </section><!--==============================
-Process Area  
-==============================-->
-    <section class="bg-smoke" id="process-sec" data-bg-src="{{asset('img/bg/process_bg_1.png')}}">
-        <div class="container space">
-            <div class="title-area text-center">
-                <span class="sub-title">
-                    <div class="icon-masking me-2">
-                        <span class="mask-icon" data-mask-src="{{asset('img/theme-img/title_shape_2.svg')}}"></span>
-                        <img src="{{asset('img/theme-img/title_shape_2.svg')}}" alt="shape">
-                    </div>
-                    WORK PROCESS
-                </span>
-                <h2 class="sec-title">How to work <span class="text-theme">it!</span></h2>
-            </div>
-            <div class="process-card-area">
-                <div class="process-line">
-                    <img src="{{asset('img/bg/process_line.svg')}}" alt="line">
-                </div>
-                <div class="row gy-40">
-                    <div class="col-sm-6 col-xl-3 process-card-wrap">
-                        <div class="process-card">
-                            <div class="process-card_number">01</div>
-                            <div class="process-card_icon">
-                                <img src="{{asset('img/icon/process_card_1.svg')}}" alt="icon">
-                            </div>
-                            <h2 class="box-title">Select a project</h2>
-                            <p class="process-card_text">Continua scale empowered metrics with cost effective innovation.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3 process-card-wrap">
-                        <div class="process-card">
-                            <div class="process-card_number">02</div>
-                            <div class="process-card_icon">
-                                <img src="{{asset('img/icon/process_card_2.svg')}}" alt="icon">
-                            </div>
-                            <h2 class="box-title">Project analysis</h2>
-                            <p class="process-card_text">Continua scale empowered metrics with cost effective innovation.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3 process-card-wrap">
-                        <div class="process-card">
-                            <div class="process-card_number">03</div>
-                            <div class="process-card_icon">
-                                <img src="{{asset('img/icon/process_card_3.svg')}}" alt="icon">
-                            </div>
-                            <h2 class="box-title">Plan Execute</h2>
-                            <p class="process-card_text">Continua scale empowered metrics with cost effective innovation.</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-xl-3 process-card-wrap">
-                        <div class="process-card">
-                            <div class="process-card_number">04</div>
-                            <div class="process-card_icon">
-                                <img src="{{asset('img/icon/process_card_4.svg')}}" alt="icon">
-                            </div>
-                            <h2 class="box-title">Deliver result</h2>
-                            <p class="process-card_text">Continua scale empowered metrics with cost effective innovation.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section><!--==============================
-Testimonial Area  
-==============================-->
-    <section class="bg-auto space" data-bg-src="img/bg/testi_bg_2.png">
+    </section>
+
+    <section class="bg-top-right overflow-hidden space" id="blog-sec" data-bg-src="{{asset('img/bg/blog_bg_1.png')}}">
         <div class="container">
             <div class="title-area text-center">
                 <span class="sub-title">
                     <div class="icon-masking me-2">
-                        <span class="mask-icon" data-mask-src="{{asset('img/theme-img/title_shape_2.svg')}}"></span>
-                        <img src="{{asset('img/theme-img/title_shape_2.svg')}}" alt="shape">
+                        <span class="mask-icon" data-mask-src="{{asset('img/theme-img/title_shape_1.svg')}}"></span>
+                        <img src="{{asset('img/theme-img/title_shape_1.svg')}}" alt="shape">
                     </div>
-                    CUSTOMER FEEDBACK
+                    NEWS & ARTICLES
                 </span>
-                <h2 class="sec-title">What Happy Clients Says <br> <span class="text-theme fw-normal"> About Us?</span></h2>
+                <h2 class="sec-title">Get Every Single Update <span class="text-theme">Blog</span></h2>
             </div>
 
             <div class="slider-area">
-                <div class="swiper th-slider has-shadow" id="testiSlider2" data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"1"},"992":{"slidesPerView":"1"},"1200":{"slidesPerView":"2"}}}'>
+                <div class="swiper th-slider has-shadow" id="blogSlider1" data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <div class="testi-box">
-                                <div class="testi-box_img">
-                                    <img src="{{asset('img/testimonial/testi_2_1.jpg')}}" alt="Avater">
-                                    <div class="testi-box_quote">
-                                        <img src="{{asset('img/icon/quote_left_2.svg')}}" alt="quote">
-                                    </div>
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <img src="{{asset('img/blog/blog_1_1.jpg')}}" alt="blog image">
                                 </div>
-                                <div class="testi-box_content">
-                                    <p class="testi-box_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration.</p>
-                                    <div class="testi-box_review">
-                                        <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>15 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
                                     </div>
-                                    <h3 class="box-title">David Farnandes</h3>
-                                    <p class="testi-box_desig">CEO at Anaton</p>
+                                    <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
+                                    <div class="blog-bottom">
+                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
+                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
-                            <div class="testi-box">
-                                <div class="testi-box_img">
-                                    <img src="{{asset('img/testimonial/testi_2_2.jpg')}}" alt="Avater">
-                                    <div class="testi-box_quote">
-                                        <img src="{{asset('img/icon/quote_left_2.svg')}}" alt="quote">
-                                    </div>
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <img src="{{asset('img/blog/blog_1_2.jpg')}}" alt="blog image">
                                 </div>
-                                <div class="testi-box_content">
-                                    <p class="testi-box_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration.</p>
-                                    <div class="testi-box_review">
-                                        <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-comments"></i>3 Comments</a>
                                     </div>
-                                    <h3 class="box-title">Jackline Techie</h3>
-                                    <p class="testi-box_desig">CEO at Kormola</p>
+                                    <h3 class="box-title"><a href="blog-details.html">Regional Manager & limited time management.</a></h3>
+                                    <div class="blog-bottom">
+                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
+                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
-                            <div class="testi-box">
-                                <div class="testi-box_img">
-                                    <img src="{{asset('img/testimonial/testi_2_3.jpg')}}" alt="Avater">
-                                    <div class="testi-box_quote">
-                                        <img src="{{asset('img/icon/quote_left_2.svg')}}" alt="quote">
-                                    </div>
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <img src="{{asset('img/blog/blog_1_3.jpg')}}" alt="blog image">
                                 </div>
-                                <div class="testi-box_content">
-                                    <p class="testi-box_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration.</p>
-                                    <div class="testi-box_review">
-                                        <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>17 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
                                     </div>
-                                    <h3 class="box-title">Abraham Khalil</h3>
-                                    <p class="testi-box_desig">CEO at Rimasu</p>
+                                    <h3 class="box-title"><a href="blog-details.html">What’s the Holding Back the It Solution Industry?</a></h3>
+                                    <div class="blog-bottom">
+                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
+                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
-                            <div class="testi-box">
-                                <div class="testi-box_img">
-                                    <img src="{{asset('img/testimonial/testi_2_1.jpg')}}" alt="Avater">
-                                    <div class="testi-box_quote">
-                                        <img src="{{asset('img/icon/quote_left_2.svg')}}" alt="quote">
-                                    </div>
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <img src="{{asset('img/blog/blog_1_4.jpg')}}" alt="blog image">
                                 </div>
-                                <div class="testi-box_content">
-                                    <p class="testi-box_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration.</p>
-                                    <div class="testi-box_review">
-                                        <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>19 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-comments"></i>4 Comments</a>
                                     </div>
-                                    <h3 class="box-title">David Farnandes</h3>
-                                    <p class="testi-box_desig">CEO at Anaton</p>
+                                    <h3 class="box-title"><a href="blog-details.html">Latin derived from Cicero's 1st-century BC</a></h3>
+                                    <div class="blog-bottom">
+                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
+                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
-                            <div class="testi-box">
-                                <div class="testi-box_img">
-                                    <img src="{{asset('img/testimonial/testi_2_2.jpg')}}" alt="Avater">
-                                    <div class="testi-box_quote">
-                                        <img src="{{asset('img/icon/quote_left_2.svg')}}" alt="quote">
-                                    </div>
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <img src="{{asset('img/blog/blog_1_1.jpg')}}" alt="blog image">
                                 </div>
-                                <div class="testi-box_content">
-                                    <p class="testi-box_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration.</p>
-                                    <div class="testi-box_review">
-                                        <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>15 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
                                     </div>
-                                    <h3 class="box-title">Jackline Techie</h3>
-                                    <p class="testi-box_desig">CEO at Kormola</p>
+                                    <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
+                                    <div class="blog-bottom">
+                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
+                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
-                            <div class="testi-box">
-                                <div class="testi-box_img">
-                                    <img src="{{asset('img/testimonial/testi_2_3.jpg')}}" alt="Avater">
-                                    <div class="testi-box_quote">
-                                        <img src="{{asset('img/icon/quote_left_2.svg')}}" alt="quote">
-                                    </div>
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <img src="{{asset('img/blog/blog_1_2.jpg')}}" alt="blog image">
                                 </div>
-                                <div class="testi-box_content">
-                                    <p class="testi-box_text">Objectively visualize error-free technology for B2B alignment. Monotonectally harness an expanded array of models via effective collaboration.</p>
-                                    <div class="testi-box_review">
-                                        <i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i><i class="fa-solid fa-star-sharp"></i>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-comments"></i>3 Comments</a>
                                     </div>
-                                    <h3 class="box-title">Abraham Khalil</h3>
-                                    <p class="testi-box_desig">CEO at Rimasu</p>
+                                    <h3 class="box-title"><a href="blog-details.html">Regional Manager & limited time management.</a></h3>
+                                    <div class="blog-bottom">
+                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
+                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <img src="{{asset('img/blog/blog_1_3.jpg')}}" alt="blog image">
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>17 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
+                                    </div>
+                                    <h3 class="box-title"><a href="blog-details.html">What’s the Holding Back the It Solution Industry?</a></h3>
+                                    <div class="blog-bottom">
+                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
+                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <img src="{{asset('img/blog/blog_1_4.jpg')}}" alt="blog image">
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>19 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-comments"></i>4 Comments</a>
+                                    </div>
+                                    <h3 class="box-title"><a href="blog-details.html">Latin derived from Cicero's 1st-century BC</a></h3>
+                                    <div class="blog-bottom">
+                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
+                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <button data-slider-prev="#blogSlider1" class="slider-arrow style3 slider-prev"><i class="far fa-arrow-left"></i></button>
+                <button data-slider-next="#blogSlider1" class="slider-arrow style3 slider-next"><i class="far fa-arrow-right"></i></button>
+            </div>
+        </div>
+        <div class="shape-mockup" data-bottom="0" data-left="0">
+            <div class="particle-2 small" id="particle-4"></div>
+        </div>
+    </section>
+
+    <section class="project-area-5 th-radius3 m-4 mt-0 mb-0 overflow-hidden space" id="project-sec">
+        <div class="container th-container4">
+            <div class="row justify-content-lg-between justify-content-center align-items-center">
+                <div class="col-lg-6 mb-n2 mb-lg-0">
+                    <div class="title-area text-center text-lg-start">
+                        <span class="sub-title style1 text-white">LATEST PROJECT</span>
+                        <h2 class="sec-title text-white">Project Success Stories</h2>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <div class="sec-btn">
+                        <a href="project.html" class="th-btn style3 style-radius">View All Project</a>
+                    </div>
+                </div>
+            </div> <!-- / Title row -->
+
+            <div class="slider-area">
+                <div class="swiper th-slider has-shadow" id="projectSlider5" data-slider-options='{"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="project-card5">
+                                <div class="project-img">
+                                    <img src="{{asset('img/project/project_5_1.jpg')}}" alt="project image">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="box-title"><a href="project-details.html">Major Insurance Provider Saves $750k per Month With Big Data Migration Month</a></h3>
+                                    <p class="project-card5_desc">The company needed to complete a complex migration on a tight deadline to avoid millions of dollars in post-contract fees and fines.</p>
+                                    <a href="project-details.html" class="line-btn">Learn More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="project-card5">
+                                <div class="project-img">
+                                    <img src="{{asset('img/project/project_5_2.jpg')}}" alt="project image">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="box-title"><a href="project-details.html">Major insurance provider to a big data cost savings of $750,000 is a significant</a></h3>
+                                    <p class="project-card5_desc">Project Success is a broad term that can be interpreted in various ways depending on the context and the goals of a specific project.</p>
+                                    <a href="project-details.html" class="line-btn">Learn More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="project-card5">
+                                <div class="project-img">
+                                    <img src="{{asset('img/project/project_5_3.jpg')}}" alt="project image">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="box-title"><a href="project-details.html">That's a significant achievement! Saving $750,000 per month through a big data migration</a></h3>
+                                    <p class="project-card5_desc">Project Success is a term that generally refers to the achievement of the goals and objectives set for a specific project.</p>
+                                    <a href="project-details.html" class="line-btn">Learn More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="project-card5">
+                                <div class="project-img">
+                                    <img src="{{asset('img/project/project_5_4.jpg')}}" alt="project image">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="box-title"><a href="project-details.html">The headline Major Insurance Provider Saves $750k per Month With Big Data Migration</a></h3>
+                                    <p class="project-card5_desc">Project Success" is a broad term that can be interpreted in various ways depending on the context and the goals of a particular project</p>
+                                    <a href="project-details.html" class="line-btn">Learn More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="project-card5">
+                                <div class="project-img">
+                                    <img src="{{asset('img/project/project_5_5.jpg')}}" alt="project image">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="box-title"><a href="project-details.html">Major Insurance Provider Saves $750k per Month With Big Data Migration Month</a></h3>
+                                    <p class="project-card5_desc">The company needed to complete a complex migration on a tight deadline to avoid millions of dollars in post-contract fees and fines.</p>
+                                    <a href="project-details.html" class="line-btn">Learn More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="project-card5">
+                                <div class="project-img">
+                                    <img src="{{asset('img/project/project_5_3.jpg')}}" alt="project image">
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="box-title"><a href="project-details.html">That's a significant achievement! Saving $750,000 per month through a big data migration</a></h3>
+                                    <p class="project-card5_desc">Project Success is a term that generally refers to the achievement of the goals and objectives set for a specific project.</p>
+                                    <a href="project-details.html" class="line-btn">Learn More<i class="far fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <button data-slider-prev="#projectSlider5" class="slider-arrow slider-prev"><i class="far fa-arrow-left"></i></button>
+                <button data-slider-next="#projectSlider5" class="slider-arrow slider-next"><i class="far fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <div class="space">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-xl-4 col-md-6">
+                    <div class="contact-info">
+                        <div class="contact-info_icon">
+                            <i class="fas fa-location-dot"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="box-title">Our Office Address</h4>
+                            <span class="contact-info_text">Burnsville, MN 55337 Streat, <br> United States</span>
                         </div>
                     </div>
                 </div>
-                <button data-slider-prev="#testiSlider2" class="slider-arrow style3 slider-prev"><i class="far fa-arrow-left"></i></button>
-                <button data-slider-next="#testiSlider2" class="slider-arrow style3 slider-next"><i class="far fa-arrow-right"></i></button>
-            </div>
-        </div>
-        <div class="shape-mockup moving d-none d-xl-block" data-bottom="0%" data-left="10%"><img src="{{asset('img/shape/line_1.png')}}" alt="shape"></div>
-        <div class="shape-mockup jump d-none d-xl-block" data-top="20%" data-right="2%"><img src="{{asset('img/shape/line_2.png')}}" alt="shape"></div>
-    </section><!--==============================
-	Footer Area
-==============================-->
-    <footer class="footer-wrapper footer-layout1">
-        <div class="footer-top">
-            <div class="logo-bg"></div>
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-3">
-                        <div class="footer-logo">
-                            <a class="icon-masking" href="index.html"><span data-mask-src="{{asset('img/logo-white.svg')}}" class="mask-icon"></span><img src="{{asset('img/logo-white.svg')}}" alt="Webteck"></a>
+                <div class="col-xl-4 col-md-6">
+                    <div class="contact-info">
+                        <div class="contact-info_icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="box-title">Call Us Anytime</h4>
+                            <span class="contact-info_text">
+                                <a href="tel:+65485965789">(+65) - 48596 - 5789</a>
+                                <a href="tel:+65485965789">+65-48596-5789</a>
+                            </span>
                         </div>
                     </div>
-                    <div class="col-xl-9">
-                        <div class="footer-contact-wrap">
-                            <div class="footer-contact">
-                                <div class="footer-contact_icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="footer-contact_text">Quick Call Us:</span>
-                                    <a href="tel:+19088000393" class="footer-contact_link">+190-8800-0393</a>
-                                </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="contact-info">
+                        <div class="contact-info_icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="box-title">Send An Email</h4>
+                            <span class="contact-info_text">
+                                <a href="mailto:info.example@gmail.com">info.example@gmail.com</a>
+                                <a href="mailto:info@webteck.com">info@webteck.com</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--==============================
+Contact Area  
+==============================-->
+    <div class="bg-smoke space" data-bg-src="{{asset('img/bg/contact_bg_1.png')}}" id="contact-sec">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="title-area mb-35 text-xl-start text-center">
+                        <span class="sub-title">
+                            <div class="icon-masking me-2">
+                                <span class="mask-icon" data-mask-src="{{asset('img/theme-img/title_shape_2.svg')}}"></span>
+                                <img src="{{asset('img/theme-img/title_shape_2.svg')}}" alt="shape">
+                            </div>contact with us!
+                        </span>
+                        <h2 class="sec-title">Have Any Questions?</h2>
+                        <p class="sec-text">Enthusiastically disintermediate one-to-one leadership via business e-commerce. Dramatically reintermediate compelling process improvements rather than empowered relationships.</p>
+                    </div>
+                    <form action="mail.php" method="POST" class="contact-form ajax-contact">
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Your Name">
+                                <i class="fal fa-user"></i>
                             </div>
-                            <div class="footer-contact">
-                                <div class="footer-contact_icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="footer-contact_text">Mail Us On:</span>
-                                    <a href="mailto:info@webteck.com" class="footer-contact_link">info@webteck.com</a>
-                                </div>
+                            <div class="form-group col-md-6">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address">
+                                <i class="fal fa-envelope"></i>
                             </div>
-                            <div class="footer-contact">
-                                <div class="footer-contact_icon">
-                                    <i class="fas fa-location-dot"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="footer-contact_text">Visit Location:</span>
-                                    <a href="https://www.google.com/maps" class="footer-contact_link">54 Flemington, USA</a>
-                                </div>
+                            <div class="form-group col-md-6">
+                                <select name="subject" id="subject" class="form-select">
+                                    <option value="" disabled selected hidden>Select Subject</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Brand Marketing">Brand Marketing</option>
+                                    <option value="UI/UX Designing">UI/UX Designing</option>
+                                    <option value="Digital Marketing">Digital Marketing</option>
+                                </select>
+                                <i class="fal fa-chevron-down"></i>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input type="tel" class="form-control" name="number" id="number" placeholder="Phone Number">
+                                <i class="fal fa-phone"></i>
+                            </div>
+                            <div class="form-group col-12">
+                                <textarea name="message" id="message" cols="30" rows="3" class="form-control" placeholder="Your Message"></textarea>
+                                <i class="fal fa-comment"></i>
+                            </div>
+                            <div class="form-btn text-xl-start text-center col-12">
+                                <button class="th-btn">Send Message<i class="fa-regular fa-arrow-right ms-2"></i></button>
                             </div>
                         </div>
+                        <p class="form-messages mb-0 mt-3"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="map mb-5" style="height: 550px">
+        <iframe height="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126319.71459821571!2d113.45383307415831!3d-8.353254933051847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6837b1ab28437%3A0x4027a76e3530e20!2sKec.%20Wuluhan%2C%20Kabupaten%20Jember%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1716481411623!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+<!--==============================
+	Footer Area
+==============================-->
+<footer class="footer-wrapper footer-layout5 footer-layout12 footer-layout14">
+    <div class="container th-container4">
+        <div class="footer-top">
+            <div class="row gx-0 align-items-center">
+                <div class="col-xl">
+                    <div class="footer-newsletter">
+                        <div class="footer-newsletter-content">
+                            <h2 class="newsletter-title text-white">Subscribe for daily update</h2>
+                        </div>
+                        <form class="newsletter-form">
+                            <i class="fa-sharp fa-light fa-envelope"></i>
+                            <input class="form-control" type="email" placeholder="Email Address" required="">
+                            <button type="submit" class="th-btn">Subscribe Now</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         <div class="widget-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-md-6 col-xxl-3 col-xl-4">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">About Company</h3>
-                            <div class="th-widget-about">
-                                <p class="about-text">Professionally redefine transparent ROI through low-risk high-yield imperatives. Progressively create empowered. cost effective users via team driven.</p>
-                                <div class="th-social">
-                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
-                                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Quick Links</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="team.html">Meet Our Team</a></li>
-                                    <li><a href="project.html">Our Projects</a></li>
-                                    <li><a href="faq.html">Help & FAQs</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">IT SERVICES</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="service-details.html">Web Development</a></li>
-                                    <li><a href="service-details.html">Business Development</a></li>
-                                    <li><a href="service-details.html">Product Management</a></li>
-                                    <li><a href="service-details.html">UI/UX Design</a></li>
-                                    <li><a href="service-details.html">Cloud services</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="{{asset('img/blog/recent-post-2-1.jpg')}}" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>21 June, 2024</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="{{asset('img/blog/recent-post-2-2.jpg')}}" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Regional Manager limited time management.</a></h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>22 June, 2024</a>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="row justify-content-between">
+                <div class="col-md-6 col-xxl-3 col-xl-4">
+                    <div class="widget footer-widget">
+                        <h3 class="widget_title style2 text-white">About Company</h3>
+                        <div class="th-widget-about style2">
+                            <p class="about-text">Centric aplications productize before front end vortals visualize front end is results and value added</p>
+                            <div class="th-social">
+                                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="copyright-wrap bg-title">
-            <div class="container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-lg-6">
-                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="https://themeforest.net/user/themeholy">Themeholy</a>. All Rights Reserved.</p>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget footer-widget">
+                        <h3 class="widget_title style2 text-white">Address</h3>
+                        <div class="th-widget-about">
+                            <div class="footer-info">
+                                <p class="footer-info_text">
+                                    <a href="tel:+9159008855" class="text-inherit">+91 590088 55</a>
+                                </p>
+                            </div>
+                            <p class="footer-info"><a class="text-inherit" href="mailto:webteck@gmail.com">webteck@gmail.com</a></p>
+                            <p class="footer-info">Diamond str, Floor No 05</p>
+
+                        </div>
                     </div>
-                    <div class="col-lg-6 text-end d-none d-lg-block">
-                        <div class="footer-links">
-                            <ul>
-                                <li><a href="about.html">Terms & Condition</a></li>
-                                <li><a href="about.html">Careers</a></li>
-                                <li><a href="about.html">Privacy Policy</a></li>
+                </div>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget widget_nav_menu footer-widget">
+                        <h3 class="widget_title style2 text-white">Company</h3>
+                        <div class="menu-all-pages-container">
+                            <ul class="menu">
+                                <li><a href="about.html">What we Offer</a></li>
+                                <li><a href="contact.html">Our Story</a></li>
+                                <li><a href="blog.html">Latest Posts</a></li>
+                                <li><a href="contact.html">Help Center</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget widget_offer footer-widget">
+                        <h3 class="widget_title style2 text-white">Get the app</h3>
+                        <div class="download-btn-wrap">
+                            <div class="mb-10">
+                                <a target="_blank" href="https://play.google.com/" class="download-btn">
+                                    <img src="{{asset('img/normal/google-play.png')}}" alt="">
+                                </a>
+                            </div>
+                            <div>
+                                <a target="_blank" href="https://www.apple.com/store" class="download-btn">
+                                    <img src="{{asset('img/normal/app.png')}}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="shape-left">
-            <img src="{{asset('img/shape/footer_shape_2.svg')}}" alt="shape">
+        <div class="copyright-wrap">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6">
+                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="https://themeforest.net/user/themeholy">Themeholy</a>. All Rights Reserved.</p>
+                </div>
+                <div class="col-lg-6 text-center text-md-end">
+                    <ul class="footer-menu">
+                        <li><a href="service.html">service</a></li>
+                        <li><a href="about.html">about</a></li>
+                        <li><a href="contact.html">Articles</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="shape-right">
-            <div class="particle-1" id="particle-5"></div>
-        </div>
-    </footer>
+    </div>
+</footer>
 
     <!--********************************
 			Code End  Here 
