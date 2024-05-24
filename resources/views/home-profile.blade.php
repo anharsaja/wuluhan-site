@@ -609,10 +609,12 @@ Cta Area
             <div class="slider-area">
                 <div class="swiper th-slider has-shadow" id="blogSlider1" data-slider-options='{"loop":true,"breakpoints":{"0":{"slidesPerView":1},"576":{"slidesPerView":"1"},"768":{"slidesPerView":"2"},"992":{"slidesPerView":"2"},"1200":{"slidesPerView":"3"}}}'>
                     <div class="swiper-wrapper">
+
+                        {{-- tempat wisata --}}
                         <div class="swiper-slide">
                             <div class="blog-card">
                                 <div class="blog-img">
-                                    <img src="{{asset('img/blog/blog_1_1.jpg')}}" alt="blog image">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">
@@ -621,7 +623,6 @@ Cta Area
                                     </div>
                                     <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
                                     <div class="blog-bottom">
-                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
                                         <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
@@ -631,64 +632,7 @@ Cta Area
                         <div class="swiper-slide">
                             <div class="blog-card">
                                 <div class="blog-img">
-                                    <img src="{{asset('img/blog/blog_1_2.jpg')}}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Jan, 2024</a>
-                                        <a href="blog.html"><i class="fal fa-comments"></i>3 Comments</a>
-                                    </div>
-                                    <h3 class="box-title"><a href="blog-details.html">Regional Manager & limited time management.</a></h3>
-                                    <div class="blog-bottom">
-                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
-                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img">
-                                    <img src="{{asset('img/blog/blog_1_3.jpg')}}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>17 Jan, 2024</a>
-                                        <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
-                                    </div>
-                                    <h3 class="box-title"><a href="blog-details.html">What’s the Holding Back the It Solution Industry?</a></h3>
-                                    <div class="blog-bottom">
-                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
-                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img">
-                                    <img src="{{asset('img/blog/blog_1_4.jpg')}}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>19 Jan, 2024</a>
-                                        <a href="blog.html"><i class="fal fa-comments"></i>4 Comments</a>
-                                    </div>
-                                    <h3 class="box-title"><a href="blog-details.html">Latin derived from Cicero's 1st-century BC</a></h3>
-                                    <div class="blog-bottom">
-                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
-                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img">
-                                    <img src="{{asset('img/blog/blog_1_1.jpg')}}" alt="blog image">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">
@@ -697,7 +641,6 @@ Cta Area
                                     </div>
                                     <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
                                     <div class="blog-bottom">
-                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
                                         <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
@@ -707,35 +650,15 @@ Cta Area
                         <div class="swiper-slide">
                             <div class="blog-card">
                                 <div class="blog-img">
-                                    <img src="{{asset('img/blog/blog_1_2.jpg')}}" alt="blog image">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>16 Jan, 2024</a>
-                                        <a href="blog.html"><i class="fal fa-comments"></i>3 Comments</a>
-                                    </div>
-                                    <h3 class="box-title"><a href="blog-details.html">Regional Manager & limited time management.</a></h3>
-                                    <div class="blog-bottom">
-                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
-                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="blog-card">
-                                <div class="blog-img">
-                                    <img src="{{asset('img/blog/blog_1_3.jpg')}}" alt="blog image">
-                                </div>
-                                <div class="blog-content">
-                                    <div class="blog-meta">
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>17 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>15 Jan, 2024</a>
                                         <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
                                     </div>
-                                    <h3 class="box-title"><a href="blog-details.html">What’s the Holding Back the It Solution Industry?</a></h3>
+                                    <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
                                     <div class="blog-bottom">
-                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
                                         <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
@@ -745,21 +668,40 @@ Cta Area
                         <div class="swiper-slide">
                             <div class="blog-card">
                                 <div class="blog-img">
-                                    <img src="{{asset('img/blog/blog_1_4.jpg')}}" alt="blog image">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="blog image">
                                 </div>
                                 <div class="blog-content">
                                     <div class="blog-meta">
-                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>19 Jan, 2024</a>
-                                        <a href="blog.html"><i class="fal fa-comments"></i>4 Comments</a>
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>15 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
                                     </div>
-                                    <h3 class="box-title"><a href="blog-details.html">Latin derived from Cicero's 1st-century BC</a></h3>
+                                    <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
                                     <div class="blog-bottom">
-                                        <a href="blog.html" class="author"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
                                         <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="swiper-slide">
+                            <div class="blog-card">
+                                <div class="blog-img">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="blog image">
+                                </div>
+                                <div class="blog-content">
+                                    <div class="blog-meta">
+                                        <a href="blog.html"><i class="fal fa-calendar-days"></i>15 Jan, 2024</a>
+                                        <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
+                                    </div>
+                                    <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
+                                    <div class="blog-bottom">
+                                        <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                     </div>
                 </div>
@@ -925,7 +867,7 @@ Cta Area
     </div><!--==============================
 Contact Area  
 ==============================-->
-    <div class="bg-smoke space" data-bg-src="{{asset('img/bg/contact_bg_1.png')}}" id="contact-sec">
+    <div class="bg-smoke space" id="contact-sec">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8">

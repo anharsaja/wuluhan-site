@@ -19,9 +19,9 @@
                     <!-- contact category list -->
                     <div id="categories-list" class="app-actions-list scrollable-container">
                         <div class="list-group">
-                            <a href="#" class="list-group-item">
+                            <a href="{{ route('admin.umkm.index') }}" class="list-group-item">
                                 <i class="fa fa-inbox text-color m-r-xs"></i>
-                                <span>All Contacts</span>
+                                <span>Semua Surat</span>
                             </a>
                         </div><!-- .list-group -->
 
@@ -30,7 +30,7 @@
                         <div class="list-group">
                             @foreach ($categories as $category)
                             <a href="#" class="list-group-item">
-                                <div class="item-data">
+                                <div class="item-data" style="width: 100%;" onclick="window.location.href='{{ route('admin.umkm.category', $category->id) }}'">
                                     <span class="label-text">{{ $category->name }}</span>
                                     {{-- <span class="pull-right hide-on-hover">7</span> --}}
                                 </div>
@@ -41,8 +41,6 @@
                                         data-target="#deletecategory{{ $category->id }}"></i>
                                 </div>
                             </a><!-- .list-group-item -->
-
-
 
 
 
@@ -132,18 +130,21 @@
                     </div><!-- END column -->
                 </div><!-- .row -->
 
+
                 <div id="contacts-list" class="row">
+
+                    @foreach ($suratumkms as $suratumkm)
                     <div class="col-sm-6">
-                        <div class="card user-card contact-item p-md">
+                        <a href="{{ asset($suratumkm->path_file) }}" target="blank" class="card user-card contact-item p-md">
                             <div class="media">
                                 <div class="media-left">
                                     <div class="avatar avatar-xl avatar-circle">
-                                        <img src="img/101.jpg" alt="contact image">
+                                        <img src="{{asset('img/icon/pdf.png')}}" alt="contact image">
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h5 class="media-heading title-color">John Doe</h5>
-                                    <small class="media-meta">Web Developer</small>
+                                    <h5 class="media-heading title-color">{{ $suratumkm->name }}</h5>
+                                    <small class="media-meta">{{$suratumkm->description}}</small>
                                 </div>
                             </div>
                             <div class="contact-item-actions">
@@ -152,8 +153,9 @@
                                 <a href="javascript:void(0)" class="btn btn-danger" data-toggle="modal"
                                     data-target="#deleteItemModal"><i class="fa fa-trash"></i></a>
                             </div><!-- .contact-item-actions -->
-                        </div><!-- card user-card -->
+                        </a><!-- card user-card -->
                     </div><!-- END column -->
+                    @endforeach
 
 
                 </div><!-- #contacts-list -->
@@ -169,28 +171,32 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Create / update contact</h4>
+                <h4 class="modal-title">Tambah Surat</h4>
             </div>
-            <form action="#" id="newContactForm">
+            <form action="{{ route('admin.umkm.store') }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" id="contactName" class="form-control" placeholder="Name">
+                        <input name="name" type="text" id="contactName" class="form-control" placeholder="Name">
                     </div>
                     <div class="form-group">
-                        <input type="text" id="contactImgUrl" class="form-control"
-                            placeholder="Image URL">
+                        <textarea name="description" class="form-control" placeholder="Deskripsi Surat"></textarea>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="contactOccupation" class="form-control"
-                            placeholder="Occupation">
+                        <select name="category_id" class="form-control" required>
+                            <option value="" selected disabled>Pilih Kategory</option>
+                            @foreach ($categories as $category)
+                            <option value="{{$category->id}}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="contactEmail" class="form-control" placeholder="Email">
+                        <input name="file" type="file" class="form-control" placeholder="File">
                     </div>
                 </div><!-- .modal-body -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Save</button>
+                    <button type="submit" class="btn btn-success">Save</button>
                 </div><!-- .modal-footer -->
             </form>
         </div><!-- /.modal-content -->

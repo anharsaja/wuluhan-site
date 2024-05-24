@@ -31,6 +31,7 @@ Route::group(['prefix' => 'admin'], function () {
         
         // UMKM
         Route::resource('umkm', UmkmController::class, ['names' => 'admin.umkm']);
+        Route::get('/umkm/category/{id}', [UmkmController::class, 'category'])->name('admin.umkm.category');
         Route::controller(CategoryUmkmController::class)->group(function() {
             Route::post('/umkm/category/store', 'store')->name('admin.umkm.category.store');
             Route::post('/umkm/category/update/{id}', 'update')->name('admin.umkm.category.update');
