@@ -29,7 +29,7 @@
 
                         <div class="list-group">
                             @foreach ($categories as $category)
-                            <a href="#" class="list-group-item">
+                            <div class="list-group-item">
                                 <div class="item-data" style="width: 100%;" onclick="window.location.href='{{ route('admin.umkm.category', $category->id) }}'">
                                     <span class="label-text">{{ $category->name }}</span>
                                     {{-- <span class="pull-right hide-on-hover">7</span> --}}
@@ -40,7 +40,7 @@
                                     <i class="item-action fa fa-trash" data-toggle="modal"
                                         data-target="#deletecategory{{ $category->id }}"></i>
                                 </div>
-                            </a><!-- .list-group-item -->
+                            </div><!-- .list-group-item -->
 
 
 
@@ -135,7 +135,7 @@
 
                     @foreach ($suratumkms as $suratumkm)
                     <div class="col-sm-6">
-                        <a href="{{ asset($suratumkm->path_file) }}" target="blank" class="card user-card contact-item p-md">
+                        <div class="card user-card contact-item p-md">
                             <div class="media">
                                 <div class="media-left">
                                     <div class="avatar avatar-xl avatar-circle">
@@ -149,12 +149,80 @@
                             </div>
                             <div class="contact-item-actions">
                                 <a href="javascript:void(0)" class="btn btn-success" data-toggle="modal"
-                                    data-target="#contactModal"><i class="fa fa-edit"></i></a>
+                                    data-target="#editsuratumkm{{ $suratumkm->id }}"><i class="fa fa-edit"></i></a>
                                 <a href="javascript:void(0)" class="btn btn-danger" data-toggle="modal"
-                                    data-target="#deleteItemModal"><i class="fa fa-trash"></i></a>
+                                    data-target="#deletesuratumkm{{ $suratumkm->id }}"><i class="fa fa-trash"></i></a>
+                                <a href="{{ asset($suratumkm->path_file) }}" target="blank" class="btn btn-warning"
+                                    ><i class="fa fa-eye"></i></a>
                             </div><!-- .contact-item-actions -->
-                        </a><!-- card user-card -->
+                        </div><!-- card user-card -->
                     </div><!-- END column -->
+
+
+                    <!-- edit  suratumkm  Modal -->
+                    <div id="editsuratumkm{{ $suratumkm->id }}" class="modal fade" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title text-center" style="width: 100%">Edit Surat</h4>
+                                </div>
+                                <form action="{{ route('admin.umkm.update', $suratumkm->id) }}" id="newCategoryForm" method="post" enctype="multipart/form-data">
+                                    @method("put")
+                                    @csrf
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <input name="name" type="text" id="contactName" class="form-control" placeholder="Name" value="{{ $suratumkm->name }}">
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea name="description" class="form-control" placeholder="Deskripsi Surat">{{ $suratumkm->description }}</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <select name="category" class="form-control" required>
+                                                <option value="" selected disabled>Pilih Kategory</option>
+                                                @foreach ($categories as $category)
+                                                <option value="{{$category->id}}" @selected($category->id == $suratumkm->category_id)>{{ $category->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <input name="file" type="file" class="form-control" placeholder="File"><br>
+                                            <a href="{{ asset($suratumkm->path_file) }}" target="blank" class="btn btn-warning" style="width: 30%"
+                                                ><i class="fa fa-eye"></i></a>
+                                        </div>
+                                    </div><!-- .modal-body -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                    </div><!-- .modal-footer -->
+                                </form>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+
+
+
+                    {{-- delete surat modal --}}
+                    <div id="deletesuratumkm{{ $suratumkm->id }}" class="modal fade" tabindex="-1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title text-center" style="width: 100%">Delete Surat</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <h5>hapus surat {{ $suratumkm->name }}</h5>
+                                </div><!-- .modal-body -->
+                                <form class="modal-footer" action="{{ route('admin.umkm.destroy', $suratumkm->id) }}" method="post">
+                                    @method("delete")
+                                    @csrf
+                                    <button class="btn btn-danger">Hapus</button>
+                                </form><!-- .modal-footer -->
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal --> 
                     @endforeach
 
 

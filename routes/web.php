@@ -37,6 +37,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/umkm/category/update/{id}', 'update')->name('admin.umkm.category.update');
             Route::get('/umkm/category/delete/{id}', 'delete')->name('admin.umkm.category.delete');
         });
+
     });
 
     // Login Routes

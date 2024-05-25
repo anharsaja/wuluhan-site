@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
-use App\Models\CategoryUmkm;
 use App\Models\SuratUmkm;
+use App\Models\CategoryUmkm;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class UmkmController extends Controller
 {
@@ -77,7 +78,33 @@ class UmkmController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $suratumkm = SuratUmkm::find($id);
+        $suratumkm->name = $request->name;
+        $suratumkm->description = $request->description;
+        $suratumkm->category_id = $request->category;
+        
+        if ($request->hasFile('file')) {
+            $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
+            $files = $request->file('file');
+            $filename = $files->getClientOriginalName();
+            $extension = $files->getClientOriginalExtension();
+            $check = in_array($extension, $allowedfileExtension);
+
+            if ($check) {
+                $filename = time().'.'.$extension;
+                $files->move(public_path() . '/kumpulan_surat/file_umkm' , $filename);
+
+                $filesLama = public_path($suratumkm->path_file);
+                if (File::exists($filesLama)) {
+                    File::delete($filesLama);
+                };
+
+                $suratumkm->path_file = '/kumpulan_surat/file_umkm/'. $filename;
+            }
+        };
+
+        $suratumkm->save();
+        return back();
     }
 
     /**
@@ -85,6 +112,12 @@ class UmkmController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $suratumkm = SuratUmkm::find($id);
+        $filesLama = public_path($suratumkm->path_file);
+                if (File::exists($filesLama)) {
+                    File::delete($filesLama);
+                };
+        $suratumkm->delete();
+        return back();
     }
 }
