@@ -54,7 +54,7 @@
                     <li class="sub collapse" id="sotk">
                         <a href="ui-alerts.html" class="nav-link" data-parent="#sotk">Artikel Publik</a>
                         <a href="ui-btns.html" class="nav-link" data-parent="#sotk">Artikel Privat</a>
-                        <a href="ui-cards.html" class="nav-link" data-parent="#sotk">Kelola Dokumen</a>
+                        <a href="{{ route('admin.sotk.index') }}" class="nav-link" data-parent="#sotk">Kelola Dokumen</a>
                     </li>
                     @endcan
 

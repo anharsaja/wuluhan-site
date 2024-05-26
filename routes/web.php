@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Backend\AdminsController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Auth\LoginController;
+use App\Http\Controllers\Backend\sotk_controller\CategorySotkController;
+use App\Http\Controllers\Backend\sotk_controller\SotkController;
 
 Auth::routes();
 // Route::get('/', function() {
@@ -38,12 +40,12 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/umkm/category/delete/{id}', 'delete')->name('admin.umkm.category.delete');
         });
         // SOTK
-        Route::resource('umkm', UmkmController::class, ['names' => 'admin.umkm']);
-        Route::get('/umkm/category/{id}', [UmkmController::class, 'category'])->name('admin.umkm.category');
-        Route::controller(CategoryUmkmController::class)->group(function() {
-            Route::post('/umkm/category/store', 'store')->name('admin.umkm.category.store');
-            Route::post('/umkm/category/update/{id}', 'update')->name('admin.umkm.category.update');
-            Route::get('/umkm/category/delete/{id}', 'delete')->name('admin.umkm.category.delete');
+        Route::resource('sotk', SotkController::class, ['names' => 'admin.sotk']);
+        Route::get('/sotk/category/{id}', [SotkController::class, 'category'])->name('admin.sotk.category');
+        Route::controller(CategorySotkController::class)->group(function() {
+            Route::post('/sotk/category/store', 'store')->name('admin.sotk.category.store');
+            Route::post('/sotk/category/update/{id}', 'update')->name('admin.sotk.category.update');
+            Route::get('/sotk/category/delete/{id}', 'delete')->name('admin.sotk.category.delete');
         });
         
         

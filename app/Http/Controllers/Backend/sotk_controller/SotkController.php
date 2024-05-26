@@ -2,16 +2,27 @@
 
 namespace App\Http\Controllers\Backend\sotk_controller;
 
-use App\Http\Controllers\Controller;
+use App\Models\SuratSotk;
+use App\Models\CategorySotk;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 
 class SotkController extends Controller
 {
     public function index()
     {
-        //
+        $category = CategorySotk::get();
+        $suratsork = SuratSotk::get();
+        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsork]);
     }
 
+    public function category($id)
+    {
+        $category = CategorySotk::get();
+        $suratsork = SuratSotk::where('category_id', $id)->get();
+        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsork]);
+    }
 
     public function create()
     {
@@ -21,7 +32,28 @@ class SotkController extends Controller
 
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('file')) {
+            $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
+            $files = $request->file('file');
+            $filename = $files->getClientOriginalName();
+            $extension = $files->getClientOriginalExtension();
+            $check = in_array($extension, $allowedfileExtension);
+
+            if ($check) {
+                $filename = time() . '.' . $extension;
+                $files->move(public_path() . '/kumpulan_surat/file_sotk', $filename);
+
+                SuratSotk::create([
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'category_id' => $request->category_id,
+                    'path_file' => '/kumpulan_surat/file_sotk/' . $filename
+                ]);
+                return back();
+            } else {
+                return back();
+            }
+        }
     }
 
 
@@ -39,12 +71,44 @@ class SotkController extends Controller
 
     public function update(Request $request, string $id)
     {
-        //
+        $suratsotk = SuratSotk::find($id);
+        $suratsotk->name = $request->name;
+        $suratsotk->description = $request->description;
+        $suratsotk->category_id = $request->category;
+        
+        if ($request->hasFile('file')) {
+            $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
+            $files = $request->file('file');
+            $filename = $files->getClientOriginalName();
+            $extension = $files->getClientOriginalExtension();
+            $check = in_array($extension, $allowedfileExtension);
+
+            if ($check) {
+                $filename = time().'.'.$extension;
+                $files->move(public_path() . '/kumpulan_surat/file_sotk' , $filename);
+
+                $filesLama = public_path($suratsotk->path_file);
+                if (File::exists($filesLama)) {
+                    File::delete($filesLama);
+                };
+
+                $suratsotk->path_file = '/kumpulan_surat/file_sotk/'. $filename;
+            }
+        };
+
+        $suratsotk->save();
+        return back();
     }
 
 
     public function destroy(string $id)
     {
-        //
+        $suratsotk = SuratSotk::find($id);
+        $filesLama = public_path($suratsotk->path_file);
+                if (File::exists($filesLama)) {
+                    File::delete($filesLama);
+                };
+        $suratsotk->delete();
+        return back();
     }
 }
