@@ -12,10 +12,12 @@
                         <i class="fa fa-chevron-right"></i>
                         <i class="fa fa-chevron-left"></i>
                     </div><!-- .action-panel-toggle -->
+                    @can('sotk.create')
                     <div class="m-b-lg">
                         <a href="#" data-toggle="modal" data-target="#contactModal"
                             class="btn btn-primary btn-block">New Contact</a>
                     </div>
+                    @endcan
                     <!-- contact category list -->
                     <div id="categories-list" class="app-actions-list scrollable-container">
                         <div class="list-group">
@@ -34,12 +36,14 @@
                                     <span class="label-text">{{ $category->name }}</span>
                                     {{-- <span class="pull-right hide-on-hover">7</span> --}}
                                 </div>
+                                @can('sotk.create')
                                 <div class="item-actions">
                                     <i class="item-action fa fa-edit" data-toggle="modal"
                                         data-target="#editcategory{{ $category->id }}"></i>
                                     <i class="item-action fa fa-trash" data-toggle="modal"
                                         data-target="#deletecategory{{ $category->id }}"></i>
                                 </div>
+                                @endcan
                             </div><!-- .list-group-item -->
 
 
@@ -88,9 +92,11 @@
                             </div><!-- /.modal --> 
                                 
                             @endforeach
+                            @can('sotk.create')
                             <a href="#" class="list-group-item text-color" data-toggle="modal"
-                                data-target="#categoryModal"><i class="fa fa-plus m-r-sm"></i> Add New
-                                Category</a>
+                                data-target="#categoryModal"><i class="fa fa-plus m-r-sm"></i> Add NewCategory
+                            </a>
+                            @endcan
                         </div>
                     </div><!-- #categories-list -->
                     <div class="m-h-md">
@@ -138,10 +144,12 @@
                                 </div>
                             </div>
                             <div class="contact-item-actions">
+                                @can('sotk.create')
                                 <a href="javascript:void(0)" class="btn btn-success" data-toggle="modal"
                                     data-target="#editsuratsotk{{ $suratsotk->id }}"><i class="fa fa-edit"></i></a>
                                 <a href="javascript:void(0)" class="btn btn-danger" data-toggle="modal"
                                     data-target="#deletesuratsotk{{ $suratsotk->id }}"><i class="fa fa-trash"></i></a>
+                                @endcan
                                 <a href="{{ asset($suratsotk->path_file) }}" target="blank" class="btn btn-warning"
                                     ><i class="fa fa-eye"></i></a>
                             </div><!-- .contact-item-actions -->
