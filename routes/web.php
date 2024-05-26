@@ -2,13 +2,13 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Backend\UmkmController;
+use App\Http\Controllers\Backend\umkm_controller\UmkmController;
+use App\Http\Controllers\Backend\umkm_controller\CategoryUmkmController;
 use App\Http\Controllers\Backend\RolesController;
 use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Backend\AdminsController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Auth\LoginController;
-use App\Http\Controllers\Backend\CategoryUmkmController;
 
 Auth::routes();
 // Route::get('/', function() {
@@ -37,7 +37,16 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/umkm/category/update/{id}', 'update')->name('admin.umkm.category.update');
             Route::get('/umkm/category/delete/{id}', 'delete')->name('admin.umkm.category.delete');
         });
-
+        // SOTK
+        Route::resource('umkm', UmkmController::class, ['names' => 'admin.umkm']);
+        Route::get('/umkm/category/{id}', [UmkmController::class, 'category'])->name('admin.umkm.category');
+        Route::controller(CategoryUmkmController::class)->group(function() {
+            Route::post('/umkm/category/store', 'store')->name('admin.umkm.category.store');
+            Route::post('/umkm/category/update/{id}', 'update')->name('admin.umkm.category.update');
+            Route::get('/umkm/category/delete/{id}', 'delete')->name('admin.umkm.category.delete');
+        });
+        
+        
     });
 
     // Login Routes

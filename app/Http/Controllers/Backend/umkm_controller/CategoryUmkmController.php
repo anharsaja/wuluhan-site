@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\Backend\umkm_controller;
 
 use App\Http\Controllers\Controller;
 use App\Models\CategoryUmkm;

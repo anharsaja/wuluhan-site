@@ -48,26 +48,21 @@
                     <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link active"><i class="fa fa-adjust"></i>Dashboard</a></li>
                     @endcan
 
-
+                    {{-- Fitur Sotk --}}
                     @can('sotk.view')
                     <li class="nav-item"><a href="#sotk" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>SOTK<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
                     <li class="sub collapse" id="sotk">
-                        <a href="ui-alerts.html" class="nav-link" data-parent="#sotk">alerts</a>
-                        <a href="ui-btns.html" class="nav-link" data-parent="#sotk">buttons</a>
-                        <a href="ui-cards.html" class="nav-link" data-parent="#sotk">cards</a>
-                        <a href="ui-list.html" class="nav-link" data-parent="#sotk">list</a>
-                        <a href="ui-progress-bars.html" class="nav-link" data-parent="#sotk">progress</a>
+                        <a href="ui-alerts.html" class="nav-link" data-parent="#sotk">Artikel Publik</a>
+                        <a href="ui-btns.html" class="nav-link" data-parent="#sotk">Artikel Privat</a>
+                        <a href="ui-cards.html" class="nav-link" data-parent="#sotk">Kelola Dokumen</a>
                     </li>
                     @endcan
 
                     @can('osjj.view')
                     <li class="nav-item"><a href="#osjj" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>OSJJ<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
                     <li class="sub collapse" id="osjj">
-                        <a href="ui-alerts.html" class="nav-link" data-parent="#osjj">alerts</a>
-                        <a href="ui-btns.html" class="nav-link" data-parent="#osjj">buttons</a>
-                        <a href="ui-cards.html" class="nav-link" data-parent="#osjj">cards</a>
-                        <a href="ui-list.html" class="nav-link" data-parent="#osjj">list</a>
-                        <a href="ui-progress-bars.html" class="nav-link" data-parent="#osjj">progress</a>
+                        <a href="ui-alerts.html" class="nav-link" data-parent="#osjj">Lihat Dokumen</a>
+                        <a href="ui-alerts.html" class="nav-link" data-parent="#osjj">Lihat Dokumen</a>
                     </li>
                     @endcan
 
@@ -114,18 +109,6 @@
                         <a href="ui-progress-bars.html" class="nav-link" data-parent="#budaya">progress</a>
                     </li>
                     @endcan
-
-                    {{-- @can('umkm.view')
-                    <li class="nav-item"><a href="#umkm" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>UMKM<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
-                    <li class="sub collapse" id="umkm">
-                        <a href="ui-alerts.html" class="nav-link" data-parent="#umkm">alerts</a>
-                        <a href="ui-btns.html" class="nav-link" data-parent="#umkm">buttons</a>
-                        <a href="ui-cards.html" class="nav-link" data-parent="#umkm">cards</a>
-                        <a href="ui-list.html" class="nav-link" data-parent="#umkm">list</a>
-                        <a href="ui-progress-bars.html" class="nav-link" data-parent="#umkm">progress</a>
-                    </li>
-                    @endcan --}}
-
 
                     @can('umkm.view')
                     <li class="nav-item"><a href="{{ route('admin.umkm.index') }}" class="nav-link"><i class="fa fa-adjust"></i>UMKM</a></li>
