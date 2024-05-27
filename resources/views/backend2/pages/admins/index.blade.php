@@ -51,16 +51,37 @@
                                     @endif
 
                                     @if (Auth::guard('admin')->user()->can('admin.delete'))
-                                    <a class="btn btn-danger text-white" href="{{ route('admin.admins.destroy', $admin->id) }}" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $admin->id }}').submit();">
+                                    {{-- <a class="btn btn-danger text-white" href="{{ route('admin.admins.destroy', $admin->id) }}" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $admin->id }}').submit();">
                                         Delete
                                     </a>
                                     <form id="delete-form-{{ $admin->id }}" action="{{ route('admin.admins.destroy', $admin->id) }}" method="POST" style="display: none;">
                                         @method('DELETE')
                                         @csrf
-                                    </form>
+                                    </form> --}}
+                                    <a href="javascript:void(0)" class="btn btn-danger text-white" data-toggle="modal" data-target="#deleteadmin{{ $admin->id }}">Delete</a>
                                     @endif
                                 </td>
                             </tr>
+
+                            <div id="deleteadmin{{ $admin->id }}" class="modal fade" tabindex="-1" role="dialog">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                                    aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title text-center" style="width: 100%">Delete Admin</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h5>hapus admin {{ $admin->name }}</h5>
+                                        </div><!-- .modal-body -->
+                                        <form class="modal-footer" action="{{ route('admin.admins.destroy', $admin->id) }}" method="post">
+                                            @method("delete")
+                                            @csrf
+                                            <button class="btn btn-danger w-50 m-3">Hapus</button>
+                                        </form><!-- .modal-footer -->
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal --> 
                             @endforeach
                         </tbody>
                     </table>

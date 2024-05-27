@@ -164,12 +164,6 @@ class AdminsController extends Controller
         return redirect()->route('admin.admins.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(int $id)
     {
         if (is_null($this->user) || !$this->user->can('admin.delete')) {
@@ -187,6 +181,7 @@ class AdminsController extends Controller
         $admin = Admin::find($id);
         if (!is_null($admin)) {
             $admin->delete();
+            return back();
         }
 
         session()->flash('success', 'Admin has been deleted !!');
