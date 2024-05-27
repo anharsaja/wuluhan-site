@@ -28,7 +28,9 @@
     @endphp
     
 </head>
-
+@section('judul')
+    Dashboard
+@endsection
 <body>
     <!-- start admin -->
     <section id="admin">
@@ -160,11 +162,13 @@
                 <!-- start head bottom -->
                 <div class="bottom">
                     <div class="left">
-                        <h1>dashboard</h1>
+                        <h1>
+                            @yield('judul')
+                        </h1>
                     </div>
                     <div class="right">
                         <h1>dashboard /</h1>
-                        <a href="#">page name</a>
+                        <a href="#">@yield('judul')</a>
                     </div>
                 </div>
                 <!-- end head bottom -->

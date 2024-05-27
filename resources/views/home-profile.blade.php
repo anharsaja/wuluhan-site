@@ -391,7 +391,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="contact.html">Contact</a>
+                                        <a href="#contact-sec">Contact</a>
                                     </li>
                                 </ul>
                             </nav>
@@ -448,11 +448,13 @@ Service Area
             <div class="col-lg-6">
                 <div class="title-area text-center me-xl-5 ms-xl-5">
                     <span class="sub-title sub-title3">Our Services</span>
-                    <h2 class="sec-title">We Provide Experts cyber security services</h2>
+                    <h2 class="sec-title">Layanan Untuk Masyarakat</h2>
                 </div>
             </div>
         </div>
         <div class="row gy-3 justify-content-between align-items-center">
+
+            {{-- Layanan --}}
             <div class="col-md-6 col-xl-3">
                 <div class="service-box2 wow fadeInRight">
                     <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
@@ -460,12 +462,13 @@ Service Area
                         <div class="service-box2_icon">
                             <img src="{{asset('img/icon/service_3_1.svg')}}" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="service-details.html">Cyber Security</a></h3>
+                        <h3 class="box-title"><a href="service-details.html">Pembuatan Kartu Keluarga</a></h3>
                         <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
                         <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-xl-3">
                 <div class="service-box2 wow fadeInRight">
                     <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
@@ -473,12 +476,13 @@ Service Area
                         <div class="service-box2_icon">
                             <img src="{{asset('img/icon/service_3_2.svg')}}" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="service-details.html">Data Protection</a></h3>
+                        <h3 class="box-title"><a href="service-details.html">Kartu Tanda Penduduk</a></h3>
                         <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
                         <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-6 col-xl-3">
                 <div class="service-box2 wow fadeInRight">
                     <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
@@ -486,12 +490,13 @@ Service Area
                         <div class="service-box2_icon">
                             <img src="{{asset('img/icon/service_3_3.svg')}}" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="service-details.html">Server Security</a></h3>
+                        <h3 class="box-title"><a href="service-details.html">Pendaftaran Akta Kelahiran</a></h3>
                         <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
                         <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-xl-3">
                 <div class="service-box2 wow fadeInRight">
                     <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
@@ -499,72 +504,125 @@ Service Area
                         <div class="service-box2_icon">
                             <img src="{{asset('img/icon/service_3_4.svg')}}" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="service-details.html">Network Security</a></h3>
+                        <h3 class="box-title"><a href="service-details.html">Pendaftaran Akta Kematian</a></h3>
                         <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
                         <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-xl-3">
-                <div class="service-box2 <br />
-<b>Warning</b>:  Undefined array key 4 in <b>E:\web-dev\angfuzsoft\html\webtek-html\build\inc\sections\service-v10.php</b> on line <b>53</b><br />
-">
+                <div class="service-box2 fadeInRight">
                     <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
                     <div class="service-box2_content">
                         <div class="service-box2_icon">
                             <img src="{{asset('img/icon/service_3_5.svg')}}" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="service-details.html">Data Encryption</a></h3>
+                        <h3 class="box-title"><a href="service-details.html">Pengajuan Surat Pindah</a></h3>
                         <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
                         <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-xl-3">
-                <div class="service-box2 <br />
-<b>Warning</b>:  Undefined array key 5 in <b>E:\web-dev\angfuzsoft\html\webtek-html\build\inc\sections\service-v10.php</b> on line <b>53</b><br />
-">
+                <div class="service-box2 fadeInRight">
                     <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
                     <div class="service-box2_content">
                         <div class="service-box2_icon">
                             <img src="{{asset('img/icon/service_3_6.svg')}}" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="service-details.html">Hacking Protection</a></h3>
+                        <h3 class="box-title"><a href="service-details.html">Permohonan Tidak Mampu</a></h3>
                         <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
                         <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-xl-3">
-                <div class="service-box2 <br />
-<b>Warning</b>:  Undefined array key 6 in <b>E:\web-dev\angfuzsoft\html\webtek-html\build\inc\sections\service-v10.php</b> on line <b>53</b><br />
-">
+                <div class="service-box2 fadeInRight">
                     <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
                     <div class="service-box2_content">
                         <div class="service-box2_icon">
                             <img src="{{asset('img/icon/service_3_7.svg')}}" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="service-details.html">Backup & Recovery</a></h3>
+                        <h3 class="box-title"><a href="service-details.html">Rekomendasi Surat Izin Usaha</a></h3>
                         <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
                         <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-xl-3">
-                <div class="service-box2 <br />
-<b>Warning</b>:  Undefined array key 7 in <b>E:\web-dev\angfuzsoft\html\webtek-html\build\inc\sections\service-v10.php</b> on line <b>53</b><br />
-">
+                <div class="service-box2 fadeInRight">
                     <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
                     <div class="service-box2_content">
                         <div class="service-box2_icon">
                             <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
                         </div>
-                        <h3 class="box-title"><a href="service-details.html">Cloud Security</a></h3>
+                        <h3 class="box-title"><a href="service-details.html">Pembaharuan Kependudukan</a></h3>
                         <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
                         <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 fadeInRight">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Pelayanan Bantuan Sosial</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 fadeInRight">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Pengaduan Masyarakat</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 fadeInRight">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Pelayanan NCR</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3">
+                <div class="service-box2 fadeInRight">
+                    <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
+                    <div class="service-box2_content">
+                        <div class="service-box2_icon">
+                            <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
+                        </div>
+                        <h3 class="box-title"><a href="service-details.html">Pelayanan Perizinan Lainnya</a></h3>
+                        <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
+                        <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
@@ -587,7 +645,7 @@ Cta Area
                         </span>
                         <h2 class="sec-title text-white">Need Any Kind Of IT Solution For <span class="text-theme fw-normal">Your Business?</span></h2>
                     </div>
-                    <a href="contact.html" class="th-btn style3">Get In Touch</a>
+                    <a href="contact.html" class="th-btn style6">Get In Touch</a>
                 </div>
             </div>
         </div>
@@ -603,7 +661,7 @@ Cta Area
                     </div>
                     NEWS & ARTICLES
                 </span>
-                <h2 class="sec-title">Get Every Single Update <span class="text-theme">Blog</span></h2>
+                <h2 class="sec-title">Artikel Kecamatan <span class="text-theme">Wuluhan</span></h2>
             </div>
 
             <div class="slider-area">
@@ -878,8 +936,8 @@ Contact Area
                                 <img src="{{asset('img/theme-img/title_shape_2.svg')}}" alt="shape">
                             </div>contact with us!
                         </span>
-                        <h2 class="sec-title">Have Any Questions?</h2>
-                        <p class="sec-text">Enthusiastically disintermediate one-to-one leadership via business e-commerce. Dramatically reintermediate compelling process improvements rather than empowered relationships.</p>
+                        <h2 class="sec-title">Kritik dan Saran</h2>
+                        <p class="sec-text">Kami sangat menghargai kunjungan Anda ke website kami. Untuk terus meningkatkan kualitas layanan dan informasi yang kami sediakan, kami mohon kesediaan Anda memberikan kritik dan saran. Silakan sampaikan pendapat Anda di kolom komentar atau melalui formulir yang tersedia. Terima kasih atas masukan Anda!</p>
                     </div>
                     <form action="mail.php" method="POST" class="contact-form ajax-contact">
                         <div class="row">
@@ -894,10 +952,10 @@ Contact Area
                             <div class="form-group col-md-6">
                                 <select name="subject" id="subject" class="form-select">
                                     <option value="" disabled selected hidden>Select Subject</option>
-                                    <option value="Web Development">Web Development</option>
-                                    <option value="Brand Marketing">Brand Marketing</option>
-                                    <option value="UI/UX Designing">UI/UX Designing</option>
-                                    <option value="Digital Marketing">Digital Marketing</option>
+                                    <option value="#">Masalah 1</option>
+                                    <option value="#">Masalah 2</option>
+                                    <option value="#">Masalah 3</option>
+                                    <option value="#">Masalah 4</option>
                                 </select>
                                 <i class="fal fa-chevron-down"></i>
                             </div>
@@ -930,7 +988,7 @@ Contact Area
 ==============================-->
 <footer class="footer-wrapper footer-layout5 footer-layout12 footer-layout14">
     <div class="container th-container4">
-        <div class="footer-top">
+        {{-- <div class="footer-top">
             <div class="row gx-0 align-items-center">
                 <div class="col-xl">
                     <div class="footer-newsletter">
@@ -945,7 +1003,7 @@ Contact Area
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="widget-area">
             <div class="row justify-content-between">
                 <div class="col-md-6 col-xxl-3 col-xl-4">
@@ -1012,14 +1070,14 @@ Contact Area
         <div class="copyright-wrap">
             <div class="row justify-content-between align-items-center">
                 <div class="col-lg-6">
-                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="https://themeforest.net/user/themeholy">Themeholy</a>. All Rights Reserved.</p>
+                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> Kecamatan <a href="#">Wuluhan</a>. 2024.</p>
                 </div>
                 <div class="col-lg-6 text-center text-md-end">
                     <ul class="footer-menu">
                         <li><a href="service.html">service</a></li>
                         <li><a href="about.html">about</a></li>
                         <li><a href="contact.html">Articles</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#contact-sec">Contact</a></li>
                     </ul>
                 </div>
             </div>

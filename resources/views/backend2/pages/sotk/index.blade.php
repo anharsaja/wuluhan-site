@@ -1,5 +1,11 @@
 @extends('backend2.layouts.master')
 
+
+@section('judul')
+    SOTK
+@endsection
+
+
 @section('content')
 
 <div class="wrap">
