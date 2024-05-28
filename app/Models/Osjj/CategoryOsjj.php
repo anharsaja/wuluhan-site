@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Osjj;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SuratSotk extends Model
+class CategoryOsjj extends Model
 {
     use HasFactory;
-    
+
     protected $guarded=['id'];
+
 }

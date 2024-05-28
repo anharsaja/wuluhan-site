@@ -55,6 +55,7 @@ class RolePermissionSeeder extends Seeder
                 'group_name' => 'osjj',
                 'permissions' => [
                     // osjj Permissions
+                    'osjj.create',
                     'osjj.view',
                     'osjj.edit',
                     'osjj.delete',
@@ -65,6 +66,7 @@ class RolePermissionSeeder extends Seeder
                 'group_name' => 'pkk',
                 'permissions' => [
                     // pkk Permissions
+                    'pkk.create',
                     'pkk.view',
                     'pkk.edit',
                     'pkk.delete',
@@ -75,6 +77,7 @@ class RolePermissionSeeder extends Seeder
                 'group_name' => 'ktb',
                 'permissions' => [
                     // ktb Permissions
+                    'ktb.create',
                     'ktb.view',
                     'ktb.edit',
                     'ktb.delete',

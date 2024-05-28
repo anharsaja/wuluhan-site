@@ -1,28 +1,28 @@
 <?php
 
-namespace App\Http\Controllers\Backend\sotk_controller;
+namespace App\Http\Controllers\Backend\osjj_controller;
 
-use App\Models\Sotk\SuratSotk;
-use App\Models\Sotk\CategorySotk;
 use Illuminate\Http\Request;
+use App\Models\Osjj\SuratOsjj;
+use App\Models\Osjj\CategoryOsjj;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 
-class SotkController extends Controller
+class OsjjController extends Controller
 {
     public function index()
     {
-        $category = CategorySotk::get();
-        $suratsotk = SuratSotk::get();
-        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK']);
+        $category = CategoryOsjj::get();
+        $suratosjj = SuratOsjj::get();
+        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat SOTK']);
     }
 
     public function category($id)
     {
-        $categoryName = CategorySotk::find($id)->name;
-        $category = CategorySotk::get();
-        $suratsotk = SuratSotk::where('category_id', $id)->get();
-        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
+        $categoryName = CategoryOsjj::find($id)->name;
+        $category = CategoryOsjj::get();
+        $suratosjj = SuratOsjj::where('category_id', $id)->get();
+        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
     }
 
     public function create()
@@ -42,13 +42,13 @@ class SotkController extends Controller
 
             if ($check) {
                 $filename = time() . '.' . $extension;
-                $files->move(public_path() . '/kumpulan_surat/file_sotk', $filename);
+                $files->move(public_path() . '/kumpulan_surat/file_osjj', $filename);
 
-                SuratSotk::create([
+                SuratOsjj::create([
                     'name' => $request->name,
                     'description' => $request->description,
                     'category_id' => $request->category_id,
-                    'path_file' => '/kumpulan_surat/file_sotk/' . $filename
+                    'path_file' => '/kumpulan_surat/file_osjj/' . $filename
                 ]);
                 return back();
             } else {
@@ -69,13 +69,12 @@ class SotkController extends Controller
         //
     }
 
-
     public function update(Request $request, string $id)
     {
-        $suratsotk = SuratSotk::find($id);
-        $suratsotk->name = $request->name;
-        $suratsotk->description = $request->description;
-        $suratsotk->category_id = $request->category;
+        $suratosjj = SuratOsjj::find($id);
+        $suratosjj->name = $request->name;
+        $suratosjj->description = $request->description;
+        $suratosjj->category_id = $request->category;
         
         if ($request->hasFile('file')) {
             $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
@@ -86,30 +85,30 @@ class SotkController extends Controller
 
             if ($check) {
                 $filename = time().'.'.$extension;
-                $files->move(public_path() . '/kumpulan_surat/file_sotk' , $filename);
+                $files->move(public_path() . '/kumpulan_surat/file_osjj' , $filename);
 
-                $filesLama = public_path($suratsotk->path_file);
+                $filesLama = public_path($suratosjj->path_file);
                 if (File::exists($filesLama)) {
                     File::delete($filesLama);
                 };
 
-                $suratsotk->path_file = '/kumpulan_surat/file_sotk/'. $filename;
+                $suratosjj->path_file = '/kumpulan_surat/file_osjj/'. $filename;
             }
         };
 
-        $suratsotk->save();
+        $suratosjj->save();
         return back();
     }
 
 
     public function destroy(string $id)
     {
-        $suratsotk = SuratSotk::find($id);
-        $filesLama = public_path($suratsotk->path_file);
+        $suratosjj = SuratOsjj::find($id);
+        $filesLama = public_path($suratosjj->path_file);
                 if (File::exists($filesLama)) {
                     File::delete($filesLama);
                 };
-        $suratsotk->delete();
+        $suratosjj->delete();
         return back();
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Backend\umkm_controller;
 
-use App\Models\SuratUmkm;
-use App\Models\CategoryUmkm;
+use App\Models\Umkm\SuratUmkm;
+use App\Models\Umkm\CategoryUmkm;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;

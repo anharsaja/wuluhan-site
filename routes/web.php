@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Backend\AdminsController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Auth\LoginController;
+use App\Http\Controllers\Backend\osjj_controller\CategoryOsjjController;
+use App\Http\Controllers\Backend\osjj_controller\OsjjController;
 use App\Http\Controllers\Backend\sotk_controller\CategorySotkController;
 use App\Http\Controllers\Backend\sotk_controller\SotkController;
 
@@ -47,7 +49,14 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/sotk/category/update/{id}', 'update')->name('admin.sotk.category.update');
             Route::get('/sotk/category/delete/{id}', 'delete')->name('admin.sotk.category.delete');
         });
-        
+        // OSJJ
+        Route::resource('osjj', OsjjController::class, ['names' => 'admin.osjj']);
+        Route::get('/osjj/category/{id}', [OsjjController::class, 'category'])->name('admin.osjj.category');
+        Route::controller(CategoryOsjjController::class)->group(function() {
+            Route::post('/osjj/category/store', 'store')->name('admin.osjj.category.store');
+            Route::post('/osjj/category/update/{id}', 'update')->name('admin.osjj.category.update');
+            Route::get('/osjj/category/delete/{id}', 'delete')->name('admin.osjj.category.delete');
+        });
         
     });
 

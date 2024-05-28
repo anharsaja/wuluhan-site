@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Backend\sotk_controller;
+namespace App\Http\Controllers\Backend\osjj_controller;
 
 use App\Http\Controllers\Controller;
-use App\Models\Sotk\CategorySotk;
+use App\Models\Osjj\CategoryOsjj;
 use Illuminate\Http\Request;
 
-class CategorySotkController extends Controller
+class CategoryOsjjController extends Controller
 {
     public function store(Request $request)
     {
-        CategorySotk::create([
+        CategoryOsjj::create([
             'name' => $request->name
         ]);
         return back();
@@ -18,7 +18,7 @@ class CategorySotkController extends Controller
 
     public function update(Request $request, $id)
     {
-        $category = CategorySotk::find($id);
+        $category = CategoryOsjj::find($id);
         $category->name = $request->name;
         $category->save();
         return back();
@@ -26,7 +26,7 @@ class CategorySotkController extends Controller
 
     public function delete($id)
     {
-        $category = CategorySotk::find($id);
+        $category = CategoryOsjj::find($id);
         $category->delete();
         return back();
     }

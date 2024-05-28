@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Osjj;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CategorySotk extends Model
+class SuratOsjj extends Model
 {
     use HasFactory;
 

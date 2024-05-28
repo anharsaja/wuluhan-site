@@ -66,10 +66,13 @@
                     @endcan
 
                     @can('osjj.view')
-                    <li class="nav-item"><a href="#osjj" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>OSJJ<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
+                    <li class="nav-item"><a href="#osjj" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>osjj<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
                     <li class="sub collapse" id="osjj">
-                        <a href="ui-alerts.html" class="nav-link" data-parent="#osjj">Lihat Dokumen</a>
-                        <a href="ui-alerts.html" class="nav-link" data-parent="#osjj">Lihat Dokumen</a>
+                        <a href="ui-alerts.html" class="nav-link" data-parent="#osjj">Artikel Publik</a>
+                        <a href="ui-btns.html" class="nav-link" data-parent="#osjj">Artikel Privat</a>
+                        @can('osjj.view')
+                        <a href="{{ route('admin.osjj.index') }}" class="nav-link" data-parent="#osjj">Kelola Dokumen</a>
+                        @endcan
                     </li>
                     @endcan
 

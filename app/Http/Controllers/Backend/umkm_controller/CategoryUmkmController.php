@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend\umkm_controller;
 
 use App\Http\Controllers\Controller;
-use App\Models\CategoryUmkm;
+use App\Models\Umkm\CategoryUmkm;
 use Illuminate\Http\Request;
 
 class CategoryUmkmController extends Controller
