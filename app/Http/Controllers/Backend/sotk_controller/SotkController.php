@@ -13,15 +13,16 @@ class SotkController extends Controller
     public function index()
     {
         $category = CategorySotk::get();
-        $suratsork = SuratSotk::get();
-        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsork]);
+        $suratsotk = SuratSotk::get();
+        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK']);
     }
 
     public function category($id)
     {
+        $categoryName = CategorySotk::find($id)->name;
         $category = CategorySotk::get();
-        $suratsork = SuratSotk::where('category_id', $id)->get();
-        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsork]);
+        $suratsotk = SuratSotk::where('category_id', $id)->get();
+        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
     }
 
     public function create()

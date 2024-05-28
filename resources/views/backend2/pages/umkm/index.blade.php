@@ -1,5 +1,16 @@
 @extends('backend2.layouts.master')
 
+@section('cucumber')
+    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+    <h1>/</h1>
+    <h1>
+        {{ $title }}
+    </h1>
+    @isset($categoryName)
+        <h1>/</h1>
+        <h1>{{$categoryName}}</h1>
+    @endisset
+@endsection
 
 @section('content')
 <div class="wrap">

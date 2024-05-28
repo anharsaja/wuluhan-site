@@ -1,5 +1,17 @@
 @extends('backend2.layouts.master')
 
+
+@section('cucumber')
+    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+    <h1>/</h1>
+    <a href="{{route('admin.admins.index')}}">Admins</a>
+    <h1>/</h1>
+    <h1>
+        Create Admins
+    </h1>
+@endsection
+
+
 @section('content')
 <div class="row">
     <!-- data table start -->

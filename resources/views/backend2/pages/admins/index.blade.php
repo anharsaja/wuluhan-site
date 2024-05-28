@@ -4,10 +4,13 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
 @endsection
 
+@section('cucumber')
+    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+    <h1>/</h1>
+    <a href="{{route('admin.admins.index')}}">Admins</a>
+@endsection
+
 @section('content')
-
-
-    
 <div class="row">
     <!-- data table start -->
     <div class="col-12 mt-5">

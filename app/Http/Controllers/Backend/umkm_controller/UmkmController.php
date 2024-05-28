@@ -14,14 +14,15 @@ class UmkmController extends Controller
     {
         $category = CategoryUmkm::get();
         $suratumkm = SuratUmkm::get();
-        return view('backend2.pages.umkm.index', ['categories' => $category, 'suratumkms' => $suratumkm]);
+        return view('backend2.pages.umkm.index', ['categories' => $category, 'suratumkms' => $suratumkm, 'title' => 'Surat UMKM']);
     }
 
     public function category($id)
     {
         $category = CategoryUmkm::get();
+        $categoryName = CategoryUmkm::find($id)->name;
         $suratumkm = SuratUmkm::where('category_id',$id)->get();
-        return view('backend2.pages.umkm.index', ['categories' => $category, 'suratumkms' => $suratumkm]);
+        return view('backend2.pages.umkm.index', ['categories' => $category, 'suratumkms' => $suratumkm, 'title' => 'Surat UMKM', 'categoryName' => $categoryName]);
     }
 
 

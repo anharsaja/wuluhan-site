@@ -1,5 +1,14 @@
 @extends('backend2.layouts.master')
 
+@section('cucumber')
+    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+    <h1>/</h1>
+    <a href="{{route('admin.roles.index')}}">Roles</a>
+    <h1>/</h1>
+    <h1>
+        {{ $title }}
+    </h1>
+@endsection
 
 
 @section('content')

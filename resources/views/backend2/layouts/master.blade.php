@@ -16,7 +16,7 @@
     <!-- icon -->
     <link rel="icon" href="img/log.png">
     <!-- end linking -->
-    <title>NutFlix - admin</title>
+    <title>{{$title}}</title>
     <style>
         .form-check-label {
             text-transform: capitalize;
@@ -31,6 +31,9 @@
 @section('judul')
     Dashboard
 @endsection
+
+
+
 <body>
     <!-- start admin -->
     <section id="admin">
@@ -163,12 +166,11 @@
                 <div class="bottom">
                     <div class="left">
                         <h1>
-                            @yield('judul')
+                            {{$title}}
                         </h1>
                     </div>
-                    <div class="right">
-                        <h1>dashboard /</h1>
-                        <a href="#">@yield('judul')</a>
+                    <div class="right" style="display: flex; gap:5px;">
+                        @yield('cucumber')
                     </div>
                 </div>
                 <!-- end head bottom -->

@@ -25,12 +25,13 @@ class RolesController extends Controller
     
     public function index()
     {
+        $title = 'Roles';
         if (is_null($this->user) || !$this->user->can('role.view')) {
             abort(403, 'Sorry !! You are Unauthorized to view any role !');
         }
 
         $roles = Role::all();
-        return view('backend2.pages.roles.index', compact('roles'));
+        return view('backend2.pages.roles.index', compact('roles', 'title'));
     }
 
     
@@ -39,10 +40,11 @@ class RolesController extends Controller
         if (is_null($this->user) || !$this->user->can('role.create')) {
             abort(403, 'Sorry !! You are Unauthorized to create any role !');
         }
-
+        
         $all_permissions  = Permission::all();
         $permission_groups = User::getpermissionGroups();
-        return view('backend2.pages.roles.create', compact('all_permissions', 'permission_groups'));
+        $title = 'Create Roles';
+        return view('backend2.pages.roles.create', compact('all_permissions', 'permission_groups', 'title'));
     }
 
     
@@ -89,7 +91,8 @@ class RolesController extends Controller
         $role = Role::findById($id, 'admin');
         $all_permissions = Permission::all();
         $permission_groups = User::getpermissionGroups();
-        return view('backend2.pages.roles.edit', compact('role', 'all_permissions', 'permission_groups'));
+        $title = 'Edit Roles';
+        return view('backend2.pages.roles.edit', compact('role', 'all_permissions', 'permission_groups', 'title'));
     }
 
     public function update(Request $request, int $id)

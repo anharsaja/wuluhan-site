@@ -1,7 +1,17 @@
 @extends('backend2.layouts.master')
 
+
+
 @section('styles')
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.7/css/dataTables.dataTables.min.css">
+@endsection
+
+@section('cucumber')
+    <a href="{{route('admin.dashboard')}}">Dashboard</a>
+    <h1>/</h1>
+    <h1>
+        {{ $title }}
+    </h1>
 @endsection
 
 @section('content')

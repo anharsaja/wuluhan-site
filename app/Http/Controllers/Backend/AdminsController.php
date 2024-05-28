@@ -21,42 +21,28 @@ class AdminsController extends Controller
         });
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         if (is_null($this->user) || !$this->user->can('admin.view')) {
             abort(403, 'Sorry !! You are Unauthorized to view any admin !');
         }
-
+        
+        $title = 'Admins';
         $admins = Admin::all();
-        return view('backend2.pages.admins.index', compact('admins'));
+        return view('backend2.pages.admins.index', compact('admins', 'title'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         if (is_null($this->user) || !$this->user->can('admin.create')) {
             abort(403, 'Sorry !! You are Unauthorized to create any admin !');
         }
-
+        
+        $title = 'Create Admins';
         $roles  = Role::all();
-        return view('backend2.pages.admins.create', compact('roles'));
+        return view('backend2.pages.admins.create', compact('roles', 'title'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         if (is_null($this->user) || !$this->user->can('admin.create')) {
@@ -87,41 +73,23 @@ class AdminsController extends Controller
         return redirect()->route('admin.admins.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(int $id)
     {
         if (is_null($this->user) || !$this->user->can('admin.edit')) {
             abort(403, 'Sorry !! You are Unauthorized to edit any admin !');
         }
-
+        
+        $title = 'Admins Edit';
         $admin = Admin::find($id);
         $roles  = Role::all();
-        return view('backend2.pages.admins.edit', compact('admin', 'roles'));
+        return view('backend2.pages.admins.edit', compact('admin', 'roles', 'title'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, int $id)
     {
         if (is_null($this->user) || !$this->user->can('admin.edit')) {
