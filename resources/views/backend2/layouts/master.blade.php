@@ -11,6 +11,13 @@
     <link rel="stylesheet" href="{{asset('backend2/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('backend2/css/app.css')}}">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon/android-chrome-192x192.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon/android-chrome-512x512.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon/favicon-16x16.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/favicon/favicon-32x32.png') }}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon/favicon.ico') }}" type="image/x-icon">
+    <link rel="manifest" href="{{ asset('img/favicon/site.webmanifest') }}">
 
     @yield('styles')
     <!-- icon -->
