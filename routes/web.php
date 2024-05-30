@@ -11,13 +11,13 @@ use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\osjj_controller\CategoryOsjjController;
 use App\Http\Controllers\Backend\osjj_controller\OsjjController;
+use App\Http\Controllers\Backend\pkk_controller\CategoryPkkController;
+use App\Http\Controllers\Backend\pkk_controller\PkkController;
 use App\Http\Controllers\Backend\sotk_controller\CategorySotkController;
 use App\Http\Controllers\Backend\sotk_controller\SotkController;
+use App\Models\Pkk\CategoryPkk;
 
 Auth::routes();
-// Route::get('/', function() {
-//     return view('backend2.layouts.master');
-// })->name('home.landing');
 
 Route::get('/', 'LandingPage\HomeController@index')->name('home.landing');
 
@@ -32,11 +32,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('roles', RolesController::class, ['names' => 'admin.roles']);
         Route::resource('users', UsersController::class, ['names' => 'admin.users']);
         Route::resource('admins', AdminsController::class, ['names' => 'admin.admins']);
-        
+
         // UMKM
         Route::resource('umkm', UmkmController::class, ['names' => 'admin.umkm']);
         Route::get('/umkm/category/{id}', [UmkmController::class, 'category'])->name('admin.umkm.category');
-        Route::controller(CategoryUmkmController::class)->group(function() {
+        Route::controller(CategoryUmkmController::class)->group(function () {
             Route::post('/umkm/category/store', 'store')->name('admin.umkm.category.store');
             Route::post('/umkm/category/update/{id}', 'update')->name('admin.umkm.category.update');
             Route::get('/umkm/category/delete/{id}', 'delete')->name('admin.umkm.category.delete');
@@ -44,7 +44,7 @@ Route::group(['prefix' => 'admin'], function () {
         // SOTK
         Route::resource('sotk', SotkController::class, ['names' => 'admin.sotk']);
         Route::get('/sotk/category/{id}', [SotkController::class, 'category'])->name('admin.sotk.category');
-        Route::controller(CategorySotkController::class)->group(function() {
+        Route::controller(CategorySotkController::class)->group(function () {
             Route::post('/sotk/category/store', 'store')->name('admin.sotk.category.store');
             Route::post('/sotk/category/update/{id}', 'update')->name('admin.sotk.category.update');
             Route::get('/sotk/category/delete/{id}', 'delete')->name('admin.sotk.category.delete');
@@ -52,12 +52,19 @@ Route::group(['prefix' => 'admin'], function () {
         // OSJJ
         Route::resource('osjj', OsjjController::class, ['names' => 'admin.osjj']);
         Route::get('/osjj/category/{id}', [OsjjController::class, 'category'])->name('admin.osjj.category');
-        Route::controller(CategoryOsjjController::class)->group(function() {
+        Route::controller(CategoryOsjjController::class)->group(function () {
             Route::post('/osjj/category/store', 'store')->name('admin.osjj.category.store');
             Route::post('/osjj/category/update/{id}', 'update')->name('admin.osjj.category.update');
             Route::get('/osjj/category/delete/{id}', 'delete')->name('admin.osjj.category.delete');
         });
-        
+        // OSJJ
+        Route::resource('pkk', PkkController::class, ['names' => 'admin.pkk']);
+        Route::get('/pkk/category/{id}', [PkkController::class, 'category'])->name('admin.pkk.category');
+        Route::controller(CategoryPkkController::class)->group(function () {
+            Route::post('/pkk/category/store', 'store')->name('admin.pkk.category.store');
+            Route::post('/pkk/category/update/{id}', 'update')->name('admin.pkk.category.update');
+            Route::get('/pkk/category/delete/{id}', 'delete')->name('admin.pkk.category.delete');
+        });
     });
 
     // Login Routes

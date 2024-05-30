@@ -79,11 +79,9 @@
                     @can('pkk.view')
                     <li class="nav-item"><a href="#pkk" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>PKK<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
                     <li class="sub collapse" id="pkk">
-                        <a href="ui-alerts.html" class="nav-link" data-parent="#pkk">alerts</a>
-                        <a href="ui-btns.html" class="nav-link" data-parent="#pkk">buttons</a>
-                        <a href="ui-cards.html" class="nav-link" data-parent="#pkk">cards</a>
-                        <a href="ui-list.html" class="nav-link" data-parent="#pkk">list</a>
-                        <a href="ui-progress-bars.html" class="nav-link" data-parent="#pkk">progress</a>
+                        <a href="ui-alerts.html" class="nav-link" data-parent="#pkk">Artikel Publik</a>
+                        <a href="ui-btns.html" class="nav-link" data-parent="#pkk">Artikel Privat</a>
+                        <a href="{{ route('admin.pkk.index') }}" class="nav-link" data-parent="#pkk">Kelola Dokumen</a>
                     </li>
                     @endcan
 
