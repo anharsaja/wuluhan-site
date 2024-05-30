@@ -9,13 +9,14 @@ use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Backend\AdminsController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Auth\LoginController;
+use App\Http\Controllers\Backend\ktb_controller\CategoryKtbController;
+use App\Http\Controllers\Backend\ktb_controller\KtbController;
 use App\Http\Controllers\Backend\osjj_controller\CategoryOsjjController;
 use App\Http\Controllers\Backend\osjj_controller\OsjjController;
 use App\Http\Controllers\Backend\pkk_controller\CategoryPkkController;
 use App\Http\Controllers\Backend\pkk_controller\PkkController;
 use App\Http\Controllers\Backend\sotk_controller\CategorySotkController;
 use App\Http\Controllers\Backend\sotk_controller\SotkController;
-use App\Models\Pkk\CategoryPkk;
 
 Auth::routes();
 
@@ -64,6 +65,14 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/pkk/category/store', 'store')->name('admin.pkk.category.store');
             Route::post('/pkk/category/update/{id}', 'update')->name('admin.pkk.category.update');
             Route::get('/pkk/category/delete/{id}', 'delete')->name('admin.pkk.category.delete');
+        });
+        // KTB
+        Route::resource('ktb', KtbController::class, ['names' => 'admin.ktb']);
+        Route::get('/ktb/category/{id}', [KtbController::class, 'category'])->name('admin.ktb.category');
+        Route::controller(CategoryKtbController::class)->group(function () {
+            Route::post('/ktb/category/store', 'store')->name('admin.ktb.category.store');
+            Route::post('/ktb/category/update/{id}', 'update')->name('admin.ktb.category.update');
+            Route::get('/ktb/category/delete/{id}', 'delete')->name('admin.ktb.category.delete');
         });
     });
 

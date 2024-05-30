@@ -6,8 +6,8 @@
     <h1>
         {{ $title }}
     </h1>
-    <h1>/</h1>
     @isset($categoryName)
+    <h1>/</h1>
         <h1>{{ $categoryName }}</h1>
     @endisset
 @endsection

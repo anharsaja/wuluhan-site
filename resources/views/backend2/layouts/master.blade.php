@@ -88,11 +88,9 @@
                     @can('ktb.view')
                     <li class="nav-item"><a href="#ktb" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>Kecamatan Tanggul Bencana<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
                     <li class="sub collapse" id="ktb">
-                        <a href="ui-alerts.html" class="nav-link" data-parent="#ktb">alerts</a>
-                        <a href="ui-btns.html" class="nav-link" data-parent="#ktb">buttons</a>
-                        <a href="ui-cards.html" class="nav-link" data-parent="#ktb">cards</a>
-                        <a href="ui-list.html" class="nav-link" data-parent="#ktb">list</a>
-                        <a href="ui-progress-bars.html" class="nav-link" data-parent="#ktb">progress</a>
+                        <a href="ui-alerts.html" class="nav-link" data-parent="#ktb">Artikel Publik</a>
+                        <a href="ui-btns.html" class="nav-link" data-parent="#ktb">Artikel Privat</a>
+                        <a href="{{ route('admin.ktb.index') }}" class="nav-link" data-parent="#ktb">Kelola Dokumen</a>
                     </li>
                     @endcan
 
