@@ -104,11 +104,9 @@
                     @can('wisata.view')
                     <li class="nav-item"><a href="#wisata" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>wisata<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
                     <li class="sub collapse" id="wisata">
-                        <a href="ui-alerts.html" class="nav-link" data-parent="#wisata">alerts</a>
-                        <a href="ui-btns.html" class="nav-link" data-parent="#wisata">buttons</a>
-                        <a href="ui-cards.html" class="nav-link" data-parent="#wisata">cards</a>
-                        <a href="ui-list.html" class="nav-link" data-parent="#wisata">list</a>
-                        <a href="ui-progress-bars.html" class="nav-link" data-parent="#wisata">progress</a>
+                        <a href="ui-alerts.html" class="nav-link" data-parent="#ktb">Artikel Publik</a>
+                        <a href="ui-btns.html" class="nav-link" data-parent="#ktb">Artikel Privat</a>
+                        <a href="{{ route('admin.wisata.index') }}" class="nav-link" data-parent="#ktb">Kelola Dokumen</a>
                     </li>
                     @endcan
 

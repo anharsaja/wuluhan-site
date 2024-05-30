@@ -17,6 +17,8 @@ use App\Http\Controllers\Backend\pkk_controller\CategoryPkkController;
 use App\Http\Controllers\Backend\pkk_controller\PkkController;
 use App\Http\Controllers\Backend\sotk_controller\CategorySotkController;
 use App\Http\Controllers\Backend\sotk_controller\SotkController;
+use App\Http\Controllers\Backend\wisata_controller\CategoryWisataController;
+use App\Http\Controllers\Backend\wisata_controller\WisataController;
 
 Auth::routes();
 
@@ -73,6 +75,14 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/ktb/category/store', 'store')->name('admin.ktb.category.store');
             Route::post('/ktb/category/update/{id}', 'update')->name('admin.ktb.category.update');
             Route::get('/ktb/category/delete/{id}', 'delete')->name('admin.ktb.category.delete');
+        });
+        // WISATA
+        Route::resource('wisata', WisataController::class, ['names' => 'admin.wisata']);
+        Route::get('/wisata/category/{id}', [WisataController::class, 'category'])->name('admin.wisata.category');
+        Route::controller(CategoryWisataController::class)->group(function () {
+            Route::post('/wisata/category/store', 'store')->name('admin.wisata.category.store');
+            Route::post('/wisata/category/update/{id}', 'update')->name('admin.wisata.category.update');
+            Route::get('/wisata/category/delete/{id}', 'delete')->name('admin.wisata.category.delete');
         });
     });
 
