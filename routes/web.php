@@ -9,6 +9,8 @@ use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Backend\AdminsController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Auth\LoginController;
+use App\Http\Controllers\Backend\budaya_controller\BudayaController;
+use App\Http\Controllers\Backend\budaya_controller\CategoryBudayaController;
 use App\Http\Controllers\Backend\ktb_controller\CategoryKtbController;
 use App\Http\Controllers\Backend\ktb_controller\KtbController;
 use App\Http\Controllers\Backend\osjj_controller\CategoryOsjjController;
@@ -83,6 +85,14 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/wisata/category/store', 'store')->name('admin.wisata.category.store');
             Route::post('/wisata/category/update/{id}', 'update')->name('admin.wisata.category.update');
             Route::get('/wisata/category/delete/{id}', 'delete')->name('admin.wisata.category.delete');
+        });
+        // BUDAYA
+        Route::resource('budaya', BudayaController::class, ['names' => 'admin.budaya']);
+        Route::get('/budaya/category/{id}', [BudayaController::class, 'category'])->name('admin.budaya.category');
+        Route::controller(CategoryBudayaController::class)->group(function () {
+            Route::post('/budaya/category/store', 'store')->name('admin.budaya.category.store');
+            Route::post('/budaya/category/update/{id}', 'update')->name('admin.budaya.category.update');
+            Route::get('/budaya/category/delete/{id}', 'delete')->name('admin.budaya.category.delete');
         });
     });
 

@@ -113,11 +113,9 @@
                     @can('budaya.view')
                     <li class="nav-item"><a href="#budaya" class="nav-link collapsed" data-toggle="collapse"><i class="fa fa-fire"></i>Budaya<span class="sub-ico"><i class="fa fa-angle-down"></i></span></a></li>
                     <li class="sub collapse" id="budaya">
-                        <a href="ui-alerts.html" class="nav-link" data-parent="#budaya">alerts</a>
-                        <a href="ui-btns.html" class="nav-link" data-parent="#budaya">buttons</a>
-                        <a href="ui-cards.html" class="nav-link" data-parent="#budaya">cards</a>
-                        <a href="ui-list.html" class="nav-link" data-parent="#budaya">list</a>
-                        <a href="ui-progress-bars.html" class="nav-link" data-parent="#budaya">progress</a>
+                        <a href="ui-alerts.html" class="nav-link" data-parent="#ktb">Artikel Publik</a>
+                        <a href="ui-btns.html" class="nav-link" data-parent="#ktb">Artikel Privat</a>
+                        <a href="{{ route('admin.budaya.index') }}" class="nav-link" data-parent="#ktb">Kelola Dokumen</a>
                     </li>
                     @endcan
 
