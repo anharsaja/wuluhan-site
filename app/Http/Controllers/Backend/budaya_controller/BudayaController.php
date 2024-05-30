@@ -19,10 +19,14 @@ class BudayaController extends Controller
 
     public function category($id)
     {
-        $categoryName = CategoryBudaya::find($id)->name;
-        $category = CategoryBudaya::get();
-        $suratbudaya = SuratBudaya::where('category_id', $id)->get();
-        return view('backend2.pages.budaya.index', ['categories' => $category, 'suratbudayas' => $suratbudaya, 'title' => 'Surat Budaya', 'categoryName' => $categoryName]);
+        try {
+            $categoryName = CategoryBudaya::find($id)->name;
+            $category = CategoryBudaya::get();
+            $suratbudaya = SuratBudaya::where('category_id', $id)->get();
+            return view('backend2.pages.budaya.index', ['categories' => $category, 'suratbudayas' => $suratbudaya, 'title' => 'Surat Budaya', 'categoryName' => $categoryName]);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.budaya.index');
+        }
     }
 
     public function create()

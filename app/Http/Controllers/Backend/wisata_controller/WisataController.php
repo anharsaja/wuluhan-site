@@ -19,10 +19,14 @@ class WisataController extends Controller
 
     public function category($id)
     {
-        $categoryName = CategoryWisata::find($id)->name;
-        $category = CategoryWisata::get();
-        $suratwisata = SuratWisata::where('category_id', $id)->get();
-        return view('backend2.pages.wisata.index', ['categories' => $category, 'suratwisatas' => $suratwisata, 'title' => 'Surat Wisata', 'categoryName' => $categoryName]);
+        try {
+            $categoryName = CategoryWisata::find($id)->name;
+            $category = CategoryWisata::get();
+            $suratwisata = SuratWisata::where('category_id', $id)->get();
+            return view('backend2.pages.wisata.index', ['categories' => $category, 'suratwisatas' => $suratwisata, 'title' => 'Surat Wisata', 'categoryName' => $categoryName]);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.wisata.index');
+        }
     }
 
     public function create()

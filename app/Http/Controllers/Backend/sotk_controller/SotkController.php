@@ -19,10 +19,14 @@ class SotkController extends Controller
 
     public function category($id)
     {
-        $categoryName = CategorySotk::find($id)->name;
-        $category = CategorySotk::get();
-        $suratsotk = SuratSotk::where('category_id', $id)->get();
-        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
+        try {
+            $categoryName = CategorySotk::findOrFail($id)->name;
+            $category = CategorySotk::get();
+            $suratsotk = SuratSotk::where('category_id', $id)->get();
+            return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.sotk.index');
+        }
     }
 
     public function create()
@@ -76,7 +80,7 @@ class SotkController extends Controller
         $suratsotk->name = $request->name;
         $suratsotk->description = $request->description;
         $suratsotk->category_id = $request->category;
-        
+
         if ($request->hasFile('file')) {
             $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
             $files = $request->file('file');
@@ -85,15 +89,15 @@ class SotkController extends Controller
             $check = in_array($extension, $allowedfileExtension);
 
             if ($check) {
-                $filename = time().'.'.$extension;
-                $files->move(public_path() . '/kumpulan_surat/file_sotk' , $filename);
+                $filename = time() . '.' . $extension;
+                $files->move(public_path() . '/kumpulan_surat/file_sotk', $filename);
 
                 $filesLama = public_path($suratsotk->path_file);
                 if (File::exists($filesLama)) {
                     File::delete($filesLama);
                 };
 
-                $suratsotk->path_file = '/kumpulan_surat/file_sotk/'. $filename;
+                $suratsotk->path_file = '/kumpulan_surat/file_sotk/' . $filename;
             }
         };
 
@@ -106,9 +110,9 @@ class SotkController extends Controller
     {
         $suratsotk = SuratSotk::find($id);
         $filesLama = public_path($suratsotk->path_file);
-                if (File::exists($filesLama)) {
-                    File::delete($filesLama);
-                };
+        if (File::exists($filesLama)) {
+            File::delete($filesLama);
+        };
         $suratsotk->delete();
         return back();
     }

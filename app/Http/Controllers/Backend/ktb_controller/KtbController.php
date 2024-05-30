@@ -19,10 +19,14 @@ class KtbController extends Controller
 
     public function category($id)
     {
-        $categoryName = CategoryKtb::find($id)->name;
-        $category = CategoryKtb::get();
-        $suratktb = SuratKtb::where('category_id', $id)->get();
-        return view('backend2.pages.ktb.index', ['categories' => $category, 'suratktbs' => $suratktb, 'title' => 'Surat KTB', 'categoryName' => $categoryName]);
+        try {
+            $categoryName = CategoryKtb::find($id)->name;
+            $category = CategoryKtb::get();
+            $suratktb = SuratKtb::where('category_id', $id)->get();
+            return view('backend2.pages.ktb.index', ['categories' => $category, 'suratktbs' => $suratktb, 'title' => 'Surat KTB', 'categoryName' => $categoryName]);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.ktb.index');
+        }
     }
 
     public function create()

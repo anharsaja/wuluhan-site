@@ -19,10 +19,14 @@ class UmkmController extends Controller
 
     public function category($id)
     {
-        $category = CategoryUmkm::get();
-        $categoryName = CategoryUmkm::find($id)->name;
-        $suratumkm = SuratUmkm::where('category_id',$id)->get();
-        return view('backend2.pages.umkm.index', ['categories' => $category, 'suratumkms' => $suratumkm, 'title' => 'Surat UMKM', 'categoryName' => $categoryName]);
+        try {
+            $category = CategoryUmkm::get();
+            $categoryName = CategoryUmkm::find($id)->name;
+            $suratumkm = SuratUmkm::where('category_id', $id)->get();
+            return view('backend2.pages.umkm.index', ['categories' => $category, 'suratumkms' => $suratumkm, 'title' => 'Surat UMKM', 'categoryName' => $categoryName]);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.umkm.index');
+        }
     }
 
 
@@ -41,17 +45,16 @@ class UmkmController extends Controller
             $check = in_array($extension, $allowedfileExtension);
 
             if ($check) {
-                $filename = time().'.'.$extension;
-                $files->move(public_path() . '/kumpulan_surat/file_umkm' , $filename);
+                $filename = time() . '.' . $extension;
+                $files->move(public_path() . '/kumpulan_surat/file_umkm', $filename);
 
                 SuratUmkm::create([
                     'name' => $request->name,
                     'description' => $request->description,
                     'category_id' => $request->category_id,
-                    'path_file' => '/kumpulan_surat/file_umkm/'. $filename
+                    'path_file' => '/kumpulan_surat/file_umkm/' . $filename
                 ]);
                 return back();
-
             } else {
                 return back();
             }
@@ -77,7 +80,7 @@ class UmkmController extends Controller
         $suratumkm->name = $request->name;
         $suratumkm->description = $request->description;
         $suratumkm->category_id = $request->category;
-        
+
         if ($request->hasFile('file')) {
             $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
             $files = $request->file('file');
@@ -86,15 +89,15 @@ class UmkmController extends Controller
             $check = in_array($extension, $allowedfileExtension);
 
             if ($check) {
-                $filename = time().'.'.$extension;
-                $files->move(public_path() . '/kumpulan_surat/file_umkm' , $filename);
+                $filename = time() . '.' . $extension;
+                $files->move(public_path() . '/kumpulan_surat/file_umkm', $filename);
 
                 $filesLama = public_path($suratumkm->path_file);
                 if (File::exists($filesLama)) {
                     File::delete($filesLama);
                 };
 
-                $suratumkm->path_file = '/kumpulan_surat/file_umkm/'. $filename;
+                $suratumkm->path_file = '/kumpulan_surat/file_umkm/' . $filename;
             }
         };
 
@@ -107,9 +110,9 @@ class UmkmController extends Controller
     {
         $suratumkm = SuratUmkm::find($id);
         $filesLama = public_path($suratumkm->path_file);
-                if (File::exists($filesLama)) {
-                    File::delete($filesLama);
-                };
+        if (File::exists($filesLama)) {
+            File::delete($filesLama);
+        };
         $suratumkm->delete();
         return back();
     }

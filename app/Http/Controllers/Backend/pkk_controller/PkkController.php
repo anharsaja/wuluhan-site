@@ -19,10 +19,14 @@ class PkkController extends Controller
 
     public function category($id)
     {
-        $categoryName = CategoryPkk::find($id)->name;
-        $category = CategoryPkk::get();
-        $suratpkk = SuratPkk::where('category_id', $id)->get();
-        return view('backend2.pages.pkk.index', ['categories' => $category, 'suratpkks' => $suratpkk, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
+        try {
+            $categoryName = CategoryPkk::find($id)->name;
+            $category = CategoryPkk::get();
+            $suratpkk = SuratPkk::where('category_id', $id)->get();
+            return view('backend2.pages.pkk.index', ['categories' => $category, 'suratpkks' => $suratpkk, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.pkk.index');
+        }
     }
 
     public function create()

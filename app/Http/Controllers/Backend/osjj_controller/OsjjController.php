@@ -19,10 +19,14 @@ class OsjjController extends Controller
 
     public function category($id)
     {
-        $categoryName = CategoryOsjj::find($id)->name;
-        $category = CategoryOsjj::get();
-        $suratosjj = SuratOsjj::where('category_id', $id)->get();
-        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
+        try {
+            $categoryName = CategoryOsjj::find($id)->name;
+            $category = CategoryOsjj::get();
+            $suratosjj = SuratOsjj::where('category_id', $id)->get();
+            return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.osjj.index');
+        }
     }
 
     public function create()
@@ -75,7 +79,7 @@ class OsjjController extends Controller
         $suratosjj->name = $request->name;
         $suratosjj->description = $request->description;
         $suratosjj->category_id = $request->category;
-        
+
         if ($request->hasFile('file')) {
             $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
             $files = $request->file('file');
@@ -84,15 +88,15 @@ class OsjjController extends Controller
             $check = in_array($extension, $allowedfileExtension);
 
             if ($check) {
-                $filename = time().'.'.$extension;
-                $files->move(public_path() . '/kumpulan_surat/file_osjj' , $filename);
+                $filename = time() . '.' . $extension;
+                $files->move(public_path() . '/kumpulan_surat/file_osjj', $filename);
 
                 $filesLama = public_path($suratosjj->path_file);
                 if (File::exists($filesLama)) {
                     File::delete($filesLama);
                 };
 
-                $suratosjj->path_file = '/kumpulan_surat/file_osjj/'. $filename;
+                $suratosjj->path_file = '/kumpulan_surat/file_osjj/' . $filename;
             }
         };
 
@@ -105,9 +109,9 @@ class OsjjController extends Controller
     {
         $suratosjj = SuratOsjj::find($id);
         $filesLama = public_path($suratosjj->path_file);
-                if (File::exists($filesLama)) {
-                    File::delete($filesLama);
-                };
+        if (File::exists($filesLama)) {
+            File::delete($filesLama);
+        };
         $suratosjj->delete();
         return back();
     }
