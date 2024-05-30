@@ -21,12 +21,12 @@ use App\Http\Controllers\Backend\sotk_controller\CategorySotkController;
 use App\Http\Controllers\Backend\sotk_controller\SotkController;
 use App\Http\Controllers\Backend\wisata_controller\CategoryWisataController;
 use App\Http\Controllers\Backend\wisata_controller\WisataController;
+use App\Http\Controllers\LandingPage\HomeController;
 
 Auth::routes();
 
-Route::get('/', 'LandingPage\HomeController@index')->name('home.landing');
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home.landing');
+Route::get('/team', [HomeController::class, 'team'])->name('home.landing.team');
 
 /**
  * Admin routes

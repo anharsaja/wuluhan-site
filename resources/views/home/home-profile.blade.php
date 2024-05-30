@@ -148,7 +148,7 @@
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="{{asset('img/logo.svg')}}" alt="Webteck"></a>
+                <a href="index.html"><img src="{{asset('img/wuluhan.svg')}}" alt="Webteck"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
@@ -259,9 +259,9 @@
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-links">
                             <ul>
-                                <li><i class="fas fa-map-location"></i>54 NJ-12, Flemington, United States</li>
+                                <li><i class="fas fa-map-location"></i>MH63+865, Jl. Ambulu, Purwojari</li>
                                 <li><i class="fas fa-phone"></i><a href="tel:+1539873657">+153-987-3657</a></li>
-                                <li><i class="fas fa-envelope"></i><a href="mailto:info@webteck.com">info@webteck.com</a></li>
+                                <li><i class="fas fa-envelope"></i><a href="mailto:info@webteck.com">wuluhan_goverment@gmail.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -345,27 +345,11 @@
                                         </ul>
                                     </li>
                                     <li><a href="about.html">About Us</a></li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Services</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="service.html">Services</a></li>
-                                            <li><a href="service-details.html">Services Details</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="#">Services</a></li>
                                     <li class="menu-item-has-children">
                                         <a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item-has-children">
-                                                <a href="#">Shop</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="shop.html">Shop</a></li>
-                                                    <li><a href="shop-details.html">Shop Details</a></li>
-                                                    <li><a href="cart.html">Cart Page</a></li>
-                                                    <li><a href="checkout.html">Checkout</a></li>
-                                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="team.html">Team</a></li>
+                                            <li><a href="{{ route('home.landing.team') }}">Team</a></li>
                                             <li><a href="team-details.html">Team Details</a></li>
                                             <li><a href="project.html">Project</a></li>
                                             <li><a href="project-details.html">Project Details</a></li>
@@ -653,7 +637,7 @@ Cta Area
                     </div>
                     NEWS & ARTICLES
                 </span>
-                <h2 class="sec-title">Artikel Kecamatan <span class="text-theme">Wuluhan</span></h2>
+                <h2 class="sec-title">Artikel Wisata <span class="text-theme">Wuluhan</span></h2>
             </div>
 
             <div class="slider-area">
@@ -769,8 +753,8 @@ Cta Area
             <div class="row justify-content-lg-between justify-content-center align-items-center">
                 <div class="col-lg-6 mb-n2 mb-lg-0">
                     <div class="title-area text-center text-lg-start">
-                        <span class="sub-title style1 text-white">LATEST PROJECT</span>
-                        <h2 class="sec-title text-white">Project Success Stories</h2>
+                        <span class="sub-title style1 text-white">Artikel</span>
+                        <h2 class="sec-title text-white">Dokumen Publik Wuluhan</h2>
                     </div>
                 </div>
                 <div class="col-auto">
@@ -786,7 +770,7 @@ Cta Area
                         <div class="swiper-slide">
                             <div class="project-card5">
                                 <div class="project-img">
-                                    <img src="{{asset('img/project/project_5_1.jpg')}}" alt="project image">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="project image">
                                 </div>
                                 <div class="project-content">
                                     <h3 class="box-title"><a href="project-details.html">Major Insurance Provider Saves $750k per Month With Big Data Migration Month</a></h3>
@@ -799,7 +783,7 @@ Cta Area
                         <div class="swiper-slide">
                             <div class="project-card5">
                                 <div class="project-img">
-                                    <img src="{{asset('img/project/project_5_2.jpg')}}" alt="project image">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="project image">
                                 </div>
                                 <div class="project-content">
                                     <h3 class="box-title"><a href="project-details.html">Major insurance provider to a big data cost savings of $750,000 is a significant</a></h3>
@@ -812,7 +796,7 @@ Cta Area
                         <div class="swiper-slide">
                             <div class="project-card5">
                                 <div class="project-img">
-                                    <img src="{{asset('img/project/project_5_3.jpg')}}" alt="project image">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="project image">
                                 </div>
                                 <div class="project-content">
                                     <h3 class="box-title"><a href="project-details.html">That's a significant achievement! Saving $750,000 per month through a big data migration</a></h3>
@@ -825,7 +809,7 @@ Cta Area
                         <div class="swiper-slide">
                             <div class="project-card5">
                                 <div class="project-img">
-                                    <img src="{{asset('img/project/project_5_4.jpg')}}" alt="project image">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="project image">
                                 </div>
                                 <div class="project-content">
                                     <h3 class="box-title"><a href="project-details.html">The headline Major Insurance Provider Saves $750k per Month With Big Data Migration</a></h3>
@@ -838,7 +822,7 @@ Cta Area
                         <div class="swiper-slide">
                             <div class="project-card5">
                                 <div class="project-img">
-                                    <img src="{{asset('img/project/project_5_5.jpg')}}" alt="project image">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="project image">
                                 </div>
                                 <div class="project-content">
                                     <h3 class="box-title"><a href="project-details.html">Major Insurance Provider Saves $750k per Month With Big Data Migration Month</a></h3>
@@ -851,7 +835,7 @@ Cta Area
                         <div class="swiper-slide">
                             <div class="project-card5">
                                 <div class="project-img">
-                                    <img src="{{asset('img/project/project_5_3.jpg')}}" alt="project image">
+                                    <img src="{{asset('img/fotowisata/1.jpg')}}" alt="project image">
                                 </div>
                                 <div class="project-content">
                                     <h3 class="box-title"><a href="project-details.html">That's a significant achievement! Saving $750,000 per month through a big data migration</a></h3>
@@ -879,8 +863,8 @@ Cta Area
                             <i class="fas fa-location-dot"></i>
                         </div>
                         <div class="media-body">
-                            <h4 class="box-title">Our Office Address</h4>
-                            <span class="contact-info_text">Burnsville, MN 55337 Streat, <br> United States</span>
+                            <h4 class="box-title">Alamat</h4>
+                            <span class="contact-info_text">Jl. Ambulu, Purwojari<br> Kecamatan Wuluhan</span>
                         </div>
                     </div>
                 </div>
@@ -890,7 +874,7 @@ Cta Area
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="media-body">
-                            <h4 class="box-title">Call Us Anytime</h4>
+                            <h4 class="box-title">No Telepon</h4>
                             <span class="contact-info_text">
                                 <a href="tel:+65485965789">(+65) - 48596 - 5789</a>
                                 <a href="tel:+65485965789">+65-48596-5789</a>
@@ -904,10 +888,10 @@ Cta Area
                             <i class="fas fa-envelope"></i>
                         </div>
                         <div class="media-body">
-                            <h4 class="box-title">Send An Email</h4>
+                            <h4 class="box-title">Email</h4>
                             <span class="contact-info_text">
-                                <a href="mailto:info.example@gmail.com">info.example@gmail.com</a>
-                                <a href="mailto:info@webteck.com">info@webteck.com</a>
+                                <a href="mailto:info.example@gmail.com">wuluhan@gmail.com</a>
+                                <a href="mailto:info@webteck.com">wuluhan@gmail.com</a>
                             </span>
                         </div>
                     </div>
@@ -1002,7 +986,7 @@ Contact Area
                     <div class="widget footer-widget">
                         <h3 class="widget_title style2 text-white">About Company</h3>
                         <div class="th-widget-about style2">
-                            <p class="about-text">Centric aplications productize before front end vortals visualize front end is results and value added</p>
+                            <p class="about-text">Tugas pelayanan kecamatan meliputi berbagai aspek yang bertujuan untuk memberikan layanan administratif dan publik kepada masyarakat di tingkat kecamatan</p>
                             <div class="th-social">
                                 <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
                                 <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
@@ -1021,8 +1005,8 @@ Contact Area
                                     <a href="tel:+9159008855" class="text-inherit">+91 590088 55</a>
                                 </p>
                             </div>
-                            <p class="footer-info"><a class="text-inherit" href="mailto:webteck@gmail.com">webteck@gmail.com</a></p>
-                            <p class="footer-info">Diamond str, Floor No 05</p>
+                            <p class="footer-info"><a class="text-inherit" href="mailto:webteck@gmail.com">wuluhan_goverment@gmail.com</a></p>
+                            <p class="footer-info">MH63+865, Jl. Ambulu, Kecamatan Wuluhan</p>
 
                         </div>
                     </div>
@@ -1040,7 +1024,7 @@ Contact Area
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-xl-auto">
+                {{-- <div class="col-md-6 col-xl-auto">
                     <div class="widget widget_offer footer-widget">
                         <h3 class="widget_title style2 text-white">Get the app</h3>
                         <div class="download-btn-wrap">
@@ -1056,7 +1040,7 @@ Contact Area
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="copyright-wrap">
