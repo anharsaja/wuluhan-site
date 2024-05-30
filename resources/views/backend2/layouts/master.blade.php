@@ -119,10 +119,6 @@
                     </li>
                     @endcan
 
-                    @can('umkm.view')
-                    <li class="nav-item"><a href="{{ route('admin.umkm.index') }}" class="nav-link"><i class="fa fa-adjust"></i>UMKM</a></li>
-                    @endcan
-
                     @can('role.view')
                     <li class="nav-item"><a href="{{ route('admin.roles.index') }}" class="nav-link"><i class="fa fa-adjust"></i>Manage Roles</a></li>
                     @endcan
