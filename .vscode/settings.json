@@ -1,4 +1,5 @@
 {
     "editor.fontLigatures": true,
-    "editor.fontFamily": "FiraCode Nerd Font"
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
