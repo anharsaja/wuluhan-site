@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('path_file');
             $table->unsignedBigInteger('category_id');
-            $table->enum('status', ['publik', 'private']);
+            $table->enum('status', ['public', 'private'])->default('private');
             $table->timestamps();
         });
     }

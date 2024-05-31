@@ -14,7 +14,21 @@ class OsjjController extends Controller
     {
         $category = CategoryOsjj::get();
         $suratosjj = SuratOsjj::get();
-        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat SOTK']);
+        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat OSJJ']);
+    }
+
+    public function indexPublic()
+    {
+        $category = CategoryOsjj::get();
+        $suratosjj = SuratOsjj::where('status', 'public')->get();
+        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat Public']);
+    }
+
+    public function indexPrivate()
+    {
+        $category = CategoryOsjj::get();
+        $suratosjj = SuratOsjj::where('status', 'private')->get();
+        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat Private']);
     }
 
     public function category($id)
@@ -52,7 +66,8 @@ class OsjjController extends Controller
                     'name' => $request->name,
                     'description' => $request->description,
                     'category_id' => $request->category_id,
-                    'path_file' => '/kumpulan_surat/file_osjj/' . $filename
+                    'path_file' => '/kumpulan_surat/file_osjj/' . $filename,
+                    'status' => $request->status
                 ]);
                 return back();
             } else {

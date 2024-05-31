@@ -83,8 +83,8 @@
                                     class="fa fa-fire"></i>osjj<span class="sub-ico"><i
                                         class="fa fa-angle-down"></i></span></a></li>
                         <li class="sub collapse" id="osjj">
-                            <a href="ui-alerts.html" class="nav-link" data-parent="#osjj">Artikel Publik</a>
-                            <a href="ui-btns.html" class="nav-link" data-parent="#osjj">Artikel Privat</a>
+                            <a href="{{ route('admin.osjj.public') }}" class="nav-link" data-parent="#osjj">Artikel Publik</a>
+                            <a href="{{ route('admin.osjj.private') }}" class="nav-link" data-parent="#osjj">Artikel Privat</a>
                             @can('osjj.view')
                                 <a href="{{ route('admin.osjj.index') }}" class="nav-link" data-parent="#osjj">Kelola
                                     Dokumen</a>

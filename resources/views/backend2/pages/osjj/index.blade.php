@@ -151,7 +151,10 @@
                                     </div>
                                 </div>
                                 <div class="media-body">
-                                    <h5 class="media-heading title-color">{{ $suratosjj->name }}</h5>
+                                    <div class="d-flex align-items-center">
+                                        <h5 class="media-heading title-color mr-2">{{ $suratosjj->name }}</h5>
+                                        <span class="badge @if($suratosjj->status == 'public') badge-success @else badge-danger @endif">{{ $suratosjj->status }}</span>
+                                    </div>
                                     <small class="media-meta">{{$suratosjj->description}}</small>
                                 </div>
                             </div>
@@ -262,6 +265,13 @@
                             @foreach ($categories as $category)
                             <option value="{{$category->id}}">{{ $category->name }}</option>
                             @endforeach
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select name="status" class="form-control" required>
+                            <option value="" selected disabled>Pilih Jenis Surat</option>
+                            <option value="private">Private</option>
+                            <option value="public">Public</option>
                         </select>
                     </div>
                     <div class="form-group">
