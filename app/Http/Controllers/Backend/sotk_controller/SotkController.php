@@ -17,6 +17,20 @@ class SotkController extends Controller
         return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK']);
     }
 
+    public function indexPublic()
+    {
+        $category = CategorySotk::get();
+        $suratsotk = SuratSotk::where('status', 'public')->get();
+        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK']);
+    }
+
+        public function indexPrivate()
+    {
+        $category = CategorySotk::get();
+        $suratsotk = SuratSotk::where('status', 'private')->get();
+        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK']);
+    }
+
     public function category($id)
     {
         try {
@@ -52,6 +66,7 @@ class SotkController extends Controller
                     'name' => $request->name,
                     'description' => $request->description,
                     'category_id' => $request->category_id,
+                    'status' => $request->status,
                     'path_file' => '/kumpulan_surat/file_sotk/' . $filename
                 ]);
                 return back();
