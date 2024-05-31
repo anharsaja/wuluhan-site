@@ -49,6 +49,8 @@ Route::group(['prefix' => 'admin'], function () {
         // SOTK
         Route::resource('sotk', SotkController::class, ['names' => 'admin.sotk']);
         Route::get('/sotk/category/{id}', [SotkController::class, 'category'])->name('admin.sotk.category');
+        Route::get('/sotk/status/public', [SotkController::class, 'index'])->name('admin.sotk.public');
+        Route::get('/sotk/status/private', [SotkController::class, 'indexPrivate'])->name('admin.sotk.private');
         Route::controller(CategorySotkController::class)->group(function () {
             Route::post('/sotk/category/store', 'store')->name('admin.sotk.category.store');
             Route::post('/sotk/category/update/{id}', 'update')->name('admin.sotk.category.update');
