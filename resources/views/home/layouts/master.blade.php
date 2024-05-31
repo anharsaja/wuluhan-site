@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Webteck - Technology & IT Solutions HTML Template - Our Team</title>
+    <title>Profiles Kecamatan Wuluhan</title>
     <meta name="author" content="Themeholy">
     <meta name="description" content="Webteck - Technology & IT Solutions HTML Template">
     <meta name="keywords" content="Webteck - Technology & IT Solutions HTML Template">
@@ -22,7 +22,6 @@
     <link rel="shortcut icon" href="{{ asset('img/favicon/favicon.ico') }}" type="image/x-icon">
     <link rel="manifest" href="{{ asset('img/favicon/site.webmanifest') }}">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="assets/img/favicons/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
     <!--==============================
@@ -46,15 +45,13 @@
     <!-- Theme Custom CSS -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
+    @yield('styles')
+
 </head>
 
 <body>
-
-    <!--==============================
-     Preloader
-  ==============================-->
     <div id="preloader" class="preloader ">
-        {{-- <button class="th-btn th-radius preloaderCls">Cancel Preloader </button> --}}
+        <!-- <button class="th-btn th-radius preloaderCls">Cancel Preloader </button> -->
         <div id="loader" class="th-preloader">
             <div class="animation-preloader"">
                 <div class="txt-loading">
@@ -151,7 +148,7 @@
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="{{asset('img/logo.svg')}}" alt="Webteck"></a>
+                <a href="index.html"><img src="{{asset('img/wuluhan.svg')}}" alt="Webteck"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
@@ -262,9 +259,9 @@
                     <div class="col-auto d-none d-lg-block">
                         <div class="header-links">
                             <ul>
-                                <li><i class="fas fa-map-location"></i>54 NJ-12, Flemington, United States</li>
+                                <li><i class="fas fa-map-location"></i>MH63+865, Jl. Ambulu, Purwojari</li>
                                 <li><i class="fas fa-phone"></i><a href="tel:+1539873657">+153-987-3657</a></li>
-                                <li><i class="fas fa-envelope"></i><a href="mailto:info@webteck.com">info@webteck.com</a></li>
+                                <li><i class="fas fa-envelope"></i><a href="mailto:info@webteck.com">wuluhan_goverment@gmail.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -384,12 +381,18 @@
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <div class="header-button">
-                                <button type="button" class="icon-btn searchBoxToggler"><i class="fal fa-search"></i></button>
+                                <!-- <button type="button" class="icon-btn searchBoxToggler"><i class="fal fa-search"></i></button>
                                 <button type="button" class="icon-btn sideMenuToggler">
                                     <i class="fal fa-shopping-cart"></i>
                                     <span class="badge">5</span>
-                                </button>
-                                <a href="contact.html" class="th-btn style3 shadow-none">Make Appointment<i class="fas fa-arrow-right ms-1"></i></a>
+                                </button> -->
+
+                                @auth('admin')
+                                    <a href="{{route('admin.dashboard')}}" class="th-btn style3 shadow-none">{{Auth::guard('admin')->user()->name}}<i class="fas fa-arrow-right ms-1"></i></a>
+                                    @else
+                                    <a href="{{route('admin.dashboard')}}" class="th-btn style3 shadow-none">Login<i class="fas fa-arrow-right ms-1"></i></a>
+                                @endauth
+                                
                             </div>
                         </div>
                     </div>
@@ -400,396 +403,112 @@
     </header><!--==============================
     Breadcumb
 ============================== -->
-    <div class="breadcumb-wrapper " data-bg-src="{{asset('img/bg/breadcumb-bg.jpg')}}">
-        <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Our Team</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li>Our Team</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--==============================
-Team Area  
-==============================-->
-    <section class="space-top">
-        <div class="container">
-            <div class="row gy-40 align-items-center">
-                <div class="col-xl-5">
-                    <div class="team-featured-img">
-                        <img src="{{asset('img/team/team_featured.jpg')}}" alt="Team">
-                    </div>
-                </div>
-                <div class="col-xl-7">
-                    <div class="team-featured">
-                        <h2 class="team-title">Rachna Sheth</h2>
-                        <p class="team-desig">CEO, of Webteck Company</p>
-                        <p class="team-bio">Enthusiastically parallel task 2.0 niches wherea end-to-end strategic theme area. Dramatically harness e-business ROI and granular service. Quickly target enabled internal organic sources after cross-unit methods of empowerment. Seamlessly e-enable intuitive applications before end-to-end applications. Uniquely matrix seamless supply chains for resource-leveling.</p>
-                        <div class="team-contact-wrap">
-                            <div class="team-contact">
-                                <div class="icon-btn">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h6 class="team-contact_label">Phone Number</h6>
-                                    <a class="team-contact_link" href="tel:+19356542587">+1 935-654-2587</a>
-                                </div>
-                            </div>
-                            <div class="team-contact">
-                                <div class="icon-btn">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h6 class="team-contact_label">Email Address</h6>
-                                    <a class="team-contact_link" href="mailto:info@rachna.com">info@rachna.com</a>
-                                </div>
-                            </div>
-                            <div class="team-contact">
-                                <div class="icon-btn">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <div class="media-body">
-                                    <h6 class="team-contact_label">Phone Number</h6>
-                                    <span class="team-contact_link">10:00AM - 4:00PM</span>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="about.html" class="th-btn">MAKE AN APPOINTMENT<i class="fa-regular fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="space">
-        <div class="container">
-            <div class="title-area text-center">
-                <span class="sub-title">
-                    <div class="icon-masking me-2">
-                        <span class="mask-icon" data-mask-src="{{asset('img/theme-img/title_shape_1.svg')}}"></span>
-                        <img src="{{asset('img/theme-img/title_shape_1.svg')}}" alt="shape">
-                    </div>
-                    ALL MEMBERS
-                </span>
-                <h2 class="sec-title">See Our Skilled Expert <span class="text-theme">Team</span></h2>
-            </div>
-            <div class="row gy-40">
-                <!-- Single Item -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="th-team team-card">
-                        <div class="team-img">
-                            <img src="{{asset('img/team/team_1_1.jpg')}}" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <div class="box-particle" id="team-p1"></div>
-                            <div class="team-social">
-                                <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
-                                <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.html">Rayan Athels</a></h3>
-                            <span class="team-desig">Founder & CEO</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single Item -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="th-team team-card">
-                        <div class="team-img">
-                            <img src="{{asset('img/team/team_1_2.jpg')}}" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <div class="box-particle" id="team-p2"></div>
-                            <div class="team-social">
-                                <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
-                                <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.html">Alex Furnandes</a></h3>
-                            <span class="team-desig">Project Manager</span>
-                        </div>
-                    </div>
-                </div>
+@yield('homepage')
 
-                <!-- Single Item -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="th-team team-card">
-                        <div class="team-img">
-                            <img src="{{asset('img/team/team_1_3.jpg')}}" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <div class="box-particle" id="team-p3"></div>
-                            <div class="team-social">
-                                <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
-                                <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.html">Mary Crispy</a></h3>
-                            <span class="team-desig">Cheif Expert</span>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Single Item -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="th-team team-card">
-                        <div class="team-img">
-                            <img src="{{asset('img/team/team_1_4.jpg')}}" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <div class="box-particle" id="team-p4"></div>
-                            <div class="team-social">
-                                <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
-                                <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.html">Henry Joshep</a></h3>
-                            <span class="team-desig">Product Manager</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Item -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="th-team team-card">
-                        <div class="team-img">
-                            <img src="{{asset('img/team/team_1_5.jpg')}}" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <div class="box-particle" id="team-p5"></div>
-                            <div class="team-social">
-                                <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
-                                <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.html">Sanjida Carlose</a></h3>
-                            <span class="team-desig">IT Consultant</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Item -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="th-team team-card">
-                        <div class="team-img">
-                            <img src="{{asset('img/team/team_1_6.jpg')}}" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <div class="box-particle" id="team-p6"></div>
-                            <div class="team-social">
-                                <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
-                                <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.html">Marian Widjya</a></h3>
-                            <span class="team-desig">Head Manager</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Item -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="th-team team-card">
-                        <div class="team-img">
-                            <img src="{{asset('img/team/team_1_7.jpg')}}" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <div class="box-particle" id="team-p7"></div>
-                            <div class="team-social">
-                                <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
-                                <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.html">Peter Parker</a></h3>
-                            <span class="team-desig">Web Developer</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Single Item -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="th-team team-card">
-                        <div class="team-img">
-                            <img src="{{asset('img/team/team_1_8.jpg')}}" alt="Team">
-                        </div>
-                        <div class="team-content">
-                            <div class="box-particle" id="team-p8"></div>
-                            <div class="team-social">
-                                <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                                <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
-                                <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                            <h3 class="box-title"><a href="team-details.html">Grayson Gabriel</a></h3>
-                            <span class="team-desig">UI/UX Designer</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!--==============================
+<!--==============================
 	Footer Area
 ==============================-->
-    <footer class="footer-wrapper footer-layout1">
-        <div class="footer-top">
-            <div class="logo-bg"></div>
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-xl-3">
-                        <div class="footer-logo">
-                            <a class="icon-masking" href="index.html"><span data-mask-src="{{asset('img/logo-white.svg')}}" class="mask-icon"></span><img src="{{asset('img/logo-white.svg')}}" alt="Webteck"></a>
+<footer class="footer-wrapper footer-layout5 footer-layout12 footer-layout14">
+    <div class="container th-container4">
+        {{-- <div class="footer-top">
+            <div class="row gx-0 align-items-center">
+                <div class="col-xl">
+                    <div class="footer-newsletter">
+                        <div class="footer-newsletter-content">
+                            <h2 class="newsletter-title text-white">Subscribe for daily update</h2>
                         </div>
-                    </div>
-                    <div class="col-xl-9">
-                        <div class="footer-contact-wrap">
-                            <div class="footer-contact">
-                                <div class="footer-contact_icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="footer-contact_text">Quick Call Us:</span>
-                                    <a href="tel:+19088000393" class="footer-contact_link">+190-8800-0393</a>
-                                </div>
-                            </div>
-                            <div class="footer-contact">
-                                <div class="footer-contact_icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="footer-contact_text">Mail Us On:</span>
-                                    <a href="mailto:info@webteck.com" class="footer-contact_link">info@webteck.com</a>
-                                </div>
-                            </div>
-                            <div class="footer-contact">
-                                <div class="footer-contact_icon">
-                                    <i class="fas fa-location-dot"></i>
-                                </div>
-                                <div class="media-body">
-                                    <span class="footer-contact_text">Visit Location:</span>
-                                    <a href="https://www.google.com/maps" class="footer-contact_link">54 Flemington, USA</a>
-                                </div>
-                            </div>
-                        </div>
+                        <form class="newsletter-form">
+                            <i class="fa-sharp fa-light fa-envelope"></i>
+                            <input class="form-control" type="email" placeholder="Email Address" required="">
+                            <button type="submit" class="th-btn">Subscribe Now</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="widget-area">
-            <div class="container">
-                <div class="row justify-content-between">
-                    <div class="col-md-6 col-xxl-3 col-xl-4">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">About Company</h3>
-                            <div class="th-widget-about">
-                                <p class="about-text">Professionally redefine transparent ROI through low-risk high-yield imperatives. Progressively create empowered. cost effective users via team driven.</p>
-                                <div class="th-social">
-                                    <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                    <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                                    <a href="https://www.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
-                                    <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Quick Links</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="team.html">Meet Our Team</a></li>
-                                    <li><a href="project.html">Our Projects</a></li>
-                                    <li><a href="faq.html">Help & FAQs</a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">IT SERVICES</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="service-details.html">Web Development</a></li>
-                                    <li><a href="service-details.html">Business Development</a></li>
-                                    <li><a href="service-details.html">Product Management</a></li>
-                                    <li><a href="service-details.html">UI/UX Design</a></li>
-                                    <li><a href="service-details.html">Cloud services</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">Recent Posts</h3>
-                            <div class="recent-post-wrap">
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="{{asset('img/blog/recent-post-2-1.jpg')}}" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>21 June, 2024</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="recent-post">
-                                    <div class="media-img">
-                                        <a href="blog-details.html"><img src="{{asset('img/blog/recent-post-2-2.jpg')}}" alt="Blog Image"></a>
-                                    </div>
-                                    <div class="media-body">
-                                        <h4 class="post-title"><a class="text-inherit" href="blog-details.html">Regional Manager limited time management.</a></h4>
-                                        <div class="recent-post-meta">
-                                            <a href="blog.html"><i class="fal fa-calendar-days"></i>22 June, 2024</a>
-                                        </div>
-                                    </div>
-                                </div>
+            <div class="row justify-content-between">
+                <div class="col-md-6 col-xxl-3 col-xl-4">
+                    <div class="widget footer-widget">
+                        <h3 class="widget_title style2 text-white">About Company</h3>
+                        <div class="th-widget-about style2">
+                            <p class="about-text">Tugas pelayanan kecamatan meliputi berbagai aspek yang bertujuan untuk memberikan layanan administratif dan publik kepada masyarakat di tingkat kecamatan</p>
+                            <div class="th-social">
+                                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="copyright-wrap bg-title">
-            <div class="container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-lg-6">
-                        <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> 2024 <a href="https://themeforest.net/user/themeholy">Themeholy</a>. All Rights Reserved.</p>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget footer-widget">
+                        <h3 class="widget_title style2 text-white">Address</h3>
+                        <div class="th-widget-about">
+                            <div class="footer-info">
+                                <p class="footer-info_text">
+                                    <a href="tel:+9159008855" class="text-inherit">+91 590088 55</a>
+                                </p>
+                            </div>
+                            <p class="footer-info"><a class="text-inherit" href="mailto:webteck@gmail.com">wuluhan_goverment@gmail.com</a></p>
+                            <p class="footer-info">MH63+865, Jl. Ambulu, Kecamatan Wuluhan</p>
+
+                        </div>
                     </div>
-                    <div class="col-lg-6 text-end d-none d-lg-block">
-                        <div class="footer-links">
-                            <ul>
-                                <li><a href="about.html">Terms & Condition</a></li>
-                                <li><a href="about.html">Careers</a></li>
-                                <li><a href="about.html">Privacy Policy</a></li>
+                </div>
+                <div class="col-md-6 col-xl-auto">
+                    <div class="widget widget_nav_menu footer-widget">
+                        <h3 class="widget_title style2 text-white">Company</h3>
+                        <div class="menu-all-pages-container">
+                            <ul class="menu">
+                                <li><a href="about.html">What we Offer</a></li>
+                                <li><a href="contact.html">Our Story</a></li>
+                                <li><a href="blog.html">Latest Posts</a></li>
+                                <li><a href="contact.html">Help Center</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                {{-- <div class="col-md-6 col-xl-auto">
+                    <div class="widget widget_offer footer-widget">
+                        <h3 class="widget_title style2 text-white">Get the app</h3>
+                        <div class="download-btn-wrap">
+                            <div class="mb-10">
+                                <a target="_blank" href="https://play.google.com/" class="download-btn">
+                                    <img src="{{asset('img/normal/google-play.png')}}" alt="">
+                                </a>
+                            </div>
+                            <div>
+                                <a target="_blank" href="https://www.apple.com/store" class="download-btn">
+                                    <img src="{{asset('img/normal/app.png')}}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> --}}
             </div>
         </div>
-        <div class="shape-left">
-            <img src="{{asset('img/shape/footer_shape_2.svg')}}" alt="shape">
+        <div class="copyright-wrap">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-6">
+                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> Kecamatan <a href="#">Wuluhan</a>. 2024.</p>
+                </div>
+                <div class="col-lg-6 text-center text-md-end">
+                    <ul class="footer-menu">
+                        <li><a href="service.html">service</a></li>
+                        <li><a href="about.html">about</a></li>
+                        <li><a href="contact.html">Articles</a></li>
+                        <li><a href="#contact-sec">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="shape-right">
-            <div class="particle-1" id="particle-5"></div>
-        </div>
-    </footer>
+    </div>
+</footer>
 
     <!--********************************
 			Code End  Here 
@@ -810,7 +529,7 @@ Team Area
     <!-- Swiper Slider -->
     <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
     <!-- Bootstrap -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- Magnific Popup -->
     <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
     <!-- Counter Up -->
@@ -826,7 +545,6 @@ Team Area
     <script src="{{asset('js/tilt.jquery.min.js')}}"></script>
 
     <!-- gsap -->
-    <script src="{{asset('js/gsap.min.js')}}"></script>
     <!-- ScrollTrigger -->
     <script src="{{asset('js/ScrollTrigger.min.js')}}"></script>
     <script src="{{asset('js/smooth-scroll.js')}}"></script>
@@ -836,6 +554,7 @@ Team Area
 
     <script src="{{asset('js/particles-config.js')}}"></script>
     <!-- Main Js File -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
     <script src="{{asset('js/main.js')}}"></script>
 
 </body>
