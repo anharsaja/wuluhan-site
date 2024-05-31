@@ -291,59 +291,7 @@
                         <div class="col-auto">
                             <nav class="main-menu d-none d-lg-inline-block">
                                 <ul>
-                                    <li class="menu-item-has-children mega-menu-wrap">
-                                        <a href="#">Home</a>
-                                        <ul class="mega-menu">
-                                            <li><a href="#">Multipage</a>
-                                                <ul>
-                                                    <li><a href="index.html">Digital Agency</a></li>
-                                                    <li><a href="home-web-development.html">Web Development</a></li>
-                                                    <li><a href="home-software-company.html">Software Company</a></li>
-                                                    <li><a href="home-software-company-2.html">Software Company Style 2</a></li>
-                                                    <li><a href="home-startup-company.html">Startup Company</a></li>
-                                                    <li><a href="home-it-solution.html">IT Solution</a></li>
-                                                    <li><a href="home-web-agency.html">Web Agency</a></li>
-                                                    <li><a href="home-sass-marketing.html">Sass Marketing</a></li>
-
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Multipage</a>
-                                                <ul>
-                                                    <li><a href="home-sass-landing.html">Sass Landing</a></li>
-                                                    <li><a href="home-sass-landing-2.html">Sass Landing Style 2</a></li>
-                                                    <li><a href="home-app-landing.html">App Landing</a></li>
-                                                    <li><a href="home-ai-technology.html">AI Technology</a></li>
-                                                    <li><a href="home-cyber-security.html">Cyber Security</a></li>
-                                                    <li><a href="home-it-company.html">IT Company</a></li>
-                                                    <li><a href="home-it-agency.html">IT Agency</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Onepage</a>
-                                                <ul>
-                                                    <li><a href="home-digital-agency-op.html">Digital Agency Onepage</a></li>
-                                                    <li><a href="home-web-development-op.html">Web Development Onepage</a></li>
-                                                    <li><a href="home-software-company-op.html">Software Company Onepage</a></li>
-                                                    <li><a href="home-software-company-2-op.html">Software Company Style 2 Onepage</a></li>
-                                                    <li><a href="home-startup-company-op.html">Startup Company Onepage</a></li>
-                                                    <li><a href="home-it-solution-op.html">IT Solution Onepage</a></li>
-                                                    <li><a href="home-web-agency-op.html">Web Agency Onepage</a></li>
-                                                    <li><a href="home-sass-marketing-op.html">Sass Marketing Onepage</a></li>
-
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Onepage</a>
-                                                <ul>
-                                                    <li><a href="home-sass-landing-op.html">Sass Landing Onepage</a></li>
-                                                    <li><a href="home-sass-landing-2-op.html">Sass Landing Style 2 Onepage</a></li>
-                                                    <li><a href="home-app-landing-op.html">App Landing Onepage</a></li>
-                                                    <li><a href="home-ai-technology-op.html">AI Technology Onepage</a></li>
-                                                    <li><a href="home-cyber-security-op.html">Cyber Security Onepage</a></li>
-                                                    <li><a href="home-it-company-op.html">IT Company Onepage</a></li>
-                                                    <li><a href="home-it-agency-op.html">IT Agency Onepage</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="{{route('home.landing')}}">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#">Services</a></li>
                                     <li class="menu-item-has-children">
