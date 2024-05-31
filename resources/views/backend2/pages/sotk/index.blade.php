@@ -160,7 +160,7 @@
                                         <div class="media-body">
                                             <div class="d-flex align-items-center">
                                                 <h5 class="media-heading title-color mr-2">{{ $suratsotk->name }}</h5>
-                                                <span class="badge badge-success">Public</span>
+                                                <span class="badge @if($suratsotk->status == 'public') badge-success @else badge-danger @endif">{{ $suratsotk->status }}</span>
                                             </div>
                                             <small class="media-meta">{{ $suratsotk->description }}</small>
                                         </div>
