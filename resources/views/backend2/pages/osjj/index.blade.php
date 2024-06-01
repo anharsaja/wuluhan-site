@@ -24,12 +24,14 @@
                         <i class="fa fa-chevron-right"></i>
                         <i class="fa fa-chevron-left"></i>
                     </div><!-- .action-panel-toggle -->
+                    @if(Route::is('admin.osjj.index'))
                     @can('osjj.create')
-                    <div class="m-b-lg">
-                        <a href="#" data-toggle="modal" data-target="#contactModal"
-                            class="btn btn-primary btn-block">New Contact</a>
-                    </div>
+                        <div class="m-b-lg">
+                            <a href="#" data-toggle="modal" data-target="#contactModal"
+                                class="btn btn-primary btn-block">New Contact</a>
+                        </div>
                     @endcan
+                    @endif 
                     <!-- contact category list -->
                     <div id="categories-list" class="app-actions-list scrollable-container">
                         <div class="list-group">
@@ -120,18 +122,10 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="mail-toolbar m-b-lg">
-
                             <div class="btn-group" role="group">
-                                <a href="#" class="btn btn-default"><i class="fa fa-trash"></i></a>
-                                <a href="#" class="btn btn-default"><i
-                                        class="fa fa-exclamation-circle"></i></a>
-                            </div>
-
-                            <div class="btn-group pull-right" role="group">
-                                <a href="#" class="btn btn-default"><i
-                                        class="fa fa-chevron-left"></i></a>
-                                <a href="#" class="btn btn-default"><i
-                                        class="fa fa-chevron-right"></i></a>
+                                <a href="{{route('admin.osjj.index')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> All</a>
+                                <a href="{{route('admin.osjj.public')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> Public</a>
+                                <a href="{{ route('admin.osjj.private') }}" class="btn btn-default"><i class="fa fa-exclamation-circle"></i> Private</a>
                             </div>
                         </div>
                     </div><!-- END column -->

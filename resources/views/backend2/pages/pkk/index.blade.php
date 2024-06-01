@@ -136,8 +136,9 @@
                                 </div>
 
                                 <div class="btn-group pull-right" role="group">
-                                    <a href="#" class="btn btn-default"><i class="fa fa-chevron-left"></i></a>
-                                    <a href="#" class="btn btn-default"><i class="fa fa-chevron-right"></i></a>
+                                    <a href="{{route('admin.pkk.index')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> All</a>
+                                    <a href="{{route('admin.pkk.public')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> Public</a>
+                                    <a href="{{ route('admin.pkk.private') }}" class="btn btn-default"><i class="fa fa-exclamation-circle"></i> Private</a>
                                 </div>
                             </div>
                         </div><!-- END column -->
@@ -281,6 +282,13 @@
                                 @foreach ($categories as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select name="status" class="form-control" required>
+                                <option value="" selected disabled>Pilih Jenis Surat</option>
+                                <option value="private">Private</option>
+                                <option value="public">Public</option>
                             </select>
                         </div>
                         <div class="form-group">

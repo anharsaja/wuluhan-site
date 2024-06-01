@@ -21,14 +21,14 @@ class OsjjController extends Controller
     {
         $category = CategoryOsjj::get();
         $suratosjj = SuratOsjj::where('status', 'public')->get();
-        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat Public']);
+        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat OSJJ Public']);
     }
 
     public function indexPrivate()
     {
         $category = CategoryOsjj::get();
         $suratosjj = SuratOsjj::where('status', 'private')->get();
-        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat Private']);
+        return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat OSJJ Private']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class OsjjController extends Controller
             $categoryName = CategoryOsjj::find($id)->name;
             $category = CategoryOsjj::get();
             $suratosjj = SuratOsjj::where('category_id', $id)->get();
-            return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
+            return view('backend2.pages.osjj.index', ['categories' => $category, 'suratosjjs' => $suratosjj, 'title' => 'Surat OSJJ', 'categoryName' => $categoryName]);
         } catch (\Throwable $th) {
             return redirect()->route('admin.osjj.index');
         }

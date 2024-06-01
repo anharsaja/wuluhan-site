@@ -25,12 +25,14 @@
                             <i class="fa fa-chevron-right"></i>
                             <i class="fa fa-chevron-left"></i>
                         </div><!-- .action-panel-toggle -->
+                        @if(Route::is('admin.sotk.index'))
                         @can('sotk.create')
                             <div class="m-b-lg">
                                 <a href="#" data-toggle="modal" data-target="#contactModal"
                                     class="btn btn-primary btn-block">New Contact</a>
                             </div>
                         @endcan
+                        @endif 
                         <!-- contact category list -->
                         <div id="categories-list" class="app-actions-list scrollable-container">
                             <div class="list-group">
@@ -129,16 +131,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="mail-toolbar m-b-lg">
-
                                 <div class="btn-group" role="group">
-                                    <a href="#" class="btn btn-default"><i class="fa fa-trash"></i></a>
-                                    <a href="#" class="btn btn-default"><i
-                                            class="fa fa-exclamation-circle"></i></a>
-                                </div>
-
-                                <div class="btn-group pull-right" role="group">
-                                    <a href="#" class="btn btn-default"><i class="fa fa-chevron-left"></i></a>
-                                    <a href="#" class="btn btn-default"><i class="fa fa-chevron-right"></i></a>
+                                    <a href="{{route('admin.sotk.index')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> All</a>
+                                    <a href="{{route('admin.sotk.public')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> Public</a>
+                                    <a href="{{ route('admin.sotk.private') }}" class="btn btn-default"><i class="fa fa-exclamation-circle"></i> Private</a>
                                 </div>
                             </div>
                         </div><!-- END column -->
@@ -213,12 +209,17 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
+                                                    <select name="status" class="form-control" required>
+                                                        <option value="" selected disabled>Pilih Jenis Surat</option>
+                                                        <option value="private" @selected($suratsotk->status == 'private')>Private</option>
+                                                        <option value="public" @selected($suratsotk->status == 'public')>Public</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
                                                     <input name="file" type="file" class="form-control"
                                                         placeholder="File"><br>
-                                                    <a href="{{ asset($suratsotk->path_file) }}" target="blank"
-                                                        class="btn btn-warning" style="width: 30%"><i
-                                                            class="fa fa-eye"></i></a>
                                                 </div>
+                                                <a href="{{ asset($suratsotk->path_file) }}" target="blank" class="btn btn-warning" style="width: 30%"><i class="fa fa-eye"></i></a>
                                             </div><!-- .modal-body -->
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger"

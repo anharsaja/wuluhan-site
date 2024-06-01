@@ -21,14 +21,14 @@ class SotkController extends Controller
     {
         $category = CategorySotk::get();
         $suratsotk = SuratSotk::where('status', 'public')->get();
-        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK']);
+        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat Public']);
     }
 
         public function indexPrivate()
     {
         $category = CategorySotk::get();
         $suratsotk = SuratSotk::where('status', 'private')->get();
-        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK']);
+        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat Private']);
     }
 
     public function category($id)
@@ -95,6 +95,7 @@ class SotkController extends Controller
         $suratsotk->name = $request->name;
         $suratsotk->description = $request->description;
         $suratsotk->category_id = $request->category;
+        $suratsotk->status = $request->status;
 
         if ($request->hasFile('file')) {
             $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];

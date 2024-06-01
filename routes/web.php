@@ -66,9 +66,11 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/osjj/category/update/{id}', 'update')->name('admin.osjj.category.update');
             Route::get('/osjj/category/delete/{id}', 'delete')->name('admin.osjj.category.delete');
         });
-        // OSJJ
+        // PKK
         Route::resource('pkk', PkkController::class, ['names' => 'admin.pkk']);
         Route::get('/pkk/category/{id}', [PkkController::class, 'category'])->name('admin.pkk.category');
+        Route::get('/pkk/surat/public', [PkkController::class, 'indexPublic'])->name('admin.pkk.public');
+        Route::get('/pkk/surat/private', [PkkController::class, 'indexPrivate'])->name('admin.pkk.private');
         Route::controller(CategoryPkkController::class)->group(function () {
             Route::post('/pkk/category/store', 'store')->name('admin.pkk.category.store');
             Route::post('/pkk/category/update/{id}', 'update')->name('admin.pkk.category.update');

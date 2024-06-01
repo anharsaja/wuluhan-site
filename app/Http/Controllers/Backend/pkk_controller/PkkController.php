@@ -17,6 +17,19 @@ class PkkController extends Controller
         return view('backend2.pages.pkk.index', ['categories' => $category, 'suratpkks' => $suratpkk, 'title' => 'Surat PKK']);
     }
 
+    public function indexPublic()
+    {
+        $category = CategoryPkk::get();
+        $suratpkk = SuratPkk::where('status', 'public')->get();
+        return view('backend2.pages.pkk.index', ['categories' => $category, 'suratpkks' => $suratpkk, 'title' => 'Surat PKK']);
+    }
+    public function indexPrivate()
+    {
+        $category = CategoryPkk::get();
+        $suratpkk = SuratPkk::where('status', 'private')->get();
+        return view('backend2.pages.pkk.index', ['categories' => $category, 'suratpkks' => $suratpkk, 'title' => 'Surat PKK']);
+    }
+
     public function category($id)
     {
         try {

@@ -57,49 +57,47 @@
             <div id="list">
                 <ul class="nav flex-column">
                     @can('dashboard.view')
-                        <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link active"><i
+                        <li class="nav-item"><a href="{{ route('admin.dashboard') }}" class="nav-link {{ Route::is('admin.dashboard') ? 'active' : '' }}"><i
                                     class="fa fa-adjust"></i>Dashboard</a></li>
                     @endcan
 
                     {{-- Fitur Sotk --}}
                     @can('sotk.view')
-                        <li class="nav-item"><a href="#sotk" class="nav-link collapsed" data-toggle="collapse"><i
+                        <li class="nav-item"><a href="#sotk" class="nav-link collapsed {{ Route::is('admin.sotk.*') ? 'active' : '' }}" data-toggle="collapse"><i
                                     class="fa fa-fire"></i>SOTK<span class="sub-ico"><i
                                         class="fa fa-angle-down"></i></span></a></li>
-                        <li class="sub collapse" id="sotk">
-                            <a href="{{ route('admin.sotk.public') }}" class="nav-link" data-parent="#sotk">Artikel
-                                Publik</a>
-                            <a href="{{ route('admin.sotk.private') }}" class="nav-link" data-parent="#sotk">Artikel
-                                Privat</a>
+                        <li class="sub collapse {{ Route::is('admin.sotk.*') ? 'show' : '' }}" id="sotk">
+                            <a href="{{ route('admin.sotk.public') }}" class="nav-link {{ Route::is('admin.sotk.public') ? 'active' : '' }}" data-parent="#sotk">-</a>
+                            <a href="{{ route('admin.sotk.private') }}" class="nav-link {{ Route::is('admin.sotk.private') ? 'active' : '' }}" data-parent="#sotk">-</a>
                             @can('sotk.view')
-                                <a href="{{ route('admin.sotk.index') }}" class="nav-link" data-parent="#sotk">Kelola
+                                <a href="{{ route('admin.sotk.index') }}" class="nav-link {{ Route::is('admin.sotk.index') ? 'active' : '' }}" data-parent="#sotk">Kelola
                                     Dokumen</a>
                             @endcan
                         </li>
                     @endcan
 
                     @can('osjj.view')
-                        <li class="nav-item"><a href="#osjj" class="nav-link collapsed" data-toggle="collapse"><i
+                        <li class="nav-item"><a href="#osjj" class="nav-link collapsed {{ Route::is('admin.osjj.*') ? 'active' : '' }}" data-toggle="collapse"><i
                                     class="fa fa-fire"></i>osjj<span class="sub-ico"><i
                                         class="fa fa-angle-down"></i></span></a></li>
-                        <li class="sub collapse" id="osjj">
-                            <a href="{{ route('admin.osjj.public') }}" class="nav-link" data-parent="#osjj">Artikel Publik</a>
-                            <a href="{{ route('admin.osjj.private') }}" class="nav-link" data-parent="#osjj">Artikel Privat</a>
+                        <li class="sub collapse {{ Route::is('admin.osjj.*') ? 'show' : '' }}" id="osjj">
+                            <a href="{{ route('admin.osjj.public') }}" class="nav-link {{ Route::is('admin.osjj.public') ? 'active' : '' }}" data-parent="#osjj">-</a>
+                            <a href="{{ route('admin.osjj.private') }}" class="nav-link {{ Route::is('admin.osjj.private') ? 'active' : '' }}" data-parent="#osjj">-</a>
                             @can('osjj.view')
-                                <a href="{{ route('admin.osjj.index') }}" class="nav-link" data-parent="#osjj">Kelola
+                                <a href="{{ route('admin.osjj.index') }}" class="nav-link {{ Route::is('admin.osjj.index') ? 'active' : '' }}" data-parent="#osjj">Kelola
                                     Dokumen</a>
                             @endcan
                         </li>
                     @endcan
 
                     @can('pkk.view')
-                        <li class="nav-item"><a href="#pkk" class="nav-link collapsed" data-toggle="collapse"><i
+                        <li class="nav-item"><a href="#pkk" class="nav-link collapsed {{ Route::is('admin.pkk.*') ? 'active' : '' }}" data-toggle="collapse"><i
                                     class="fa fa-fire"></i>PKK<span class="sub-ico"><i
                                         class="fa fa-angle-down"></i></span></a></li>
-                        <li class="sub collapse" id="pkk">
-                            <a href="ui-alerts.html" class="nav-link" data-parent="#pkk">Artikel Publik</a>
-                            <a href="ui-btns.html" class="nav-link" data-parent="#pkk">Artikel Privat</a>
-                            <a href="{{ route('admin.pkk.index') }}" class="nav-link" data-parent="#pkk">Kelola
+                        <li class="sub collapse {{ Route::is('admin.pkk.*') ? 'show' : '' }}" id="pkk">
+                            <a href="ui-alerts.html" class="nav-link {{ Route::is('admin.pkk.*') ? 'active' : '' }}" data-parent="#pkk">-</a>
+                            <a href="ui-btns.html" class="nav-link {{ Route::is('admin.pkk.*') ? 'active' : '' }}" data-parent="#pkk">-</a>
+                            <a href="{{ route('admin.pkk.index') }}" class="nav-link {{ Route::is('admin.pkk.index') ? 'active' : '' }}" data-parent="#pkk">Kelola
                                 Dokumen</a>
                         </li>
                     @endcan
