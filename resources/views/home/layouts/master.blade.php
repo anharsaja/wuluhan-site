@@ -71,7 +71,8 @@
                 </div>
             </div>
         </div>
-    </div> <!--==============================
+    </div> 
+<!--==============================
     Sidemenu
 ============================== -->
     <div class="sidemenu-wrapper ">
@@ -141,14 +142,15 @@
             <input type="text" placeholder="What are you looking for?">
             <button type="submit"><i class="fal fa-search"></i></button>
         </form>
-    </div><!--==============================
+    </div>
+    <!--==============================
     Mobile Menu
-  ============================== -->
+============================== -->
     <div class="th-menu-wrapper">
         <div class="th-menu-area text-center">
             <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
             <div class="mobile-logo">
-                <a href="index.html"><img src="{{asset('img/wuluhan.png')}}" alt="Webteck"></a>
+                <a href="{{route('home')}}"><img src="{{asset('img/wuluhan.png')}}" alt="Webteck"></a>
             </div>
             <div class="th-mobile-menu">
                 <ul>
@@ -177,7 +179,8 @@
                 </ul>
             </div>
         </div>
-    </div><!--==============================
+    </div>
+    <!--==============================
 	Header Area
 ==============================-->
     <header class="th-header header-layout1">
@@ -257,12 +260,6 @@
                         </div>
                         <div class="col-auto d-none d-lg-block">
                             <div class="header-button">
-                                <!-- <button type="button" class="icon-btn searchBoxToggler"><i class="fal fa-search"></i></button>
-                                <button type="button" class="icon-btn sideMenuToggler">
-                                    <i class="fal fa-shopping-cart"></i>
-                                    <span class="badge">5</span>
-                                </button> -->
-
                                 @auth('admin')
                                     <a href="{{route('admin.dashboard')}}" class="th-btn style3 shadow-none">{{Auth::guard('admin')->user()->name}}<i class="fas fa-arrow-right ms-1"></i></a>
                                     @else
@@ -276,10 +273,7 @@
                 <div class="logo-bg"></div>
             </div>
         </div>
-    </header><!--==============================
-    Breadcumb
-============================== -->
-
+    </header>
 
 @yield('homepage')
 
@@ -289,22 +283,6 @@
 ==============================-->
 <footer class="footer-wrapper footer-layout5 footer-layout12 footer-layout14">
     <div class="container th-container4">
-        {{-- <div class="footer-top">
-            <div class="row gx-0 align-items-center">
-                <div class="col-xl">
-                    <div class="footer-newsletter">
-                        <div class="footer-newsletter-content">
-                            <h2 class="newsletter-title text-white">Subscribe for daily update</h2>
-                        </div>
-                        <form class="newsletter-form">
-                            <i class="fa-sharp fa-light fa-envelope"></i>
-                            <input class="form-control" type="email" placeholder="Email Address" required="">
-                            <button type="submit" class="th-btn">Subscribe Now</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
         <div class="widget-area">
             <div class="row justify-content-between">
                 <div class="col-md-6 col-xxl-3 col-xl-4">
@@ -349,23 +327,6 @@
                         </div>
                     </div>
                 </div>
-                {{-- <div class="col-md-6 col-xl-auto">
-                    <div class="widget widget_offer footer-widget">
-                        <h3 class="widget_title style2 text-white">Get the app</h3>
-                        <div class="download-btn-wrap">
-                            <div class="mb-10">
-                                <a target="_blank" href="https://play.google.com/" class="download-btn">
-                                    <img src="{{asset('img/normal/google-play.png')}}" alt="">
-                                </a>
-                            </div>
-                            <div>
-                                <a target="_blank" href="https://www.apple.com/store" class="download-btn">
-                                    <img src="{{asset('img/normal/app.png')}}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
             </div>
         </div>
         <div class="copyright-wrap">
