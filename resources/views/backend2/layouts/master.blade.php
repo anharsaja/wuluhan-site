@@ -165,7 +165,7 @@
                     <div class="left">
                         <button id="on" class="btn btn-info"><i class="fa fa-bars"></i></button>
                         <button id="off" class="btn btn-info hide"><i class="fa fa-align-left"></i></button>
-                        <a href="{{ route('home.landing') }}" class="btn btn-info hidden-xs-down"><i
+                        <a href="{{ route('home') }}" class="btn btn-info hidden-xs-down"><i
                                 class="fa fa-home"></i>Back Home</a>
                     </div>
                     <div class="right">

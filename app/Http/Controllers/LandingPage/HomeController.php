@@ -33,6 +33,11 @@ class HomeController extends Controller
         return view('home.blog-details');
     }
 
+    public function contact()
+    {
+        return view('home.contact');
+    }
+
     public function store(Request $request)
     {
         //

@@ -160,19 +160,19 @@
                     <li class="menu-item-has-children">
                         <a href="#">Pages</a>
                         <ul class="sub-menu">
-                            <li><a href="{{route('home.landing.team')}}">Team</a></li>
-                            <li><a href="{{route('home.landing.teamdetails')}}">Team Details</a></li>
+                            <li><a href="{{route('home.team')}}">Team</a></li>
+                            <li><a href="{{route('home.teamdetails')}}">Team Details</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children">
                         <a href="#">Blog</a>
                         <ul class="sub-menu">
-                            <li><a href="{{route('home.landing.blog')}}">Blog</a></li>
-                            <li><a href="{{route('home.landing.blogdetails')}}">Blog Details</a></li>
+                            <li><a href="{{route('home.blog')}}">Blog</a></li>
+                            <li><a href="{{route('home.blogdetails')}}">Blog Details</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="{{route('home.contact')}}">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -213,20 +213,20 @@
                     <div class="row align-items-center justify-content-between">
                         <div class="col-auto">
                             <div class="header-logo">
-                                <a class="icon-masking" href="{{ route('home.landing') }}"><span data-mask-src="{{asset('img/wuluhan.png')}}"></span><img src="{{asset('img/wuluhan.png')}}" style="width: 180px"></a>
+                                <a class="icon-masking" href="{{ route('home') }}"><span data-mask-src="{{asset('img/wuluhan.png')}}"></span><img src="{{asset('img/wuluhan.png')}}" style="width: 180px"></a>
                             </div>
                         </div>
                         <div class="col-auto">
                             <nav class="main-menu d-none d-lg-inline-block">
                                 <ul>
-                                    <li><a href="{{route('home.landing')}}">Home</a></li>
+                                    <li><a href="{{route('home')}}">Home</a></li>
                                     <li><a href="about.html">About Us</a></li>
                                     <li><a href="#">Services</a></li>
                                     <li class="menu-item-has-children">
                                         <a href="#">Pages</a>
                                         <ul class="sub-menu">
-                                            <li><a href="{{ route('home.landing.team') }}">Team</a></li>
-                                            <li><a href="{{ route('home.landing.teamdetails') }}">Team Details</a></li>
+                                            <li><a href="{{ route('home.team') }}">Team</a></li>
+                                            <li><a href="{{ route('home.teamdetails') }}">Team Details</a></li>
                                             <li><a href="project.html">Project</a></li>
                                             <li><a href="project-details.html">Project Details</a></li>
                                             <li><a href="gallery.html">Gallery</a></li>
@@ -238,12 +238,12 @@
                                     <li class="menu-item-has-children">
                                         <a href="#">Blog</a>
                                         <ul class="sub-menu">
-                                            <li><a href="{{ route('home.landing.blog') }}">Blog</a></li>
-                                            <li><a href="{{route('home.landing.blogdetails')}}">Blog Details</a></li>
+                                            <li><a href="{{ route('home.blog') }}">Blog</a></li>
+                                            <li><a href="{{route('home.blogdetails')}}">Blog Details</a></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="#contact-sec">Contact</a>
+                                        <a href="{{route('home.contact')}}">Contact</a>
                                     </li>
                                 </ul>
                             </nav>

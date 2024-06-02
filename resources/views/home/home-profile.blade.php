@@ -453,7 +453,7 @@ Cta Area
     </div>
 </section>
 
-<div class="space">
+{{-- <div class="space">
     <div class="container">
         <div class="row gy-4">
             <div class="col-xl-4 col-md-6">
@@ -497,10 +497,12 @@ Cta Area
             </div>
         </div>
     </div>
-</div><!--==============================
+</div> --}}
+
+<!--==============================
 Contact Area  
 ==============================-->
-<div class="bg-smoke space" id="contact-sec">
+{{-- <div class="bg-smoke space" id="contact-sec">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8">
@@ -551,10 +553,10 @@ Contact Area
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 
 
-<div class="map mb-5" style="height: 550px">
+<div class="map mb-5 mt-5" style="height: 800px">
     <iframe height="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126319.71459821571!2d113.45383307415831!3d-8.353254933051847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6837b1ab28437%3A0x4027a76e3530e20!2sKec.%20Wuluhan%2C%20Kabupaten%20Jember%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1716481411623!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
 </div>
     
