@@ -18,6 +18,21 @@ class HomeController extends Controller
         return view('home.team');
     }
 
+    public function teamdetails()
+    {
+        return view('home.team-details');
+    }
+
+    public function blog()
+    {
+        return view('home.blog');
+    }
+
+    public function blogdetails()
+    {
+        return view('home.blog-details');
+    }
+
     public function store(Request $request)
     {
         //

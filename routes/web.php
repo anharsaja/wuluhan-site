@@ -25,8 +25,13 @@ use App\Http\Controllers\LandingPage\HomeController;
 
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('home.landing');
-Route::get('/team', [HomeController::class, 'team'])->name('home.landing.team');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index')->name('home.landing');
+    Route::get('/team', 'team')->name('home.landing.team');
+    Route::get('/team/details', 'teamdetails')->name('home.landing.teamdetails');
+    Route::get('/team/blog', 'blog')->name('home.landing.blog');
+    Route::get('/team/blog/details', 'blogdetails')->name('home.landing.blogdetails');
+});
 
 /**
  * Admin routes
