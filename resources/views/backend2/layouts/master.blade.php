@@ -148,6 +148,11 @@
                                     class="fa fa-adjust"></i>Manage Admins</a></li>
                     @endcan
 
+                    @can('admin.view')
+                        <li class="nav-item"><a href="{{ route('admin.team') }}" class="nav-link"><i
+                                    class="fa fa-adjust"></i>Manage Team Details</a></li>
+                    @endcan
+
 
 
 

@@ -6,8 +6,9 @@
     <div class="container">
         <div class="row gy-40 align-items-center">
             <div class="col-xl-5">
-                <div class="team-featured-img">
-                    <img src="{{asset('img/team/team_featured.jpg')}}" alt="Team">
+                <div class="team-featured-img" style="width: 494px; height: 468px;">
+                    {{-- <img src="{{asset('img/team/team_featured.jpg')}}" alt="Team">   --}}
+                    <img src="{{asset('img/model_sementara/model1.jpeg')}}" alt="Team">
                 </div>
             </div>
             <div class="col-xl-7">
@@ -44,13 +45,14 @@
                             </div>
                         </div>
                     </div>
-                    <a href="about.html" class="th-btn">MAKE AN APPOINTMENT<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                    <a href="{{route('home.teamdetails')}}" class="th-btn">MAKE AN APPOINTMENT<i class="fa-regular fa-arrow-right ms-2"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+{{-- Team Cards --}}
 <section class="space">
     <div class="container">
         <div class="title-area text-center">
@@ -65,10 +67,11 @@
         </div>
         <div class="row gy-40">
             <!-- Single Item -->
+
             <div class="col-lg-3 col-md-6">
                 <div class="th-team team-card">
-                    <div class="team-img">
-                        <img src="{{asset('img/team/team_1_1.jpg')}}" alt="Team">
+                    <div class="team-img" style="width: 287px; height: 320px;">
+                        <img src="{{asset('img/model_sementara/model2.jpeg')}}" alt="Team">
                     </div>
                     <div class="team-content">
                         <div class="box-particle" id="team-p1"></div>
@@ -78,151 +81,138 @@
                             <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
                             <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <h3 class="box-title"><a href="team-details.html">Rayan Athels</a></h3>
-                        <span class="team-desig">Founder & CEO</span>
+                        <h3 class="box-title"><a href="{{route('home.teamdetails')}}">Name</a></h3>
+                        <span class="team-desig">Posisi</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Single Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="th-team team-card">
-                    <div class="team-img">
-                        <img src="{{asset('img/team/team_1_2.jpg')}}" alt="Team">
+                    <div class="team-img" style="width: 287px; height: 320px;">
+                        <img src="{{asset('img/model_sementara/model2.jpeg')}}" alt="Team">
                     </div>
                     <div class="team-content">
-                        <div class="box-particle" id="team-p2"></div>
+                        <div class="box-particle" id="team-p1"></div>
                         <div class="team-social">
                             <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
                             <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                             <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
                             <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <h3 class="box-title"><a href="team-details.html">Alex Furnandes</a></h3>
-                        <span class="team-desig">Project Manager</span>
+                        <h3 class="box-title"><a href="{{route('home.teamdetails')}}">Name</a></h3>
+                        <span class="team-desig">Posisi</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Single Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="th-team team-card">
-                    <div class="team-img">
-                        <img src="{{asset('img/team/team_1_3.jpg')}}" alt="Team">
+                    <div class="team-img" style="width: 287px; height: 320px;">
+                        <img src="{{asset('img/model_sementara/model2.jpeg')}}" alt="Team">
                     </div>
                     <div class="team-content">
-                        <div class="box-particle" id="team-p3"></div>
+                        <div class="box-particle" id="team-p1"></div>
                         <div class="team-social">
                             <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
                             <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                             <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
                             <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <h3 class="box-title"><a href="team-details.html">Mary Crispy</a></h3>
-                        <span class="team-desig">Cheif Expert</span>
+                        <h3 class="box-title"><a href="{{route('home.teamdetails')}}">Name</a></h3>
+                        <span class="team-desig">Posisi</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Single Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="th-team team-card">
-                    <div class="team-img">
-                        <img src="{{asset('img/team/team_1_4.jpg')}}" alt="Team">
+                    <div class="team-img" style="width: 287px; height: 320px;">
+                        <img src="{{asset('img/model_sementara/model2.jpeg')}}" alt="Team">
                     </div>
                     <div class="team-content">
-                        <div class="box-particle" id="team-p4"></div>
+                        <div class="box-particle" id="team-p1"></div>
                         <div class="team-social">
                             <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
                             <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                             <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
                             <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <h3 class="box-title"><a href="team-details.html">Henry Joshep</a></h3>
-                        <span class="team-desig">Product Manager</span>
+                        <h3 class="box-title"><a href="{{route('home.teamdetails')}}">Name</a></h3>
+                        <span class="team-desig">Posisi</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Single Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="th-team team-card">
-                    <div class="team-img">
-                        <img src="{{asset('img/team/team_1_5.jpg')}}" alt="Team">
+                    <div class="team-img" style="width: 287px; height: 320px;">
+                        <img src="{{asset('img/model_sementara/model2.jpeg')}}" alt="Team">
                     </div>
                     <div class="team-content">
-                        <div class="box-particle" id="team-p5"></div>
+                        <div class="box-particle" id="team-p1"></div>
                         <div class="team-social">
                             <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
                             <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                             <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
                             <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <h3 class="box-title"><a href="team-details.html">Sanjida Carlose</a></h3>
-                        <span class="team-desig">IT Consultant</span>
+                        <h3 class="box-title"><a href="{{route('home.teamdetails')}}">Name</a></h3>
+                        <span class="team-desig">Posisi</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Single Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="th-team team-card">
-                    <div class="team-img">
-                        <img src="{{asset('img/team/team_1_6.jpg')}}" alt="Team">
+                    <div class="team-img" style="width: 287px; height: 320px;">
+                        <img src="{{asset('img/model_sementara/model2.jpeg')}}" alt="Team">
                     </div>
                     <div class="team-content">
-                        <div class="box-particle" id="team-p6"></div>
+                        <div class="box-particle" id="team-p1"></div>
                         <div class="team-social">
                             <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
                             <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                             <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
                             <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <h3 class="box-title"><a href="team-details.html">Marian Widjya</a></h3>
-                        <span class="team-desig">Head Manager</span>
+                        <h3 class="box-title"><a href="{{route('home.teamdetails')}}">Name</a></h3>
+                        <span class="team-desig">Posisi</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Single Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="th-team team-card">
-                    <div class="team-img">
-                        <img src="{{asset('img/team/team_1_7.jpg')}}" alt="Team">
+                    <div class="team-img" style="width: 287px; height: 320px;">
+                        <img src="{{asset('img/model_sementara/model2.jpeg')}}" alt="Team">
                     </div>
                     <div class="team-content">
-                        <div class="box-particle" id="team-p7"></div>
+                        <div class="box-particle" id="team-p1"></div>
                         <div class="team-social">
                             <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
                             <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                             <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
                             <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <h3 class="box-title"><a href="team-details.html">Peter Parker</a></h3>
-                        <span class="team-desig">Web Developer</span>
+                        <h3 class="box-title"><a href="{{route('home.teamdetails')}}">Name</a></h3>
+                        <span class="team-desig">Posisi</span>
                     </div>
                 </div>
             </div>
-
-            <!-- Single Item -->
             <div class="col-lg-3 col-md-6">
                 <div class="th-team team-card">
-                    <div class="team-img">
-                        <img src="{{asset('img/team/team_1_8.jpg')}}" alt="Team">
+                    <div class="team-img" style="width: 287px; height: 320px;">
+                        <img src="{{asset('img/model_sementara/model2.jpeg')}}" alt="Team">
                     </div>
                     <div class="team-content">
-                        <div class="box-particle" id="team-p8"></div>
+                        <div class="box-particle" id="team-p1"></div>
                         <div class="team-social">
                             <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
                             <a target="_blank" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                             <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
                             <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <h3 class="box-title"><a href="team-details.html">Grayson Gabriel</a></h3>
-                        <span class="team-desig">UI/UX Designer</span>
+                        <h3 class="box-title"><a href="{{route('home.teamdetails')}}">Name</a></h3>
+                        <span class="team-desig">Posisi</span>
                     </div>
                 </div>
             </div>
+
 
         </div>
     </div>

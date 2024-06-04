@@ -19,6 +19,7 @@ use App\Http\Controllers\Backend\pkk_controller\CategoryPkkController;
 use App\Http\Controllers\Backend\pkk_controller\PkkController;
 use App\Http\Controllers\Backend\sotk_controller\CategorySotkController;
 use App\Http\Controllers\Backend\sotk_controller\SotkController;
+use App\Http\Controllers\Backend\team_controller\TeamController;
 use App\Http\Controllers\Backend\wisata_controller\CategoryWisataController;
 use App\Http\Controllers\Backend\wisata_controller\WisataController;
 use App\Http\Controllers\LandingPage\HomeController;
@@ -32,6 +33,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/team/blog', 'blog')->name('home.blog');
     Route::get('/team/blog/details', 'blogdetails')->name('home.blogdetails');
     Route::get('/team/contact', 'contact')->name('home.contact');
+    Route::get('/gallery', 'gallery')->name('home.gallery');
 });
 
 /**
@@ -106,6 +108,10 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/budaya/category/update/{id}', 'update')->name('admin.budaya.category.update');
             Route::get('/budaya/category/delete/{id}', 'delete')->name('admin.budaya.category.delete');
         });
+
+
+        // Team
+        Route::get('/team', [TeamController::class, 'index'])->name('admin.team');
     });
 
     // Login Routes

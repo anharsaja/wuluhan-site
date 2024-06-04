@@ -232,7 +232,7 @@
                                             <li><a href="{{ route('home.teamdetails') }}">Team Details</a></li>
                                             <li><a href="project.html">Project</a></li>
                                             <li><a href="project-details.html">Project Details</a></li>
-                                            <li><a href="gallery.html">Gallery</a></li>
+                                            <li><a href="{{route('home.gallery')}}">Gallery</a></li>
                                             <li><a href="pricing.html">Pricing</a></li>
                                             <li><a href="faq.html">Faq Page</a></li>
                                             <li><a href="error.html">Error Page</a></li>
