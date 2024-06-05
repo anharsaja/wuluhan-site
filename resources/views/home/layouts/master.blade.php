@@ -50,306 +50,29 @@
 </head>
 
 <body>
-    <div id="preloader" class="preloader ">
-        <!-- <button class="th-btn th-radius preloaderCls">Cancel Preloader </button> -->
-        <div id="loader" class="th-preloader">
-            <div class="animation-preloader"">
-                <div class="txt-loading">
-                    <span preloader-text="W" class="characters">W</span>
-
-                    <span preloader-text="U" class="characters">U</span>
-
-                    <span preloader-text="L" class="characters">L</span>
-
-                    <span preloader-text="U" class="characters">U</span>
-
-                    <span preloader-text="H" class="characters">H</span>
-
-                    <span preloader-text="A" class="characters">A</span>
-
-                    <span preloader-text="N" class="characters">N</span>
-                </div>
-            </div>
-        </div>
-    </div> 
+@include('home.layouts.partials.loader')
 <!--==============================
     Sidemenu
 ============================== -->
-    <div class="sidemenu-wrapper ">
-        <div class="sidemenu-content">
-            <button class="closeButton sideMenuCls"><i class="far fa-times"></i></button>
-            <div class="widget woocommerce widget_shopping_cart">
-                <h3 class="widget_title">Shopping cart</h3>
-                <div class="widget_shopping_cart_content">
-                    <ul class="woocommerce-mini-cart cart_list product_list_widget ">
-                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
-                            <a href="#"><img src="{{asset('img/product/product_thumb_1_1.jpg')}}" alt="Cart Image">Gaming Computer</a>
-                            <span class="quantity">1 ×
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>940.00</span>
-                            </span>
-                        </li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
-                            <a href="#"><img src="{{asset('img/product/product_thumb_1_2.jpg')}}" alt="Cart Image">Smartphone Vivo V9</a>
-                            <span class="quantity">1 ×
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>899.00</span>
-                            </span>
-                        </li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
-                            <a href="#"><img src="{{asset('img/product/product_thumb_1_3.jpg')}}" alt="Cart Image">SanDisk Flash Drive</a>
-                            <span class="quantity">1 ×
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>756.00</span>
-                            </span>
-                        </li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
-                            <a href="#"><img src="{{asset('img/product/product_thumb_1_4.jpg')}}" alt="Cart Image">Smart Power Bank</a>
-                            <span class="quantity">1 ×
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>723.00</span>
-                            </span>
-                        </li>
-                        <li class="woocommerce-mini-cart-item mini_cart_item">
-                            <a href="#" class="remove remove_from_cart_button"><i class="far fa-times"></i></a>
-                            <a href="#"><img src="{{asset('img/product/product_thumb_1_5.jpg')}}" alt="Cart Image">Apple Smartwatch</a>
-                            <span class="quantity">1 ×
-                                <span class="woocommerce-Price-amount amount">
-                                    <span class="woocommerce-Price-currencySymbol">$</span>1080.00</span>
-                            </span>
-                        </li>
-                    </ul>
-                    <p class="woocommerce-mini-cart__total total">
-                        <strong>Subtotal:</strong>
-                        <span class="woocommerce-Price-amount amount">
-                            <span class="woocommerce-Price-currencySymbol">$</span>4398.00</span>
-                    </p>
-                    <p class="woocommerce-mini-cart__buttons buttons btn-wrap">
-                        <a href="cart.html" class="th-btn wc-forward">View cart</a>
-                        <a href="checkout.html" class="th-btn checkout wc-forward">Checkout</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="popup-search-box d-none d-lg-block">
-        <button class="searchClose"><i class="fal fa-times"></i></button>
-        <form action="#">
-            <input type="text" placeholder="What are you looking for?">
-            <button type="submit"><i class="fal fa-search"></i></button>
-        </form>
-    </div>
-    <!--==============================
+@include('home.layouts.partials.sidebar-right')
+<!--==============================
     Mobile Menu
 ============================== -->
-    <div class="th-menu-wrapper">
-        <div class="th-menu-area text-center">
-            <button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo">
-                <a href="{{route('home')}}"><img src="{{asset('img/wuluhan.png')}}" alt="Webteck"></a>
-            </div>
-            <div class="th-mobile-menu">
-                <ul>
-                    <li class="menu-item-has-children mega-menu-wrap">
-                        <a href="#">Home</a>
-                    </li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="about.html">Services</a></li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Pages</a>
-                        <ul class="sub-menu">
-                            <li><a href="{{route('home.team')}}">Team</a></li>
-                            <li><a href="{{route('home.teamdetails')}}">Team Details</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="#">Blog</a>
-                        <ul class="sub-menu">
-                            <li><a href="{{route('home.blog')}}">Blog</a></li>
-                            <li><a href="{{route('home.blogdetails')}}">Blog Details</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="{{route('home.contact')}}">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <!--==============================
+@include('home.layouts.partials.sidebar-left')
+<!--==============================
 	Header Area
 ==============================-->
     <header class="th-header header-layout1">
-        <div class="header-top">
-            <div class="container">
-                <div class="row justify-content-center justify-content-lg-between align-items-center gy-2">
-                    <div class="col-auto d-none d-lg-block">
-                        <div class="header-links">
-                            <ul>
-                                <li><i class="fas fa-map-location"></i>MH63+865, Jl. Ambulu, Purwojari</li>
-                                <li><i class="fas fa-phone"></i><a href="tel:+1539873657">+153-987-3657</a></li>
-                                <li><i class="fas fa-envelope"></i><a href="mailto:info@webteck.com">wuluhan_goverment@gmail.com</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-auto">
-                        <div class="header-social">
-                            <span class="social-title">Follow Us On : </span>
-                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="sticky-wrapper">
-            <!-- Main Menu Area -->
-            <div class="menu-area">
-                <div class="container">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-auto">
-                            <div class="header-logo">
-                                <a class="icon-masking" href="{{ route('home') }}"><span data-mask-src="{{asset('img/wuluhan.png')}}"></span><img src="{{asset('img/wuluhan.png')}}" style="width: 180px"></a>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <nav class="main-menu d-none d-lg-inline-block">
-                                <ul>
-                                    <li><a href="{{route('home')}}">Home</a></li>
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Pages</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ route('home.team') }}">Team</a></li>
-                                            <li><a href="{{ route('home.teamdetails') }}">Team Details</a></li>
-                                            <li><a href="project.html">Project</a></li>
-                                            <li><a href="project-details.html">Project Details</a></li>
-                                            <li><a href="{{route('home.gallery')}}">Gallery</a></li>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="faq.html">Faq Page</a></li>
-                                            <li><a href="error.html">Error Page</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Blog</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="{{ route('home.blog') }}">Blog</a></li>
-                                            <li><a href="{{route('home.blogdetails')}}">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('home.contact')}}">Contact</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <div class="header-button">
-                                <button type="button" class="icon-btn sideMenuToggler d-inline-block d-lg-none">
-                                    <i class="fal fa-shopping-cart"></i>
-                                    <span class="badge">5</span>
-                                </button>
-                                <button type="button" class="th-menu-toggle d-inline-block d-lg-none"><i class="far fa-bars"></i></button>
-                            </div>
-                        </div>
-                        <div class="col-auto d-none d-lg-block">
-                            <div class="header-button">
-                                @auth('admin')
-                                    <a href="{{route('admin.dashboard')}}" class="th-btn style3 shadow-none">{{Auth::guard('admin')->user()->name}}<i class="fas fa-arrow-right ms-1"></i></a>
-                                    @else
-                                    <a href="{{route('admin.dashboard')}}" class="th-btn style3 shadow-none">Login<i class="fas fa-arrow-right ms-1"></i></a>
-                                @endauth
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="logo-bg"></div>
-            </div>
-        </div>
+@include('home.layouts.partials.header')
+@include('home.layouts.partials.navbar')
     </header>
 
 @yield('homepage')
 
-
 <!--==============================
 	Footer Area
 ==============================-->
-<footer class="footer-wrapper footer-layout5 footer-layout12 footer-layout14">
-    <div class="container th-container4">
-        <div class="widget-area">
-            <div class="row justify-content-between">
-                <div class="col-md-6 col-xxl-3 col-xl-4">
-                    <div class="widget footer-widget">
-                        <h3 class="widget_title style2 text-white">About Company</h3>
-                        <div class="th-widget-about style2">
-                            <p class="about-text">Tugas pelayanan kecamatan meliputi berbagai aspek yang bertujuan untuk memberikan layanan administratif dan publik kepada masyarakat di tingkat kecamatan</p>
-                            <div class="th-social">
-                                <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.twitter.com/"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-auto">
-                    <div class="widget footer-widget">
-                        <h3 class="widget_title style2 text-white">Address</h3>
-                        <div class="th-widget-about">
-                            <div class="footer-info">
-                                <p class="footer-info_text">
-                                    <a href="tel:+9159008855" class="text-inherit">+91 590088 55</a>
-                                </p>
-                            </div>
-                            <p class="footer-info"><a class="text-inherit" href="mailto:webteck@gmail.com">wuluhan_goverment@gmail.com</a></p>
-                            <p class="footer-info">MH63+865, Jl. Ambulu, Kecamatan Wuluhan</p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-xl-auto">
-                    <div class="widget widget_nav_menu footer-widget">
-                        <h3 class="widget_title style2 text-white">Company</h3>
-                        <div class="menu-all-pages-container">
-                            <ul class="menu">
-                                <li><a href="about.html">What we Offer</a></li>
-                                <li><a href="contact.html">Our Story</a></li>
-                                <li><a href="blog.html">Latest Posts</a></li>
-                                <li><a href="contact.html">Help Center</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="copyright-wrap">
-            <div class="row justify-content-between align-items-center">
-                <div class="col-lg-6">
-                    <p class="copyright-text">Copyright <i class="fal fa-copyright"></i> Kecamatan <a href="#">Wuluhan</a>. 2024.</p>
-                </div>
-                <div class="col-lg-6 text-center text-md-end">
-                    <ul class="footer-menu">
-                        <li><a href="service.html">service</a></li>
-                        <li><a href="about.html">about</a></li>
-                        <li><a href="contact.html">Articles</a></li>
-                        <li><a href="#contact-sec">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-
-    <!--********************************
-			Code End  Here 
-	******************************** -->
+@include('home.layouts.partials.footer')
 
     <!-- Scroll To Top -->
     <div class="scroll-top">
@@ -361,39 +84,7 @@
     <!--==============================
     All Js File
 ============================== -->
-    <!-- Jquery -->
-    <script src="{{asset('js/vendor/jquery-3.7.1.min.js')}}"></script>
-    <!-- Swiper Slider -->
-    <script src="{{asset('js/swiper-bundle.min.js')}}"></script>
-    <!-- Bootstrap -->
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <!-- Magnific Popup -->
-    <script src="{{asset('js/jquery.magnific-popup.min.js')}}"></script>
-    <!-- Counter Up -->
-    <script src="{{asset('js/jquery.counterup.min.js')}}"></script>
-    <!-- Circle Progress -->
-    <script src="{{asset('js/circle-progress.js')}}"></script>
-    <!-- Range Slider -->
-    <script src="{{asset('js/jquery-ui.min.js')}}"></script>
-    <!-- Isotope Filter -->
-    <script src="{{asset('js/imagesloaded.pkgd.min.js')}}"></script>
-    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
-    <!-- Tilt JS -->
-    <script src="{{asset('js/tilt.jquery.min.js')}}"></script>
-
-    <!-- gsap -->
-    <!-- ScrollTrigger -->
-    <script src="{{asset('js/ScrollTrigger.min.js')}}"></script>
-    <script src="{{asset('js/smooth-scroll.js')}}"></script>
-
-    <!-- Particles JS -->
-    <script src="{{asset('js/particles.min.js')}}"></script>
-
-    <script src="{{asset('js/particles-config.js')}}"></script>
-    <!-- Main Js File -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-    <script src="{{asset('js/main.js')}}"></script>
+@include('home.layouts.partials.js')
 
 </body>
-
 </html>
