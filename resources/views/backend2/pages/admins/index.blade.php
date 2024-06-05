@@ -28,11 +28,14 @@
                     <table id="dataTable" class="text-center table-striped">
                         <thead class="bg-light text-capitalize">
                             <tr>
-                                <th width="5%">Sl</th>
-                                <th width="10%">Name</th>
-                                <th width="10%">Email</th>
-                                <th width="40%">Roles</th>
-                                <th width="15%">Action</th>
+                                <th>No</th>
+                                <th>Name</th>
+                                <th>posisi</th>
+                                <th>deskirpsi</th>
+                                <th>telepon</th>
+                                <th>email</th>
+                                <th>experience</th>
+                                <th>action</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,7 +43,6 @@
                             <tr>
                                 <td>{{ $loop->index+1 }}</td>
                                 <td>{{ $admin->name }}</td>
-                                <td>{{ $admin->email }}</td>
                                 <td>
                                     @foreach ($admin->roles as $role)
                                     <span class="badge badge-info mr-1">
@@ -48,6 +50,10 @@
                                     </span>
                                     @endforeach
                                 </td>
+                                <td>{{ $admin->description }}</td>
+                                <td>{{ $admin->telepon }}</td>
+                                <td>{{ $admin->email }}</td>
+                                <td>{{ $admin->experience }}</td>
                                 <td>
                                     @if (Auth::guard('admin')->user()->can('admin.edit'))
                                     <a class="btn btn-warning text-white" href="{{ route('admin.admins.edit', $admin->id) }}">Edit</a>

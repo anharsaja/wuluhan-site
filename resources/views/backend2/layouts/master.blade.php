@@ -140,7 +140,7 @@
 
                     @can('role.view')
                         <li class="nav-item"><a href="{{ route('admin.roles.index') }}" class="nav-link"><i
-                                    class="fa fa-adjust"></i>Manage Roles</a></li>
+                                    class="fa fa-adjust"></i>Manage Jabatan</a></li>
                     @endcan
 
                     @can('admin.view')

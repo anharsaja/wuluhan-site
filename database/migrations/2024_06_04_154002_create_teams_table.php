@@ -19,15 +19,10 @@ return new class extends Migration
             $table->string('email');
             $table->string('telepon');
             $table->string('biografi');
-            $table->string('skill');
-            $table->string('aktivitas');
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('teams');

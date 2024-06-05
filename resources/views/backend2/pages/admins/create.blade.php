@@ -25,12 +25,24 @@
                     @csrf
                     <div class="form-row">
                         <div class="form-group col-md-6 col-sm-12">
-                            <label for="name">Admin Name</label>
+                            <label for="name">Nama Panggilan</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
                         </div>
                         <div class="form-group col-md-6 col-sm-12">
                             <label for="email">Admin Email</label>
                             <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="telepon">No. Telepon</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Telepon">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="experience">Pengalaman</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Pengalaman">
                         </div>
                     </div>
 
@@ -53,10 +65,6 @@
                                     <option value="{{ $role->name }}">{{ $role->name }}</option>
                                 @endforeach
                             </select>
-                        </div>
-                        <div class="form-group col-md-6 col-sm-6">
-                            <label for="username">Admin Username</label>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" required>
                         </div>
                     </div>
                     

@@ -50,7 +50,7 @@
                             <a href="mailto:info@webteck.com" class="contact-feature_link">info@webteck.com</a>
                         </div>
                     </div>
-                    <div class="contact-feature">
+                    {{-- <div class="contact-feature">
                         <div class="icon-btn">
                             <i class="fa-solid fa-calendar-days"></i>
                         </div>
@@ -58,12 +58,12 @@
                             <p class="contact-feature_label">Fax</p>
                             <span class="contact-feature_link">+265478962</span>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
-                <a href="about.html" class="th-btn">GET IN TOUCH<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                {{-- <a href="about.html" class="th-btn">GET IN TOUCH<i class="fa-regular fa-arrow-right ms-2"></i></a> --}}
             </div>
         </div>
-        <div class="row mt-5 pt-10">
+        {{-- <div class="row mt-5 pt-10">
             <div class="col-xl-6 mb-xl-0">
                 <h4 class="border-title">Personal Biography</h4>
                 <p class="mb-40">Conveniently innovate professional initiatives whereas virtual information. Compellingly network resource maximizing materials without premier benefits. Phosfluorescently synthesize wireless solutions with robust e-business. Monotonectally implement functionalized ideas with technically sound process improvements. Dramatically disseminate vertical systems after.</p>
@@ -138,7 +138,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
     
