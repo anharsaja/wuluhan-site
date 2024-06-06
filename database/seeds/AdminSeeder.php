@@ -19,11 +19,10 @@ class AdminSeeder extends Seeder
         if (is_null($admin)) {
             $admin           = new Admin();
             $admin->name     = "Super Admin";
+            $admin->nip      = '321231234421';
             $admin->email    = "superadmin@example.com";
             $admin->username = "superadmin";
-            $admin->description = Str::random(30);
-            $admin->telepon = "084084084084";
-            $admin->experience = "5 Tahun";
+            $admin->description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, obcaecati inventore. Laudantium ratione adipisci voluptate quo quod nisi ex tempore error quidem, placeat excepturi laboriosam iste quae culpa cum eaque!';
             $admin->foto = "/img/model_sementara/model1.jpeg";
             $admin->password = Hash::make('123123');
             $admin->save();

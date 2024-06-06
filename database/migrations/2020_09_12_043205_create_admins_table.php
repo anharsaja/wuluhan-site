@@ -17,11 +17,10 @@ class CreateAdminsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('nip')->unique();
             $table->string('username')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('description')->nullable();
-            $table->string('telepon')->unique();
-            $table->string('experience');
             $table->string('password');
             $table->string('foto');
             $table->rememberToken();
@@ -29,11 +28,6 @@ class CreateAdminsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('admins');
