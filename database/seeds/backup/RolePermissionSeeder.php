@@ -18,6 +18,8 @@ class RolePermissionSeeder extends Seeder
                     'admin.create',
                     'admin.view',
                     'admin.edit',
+                    'admin.delete',
+                    'admin.approve',
                 ]
             ],
             [
@@ -27,6 +29,8 @@ class RolePermissionSeeder extends Seeder
                     'role.create',
                     'role.view',
                     'role.edit',
+                    'role.delete',
+                    'role.approve',
                 ]
             ],
             [
@@ -37,50 +41,79 @@ class RolePermissionSeeder extends Seeder
                 ]
             ],
             [
-                'group_name' => 'sekretariat',
+                'group_name' => 'sotk',
                 'permissions' => [
-                    // sekretariat Permissions
-                    'sekretariat.create',
-                    'sekretariat.view',
-                    'sekretariat.edit',
+                    // sotk Permissions
+                    'sotk.create',
+                    'sotk.view',
+                    'sotk.edit',
+                    'sotk.delete',
+                    'sotk.approve',
                 ]
             ],
             [
-                'group_name' => 'pemerintahan',
+                'group_name' => 'osjj',
                 'permissions' => [
-                    // pemerintahan Permissions
-                    'pemerintahan.create',
-                    'pemerintahan.view',
-                    'pemerintahan.edit',
+                    // osjj Permissions
+                    'osjj.create',
+                    'osjj.view',
+                    'osjj.edit',
+                    'osjj.delete',
+                    'osjj.update',
                 ]
             ],
             [
-                'group_name' => 'pelum',
+                'group_name' => 'pkk',
                 'permissions' => [
-                    // pelum Permissions
-                    'pelum.create',
-                    'pelum.view',
-                    'pelum.edit',
+                    // pkk Permissions
+                    'pkk.create',
+                    'pkk.view',
+                    'pkk.edit',
+                    'pkk.delete',
+                    'pkk.update',
                 ]
             ],
             [
-                'group_name' => 'pmks',
+                'group_name' => 'ktb',
                 'permissions' => [
-                    // pmks Permissions
-                    'pmks.create',
-                    'pmks.view',
-                    'pmks.edit',
+                    // ktb Permissions
+                    'ktb.create',
+                    'ktb.view',
+                    'ktb.edit',
+                    'ktb.delete',
+                    'ktb.update',
                 ]
             ],
             [
-                'group_name' => 'trantib',
+                'group_name' => 'wisata',
                 'permissions' => [
-                    // trantib Permissions
-                    'trantib.create',
-                    'trantib.view',
-                    'trantib.edit',
+                    // wisata Permissions
+                    'wisata.view',
+                    'wisata.edit',
+                    'wisata.delete',
+                    'wisata.update',
                 ]
-            ]
+            ],
+            [
+                'group_name' => 'budaya',
+                'permissions' => [
+                    // budaya Permissions
+                    'budaya.view',
+                    'budaya.edit',
+                    'budaya.delete',
+                    'budaya.update',
+                ]
+            ],
+            [
+                'group_name' => 'umkm',
+                'permissions' => [
+                    // umkm Permissions
+                    'umkm.view',
+                    'umkm.edit',
+                    'umkm.delete',
+                    'umkm.update',
+                ]
+            ],
         ];
 
         // Do same for the admin guard for tutorial purposes.

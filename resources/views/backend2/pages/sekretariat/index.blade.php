@@ -25,8 +25,8 @@
                             <i class="fa fa-chevron-right"></i>
                             <i class="fa fa-chevron-left"></i>
                         </div><!-- .action-panel-toggle -->
-                        @if(Route::is('admin.sotk.index'))
-                        @can('sotk.create')
+                        @if(Route::is('admin.umpeg.index'))
+                        @can('sekretariat.view')
                             <div class="m-b-lg">
                                 <a href="#" data-toggle="modal" data-target="#contactModal"
                                     class="btn btn-primary btn-block">New Contact</a>
@@ -36,7 +36,7 @@
                         <!-- contact category list -->
                         <div id="categories-list" class="app-actions-list scrollable-container">
                             <div class="list-group">
-                                <a href="{{ route('admin.sotk.index') }}" class="list-group-item">
+                                <a href="{{ route('admin.umpeg.index') }}" class="list-group-item">
                                     <i class="fa fa-inbox text-color m-r-xs"></i>
                                     <span>Semua Surat</span>
                                 </a>
@@ -48,11 +48,11 @@
                                 @foreach ($categories as $category)
                                     <div class="list-group-item">
                                         <div class="item-data" style="width: 100%;"
-                                            onclick="window.location.href='{{ route('admin.sotk.category', $category->id) }}'">
+                                            onclick="window.location.href='{{ route('admin.umpeg.category', $category->id) }}'">
                                             <span class="label-text">{{ $category->name }}</span>
                                             {{-- <span class="pull-right hide-on-hover">7</span> --}}
                                         </div>
-                                        @can('sotk.create')
+                                        @can('sekretariat.view')
                                             <div class="item-actions">
                                                 <i class="item-action fa fa-edit" data-toggle="modal"
                                                     data-target="#editcategory{{ $category->id }}"></i>
@@ -74,7 +74,7 @@
                                                     <h4 class="modal-title text-center" style="width: 100%">Edit Category
                                                     </h4>
                                                 </div>
-                                                <form action="{{ route('admin.sotk.category.update', $category->id) }}"
+                                                <form action="{{ route('admin.umpeg.category.update', $category->id) }}"
                                                     id="newCategoryForm" method="post">
                                                     @csrf
                                                     <div class="modal-body">
@@ -108,14 +108,14 @@
                                                     <h5>hapus categori {{ $category->name }}</h5>
                                                 </div><!-- .modal-body -->
                                                 <div class="modal-footer">
-                                                    <a href="{{ route('admin.sotk.category.delete', $category->id) }}""
+                                                    <a href="{{ route('admin.umpeg.category.delete', $category->id) }}""
                                                         class="btn btn-danger">Hapus</a>
                                                 </div><!-- .modal-footer -->
                                             </div><!-- /.modal-content -->
                                         </div><!-- /.modal-dialog -->
                                     </div><!-- /.modal -->
                                 @endforeach
-                                @can('sotk.create')
+                                @can('sekretariat.view')
                                     <a href="#" class="list-group-item text-color" data-toggle="modal"
                                         data-target="#categoryModal"><i class="fa fa-plus m-r-sm"></i> Add NewCategory
                                     </a>
@@ -132,9 +132,9 @@
                         <div class="col-md-12">
                             <div class="mail-toolbar m-b-lg">
                                 <div class="btn-group" role="group">
-                                    <a href="{{route('admin.sotk.index')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> All</a>
-                                    <a href="{{route('admin.sotk.public')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> Public</a>
-                                    <a href="{{ route('admin.sotk.private') }}" class="btn btn-default"><i class="fa fa-exclamation-circle"></i> Private</a>
+                                    <a href="{{ route('admin.umpeg.index')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> All</a>
+                                    <a href="{{ route('admin.umpeg.public')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> Public</a>
+                                    <a href="{{ route('admin.umpeg.private') }}" class="btn btn-default"><i class="fa fa-exclamation-circle"></i> Private</a>
                                 </div>
                             </div>
                         </div><!-- END column -->
@@ -162,7 +162,7 @@
                                         </div>
                                     </div>
                                     <div class="contact-item-actions">
-                                        @can('sotk.create')
+                                        @can('sekretariat.view')
                                             <a href="javascript:void(0)" class="btn btn-success" data-toggle="modal"
                                                 data-target="#editsuratsotk{{ $suratsotk->id }}"><i
                                                     class="fa fa-edit"></i></a>
@@ -186,7 +186,7 @@
                                                 aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title text-center" style="width: 100%">Edit Surat</h4>
                                         </div>
-                                        <form action="{{ route('admin.sotk.update', $suratsotk->id) }}"
+                                        <form action="{{ route('admin.umpeg.update', $suratsotk->id) }}"
                                             id="newCategoryForm" method="post" enctype="multipart/form-data">
                                             @method('put')
                                             @csrf
@@ -245,7 +245,7 @@
                                             <h5>hapus surat {{ $suratsotk->name }}</h5>
                                         </div><!-- .modal-body -->
                                         <form class="modal-footer"
-                                            action="{{ route('admin.sotk.destroy', $suratsotk->id) }}" method="post">
+                                            action="{{ route('admin.umpeg.destroy', $suratsotk->id) }}" method="post">
                                             @method('delete')
                                             @csrf
                                             <button class="btn btn-danger">Hapus</button>
@@ -270,7 +270,7 @@
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Tambah Surat</h4>
                 </div>
-                <form action="{{ route('admin.sotk.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.umpeg.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
@@ -317,7 +317,7 @@
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title text-center" style="width: 100%;">Create Category</h4>
                 </div>
-                <form action="{{ route('admin.sotk.category.store') }}" id="newCategoryForm" method="post">
+                <form action="{{ route('admin.umpeg.category.store') }}" id="newCategoryForm" method="post">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group m-0">

@@ -7,18 +7,13 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $admin = Admin::where('username', 'superadmin')->first();
 
         if (is_null($admin)) {
             $admin           = new Admin();
-            $admin->name     = "Super Admin";
+            $admin->name     = "Pak Camat";
             $admin->nip      = '321231234421';
             $admin->email    = "superadmin@example.com";
             $admin->username = "superadmin";

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\sotk_controller;
+namespace App\Http\Controllers\Backend\sekretariat_controller\umpeg;
 
 use App\Models\Sotk\SuratSotk;
 use App\Models\Sotk\CategorySotk;
@@ -8,27 +8,27 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 
-class SotkController extends Controller
+class UmpegController extends Controller
 {
     public function index()
     {
         $category = CategorySotk::get();
         $suratsotk = SuratSotk::get();
-        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK']);
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'UMPEG']);
     }
 
     public function indexPublic()
     {
         $category = CategorySotk::get();
         $suratsotk = SuratSotk::where('status', 'public')->get();
-        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat Public']);
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'UMPEG - Public']);
     }
 
         public function indexPrivate()
     {
         $category = CategorySotk::get();
         $suratsotk = SuratSotk::where('status', 'private')->get();
-        return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat Private']);
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'UMPEG - Private']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class SotkController extends Controller
             $categoryName = CategorySotk::findOrFail($id)->name;
             $category = CategorySotk::get();
             $suratsotk = SuratSotk::where('category_id', $id)->get();
-            return view('backend2.pages.sotk.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
+            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
         } catch (\Throwable $th) {
             return redirect()->route('admin.sotk.index');
         }

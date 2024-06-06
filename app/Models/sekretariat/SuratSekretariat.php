@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\Sotk;
+namespace App\Models\Sekretariat;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SuratSotk extends Model
+class SuratSekretiat extends Model
 {
     use HasFactory;
     

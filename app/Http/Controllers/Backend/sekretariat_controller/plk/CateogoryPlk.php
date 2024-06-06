@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Backend\sotk_controller;
+namespace App\Http\Controllers\Backend\sekretariat_controller;
 
 use App\Http\Controllers\Controller;
 use App\Models\Sotk\CategorySotk;
 use Illuminate\Http\Request;
 
-class CategorySotkController extends Controller
+class CategorySekretariat extends Controller
 {
     public function store(Request $request)
     {
