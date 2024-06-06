@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Backend\sekretariat_controller;
 
-use App\Models\Sotk\SuratSotk;
-use App\Models\Sotk\CategorySotk;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;

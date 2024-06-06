@@ -25,14 +25,14 @@
                             <i class="fa fa-chevron-right"></i>
                             <i class="fa fa-chevron-left"></i>
                         </div><!-- .action-panel-toggle -->
-                        @if(Route::is('admin.umpeg.index'))
+                        {{-- @if(Route::is('admin.umpeg.index') || Route::is('admin.umpeg.public') || Route::is('admin.umpeg.private')) --}}
                         @can('sekretariat.view')
                             <div class="m-b-lg">
                                 <a href="#" data-toggle="modal" data-target="#contactModal"
                                     class="btn btn-primary btn-block">New Contact</a>
                             </div>
                         @endcan
-                        @endif 
+                        {{-- @endif  --}}
                         <!-- contact category list -->
                         <div id="categories-list" class="app-actions-list scrollable-container">
                             <div class="list-group">
@@ -141,10 +141,9 @@
                     </div><!-- .row -->
 
 
-
                     {{-- Content Surat --}}
                     <div id="contacts-list" class="row">
-                        @foreach ($suratsotks as $suratsotk)
+                        @foreach ($surats as $surat)
                             <div class="col-sm-6">
                                 <div class="card user-card contact-item p-md">
                                     <div class="media">
@@ -155,29 +154,29 @@
                                         </div>
                                         <div class="media-body">
                                             <div class="d-flex align-items-center">
-                                                <h5 class="media-heading title-color mr-2">{{ $suratsotk->name }}</h5>
-                                                <span class="badge @if($suratsotk->status == 'public') badge-success @else badge-danger @endif">{{ $suratsotk->status }}</span>
+                                                <h5 class="media-heading title-color mr-2">{{ $surat->name }}</h5>
+                                                <span class="badge @if($surat->status == 'public') badge-success @else badge-danger @endif">{{ $surat->status }}</span>
                                             </div>
-                                            <small class="media-meta">{{ $suratsotk->description }}</small>
+                                            <small class="media-meta">{{ $surat->description }}</small>
                                         </div>
                                     </div>
                                     <div class="contact-item-actions">
                                         @can('sekretariat.view')
                                             <a href="javascript:void(0)" class="btn btn-success" data-toggle="modal"
-                                                data-target="#editsuratsotk{{ $suratsotk->id }}"><i
+                                                data-target="#editsuratsotk{{ $surat->id }}"><i
                                                     class="fa fa-edit"></i></a>
                                             <a href="javascript:void(0)" class="btn btn-danger" data-toggle="modal"
-                                                data-target="#deletesuratsotk{{ $suratsotk->id }}"><i
+                                                data-target="#deletesuratsotk{{ $surat->id }}"><i
                                                     class="fa fa-trash"></i></a>
                                         @endcan
-                                        <a href="{{ asset($suratsotk->path_file) }}" target="blank"
+                                        <a href="{{ asset($surat->path_file) }}" target="blank"
                                             class="btn btn-warning"><i class="fa fa-eye"></i></a>
                                     </div><!-- .contact-item-actions -->
                                 </div><!-- card user-card -->
                             </div><!-- END column -->
 
                             <!-- edit surat  Modal -->
-                            <div id="editsuratsotk{{ $suratsotk->id }}" class="modal fade" tabindex="-1"
+                            <div id="editsuratsotk{{ $surat->id }}" class="modal fade" tabindex="-1"
                                 role="dialog">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -186,7 +185,7 @@
                                                 aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title text-center" style="width: 100%">Edit Surat</h4>
                                         </div>
-                                        <form action="{{ route('admin.umpeg.update', $suratsotk->id) }}"
+                                        <form action="{{ route('admin.umpeg.update', $surat->id) }}"
                                             id="newCategoryForm" method="post" enctype="multipart/form-data">
                                             @method('put')
                                             @csrf
@@ -194,32 +193,32 @@
                                                 <div class="form-group">
                                                     <input name="name" type="text" id="contactName"
                                                         class="form-control" placeholder="Name"
-                                                        value="{{ $suratsotk->name }}">
+                                                        value="{{ $surat->name }}">
                                                 </div>
                                                 <div class="form-group">
-                                                    <textarea name="description" class="form-control" placeholder="Deskripsi Surat">{{ $suratsotk->description }}</textarea>
+                                                    <textarea name="description" class="form-control" placeholder="Deskripsi Surat">{{ $surat->description }}</textarea>
                                                 </div>
                                                 <div class="form-group">
                                                     <select name="category" class="form-control" required>
                                                         <option value="" selected disabled>Pilih Kategory</option>
                                                         @foreach ($categories as $category)
                                                             <option value="{{ $category->id }}"
-                                                                @selected($category->id == $suratsotk->category_id)>{{ $category->name }}</option>
+                                                                @selected($category->id == $surat->category_id)>{{ $category->name }}</option>
                                                         @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <select name="status" class="form-control" required>
                                                         <option value="" selected disabled>Pilih Jenis Surat</option>
-                                                        <option value="private" @selected($suratsotk->status == 'private')>Private</option>
-                                                        <option value="public" @selected($suratsotk->status == 'public')>Public</option>
+                                                        <option value="private" @selected($surat->status == 'private')>Private</option>
+                                                        <option value="public" @selected($surat->status == 'public')>Public</option>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <input name="file" type="file" class="form-control"
                                                         placeholder="File"><br>
                                                 </div>
-                                                <a href="{{ asset($suratsotk->path_file) }}" target="blank" class="btn btn-warning" style="width: 30%"><i class="fa fa-eye"></i></a>
+                                                <a href="{{ asset($surat->path_file) }}" target="blank" class="btn btn-warning" style="width: 30%"><i class="fa fa-eye"></i></a>
                                             </div><!-- .modal-body -->
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger"
@@ -232,7 +231,7 @@
                             </div><!-- /.modal -->
 
                             {{-- delete surat modal --}}
-                            <div id="deletesuratsotk{{ $suratsotk->id }}" class="modal fade" tabindex="-1"
+                            <div id="deletesuratsotk{{ $surat->id }}" class="modal fade" tabindex="-1"
                                 role="dialog">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -242,10 +241,10 @@
                                             <h4 class="modal-title text-center" style="width: 100%">Delete Surat</h4>
                                         </div>
                                         <div class="modal-body">
-                                            <h5>hapus surat {{ $suratsotk->name }}</h5>
+                                            <h5>hapus surat {{ $surat->name }}</h5>
                                         </div><!-- .modal-body -->
                                         <form class="modal-footer"
-                                            action="{{ route('admin.umpeg.destroy', $suratsotk->id) }}" method="post">
+                                            action="{{ route('admin.umpeg.destroy', $surat->id) }}" method="post">
                                             @method('delete')
                                             @csrf
                                             <button class="btn btn-danger">Hapus</button>

@@ -7,7 +7,9 @@ use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Backend\AdminsController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Auth\LoginController;
-// Sekretariat
+// Sekretariat - umpeg
+use App\Http\Controllers\Backend\sekretariat_controller\umpeg\CategoryUmpegController;
+use App\Http\Controllers\Backend\sekretariat_controller\umpeg\UmpegController;
 
 
 use App\Http\Controllers\Backend\umkm_controller\UmkmController;
@@ -20,9 +22,6 @@ use App\Http\Controllers\Backend\osjj_controller\CategoryOsjjController;
 use App\Http\Controllers\Backend\osjj_controller\OsjjController;
 use App\Http\Controllers\Backend\pkk_controller\CategoryPkkController;
 use App\Http\Controllers\Backend\pkk_controller\PkkController;
-use App\Http\Controllers\Backend\sekretariat_controller\umpeg\CategoryUmpeg;
-use App\Http\Controllers\Backend\sekretariat_controller\umpeg\UmpegController;
-use App\Http\Controllers\Backend\team_controller\TeamController;
 use App\Http\Controllers\Backend\wisata_controller\CategoryWisataController;
 use App\Http\Controllers\Backend\wisata_controller\WisataController;
 use App\Http\Controllers\LandingPage\HomeController;
@@ -49,15 +48,17 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('users', UsersController::class, ['names' => 'admin.users']);
         Route::resource('admins', AdminsController::class, ['names' => 'admin.admins']);
 
+        
         // SEKRETARIAT - UMPEG
         Route::resource('umpeg', UmpegController::class, ['names' => 'admin.umpeg']);
         Route::get('/umpeg/category/{id}', [UmpegController::class, 'category'])->name('admin.umpeg.category');
         Route::get('/umpeg/surat/public', [UmpegController::class, 'indexPublic'])->name('admin.umpeg.public');
         Route::get('/umpeg/surat/private', [UmpegController::class, 'indexPrivate'])->name('admin.umpeg.private');
-        Route::controller(CategoryUmpeg::class)->group(function () {
+        Route::controller(CategoryUmpegController::class)->group(function () {
             Route::post('/umpeg/category/store', 'store')->name('admin.umpeg.category.store');
             Route::post('/umpeg/category/update/{id}', 'update')->name('admin.umpeg.category.update');
             Route::get('/umpeg/category/delete/{id}', 'delete')->name('admin.umpeg.category.delete');
+        });
         // UMKM
         Route::resource('umkm', UmkmController::class, ['names' => 'admin.umkm']);
         Route::get('/umkm/category/{id}', [UmkmController::class, 'category'])->name('admin.umkm.category');
@@ -65,7 +66,6 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/umkm/category/store', 'store')->name('admin.umkm.category.store');
             Route::post('/umkm/category/update/{id}', 'update')->name('admin.umkm.category.update');
             Route::get('/umkm/category/delete/{id}', 'delete')->name('admin.umkm.category.delete');
-        });
         });
         // OSJJ
         Route::resource('osjj', OsjjController::class, ['names' => 'admin.osjj']);

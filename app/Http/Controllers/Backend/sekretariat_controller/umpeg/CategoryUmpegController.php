@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Backend\sekretariat_controller\umpeg;
 
 use App\Http\Controllers\Controller;
-use App\Models\Sotk\CategorySotk;
+use App\Models\Sekretariat\Umpeg\CategoryUmpeg;
 use Illuminate\Http\Request;
 
-class CategoryUmpeg extends Controller
+class CategoryUmpegController extends Controller
 {
     public function store(Request $request)
     {
-        CategorySotk::create([
+        CategoryUmpeg::create([
             'name' => $request->name
         ]);
         return back();
@@ -18,7 +18,7 @@ class CategoryUmpeg extends Controller
 
     public function update(Request $request, $id)
     {
-        $category = CategorySotk::find($id);
+        $category = CategoryUmpeg::find($id);
         $category->name = $request->name;
         $category->save();
         return back();
@@ -26,7 +26,7 @@ class CategoryUmpeg extends Controller
 
     public function delete($id)
     {
-        $category = CategorySotk::find($id);
+        $category = CategoryUmpeg::find($id);
         $category->delete();
         return back();
     }

@@ -6,12 +6,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('surat_sotks', function (Blueprint $table) {
+        Schema::create('surat_umpegs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('description');
@@ -22,11 +19,9 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
-        Schema::dropIfExists('surat_sotks');
+        Schema::dropIfExists('surat_umpegs');
     }
 };
