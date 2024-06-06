@@ -1,43 +1,45 @@
 <?php
 
-namespace App\Http\Controllers\Backend\sekretariat_controller;
+namespace App\Http\Controllers\Backend\sekretariat_controller\plk;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Sekretariat\Plk\CategoryPlk;
+use App\Models\Sekretariat\Plk\SuratPlk;
 use Illuminate\Support\Facades\File;
 
-class SekretariatController extends Controller
+class PlkController extends Controller
 {
     public function index()
     {
-        $category = CategorySotk::get();
-        $suratsotk = SuratSotk::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK']);
+        $category = CategoryPlk::get();
+        $surat = SuratPlk::get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan', 'name' => 'plk']);
     }
 
     public function indexPublic()
     {
-        $category = CategorySotk::get();
-        $suratsotk = SuratSotk::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat Public']);
+        $category = CategoryPlk::get();
+        $surat = SuratPlk::where('status', 'public')->get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan - Public', 'name' => 'plk']);
     }
 
         public function indexPrivate()
     {
-        $category = CategorySotk::get();
-        $suratsotk = SuratSotk::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat Private']);
+        $category = CategoryPlk::get();
+        $surat = SuratPlk::where('status', 'private')->get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan - Private', 'name' => 'plk']);
     }
 
     public function category($id)
     {
         try {
-            $categoryName = CategorySotk::findOrFail($id)->name;
-            $category = CategorySotk::get();
-            $suratsotk = SuratSotk::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'suratsotks' => $suratsotk, 'title' => 'Surat SOTK', 'categoryName' => $categoryName]);
+            $categoryName = CategoryPlk::findOrFail($id)->name;
+            $category = CategoryPlk::get();
+            $surat = SuratPlk::where('category_id', $id)->get();
+            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan', 'categoryName' => $categoryName, 'name' => 'plk']);
         } catch (\Throwable $th) {
-            return redirect()->route('admin.sotk.index');
+            return redirect()->route('admin.umpeg.index');
         }
     }
 
@@ -58,14 +60,14 @@ class SekretariatController extends Controller
 
             if ($check) {
                 $filename = time() . '.' . $extension;
-                $files->move(public_path() . '/kumpulan_surat/file_sotk', $filename);
+                $files->move(public_path() . '/kumpulan_surat/file_perencanaan_keuangan', $filename);
 
-                SuratSotk::create([
+                SuratPlk::create([
                     'name' => $request->name,
                     'description' => $request->description,
                     'category_id' => $request->category_id,
                     'status' => $request->status,
-                    'path_file' => '/kumpulan_surat/file_sotk/' . $filename
+                    'path_file' => '/kumpulan_surat/file_perencanaan_keuangan/' . $filename
                 ]);
                 return back();
             } else {
@@ -89,11 +91,11 @@ class SekretariatController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $suratsotk = SuratSotk::find($id);
-        $suratsotk->name = $request->name;
-        $suratsotk->description = $request->description;
-        $suratsotk->category_id = $request->category;
-        $suratsotk->status = $request->status;
+        $surat = SuratPlk::find($id);
+        $surat->name = $request->name;
+        $surat->description = $request->description;
+        $surat->category_id = $request->category;
+        $surat->status = $request->status;
 
         if ($request->hasFile('file')) {
             $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
@@ -104,30 +106,30 @@ class SekretariatController extends Controller
 
             if ($check) {
                 $filename = time() . '.' . $extension;
-                $files->move(public_path() . '/kumpulan_surat/file_sotk', $filename);
+                $files->move(public_path() . '/kumpulan_surat/file_perencanaan_keuangan', $filename);
 
-                $filesLama = public_path($suratsotk->path_file);
+                $filesLama = public_path($surat->path_file);
                 if (File::exists($filesLama)) {
                     File::delete($filesLama);
                 };
 
-                $suratsotk->path_file = '/kumpulan_surat/file_sotk/' . $filename;
+                $surat->path_file = '/kumpulan_surat/file_perencanaan_keuangan/' . $filename;
             }
         };
 
-        $suratsotk->save();
+        $surat->save();
         return back();
     }
 
 
     public function destroy(string $id)
     {
-        $suratsotk = SuratSotk::find($id);
-        $filesLama = public_path($suratsotk->path_file);
+        $surat = SuratPlk::find($id);
+        $filesLama = public_path($surat->path_file);
         if (File::exists($filesLama)) {
             File::delete($filesLama);
         };
-        $suratsotk->delete();
+        $surat->delete();
         return back();
     }
 }

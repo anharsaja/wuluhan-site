@@ -132,9 +132,9 @@
                         <div class="col-md-12">
                             <div class="mail-toolbar m-b-lg">
                                 <div class="btn-group" role="group">
-                                    <a href="{{ route('admin.umpeg.index')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> All</a>
-                                    <a href="{{ route('admin.umpeg.public')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> Public</a>
-                                    <a href="{{ route('admin.umpeg.private') }}" class="btn btn-default"><i class="fa fa-exclamation-circle"></i> Private</a>
+                                    <a href="{{ route('admin.'.$name.'.index')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> All</a>
+                                    <a href="{{ route('admin.'.$name.'.public')}}" class="btn btn-default mr-3"><i class="fa fa-exclamation-circle"></i> Public</a>
+                                    <a href="{{ route('admin.'.$name.'.private') }}" class="btn btn-default"><i class="fa fa-exclamation-circle"></i> Private</a>
                                 </div>
                             </div>
                         </div><!-- END column -->
@@ -269,7 +269,7 @@
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title">Tambah Surat</h4>
                 </div>
-                <form action="{{ route('admin.umpeg.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.'.$name.'.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group">
@@ -316,7 +316,7 @@
                             aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title text-center" style="width: 100%;">Create Category</h4>
                 </div>
-                <form action="{{ route('admin.umpeg.category.store') }}" id="newCategoryForm" method="post">
+                <form action="{{ route('admin.'.$name.'.category.store') }}" id="newCategoryForm" method="post">
                     @csrf
                     <div class="modal-body">
                         <div class="form-group m-0">

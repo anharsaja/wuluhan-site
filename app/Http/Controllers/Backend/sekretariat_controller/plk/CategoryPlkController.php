@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Backend\sekretariat_controller;
+namespace App\Http\Controllers\Backend\sekretariat_controller\plk;
 
 use App\Http\Controllers\Controller;
-use App\Models\Sotk\CategorySotk;
+use App\Models\Sekretariat\Plk\CategoryPlk;
 use Illuminate\Http\Request;
 
-class CategorySekretariat extends Controller
+class CategoryPlkController extends Controller
 {
     public function store(Request $request)
     {
-        CategorySotk::create([
+        CategoryPlk::create([
             'name' => $request->name
         ]);
         return back();
@@ -18,7 +18,7 @@ class CategorySekretariat extends Controller
 
     public function update(Request $request, $id)
     {
-        $category = CategorySotk::find($id);
+        $category = CategoryPlk::find($id);
         $category->name = $request->name;
         $category->save();
         return back();
@@ -26,7 +26,7 @@ class CategorySekretariat extends Controller
 
     public function delete($id)
     {
-        $category = CategorySotk::find($id);
+        $category = CategoryPlk::find($id);
         $category->delete();
         return back();
     }

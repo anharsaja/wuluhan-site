@@ -5,12 +5,12 @@
 
 {{-- Sekretariat --}}
 @can('sekretariat.view')
-    <li class="nav-item"><a href="#sekretariat" class="nav-link collapsed {{ Route::is('admin.sotk.*') ? 'active' : '' }}" data-toggle="collapse"><i
+    <li class="nav-item"><a href="#sekretariat" class="nav-link collapsed {{ Route::is('admin.umpeg.*') || Route::is('admin.plk.*') ? 'active' : '' }}" data-toggle="collapse"><i
         class="fa fa-fire"></i>Sekretariat<span class="sub-ico">
             <i class="fa fa-angle-down"></i></span></a></li>
-    <li class="sub collapse {{ Route::is('admin.sotk.*') ? 'show' : '' }}" id="sekretariat">
-        <a href="{{ route('admin.umpeg.index') }}" class="nav-link {{ Route::is('admin.umpeg.index') ? 'active' : '' }}" data-parent="#umpeg">UMPEG</a>
-        <a href="{{ route('admin.umpeg.index') }}" class="nav-link {{ Route::is('admin.umpeg.index') ? 'active' : '' }}" data-parent="#umpeg">Perencanaan Keuangan</a>
+    <li class="sub collapse {{ Route::is('admin.umpeg.*') || Route::is('admin.plk.*') ? 'show' : '' }}" id="sekretariat">
+        <a href="{{ route('admin.umpeg.index') }}" class="nav-link {{ Route::is('admin.umpeg.index') ? 'active' : '' }}" data-parent="#sekretariat">UMPEG</a>
+        <a href="{{ route('admin.plk.index') }}" class="nav-link {{ Route::is('admin.plk.index') ? 'active' : '' }}" data-parent="#sekretariat">Perencanaan Keuangan</a>
     </li>
 @endcan
 

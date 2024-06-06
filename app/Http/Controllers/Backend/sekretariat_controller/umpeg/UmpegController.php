@@ -14,21 +14,21 @@ class UmpegController extends Controller
     {
         $category = CategoryUmpeg::get();
         $surat = SuratUmpeg::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'UMPEG']);
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'UMPEG', 'name' => 'umpeg']);
     }
 
     public function indexPublic()
     {
         $category = CategoryUmpeg::get();
         $surat = SuratUmpeg::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'UMPEG - Public']);
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'UMPEG - Public', 'name' => 'umpeg']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryUmpeg::get();
         $surat = SuratUmpeg::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'UMPEG - Private']);
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'UMPEG - Private', 'name' => 'umpeg']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class UmpegController extends Controller
             $categoryName = CategoryUmpeg::findOrFail($id)->name;
             $category = CategoryUmpeg::get();
             $surat = SuratUmpeg::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'UMPEG', 'categoryName' => $categoryName]);
+            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'UMPEG', 'categoryName' => $categoryName, 'name' => 'umpeg']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.umpeg.index');
         }

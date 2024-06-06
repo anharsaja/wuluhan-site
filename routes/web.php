@@ -7,11 +7,19 @@ use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Backend\AdminsController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\Auth\LoginController;
-// Sekretariat - umpeg
+
+// Sekretariat -- umpeg
 use App\Http\Controllers\Backend\sekretariat_controller\umpeg\CategoryUmpegController;
 use App\Http\Controllers\Backend\sekretariat_controller\umpeg\UmpegController;
+// Sekretariat -- plk
+use App\Http\Controllers\Backend\sekretariat_controller\plk\CategoryPlkController;
+use App\Http\Controllers\Backend\sekretariat_controller\plk\PlkController;
 
 
+
+// Pemerintahan -- RAPBDES
+// Pemerintahan -- Desa
+// Pemerintahan -- Produk Hukum 
 use App\Http\Controllers\Backend\umkm_controller\UmkmController;
 use App\Http\Controllers\Backend\umkm_controller\CategoryUmkmController;
 use App\Http\Controllers\Backend\budaya_controller\BudayaController;
@@ -59,6 +67,20 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/umpeg/category/update/{id}', 'update')->name('admin.umpeg.category.update');
             Route::get('/umpeg/category/delete/{id}', 'delete')->name('admin.umpeg.category.delete');
         });
+        
+        // SEKRETARIAT - PLK
+        Route::resource('plk', PlkController::class, ['names' => 'admin.plk']);
+        Route::get('/plk/category/{id}', [PlkController::class, 'category'])->name('admin.plk.category');
+        Route::get('/plk/surat/public', [PlkController::class, 'indexPublic'])->name('admin.plk.public');
+        Route::get('/plk/surat/private', [PlkController::class, 'indexPrivate'])->name('admin.plk.private');
+        Route::controller(CategoryPlkController::class)->group(function () {
+            Route::post('/plk/category/store', 'store')->name('admin.plk.category.store');
+            Route::post('/plk/category/update/{id}', 'update')->name('admin.plk.category.update');
+            Route::get('/plk/category/delete/{id}', 'delete')->name('admin.plk.category.delete');
+        });
+
+
+
         // UMKM
         Route::resource('umkm', UmkmController::class, ['names' => 'admin.umkm']);
         Route::get('/umkm/category/{id}', [UmkmController::class, 'category'])->name('admin.umkm.category');
