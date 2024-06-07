@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\Pkk;
+namespace App\Models\Pemerintahan\Rapbdes;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class SuratPkk extends Model
+class CategoryRapbdes extends Model
 {
     use HasFactory;
 

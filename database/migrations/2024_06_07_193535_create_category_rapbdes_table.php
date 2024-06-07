@@ -11,12 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surat_ktbs', function (Blueprint $table) {
+        Schema::create('category_rapbdes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->string('path_file');
-            $table->unsignedBigInteger('category_id');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('surat_ktbs');
+        Schema::dropIfExists('category_rapbdes');
     }
 };

@@ -11,12 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('surat_wisatas', function (Blueprint $table) {
+        Schema::create('surat_rapbdes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('description');
             $table->string('path_file');
             $table->unsignedBigInteger('category_id');
+            $table->enum('status', ['private', 'public'])->default('private');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('surat_wisatas');
+        Schema::dropIfExists('surat_rapbdes');
     }
 };

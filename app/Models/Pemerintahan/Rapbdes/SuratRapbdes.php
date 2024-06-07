@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Models\Osjj;
+namespace App\Models\Pemerintahan\Rapbdes;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryOsjj extends Model
+class SuratRapbdes extends Model
 {
     use HasFactory;
 
-    protected $guarded=['id'];
-
+    protected $guarded = ['id'];
 }

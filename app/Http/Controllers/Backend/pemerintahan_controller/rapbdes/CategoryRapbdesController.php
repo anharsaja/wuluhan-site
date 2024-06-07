@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Backend\osjj_controller;
+namespace App\Http\Controllers\Backend\pemerintahan_controller\rapbdes;
 
 use App\Http\Controllers\Controller;
-use App\Models\Osjj\CategoryOsjj;
+use App\Models\Pemerintahan\Rapbdes\CategoryRapbdes;
 use Illuminate\Http\Request;
 
-class CategoryOsjjController extends Controller
+class CategoryRapbdesController extends Controller
 {
     public function store(Request $request)
     {
-        CategoryOsjj::create([
+        CategoryRapbdes::create([
             'name' => $request->name
         ]);
         return back();
@@ -18,7 +18,7 @@ class CategoryOsjjController extends Controller
 
     public function update(Request $request, $id)
     {
-        $category = CategoryOsjj::find($id);
+        $category = CategoryRapbdes::find($id);
         $category->name = $request->name;
         $category->save();
         return back();
@@ -26,7 +26,7 @@ class CategoryOsjjController extends Controller
 
     public function delete($id)
     {
-        $category = CategoryOsjj::find($id);
+        $category = CategoryRapbdes::find($id);
         $category->delete();
         return back();
     }

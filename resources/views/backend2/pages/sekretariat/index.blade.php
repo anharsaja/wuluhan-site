@@ -25,18 +25,14 @@
                             <i class="fa fa-chevron-right"></i>
                             <i class="fa fa-chevron-left"></i>
                         </div><!-- .action-panel-toggle -->
-                        {{-- @if(Route::is('admin.umpeg.index') || Route::is('admin.umpeg.public') || Route::is('admin.umpeg.private')) --}}
-                        @can('sekretariat.view')
                             <div class="m-b-lg">
                                 <a href="#" data-toggle="modal" data-target="#contactModal"
                                     class="btn btn-primary btn-block">New Contact</a>
                             </div>
-                        @endcan
-                        {{-- @endif  --}}
                         <!-- contact category list -->
                         <div id="categories-list" class="app-actions-list scrollable-container">
                             <div class="list-group">
-                                <a href="{{ route('admin.umpeg.index') }}" class="list-group-item">
+                                <a href="{{ route('admin.'.$name.'.index') }}" class="list-group-item">
                                     <i class="fa fa-inbox text-color m-r-xs"></i>
                                     <span>Semua Surat</span>
                                 </a>
@@ -48,7 +44,7 @@
                                 @foreach ($categories as $category)
                                     <div class="list-group-item">
                                         <div class="item-data" style="width: 100%;"
-                                            onclick="window.location.href='{{ route('admin.umpeg.category', $category->id) }}'">
+                                            onclick="window.location.href='{{ route('admin.'.$name.'.category', $category->id) }}'">
                                             <span class="label-text">{{ $category->name }}</span>
                                             {{-- <span class="pull-right hide-on-hover">7</span> --}}
                                         </div>
@@ -62,7 +58,6 @@
                                         @endcan
                                     </div><!-- .list-group-item -->
 
-
                                     <!-- edit  category Modal -->
                                     <div id="editcategory{{ $category->id }}" class="modal fade" tabindex="-1"
                                         role="dialog">
@@ -74,7 +69,7 @@
                                                     <h4 class="modal-title text-center" style="width: 100%">Edit Category
                                                     </h4>
                                                 </div>
-                                                <form action="{{ route('admin.umpeg.category.update', $category->id) }}"
+                                                <form action="{{ route('admin.'.$name.'.category.update', $category->id) }}"
                                                     id="newCategoryForm" method="post">
                                                     @csrf
                                                     <div class="modal-body">
@@ -108,7 +103,7 @@
                                                     <h5>hapus categori {{ $category->name }}</h5>
                                                 </div><!-- .modal-body -->
                                                 <div class="modal-footer">
-                                                    <a href="{{ route('admin.umpeg.category.delete', $category->id) }}""
+                                                    <a href="{{ route('admin.'.$name.'.category.delete', $category->id) }}""
                                                         class="btn btn-danger">Hapus</a>
                                                 </div><!-- .modal-footer -->
                                             </div><!-- /.modal-content -->
@@ -139,7 +134,6 @@
                             </div>
                         </div><!-- END column -->
                     </div><!-- .row -->
-
 
                     {{-- Content Surat --}}
                     <div id="contacts-list" class="row">
@@ -185,13 +179,13 @@
                                                 aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                             <h4 class="modal-title text-center" style="width: 100%">Edit Surat</h4>
                                         </div>
-                                        <form action="{{ route('admin.umpeg.update', $surat->id) }}"
+                                        <form action="{{ route('admin.'.$name.'.update', $surat->id) }}"
                                             id="newCategoryForm" method="post" enctype="multipart/form-data">
                                             @method('put')
                                             @csrf
                                             <div class="modal-body">
                                                 <div class="form-group">
-                                                    <input name="name" type="text" id="contactName"
+                                                    <input name="name" type="text" id="name"
                                                         class="form-control" placeholder="Name"
                                                         value="{{ $surat->name }}">
                                                 </div>
@@ -244,7 +238,7 @@
                                             <h5>hapus surat {{ $surat->name }}</h5>
                                         </div><!-- .modal-body -->
                                         <form class="modal-footer"
-                                            action="{{ route('admin.umpeg.destroy', $surat->id) }}" method="post">
+                                            action="{{ route('admin.'.$name.'.destroy', $surat->id) }}" method="post">
                                             @method('delete')
                                             @csrf
                                             <button class="btn btn-danger">Hapus</button>
