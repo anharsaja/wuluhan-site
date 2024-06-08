@@ -25,6 +25,8 @@ use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHuku
 /*** Pelum - Adminduk */
 use App\Http\Controllers\Backend\pelum_controller\adminduk\CategoryAdmindukController;
 use App\Http\Controllers\Backend\pelum_controller\adminduk\AdmindukController;
+use App\Http\Controllers\Backend\pmks_controller\agama\AgamaController;
+use App\Http\Controllers\Backend\pmks_controller\agama\CategoryAgamaController;
 use App\Http\Controllers\Backend\pmks_controller\budaya\BudayaController;
 use App\Http\Controllers\Backend\pmks_controller\budaya\CategoryBudayaController;
 use App\Http\Controllers\Backend\pmks_controller\kencana\CategoryKencanaController;
@@ -40,6 +42,7 @@ use App\Http\Controllers\Backend\pmks_controller\wisata\WisataController;
 
 
 use App\Http\Controllers\LandingPage\HomeController;
+use App\Models\Pmks\Agama\CategoryAgama;
 
 Auth::routes();
 
@@ -172,7 +175,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/pmks/budaya/category/delete/{id}', 'delete')->name('admin.budaya.category.delete');
         });
 
-        /*** PMKS - Wisata */
+        /*** PMKS - Budaya */
         Route::resource('/pmks/wisata', WisataController::class, ['names' => 'admin.wisata']);
         Route::get('/pmks/wisata/category/{id}', [WisataController::class, 'category'])->name('admin.wisata.category');
         Route::get('/pmks/wisata/surat/public', [WisataController::class, 'indexPublic'])->name('admin.wisata.public');
@@ -181,6 +184,17 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/pmks/wisata/category/store', 'store')->name('admin.wisata.category.store');
             Route::post('/pmks/wisata/category/update/{id}', 'update')->name('admin.wisata.category.update');
             Route::get('/pmks/wisata/category/delete/{id}', 'delete')->name('admin.wisata.category.delete');
+        });
+
+        /*** PMKS - Agama */
+        Route::resource('/pmks/agama', AgamaController::class, ['names' => 'admin.agama']);
+        Route::get('/pmks/agama/category/{id}', [AgamaController::class, 'category'])->name('admin.agama.category');
+        Route::get('/pmks/agama/surat/public', [AgamaController::class, 'indexPublic'])->name('admin.agama.public');
+        Route::get('/pmks/agama/surat/private', [AgamaController::class, 'indexPrivate'])->name('admin.agama.private');
+        Route::controller(CategoryAgamaController::class)->group(function () {
+            Route::post('/pmks/agama/category/store', 'store')->name('admin.agama.category.store');
+            Route::post('/pmks/agama/category/update/{id}', 'update')->name('admin.agama.category.update');
+            Route::get('/pmks/agama/category/delete/{id}', 'delete')->name('admin.agama.category.delete');
         });
 
 
