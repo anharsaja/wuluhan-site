@@ -25,6 +25,8 @@ use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHuku
 /*** Pelum - Adminduk */
 use App\Http\Controllers\Backend\pelum_controller\adminduk\CategoryAdmindukController;
 use App\Http\Controllers\Backend\pelum_controller\adminduk\AdmindukController;
+use App\Http\Controllers\Backend\pmks_controller\osjj\CategoryOsjjController;
+use App\Http\Controllers\Backend\pmks_controller\osjj\OsjjController;
 use App\Http\Controllers\Backend\pmks_controller\pkk\CategoryPkkController;
 use App\Http\Controllers\Backend\pmks_controller\pkk\PkkController;
 
@@ -129,6 +131,17 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/pmks/pkk/category/store', 'store')->name('admin.pkk.category.store');
             Route::post('/pmks/pkk/category/update/{id}', 'update')->name('admin.pkk.category.update');
             Route::get('/pmks/pkk/category/delete/{id}', 'delete')->name('admin.pkk.category.delete');
+        });
+
+        /*** PMKS - OSJJ */
+        Route::resource('/pmks/osjj', OsjjController::class, ['names' => 'admin.osjj']);
+        Route::get('/pmks/osjj/category/{id}', [OsjjController::class, 'category'])->name('admin.osjj.category');
+        Route::get('/pmks/osjj/surat/public', [OsjjController::class, 'indexPublic'])->name('admin.osjj.public');
+        Route::get('/pmks/osjj/surat/private', [OsjjController::class, 'indexPrivate'])->name('admin.osjj.private');
+        Route::controller(CategoryOsjjController::class)->group(function () {
+            Route::post('/pmks/osjj/category/store', 'store')->name('admin.osjj.category.store');
+            Route::post('/pmks/osjj/category/update/{id}', 'update')->name('admin.osjj.category.update');
+            Route::get('/pmks/osjj/category/delete/{id}', 'delete')->name('admin.osjj.category.delete');
         });
 
 

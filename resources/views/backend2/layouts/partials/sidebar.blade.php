@@ -39,12 +39,12 @@
 
 {{-- Pennyandang Masalah Kesejahteraan Sosial --}}
 @can('pmks.view')
-    <li class="nav-item"><a href="#pmks" class="nav-link collapsed {{ Route::is('admin.pkk.*') ? 'active' : '' }}" data-toggle="collapse"><i
+    <li class="nav-item"><a href="#pmks" class="nav-link collapsed {{ Route::is('admin.pkk.*') || Route::is('admin.osjj.*') ? 'active' : '' }}" data-toggle="collapse"><i
         class="fa fa-fire"></i>PMKS<span class="sub-ico">
             <i class="fa fa-angle-down"></i></span></a></li>
-    <li class="sub collapse {{ Route::is('admin.pkk.*') ? 'show' : '' }}" id="pmks">
+    <li class="sub collapse {{ Route::is('admin.pkk.*') || Route::is('admin.osjj.*') ? 'show' : '' }}" id="pmks">
         <a href="{{ route('admin.pkk.index') }}" class="nav-link {{ Route::is('admin.pkk.index') || Route::is('admin.pkk.public') || Route::is('admin.pkk.private') || Route::is('admin.pkk.category') ? 'active' : '' }}" data-parent="#sekretariat">PKK</a>
-        <a href="{{ route('admin.adminduk.index') }}" class="nav-link {{ Route::is('admin.adminduk.index') || Route::is('admin.adminduk.public') || Route::is('admin.adminduk.private') || Route::is('admin.adminduk.category') ? 'active' : '' }}" data-parent="#sekretariat">Dokumentasi</a>
+        <a href="{{ route('admin.osjj.index') }}" class="nav-link {{ Route::is('admin.osjj.index') || Route::is('admin.osjj.public') || Route::is('admin.osjj.private') || Route::is('admin.osjj.category') ? 'active' : '' }}" data-parent="#sekretariat">OSJJ</a>
     </li>
 @endcan
 
