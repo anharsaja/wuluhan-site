@@ -40,7 +40,7 @@
 {{-- Pennyandang Masalah Kesejahteraan Sosial --}}
 @can('pmks.view')
     <li class="nav-item"><a href="#pmks" class="nav-link collapsed {{ Route::is('admin.pkk.*') || Route::is('admin.osjj.*') || Route::is('admin.kencana.*') || Route::is('admin.wisata.*') || Route::is('admin.budaya.*') || Route::is('admin.agama.*') ? 'active' : '' }}" data-toggle="collapse"><i
-        class="fa fa-fire"></i>PMKS<span class="sub-ico">
+        class="fa fa-handshake"></i>PMKS<span class="sub-ico">
             <i class="fa fa-angle-down"></i></span></a></li>
     <li class="sub collapse {{ Route::is('admin.pkk.*') || Route::is('admin.osjj.*') || Route::is('admin.kencana.*') || Route::is('admin.wisata.*') || Route::is('admin.budaya.*') || Route::is('admin.agama.*') ? 'show' : '' }}" id="pmks">
         <a href="{{ route('admin.pkk.index') }}" class="nav-link {{ Route::is('admin.pkk.index') || Route::is('admin.pkk.public') || Route::is('admin.pkk.private') || Route::is('admin.pkk.category') ? 'active' : '' }}" data-parent="#sekretariat">PKK</a>
@@ -49,6 +49,17 @@
         <a href="{{ route('admin.wisata.index') }}" class="nav-link {{ Route::is('admin.wisata.index') || Route::is('admin.wisata.public') || Route::is('admin.wisata.private') || Route::is('admin.wisata.category') ? 'active' : '' }}" data-parent="#sekretariat">Wisata</a>
         <a href="{{ route('admin.budaya.index') }}" class="nav-link {{ Route::is('admin.budaya.index') || Route::is('admin.budaya.public') || Route::is('admin.budaya.private') || Route::is('admin.budaya.category') ? 'active' : '' }}" data-parent="#sekretariat">Budaya</a>
         <a href="{{ route('admin.agama.index') }}" class="nav-link {{ Route::is('admin.agama.index') || Route::is('admin.agama.public') || Route::is('admin.agama.private') || Route::is('admin.agama.category') ? 'active' : '' }}" data-parent="#sekretariat">Agama</a>
+    </li>
+@endcan
+
+{{-- Trantib --}}
+@can('trantib.view')
+    <li class="nav-item"><a href="#trantib" class="nav-link collapsed {{ Route::is('admin.trantib.*') || Route::is('admin.trantib.dokumentasi.*') ? 'active' : '' }}" data-toggle="collapse"><i
+        class="fa fa-handshake"></i>TRANTIB<span class="sub-ico">
+            <i class="fa fa-angle-down"></i></span></a></li>
+    <li class="sub collapse {{ Route::is('admin.trantib.*') || Route::is('admin.trantib.dokumentasi.*') ? 'show' : '' }}" id="trantib">
+        <a href="{{ route('admin.trantib.surat.index') }}" class="nav-link {{ Route::is('admin.trantib.surat.index') || Route::is('admin.trantib.surat.public') || Route::is('admin.trantib.surat.private') || Route::is('admin.trantib.surat.category') ? 'active' : '' }}" data-parent="#sekretariat">Kelola Dokumen</a>
+        {{-- <a href="{{ route('admin.trantib.dokumentasi.index') }}" class="nav-link {{ Route::is('admin.trantib.dokumentasi.index') || Route::is('admin.trantib.dokumentasi.public') || Route::is('admin.trantib.dokumentasi.private') || Route::is('admin.trantib.dokumentasi.category') ? 'active' : '' }}" data-parent="#sekretariat">Dokumentasi</a> --}}
     </li>
 @endcan
 

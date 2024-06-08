@@ -37,12 +37,13 @@ use App\Http\Controllers\Backend\pmks_controller\pkk\CategoryPkkController;
 use App\Http\Controllers\Backend\pmks_controller\pkk\PkkController;
 use App\Http\Controllers\Backend\pmks_controller\wisata\CategoryWisataController;
 use App\Http\Controllers\Backend\pmks_controller\wisata\WisataController;
+use App\Http\Controllers\Backend\trantib_controller\surat\CategorySuratTrantibController;
+use App\Http\Controllers\Backend\trantib_controller\surat\SuratTrantibController;
 
 /*** Pelum - PMKS */
 
 
 use App\Http\Controllers\LandingPage\HomeController;
-use App\Models\Pmks\Agama\CategoryAgama;
 
 Auth::routes();
 
@@ -195,6 +196,17 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/pmks/agama/category/store', 'store')->name('admin.agama.category.store');
             Route::post('/pmks/agama/category/update/{id}', 'update')->name('admin.agama.category.update');
             Route::get('/pmks/agama/category/delete/{id}', 'delete')->name('admin.agama.category.delete');
+        });
+
+        /*** TRANTIB - Surat */
+        Route::resource('/trantib/surat', SuratTrantibController::class, ['names' => 'admin.trantib.surat']);
+        Route::get('/trantib/surat/category/{id}', [SuratTrantibController::class, 'category'])->name('admin.trantib.surat.category');
+        Route::get('/trantib/surat/public', [SuratTrantibController::class, 'indexPublic'])->name('admin.trantib.surat.public');
+        Route::get('/trantib/surat/private', [SuratTrantibController::class, 'indexPrivate'])->name('admin.trantib.surat.private');
+        Route::controller(CategorySuratTrantibController::class)->group(function () {
+            Route::post('/trantib/surat/category/store', 'store')->name('admin.trantib.surat.category.store');
+            Route::post('/trantib/surat/category/update/{id}', 'update')->name('admin.trantib.surat.category.update');
+            Route::get('/trantib/surat/category/delete/{id}', 'delete')->name('admin.trantib.surat.category.delete');
         });
 
 
