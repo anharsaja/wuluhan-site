@@ -1,0 +1,135 @@
+<?php
+
+namespace App\Http\Controllers\Backend\pmks_controller\wisata;
+
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use App\Models\Pmks\Wisata\SuratWisata;
+use App\Models\Pmks\Wisata\CategoryWisata;
+
+class WisataController extends Controller
+{
+    public function index()
+    {
+        $category = CategoryWisata::get();
+        $surat = SuratWisata::get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA', 'name' => 'wisata']);
+    }
+
+    public function indexPublic()
+    {
+        $category = CategoryWisata::get();
+        $surat = SuratWisata::where('status', 'public')->get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA - Public', 'name' => 'wisata']);
+    }
+
+        public function indexPrivate()
+    {
+        $category = CategoryWisata::get();
+        $surat = SuratWisata::where('status', 'private')->get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA - Private', 'name' => 'wisata']);
+    }
+
+    public function category($id)
+    {
+        try {
+            $categoryName = CategoryWisata::findOrFail($id)->name;
+            $category = CategoryWisata::get();
+            $surat = SuratWisata::where('category_id', $id)->get();
+            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA', 'categoryName' => $categoryName, 'name' => 'wisata']);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.wisata.index');
+        }
+    }
+
+    public function create()
+    {
+        //
+    }
+
+
+    public function store(Request $request)
+    {
+        if ($request->hasFile('file')) {
+            $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
+            $files = $request->file('file');
+            $filename = $files->getClientOriginalName();
+            $extension = $files->getClientOriginalExtension();
+            $check = in_array($extension, $allowedfileExtension);
+
+            if ($check) {
+                $filename = time() . '.' . $extension;
+                $files->move(public_path() . '/kumpulan_surat/file_wisata', $filename);
+
+                SuratWisata::create([
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'category_id' => $request->category_id,
+                    'status' => $request->status,
+                    'path_file' => '/kumpulan_surat/file_wisata/' . $filename
+                ]);
+                return back();
+            } else {
+                return back();
+            }
+        }
+    }
+
+
+    public function show(string $id)
+    {
+        //
+    }
+
+
+    public function edit(string $id)
+    {
+        //
+    }
+
+
+    public function update(Request $request, string $id)
+    {
+        $surat = SuratWisata::find($id);
+        $surat->name = $request->name;
+        $surat->description = $request->description;
+        $surat->category_id = $request->category;
+        $surat->status = $request->status;
+
+        if ($request->hasFile('file')) {
+            $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
+            $files = $request->file('file');
+            $filename = $files->getClientOriginalName();
+            $extension = $files->getClientOriginalExtension();
+            $check = in_array($extension, $allowedfileExtension);
+
+            if ($check) {
+                $filename = time() . '.' . $extension;
+                $files->move(public_path() . '/kumpulan_surat/file_wisata', $filename);
+
+                $filesLama = public_path($surat->path_file);
+                if (File::exists($filesLama)) {
+                    File::delete($filesLama);
+                };
+
+                $surat->path_file = '/kumpulan_surat/file_wisata/' . $filename;
+            }
+        };
+
+        $surat->save();
+        return back();
+    }
+
+
+    public function destroy(string $id)
+    {
+        $surat = SuratWisata::find($id);
+        $filesLama = public_path($surat->path_file);
+        if (File::exists($filesLama)) {
+            File::delete($filesLama);
+        };
+        $surat->delete();
+        return back();
+    }
+}

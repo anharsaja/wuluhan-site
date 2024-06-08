@@ -31,6 +31,8 @@ use App\Http\Controllers\Backend\pmks_controller\osjj\CategoryOsjjController;
 use App\Http\Controllers\Backend\pmks_controller\osjj\OsjjController;
 use App\Http\Controllers\Backend\pmks_controller\pkk\CategoryPkkController;
 use App\Http\Controllers\Backend\pmks_controller\pkk\PkkController;
+use App\Http\Controllers\Backend\pmks_controller\wisata\CategoryWisataController;
+use App\Http\Controllers\Backend\pmks_controller\wisata\WisataController;
 
 /*** Pelum - PMKS */
 
@@ -157,6 +159,27 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/pmks/kencana/category/delete/{id}', 'delete')->name('admin.kencana.category.delete');
         });
 
+        /*** PMKS - Wisata */
+        Route::resource('/pmks/wisata', WisataController::class, ['names' => 'admin.wisata']);
+        Route::get('/pmks/wisata/category/{id}', [WisataController::class, 'category'])->name('admin.wisata.category');
+        Route::get('/pmks/wisata/surat/public', [WisataController::class, 'indexPublic'])->name('admin.wisata.public');
+        Route::get('/pmks/wisata/surat/private', [WisataController::class, 'indexPrivate'])->name('admin.wisata.private');
+        Route::controller(CategoryWisataController::class)->group(function () {
+            Route::post('/pmks/wisata/category/store', 'store')->name('admin.wisata.category.store');
+            Route::post('/pmks/wisata/category/update/{id}', 'update')->name('admin.wisata.category.update');
+            Route::get('/pmks/wisata/category/delete/{id}', 'delete')->name('admin.wisata.category.delete');
+        });
+        
+        /*** PMKS - Wisata */
+        Route::resource('/pmks/wisata', WisataController::class, ['names' => 'admin.wisata']);
+        Route::get('/pmks/wisata/category/{id}', [WisataController::class, 'category'])->name('admin.wisata.category');
+        Route::get('/pmks/wisata/surat/public', [WisataController::class, 'indexPublic'])->name('admin.wisata.public');
+        Route::get('/pmks/wisata/surat/private', [WisataController::class, 'indexPrivate'])->name('admin.wisata.private');
+        Route::controller(CategoryWisataController::class)->group(function () {
+            Route::post('/pmks/wisata/category/store', 'store')->name('admin.wisata.category.store');
+            Route::post('/pmks/wisata/category/update/{id}', 'update')->name('admin.wisata.category.update');
+            Route::get('/pmks/wisata/category/delete/{id}', 'delete')->name('admin.wisata.category.delete');
+        });
 
 
     });
