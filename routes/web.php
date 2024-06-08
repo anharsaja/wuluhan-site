@@ -37,6 +37,8 @@ use App\Http\Controllers\Backend\pmks_controller\pkk\CategoryPkkController;
 use App\Http\Controllers\Backend\pmks_controller\pkk\PkkController;
 use App\Http\Controllers\Backend\pmks_controller\wisata\CategoryWisataController;
 use App\Http\Controllers\Backend\pmks_controller\wisata\WisataController;
+use App\Http\Controllers\Backend\trantib_controller\dokumentasi\CategoryDokumentasiTantribController;
+use App\Http\Controllers\Backend\trantib_controller\dokumentasi\DokumentasiTantribController;
 use App\Http\Controllers\Backend\trantib_controller\surat\CategorySuratTrantibController;
 use App\Http\Controllers\Backend\trantib_controller\surat\SuratTrantibController;
 
@@ -207,6 +209,17 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/trantib/surat/category/store', 'store')->name('admin.trantib.surat.category.store');
             Route::post('/trantib/surat/category/update/{id}', 'update')->name('admin.trantib.surat.category.update');
             Route::get('/trantib/surat/category/delete/{id}', 'delete')->name('admin.trantib.surat.category.delete');
+        });
+
+        /*** TRANTIB - Dokumentasi */
+        Route::resource('/trantib/dokumentasi', DokumentasiTantribController::class, ['names' => 'admin.trantib.dokumentasi']);
+        Route::get('/trantib/dokumentasi/category/{id}', [DokumentasiTantribController::class, 'category'])->name('admin.trantib.dokumentasi.category');
+        Route::get('/trantib/dokumentasi/public', [DokumentasiTantribController::class, 'indexPublic'])->name('admin.trantib.dokumentasi.public');
+        Route::get('/trantib/dokumentasi/private', [DokumentasiTantribController::class, 'indexPrivate'])->name('admin.trantib.dokumentasi.private');
+        Route::controller(CategoryDokumentasiTantribController::class)->group(function () {
+            Route::post('/trantib/dokumentasi/category/store', 'store')->name('admin.trantib.dokumentasi.category.store');
+            Route::post('/trantib/dokumentasi/category/update/{id}', 'update')->name('admin.trantib.dokumentasi.category.update');
+            Route::get('/trantib/dokumentasi/category/delete/{id}', 'delete')->name('admin.trantib.dokumentasi.category.delete');
         });
 
 

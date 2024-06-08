@@ -59,7 +59,7 @@
             <i class="fa fa-angle-down"></i></span></a></li>
     <li class="sub collapse {{ Route::is('admin.trantib.*') || Route::is('admin.trantib.dokumentasi.*') ? 'show' : '' }}" id="trantib">
         <a href="{{ route('admin.trantib.surat.index') }}" class="nav-link {{ Route::is('admin.trantib.surat.index') || Route::is('admin.trantib.surat.public') || Route::is('admin.trantib.surat.private') || Route::is('admin.trantib.surat.category') ? 'active' : '' }}" data-parent="#sekretariat">Kelola Dokumen</a>
-        {{-- <a href="{{ route('admin.trantib.dokumentasi.index') }}" class="nav-link {{ Route::is('admin.trantib.dokumentasi.index') || Route::is('admin.trantib.dokumentasi.public') || Route::is('admin.trantib.dokumentasi.private') || Route::is('admin.trantib.dokumentasi.category') ? 'active' : '' }}" data-parent="#sekretariat">Dokumentasi</a> --}}
+        <a href="{{ route('admin.trantib.dokumentasi.index') }}" class="nav-link {{ Route::is('admin.trantib.dokumentasi.index') || Route::is('admin.trantib.dokumentasi.public') || Route::is('admin.trantib.dokumentasi.private') || Route::is('admin.trantib.dokumentasi.category') ? 'active' : '' }}" data-parent="#sekretariat">Foto</a>
     </li>
 @endcan
 

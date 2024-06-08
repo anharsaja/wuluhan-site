@@ -14,21 +14,21 @@ class SuratTrantibController extends Controller
     {
         $category = CategorySuratTrantib::get();
         $surat = SuratTrantib::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'TANTRIB', 'name' => 'trantib.surat']);
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB', 'name' => 'trantib.surat']);
     }
 
     public function indexPublic()
     {
         $category = CategorySuratTrantib::get();
         $surat = SuratTrantib::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'TANTRIB - Public', 'name' => 'trantib.surat']);
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB - Public', 'name' => 'trantib.surat']);
     }
 
         public function indexPrivate()
     {
         $category = CategorySuratTrantib::get();
         $surat = SuratTrantib::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'TANTRIB - Private', 'name' => 'trantib.surat']);
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB - Private', 'name' => 'trantib.surat']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class SuratTrantibController extends Controller
             $categoryName = CategorySuratTrantib::findOrFail($id)->name;
             $category = CategorySuratTrantib::get();
             $surat = SuratTrantib::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'TANTRIB', 'categoryName' => $categoryName, 'name' => 'trantib.surat']);
+            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB', 'categoryName' => $categoryName, 'name' => 'trantib.surat']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.trantib.surat.index');
         }
@@ -60,14 +60,14 @@ class SuratTrantibController extends Controller
 
             if ($check) {
                 $filename = time() . '.' . $extension;
-                $files->move(public_path() . '/kumpulan_surat/file_dokumen_tantrib', $filename);
+                $files->move(public_path() . '/kumpulan_surat/file_surat_tantrib', $filename);
 
                 SuratTrantib::create([
                     'name' => $request->name,
                     'description' => $request->description,
                     'category_id' => $request->category_id,
                     'status' => $request->status,
-                    'path_file' => '/kumpulan_surat/file_dokumen_tantrib/' . $filename
+                    'path_file' => '/kumpulan_surat/file_surat_tantrib/' . $filename
                 ]);
                 return back();
             } else {
@@ -106,14 +106,14 @@ class SuratTrantibController extends Controller
 
             if ($check) {
                 $filename = time() . '.' . $extension;
-                $files->move(public_path() . '/kumpulan_surat/file_dokumen_tantrib', $filename);
+                $files->move(public_path() . '/kumpulan_surat/file_surat_tantrib', $filename);
 
                 $filesLama = public_path($surat->path_file);
                 if (File::exists($filesLama)) {
                     File::delete($filesLama);
                 };
 
-                $surat->path_file = '/kumpulan_surat/file_dokumen_tantrib/' . $filename;
+                $surat->path_file = '/kumpulan_surat/file_surat_tantrib/' . $filename;
             }
         };
 

@@ -2,64 +2,134 @@
 
 namespace App\Http\Controllers\Backend\trantib_controller\dokumentasi;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
+use App\Models\Trantib\Dokumentasi\DokumentasiTrantib;
+use App\Models\Trantib\Dokumentasi\CategoryDokumentasiTrantib;
 
 class DokumentasiTantribController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        //
+        $category = CategoryDokumentasiTrantib::get();
+        $surat = DokumentasiTrantib::get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'FOTO TANTRIB', 'name' => 'trantib.dokumentasi']);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function indexPublic()
+    {
+        $category = CategoryDokumentasiTrantib::get();
+        $surat = DokumentasiTrantib::where('status', 'public')->get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'FOTO TANTRIB - Public', 'name' => 'trantib.dokumentasi']);
+    }
+
+        public function indexPrivate()
+    {
+        $category = CategoryDokumentasiTrantib::get();
+        $surat = DokumentasiTrantib::where('status', 'private')->get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'FOTO TANTRIB - Private', 'name' => 'trantib.dokumentasi']);
+    }
+
+    public function category($id)
+    {
+        try {
+            $categoryName = CategoryDokumentasiTrantib::findOrFail($id)->name;
+            $category = CategoryDokumentasiTrantib::get();
+            $surat = DokumentasiTrantib::where('category_id', $id)->get();
+            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'FOTO TANTRIB', 'categoryName' => $categoryName, 'name' => 'trantib.dokumentasi']);
+        } catch (\Throwable $th) {
+            return redirect()->route('admin.trantib.dokumentasi.index');
+        }
+    }
+
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-        //
+        if ($request->hasFile('file')) {
+            $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
+            $files = $request->file('file');
+            $filename = $files->getClientOriginalName();
+            $extension = $files->getClientOriginalExtension();
+            $check = in_array($extension, $allowedfileExtension);
+
+            if ($check) {
+                $filename = time() . '.' . $extension;
+                $files->move(public_path() . '/kumpulan_surat/file_dokumentasi_tantrib', $filename);
+
+                DokumentasiTrantib::create([
+                    'name' => $request->name,
+                    'description' => $request->description,
+                    'category_id' => $request->category_id,
+                    'status' => $request->status,
+                    'path_file' => '/kumpulan_surat/file_dokumentasi_tantrib/' . $filename
+                ]);
+                return back();
+            } else {
+                return back();
+            }
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
+
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit(string $id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, string $id)
     {
-        //
+        $surat = DokumentasiTrantib::find($id);
+        $surat->name = $request->name;
+        $surat->description = $request->description;
+        $surat->category_id = $request->category;
+        $surat->status = $request->status;
+
+        if ($request->hasFile('file')) {
+            $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
+            $files = $request->file('file');
+            $filename = $files->getClientOriginalName();
+            $extension = $files->getClientOriginalExtension();
+            $check = in_array($extension, $allowedfileExtension);
+
+            if ($check) {
+                $filename = time() . '.' . $extension;
+                $files->move(public_path() . '/kumpulan_surat/file_dokumentasi_tantrib', $filename);
+
+                $filesLama = public_path($surat->path_file);
+                if (File::exists($filesLama)) {
+                    File::delete($filesLama);
+                };
+
+                $surat->path_file = '/kumpulan_surat/file_dokumentasi_tantrib/' . $filename;
+            }
+        };
+
+        $surat->save();
+        return back();
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+
     public function destroy(string $id)
     {
-        //
+        $surat = DokumentasiTrantib::find($id);
+        $filesLama = public_path($surat->path_file);
+        if (File::exists($filesLama)) {
+            File::delete($filesLama);
+        };
+        $surat->delete();
+        return back();
     }
 }
