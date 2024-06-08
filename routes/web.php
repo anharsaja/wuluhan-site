@@ -25,6 +25,8 @@ use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHuku
 /*** Pelum - Adminduk */
 use App\Http\Controllers\Backend\pelum_controller\adminduk\CategoryAdmindukController;
 use App\Http\Controllers\Backend\pelum_controller\adminduk\AdmindukController;
+use App\Http\Controllers\Backend\pmks_controller\kencana\CategoryKencanaController;
+use App\Http\Controllers\Backend\pmks_controller\kencana\KencanaController;
 use App\Http\Controllers\Backend\pmks_controller\osjj\CategoryOsjjController;
 use App\Http\Controllers\Backend\pmks_controller\osjj\OsjjController;
 use App\Http\Controllers\Backend\pmks_controller\pkk\CategoryPkkController;
@@ -142,6 +144,17 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/pmks/osjj/category/store', 'store')->name('admin.osjj.category.store');
             Route::post('/pmks/osjj/category/update/{id}', 'update')->name('admin.osjj.category.update');
             Route::get('/pmks/osjj/category/delete/{id}', 'delete')->name('admin.osjj.category.delete');
+        });
+
+        /*** PMKS - KENCANA */
+        Route::resource('/pmks/kencana', KencanaController::class, ['names' => 'admin.kencana']);
+        Route::get('/pmks/kencana/category/{id}', [KencanaController::class, 'category'])->name('admin.kencana.category');
+        Route::get('/pmks/kencana/surat/public', [KencanaController::class, 'indexPublic'])->name('admin.kencana.public');
+        Route::get('/pmks/kencana/surat/private', [KencanaController::class, 'indexPrivate'])->name('admin.kencana.private');
+        Route::controller(CategoryKencanaController::class)->group(function () {
+            Route::post('/pmks/kencana/category/store', 'store')->name('admin.kencana.category.store');
+            Route::post('/pmks/kencana/category/update/{id}', 'update')->name('admin.kencana.category.update');
+            Route::get('/pmks/kencana/category/delete/{id}', 'delete')->name('admin.kencana.category.delete');
         });
 
 
