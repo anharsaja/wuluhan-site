@@ -7,25 +7,26 @@ use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Backend\AdminsController;
 use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
-
-
-// Sekretariat -- umpeg
+/***  Sekretariat -- umpeg */
 use App\Http\Controllers\Backend\sekretariat_controller\umpeg\CategoryUmpegController;
 use App\Http\Controllers\Backend\sekretariat_controller\umpeg\UmpegController;
-// Sekretariat -- plk
+/***  ekretariat -- plk */
 use App\Http\Controllers\Backend\sekretariat_controller\plk\CategoryPlkController;
 use App\Http\Controllers\Backend\sekretariat_controller\plk\PlkController;
-
-
-// Pemerintahan -- RAPBDES
+/*** Pemerintahan -- RAPBDES */
 use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\CategoryRapbdesController;
 use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\RapbdesController;
-// Pemerintahan -- Desa
+/*** Pemerintahan -- Desa */
 use App\Http\Controllers\Backend\pemerintahan_controller\desa\CategoryDesaController;
 use App\Http\Controllers\Backend\pemerintahan_controller\desa\DesaController;
+/*** Pemerintahan -- Produk Hukum */
 use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\CategoryProdukHukumController;
 use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHukumController;
-// Pemerintahan -- Produk Hukum 
+/*** Pelum - Adminduk */
+use App\Http\Controllers\Backend\pelum_controller\adminduk\CategoryAdmindukController;
+use App\Http\Controllers\Backend\pelum_controller\adminduk\AdmindukController;
+/*** Pelum - PMKS */
+
 
 use App\Http\Controllers\LandingPage\HomeController;
 
@@ -41,9 +42,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/gallery', 'gallery')->name('home.gallery');
 });
 
-/**
- * Admin routes
- */
+/*** Admin routes */
 Route::group(['prefix' => 'admin'], function () {
     Route::middleware('auth:admin')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
@@ -52,7 +51,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('admins', AdminsController::class, ['names' => 'admin.admins']);
 
         
-        // SEKRETARIAT - UMPEG
+        /*** SEKRETARIAT - UMPEG */
         Route::resource('/sekretariatan/umpeg', UmpegController::class, ['names' => 'admin.umpeg']);
         Route::get('/sekretariatan/umpeg/category/{id}', [UmpegController::class, 'category'])->name('admin.umpeg.category');
         Route::get('/sekretariatan/umpeg/surat/public', [UmpegController::class, 'indexPublic'])->name('admin.umpeg.public');
@@ -63,7 +62,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/sekretariatan/umpeg/category/delete/{id}', 'delete')->name('admin.umpeg.category.delete');
         });
         
-        // SEKRETARIAT - PLK
+        /*** SEKRETARIAT - PLK */
         Route::resource('/sekretariatan/plk', PlkController::class, ['names' => 'admin.plk']);
         Route::get('/sekretariatan/plk/category/{id}', [PlkController::class, 'category'])->name('admin.plk.category');
         Route::get('/sekretariatan/plk/surat/public', [PlkController::class, 'indexPublic'])->name('admin.plk.public');
@@ -74,7 +73,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/sekretariatan/plk/category/delete/{id}', 'delete')->name('admin.plk.category.delete');
         });
         
-        // PEMERINTAHAN - RAPBDES
+        /*** PEMERINTAHAN - RAPBDES */
         Route::resource('/pemerintahan/rapbdes', RapbdesController::class, ['names' => 'admin.rapbdes']);
         Route::get('/pemerintahan/rapbdes/category/{id}', [RapbdesController::class, 'category'])->name('admin.rapbdes.category');
         Route::get('/pemerintahan/rapbdes/surat/public', [RapbdesController::class, 'indexPublic'])->name('admin.rapbdes.public');
@@ -85,7 +84,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/pemerintahan/rapbdes/category/delete/{id}', 'delete')->name('admin.rapbdes.category.delete');
         });
 
-        // PEMERINTAHAN - DESA
+        /*** PEMERINTAHAN - DESA */
         Route::resource('/pemerintahan/desa', DesaController::class, ['names' => 'admin.desa']);
         Route::get('/pemerintahan/desa/category/{id}', [DesaController::class, 'category'])->name('admin.desa.category');
         Route::get('/pemerintahan/desa/surat/public', [DesaController::class, 'indexPublic'])->name('admin.desa.public');
@@ -96,7 +95,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/pemerintahan/desa/category/delete/{id}', 'delete')->name('admin.desa.category.delete');
         });
 
-        // PEMERINTAHAN - PRODUK HUKUM
+        /*** PEMERINTAHAN - PRODUK HUKUM */
         Route::resource('/pemerintahan/produkhukum', ProdukHukumController::class, ['names' => 'admin.produkhukum']);
         Route::get('/pemerintahan/produkhukum/category/{id}', [ProdukHukumController::class, 'category'])->name('admin.produkhukum.category');
         Route::get('/pemerintahan/produkhukum/surat/public', [ProdukHukumController::class, 'indexPublic'])->name('admin.produkhukum.public');
@@ -107,18 +106,29 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/pemerintahan/produkhukum/category/delete/{id}', 'delete')->name('admin.produkhukum.category.delete');
         });
 
+        /*** PELUM - ADMINDUK */
+        Route::resource('/pelum/adminduk', AdmindukController::class, ['names' => 'admin.adminduk']);
+        Route::get('/pelum/adminduk/category/{id}', [AdmindukController::class, 'category'])->name('admin.adminduk.category');
+        Route::get('/pelum/adminduk/surat/public', [AdmindukController::class, 'indexPublic'])->name('admin.adminduk.public');
+        Route::get('/pelum/adminduk/surat/private', [AdmindukController::class, 'indexPrivate'])->name('admin.adminduk.private');
+        Route::controller(CategoryAdmindukController::class)->group(function () {
+            Route::post('/pelum/adminduk/category/store', 'store')->name('admin.adminduk.category.store');
+            Route::post('/pelum/adminduk/category/update/{id}', 'update')->name('admin.adminduk.category.update');
+            Route::get('/pelum/adminduk/category/delete/{id}', 'delete')->name('admin.adminduk.category.delete');
+        });
+
 
 
     });
 
-    // Login Routes
+    /*** Login Routes */
     Route::get('/login', 'Backend\Auth\LoginController@showLoginForm')->name('admin.login');
     Route::post('/login/submit', [LoginController::class, 'login'])->name('admin.login.submit');
 
-    // Logout Routes
+    /*** Logout Routes */
     Route::get('/logout/submit', [LoginController::class, 'logout'])->name('admin.logout.submit');
 
-    // Forget Password Routes
+    /*** Forget Password Routes */
     Route::get('/password/reset', 'Backend\Auth\ForgetPasswordController@showLinkRequestForm')->name('admin.password.request');
     Route::post('/password/reset/submit', 'Backend\Auth\ForgetPasswordController@reset')->name('admin.password.update');
 });

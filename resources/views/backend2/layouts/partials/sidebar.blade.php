@@ -26,6 +26,17 @@
     </li>
 @endcan
 
+{{-- Pelayanan Umum --}}
+@can('pelum.view')
+    <li class="nav-item"><a href="#pelum" class="nav-link collapsed {{ Route::is('admin.adminduk.*') ? 'active' : '' }}" data-toggle="collapse"><i
+        class="fa fa-fire"></i>Pelayanan Umum<span class="sub-ico">
+            <i class="fa fa-angle-down"></i></span></a></li>
+    <li class="sub collapse {{ Route::is('admin.adminduk.*') ? 'show' : '' }}" id="pelum">
+        <a href="{{ route('admin.adminduk.index') }}" class="nav-link {{ Route::is('admin.adminduk.index') || Route::is('admin.adminduk.public') || Route::is('admin.adminduk.private') || Route::is('admin.adminduk.category') ? 'active' : '' }}" data-parent="#sekretariat">ADMINDUK</a>
+        <a href="{{ route('admin.adminduk.index') }}" class="nav-link {{ Route::is('admin.adminduk.index') || Route::is('admin.adminduk.public') || Route::is('admin.adminduk.private') || Route::is('admin.adminduk.category') ? 'active' : '' }}" data-parent="#sekretariat">Dokumentasi</a>
+    </li>
+@endcan
+
 
 @can('role.view')
     <li class="nav-item"><a href="{{ route('admin.roles.index') }}" class="nav-link"><i
