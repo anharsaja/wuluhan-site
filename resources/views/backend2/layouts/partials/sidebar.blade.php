@@ -16,12 +16,12 @@
 
 {{-- Pemerintahan --}}
 @can('pemerintahan.view')
-    <li class="nav-item"><a href="#pemerintahan" class="nav-link collapsed {{ Route::is('admin.rapbdes.*') || Route::is('admin.plk.*') ? 'active' : '' }}" data-toggle="collapse"><i
+    <li class="nav-item"><a href="#pemerintahan" class="nav-link collapsed {{ Route::is('admin.rapbdes.*') || Route::is('admin.desa.*') || Route::is('admin.produkhukum.*') ? 'active' : '' }}" data-toggle="collapse"><i
         class="fa fa-fire"></i>Pemerintahan<span class="sub-ico">
             <i class="fa fa-angle-down"></i></span></a></li>
-    <li class="sub collapse {{ Route::is('admin.rapbdes.*') || Route::is('admin.plk.*') ? 'show' : '' }}" id="pemerintahan">
+    <li class="sub collapse {{ Route::is('admin.rapbdes.*') || Route::is('admin.desa.*') || Route::is('admin.produkhukum.*') ? 'show' : '' }}" id="pemerintahan">
         <a href="{{ route('admin.rapbdes.index') }}" class="nav-link {{ Route::is('admin.rapbdes.index') || Route::is('admin.rapbdes.public') || Route::is('admin.rapbdes.private') || Route::is('admin.rapbdes.category') ? 'active' : '' }}" data-parent="#sekretariat">RAPBDES</a>
-        {{-- <a href="{{ route('admin.desa.index') }}" class="nav-link {{ Route::is('admin.desa.index') || Route::is('admin.desa.public') || Route::is('admin.desa.private') || Route::is('admin.desa.category') ? 'active' : '' }}" data-parent="#sekretariat">Desa</a> --}}
+        <a href="{{ route('admin.desa.index') }}" class="nav-link {{ Route::is('admin.desa.index') || Route::is('admin.desa.public') || Route::is('admin.desa.private') || Route::is('admin.desa.category') ? 'active' : '' }}" data-parent="#sekretariat">Desa</a>
         <a href="{{ route('admin.rapbdes.index') }}" class="nav-link {{ Route::is('admin.rapbdes.index') || Route::is('admin.rapbdes.public') || Route::is('admin.rapbdes.private') || Route::is('admin.rapbdes.category') ? 'active' : '' }}" data-parent="#sekretariat">Produk Hukum</a>
     </li>
 @endcan
@@ -34,5 +34,5 @@
 
 @can('admin.view')
     <li class="nav-item"><a href="{{ route('admin.admins.index') }}" class="nav-link"><i
-                class="fa fa-adjust"></i>Manage Admins</a></li>
+        class="fa fa-adjust"></i>Manage Admins</a></li>
 @endcan

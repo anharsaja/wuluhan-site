@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\AdminsController;
 use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\DashboardController;
 
+
 // Sekretariat -- umpeg
 use App\Http\Controllers\Backend\sekretariat_controller\umpeg\CategoryUmpegController;
 use App\Http\Controllers\Backend\sekretariat_controller\umpeg\UmpegController;
@@ -20,6 +21,8 @@ use App\Http\Controllers\Backend\sekretariat_controller\plk\PlkController;
 use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\CategoryRapbdesController;
 use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\RapbdesController;
 // Pemerintahan -- Desa
+use App\Http\Controllers\Backend\pemerintahan_controller\desa\CategoryDesaController;
+use App\Http\Controllers\Backend\pemerintahan_controller\desa\DesaController;
 // Pemerintahan -- Produk Hukum 
 
 use App\Http\Controllers\LandingPage\HomeController;
@@ -81,14 +84,14 @@ Route::group(['prefix' => 'admin'], function () {
         });
 
         // PEMERINTAHAN - DESA
-        Route::resource('/pemerintahan/rapbdes', RapbdesController::class, ['names' => 'admin.rapbdes']);
-        Route::get('/pemerintahan/rapbdes/category/{id}', [RapbdesController::class, 'category'])->name('admin.rapbdes.category');
-        Route::get('/pemerintahan/rapbdes/surat/public', [RapbdesController::class, 'indexPublic'])->name('admin.rapbdes.public');
-        Route::get('/pemerintahan/rapbdes/surat/private', [RapbdesController::class, 'indexPrivate'])->name('admin.rapbdes.private');
-        Route::controller(CategoryRapbdesController::class)->group(function () {
-            Route::post('/pemerintahan/rapbdes/category/store', 'store')->name('admin.rapbdes.category.store');
-            Route::post('/pemerintahan/rapbdes/category/update/{id}', 'update')->name('admin.rapbdes.category.update');
-            Route::get('/pemerintahan/rapbdes/category/delete/{id}', 'delete')->name('admin.rapbdes.category.delete');
+        Route::resource('/pemerintahan/desa', DesaController::class, ['names' => 'admin.desa']);
+        Route::get('/pemerintahan/desa/category/{id}', [DesaController::class, 'category'])->name('admin.desa.category');
+        Route::get('/pemerintahan/desa/surat/public', [DesaController::class, 'indexPublic'])->name('admin.desa.public');
+        Route::get('/pemerintahan/desa/surat/private', [DesaController::class, 'indexPrivate'])->name('admin.desa.private');
+        Route::controller(CategoryDesaController::class)->group(function () {
+            Route::post('/pemerintahan/desa/category/store', 'store')->name('admin.desa.category.store');
+            Route::post('/pemerintahan/desa/category/update/{id}', 'update')->name('admin.desa.category.update');
+            Route::get('/pemerintahan/desa/category/delete/{id}', 'delete')->name('admin.desa.category.delete');
         });
 
 
