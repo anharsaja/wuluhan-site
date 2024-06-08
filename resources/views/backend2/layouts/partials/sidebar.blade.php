@@ -39,10 +39,10 @@
 
 {{-- Pennyandang Masalah Kesejahteraan Sosial --}}
 @can('pmks.view')
-    <li class="nav-item"><a href="#pmks" class="nav-link collapsed {{ Route::is('admin.pkk.*') || Route::is('admin.osjj.*') || Route::is('admin.kencana.*') || Route::is('admin.wisata.*') ? 'active' : '' }}" data-toggle="collapse"><i
+    <li class="nav-item"><a href="#pmks" class="nav-link collapsed {{ Route::is('admin.pkk.*') || Route::is('admin.osjj.*') || Route::is('admin.kencana.*') || Route::is('admin.wisata.*') || Route::is('admin.budaya.*') ? 'active' : '' }}" data-toggle="collapse"><i
         class="fa fa-fire"></i>PMKS<span class="sub-ico">
             <i class="fa fa-angle-down"></i></span></a></li>
-    <li class="sub collapse {{ Route::is('admin.pkk.*') || Route::is('admin.osjj.*') || Route::is('admin.kencana.*') || Route::is('admin.wisata.*') ? 'show' : '' }}" id="pmks">
+    <li class="sub collapse {{ Route::is('admin.pkk.*') || Route::is('admin.osjj.*') || Route::is('admin.kencana.*') || Route::is('admin.wisata.*') || Route::is('admin.budaya.*') ? 'show' : '' }}" id="pmks">
         <a href="{{ route('admin.pkk.index') }}" class="nav-link {{ Route::is('admin.pkk.index') || Route::is('admin.pkk.public') || Route::is('admin.pkk.private') || Route::is('admin.pkk.category') ? 'active' : '' }}" data-parent="#sekretariat">PKK</a>
         <a href="{{ route('admin.osjj.index') }}" class="nav-link {{ Route::is('admin.osjj.index') || Route::is('admin.osjj.public') || Route::is('admin.osjj.private') || Route::is('admin.osjj.category') ? 'active' : '' }}" data-parent="#sekretariat">OSJJ</a>
         <a href="{{ route('admin.kencana.index') }}" class="nav-link {{ Route::is('admin.kencana.index') || Route::is('admin.kencana.public') || Route::is('admin.kencana.private') || Route::is('admin.kencana.category') ? 'active' : '' }}" data-parent="#sekretariat">KENCANA</a>

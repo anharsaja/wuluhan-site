@@ -25,6 +25,8 @@ use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHuku
 /*** Pelum - Adminduk */
 use App\Http\Controllers\Backend\pelum_controller\adminduk\CategoryAdmindukController;
 use App\Http\Controllers\Backend\pelum_controller\adminduk\AdmindukController;
+use App\Http\Controllers\Backend\pmks_controller\budaya\BudayaController;
+use App\Http\Controllers\Backend\pmks_controller\budaya\CategoryBudayaController;
 use App\Http\Controllers\Backend\pmks_controller\kencana\CategoryKencanaController;
 use App\Http\Controllers\Backend\pmks_controller\kencana\KencanaController;
 use App\Http\Controllers\Backend\pmks_controller\osjj\CategoryOsjjController;
@@ -160,16 +162,16 @@ Route::group(['prefix' => 'admin'], function () {
         });
 
         /*** PMKS - Wisata */
-        Route::resource('/pmks/wisata', WisataController::class, ['names' => 'admin.wisata']);
-        Route::get('/pmks/wisata/category/{id}', [WisataController::class, 'category'])->name('admin.wisata.category');
-        Route::get('/pmks/wisata/surat/public', [WisataController::class, 'indexPublic'])->name('admin.wisata.public');
-        Route::get('/pmks/wisata/surat/private', [WisataController::class, 'indexPrivate'])->name('admin.wisata.private');
-        Route::controller(CategoryWisataController::class)->group(function () {
-            Route::post('/pmks/wisata/category/store', 'store')->name('admin.wisata.category.store');
-            Route::post('/pmks/wisata/category/update/{id}', 'update')->name('admin.wisata.category.update');
-            Route::get('/pmks/wisata/category/delete/{id}', 'delete')->name('admin.wisata.category.delete');
+        Route::resource('/pmks/budaya', BudayaController::class, ['names' => 'admin.budaya']);
+        Route::get('/pmks/budaya/category/{id}', [BudayaController::class, 'category'])->name('admin.budaya.category');
+        Route::get('/pmks/budaya/surat/public', [BudayaController::class, 'indexPublic'])->name('admin.budaya.public');
+        Route::get('/pmks/budaya/surat/private', [BudayaController::class, 'indexPrivate'])->name('admin.budaya.private');
+        Route::controller(CategoryBudayaController::class)->group(function () {
+            Route::post('/pmks/budaya/category/store', 'store')->name('admin.budaya.category.store');
+            Route::post('/pmks/budaya/category/update/{id}', 'update')->name('admin.budaya.category.update');
+            Route::get('/pmks/budaya/category/delete/{id}', 'delete')->name('admin.budaya.category.delete');
         });
-        
+
         /*** PMKS - Wisata */
         Route::resource('/pmks/wisata', WisataController::class, ['names' => 'admin.wisata']);
         Route::get('/pmks/wisata/category/{id}', [WisataController::class, 'category'])->name('admin.wisata.category');
