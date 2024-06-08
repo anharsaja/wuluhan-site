@@ -39,7 +39,7 @@ class AdmindukController extends Controller
             $surat = SuratAdminduk::where('category_id', $id)->get();
             return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'ADMINDUK', 'categoryName' => $categoryName, 'name' => 'adminduk']);
         } catch (\Throwable $th) {
-            return redirect()->route('admin.rapbdes.index');
+            return redirect()->route('admin.adminduk.index');
         }
     }
 

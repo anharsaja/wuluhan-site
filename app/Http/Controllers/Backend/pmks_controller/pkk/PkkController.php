@@ -1,45 +1,45 @@
 <?php
 
-namespace App\Http\Controllers\Backend\pemerintahan_controller\desa;
+namespace App\Http\Controllers\Backend\pmks_controller\pkk;
 
 use Illuminate\Http\Request;
+use App\Models\Pmks\Pkk\SuratPkk;
 use App\Http\Controllers\Controller;
+use App\Models\Pmks\Pkk\CategoryPkk;
 use Illuminate\Support\Facades\File;
-use App\Models\Pemerintahan\Desa\SuratDesa;
-use App\Models\Pemerintahan\Desa\CategoryDesa;
 
-class DesaController extends Controller
+class PkkController extends Controller
 {
     public function index()
     {
-        $category = CategoryDesa::get();
-        $surat = SuratDesa::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA', 'name' => 'desa']);
+        $category = CategoryPkk::get();
+        $surat = SuratPkk::get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK', 'name' => 'pkk']);
     }
 
     public function indexPublic()
     {
-        $category = CategoryDesa::get();
-        $surat = SuratDesa::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA - Public', 'name' => 'desa']);
+        $category = CategoryPkk::get();
+        $surat = SuratPkk::where('status', 'public')->get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK - Public', 'name' => 'pkk']);
     }
 
         public function indexPrivate()
     {
-        $category = CategoryDesa::get();
-        $surat = SuratDesa::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA - Private', 'name' => 'desa']);
+        $category = CategoryPkk::get();
+        $surat = SuratPkk::where('status', 'private')->get();
+        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK - Private', 'name' => 'pkk']);
     }
 
     public function category($id)
     {
         try {
-            $categoryName = CategoryDesa::findOrFail($id)->name;
-            $category = CategoryDesa::get();
-            $surat = SuratDesa::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA', 'categoryName' => $categoryName, 'name' => 'desa']);
+            $categoryName = CategoryPkk::findOrFail($id)->name;
+            $category = CategoryPkk::get();
+            $surat = SuratPkk::where('category_id', $id)->get();
+            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK', 'categoryName' => $categoryName, 'name' => 'pkk']);
         } catch (\Throwable $th) {
-            return redirect()->route('admin.desa.index');
+            return redirect()->route('admin.pkk.index');
         }
     }
 
@@ -62,7 +62,7 @@ class DesaController extends Controller
                 $filename = time() . '.' . $extension;
                 $files->move(public_path() . '/kumpulan_surat/file_desa', $filename);
 
-                SuratDesa::create([
+                SuratPkk::create([
                     'name' => $request->name,
                     'description' => $request->description,
                     'category_id' => $request->category_id,
@@ -91,7 +91,7 @@ class DesaController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $surat = SuratDesa::find($id);
+        $surat = SuratPkk::find($id);
         $surat->name = $request->name;
         $surat->description = $request->description;
         $surat->category_id = $request->category;
@@ -124,7 +124,7 @@ class DesaController extends Controller
 
     public function destroy(string $id)
     {
-        $surat = SuratDesa::find($id);
+        $surat = SuratPkk::find($id);
         $filesLama = public_path($surat->path_file);
         if (File::exists($filesLama)) {
             File::delete($filesLama);

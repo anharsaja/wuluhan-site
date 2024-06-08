@@ -25,6 +25,9 @@ use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHuku
 /*** Pelum - Adminduk */
 use App\Http\Controllers\Backend\pelum_controller\adminduk\CategoryAdmindukController;
 use App\Http\Controllers\Backend\pelum_controller\adminduk\AdmindukController;
+use App\Http\Controllers\Backend\pmks_controller\pkk\CategoryPkkController;
+use App\Http\Controllers\Backend\pmks_controller\pkk\PkkController;
+
 /*** Pelum - PMKS */
 
 
@@ -115,6 +118,17 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/pelum/adminduk/category/store', 'store')->name('admin.adminduk.category.store');
             Route::post('/pelum/adminduk/category/update/{id}', 'update')->name('admin.adminduk.category.update');
             Route::get('/pelum/adminduk/category/delete/{id}', 'delete')->name('admin.adminduk.category.delete');
+        });
+
+        /*** PMKS - PKK */
+        Route::resource('/pmks/pkk', PkkController::class, ['names' => 'admin.pkk']);
+        Route::get('/pmks/pkk/category/{id}', [PkkController::class, 'category'])->name('admin.pkk.category');
+        Route::get('/pmks/pkk/surat/public', [PkkController::class, 'indexPublic'])->name('admin.pkk.public');
+        Route::get('/pmks/pkk/surat/private', [PkkController::class, 'indexPrivate'])->name('admin.pkk.private');
+        Route::controller(CategoryPkkController::class)->group(function () {
+            Route::post('/pmks/pkk/category/store', 'store')->name('admin.pkk.category.store');
+            Route::post('/pmks/pkk/category/update/{id}', 'update')->name('admin.pkk.category.update');
+            Route::get('/pmks/pkk/category/delete/{id}', 'delete')->name('admin.pkk.category.delete');
         });
 
 

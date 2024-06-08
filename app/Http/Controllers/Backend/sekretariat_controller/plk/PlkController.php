@@ -39,7 +39,7 @@ class PlkController extends Controller
             $surat = SuratPlk::where('category_id', $id)->get();
             return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan', 'categoryName' => $categoryName, 'name' => 'plk']);
         } catch (\Throwable $th) {
-            return redirect()->route('admin.umpeg.index');
+            return redirect()->route('admin.plk.index');
         }
     }
 
