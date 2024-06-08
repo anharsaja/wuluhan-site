@@ -23,6 +23,8 @@ use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\RapbdesControll
 // Pemerintahan -- Desa
 use App\Http\Controllers\Backend\pemerintahan_controller\desa\CategoryDesaController;
 use App\Http\Controllers\Backend\pemerintahan_controller\desa\DesaController;
+use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\CategoryProdukHukumController;
+use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHukumController;
 // Pemerintahan -- Produk Hukum 
 
 use App\Http\Controllers\LandingPage\HomeController;
@@ -92,6 +94,17 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/pemerintahan/desa/category/store', 'store')->name('admin.desa.category.store');
             Route::post('/pemerintahan/desa/category/update/{id}', 'update')->name('admin.desa.category.update');
             Route::get('/pemerintahan/desa/category/delete/{id}', 'delete')->name('admin.desa.category.delete');
+        });
+
+        // PEMERINTAHAN - PRODUK HUKUM
+        Route::resource('/pemerintahan/produkhukum', ProdukHukumController::class, ['names' => 'admin.produkhukum']);
+        Route::get('/pemerintahan/produkhukum/category/{id}', [ProdukHukumController::class, 'category'])->name('admin.produkhukum.category');
+        Route::get('/pemerintahan/produkhukum/surat/public', [ProdukHukumController::class, 'indexPublic'])->name('admin.produkhukum.public');
+        Route::get('/pemerintahan/produkhukum/surat/private', [ProdukHukumController::class, 'indexPrivate'])->name('admin.produkhukum.private');
+        Route::controller(CategoryProdukHukumController::class)->group(function () {
+            Route::post('/pemerintahan/produkhukum/category/store', 'store')->name('admin.produkhukum.category.store');
+            Route::post('/pemerintahan/produkhukum/category/update/{id}', 'update')->name('admin.produkhukum.category.update');
+            Route::get('/pemerintahan/produkhukum/category/delete/{id}', 'delete')->name('admin.produkhukum.category.delete');
         });
 
 

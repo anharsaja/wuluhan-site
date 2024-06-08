@@ -22,7 +22,7 @@
     <li class="sub collapse {{ Route::is('admin.rapbdes.*') || Route::is('admin.desa.*') || Route::is('admin.produkhukum.*') ? 'show' : '' }}" id="pemerintahan">
         <a href="{{ route('admin.rapbdes.index') }}" class="nav-link {{ Route::is('admin.rapbdes.index') || Route::is('admin.rapbdes.public') || Route::is('admin.rapbdes.private') || Route::is('admin.rapbdes.category') ? 'active' : '' }}" data-parent="#sekretariat">RAPBDES</a>
         <a href="{{ route('admin.desa.index') }}" class="nav-link {{ Route::is('admin.desa.index') || Route::is('admin.desa.public') || Route::is('admin.desa.private') || Route::is('admin.desa.category') ? 'active' : '' }}" data-parent="#sekretariat">Desa</a>
-        <a href="{{ route('admin.rapbdes.index') }}" class="nav-link {{ Route::is('admin.rapbdes.index') || Route::is('admin.rapbdes.public') || Route::is('admin.rapbdes.private') || Route::is('admin.rapbdes.category') ? 'active' : '' }}" data-parent="#sekretariat">Produk Hukum</a>
+        <a href="{{ route('admin.produkhukum.index') }}" class="nav-link {{ Route::is('admin.produkhukum.index') || Route::is('admin.produkhukum.public') || Route::is('admin.produkhukum.private') || Route::is('admin.produkhukum.category') ? 'active' : '' }}" data-parent="#sekretariat">Produk Hukum</a>
     </li>
 @endcan
 
