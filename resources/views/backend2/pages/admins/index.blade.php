@@ -30,11 +30,9 @@
                             <tr>
                                 <th>No</th>
                                 <th>Name</th>
+                                <th>Email</th>
+                                <th>NIP</th>
                                 <th>posisi</th>
-                                <th>deskirpsi</th>
-                                <th>telepon</th>
-                                <th>email</th>
-                                <th>experience</th>
                                 <th>action</th>
                             </tr>
                         </thead>
@@ -43,6 +41,8 @@
                             <tr>
                                 <td>{{ $loop->index+1 }}</td>
                                 <td>{{ $admin->name }}</td>
+                                <td>{{ $admin->email }}</td>
+                                <td>{{ $admin->nip }}</td>
                                 <td>
                                     @foreach ($admin->roles as $role)
                                     <span class="badge badge-info mr-1">
@@ -50,10 +50,6 @@
                                     </span>
                                     @endforeach
                                 </td>
-                                <td>{{ $admin->description }}</td>
-                                <td>{{ $admin->telepon }}</td>
-                                <td>{{ $admin->email }}</td>
-                                <td>{{ $admin->experience }}</td>
                                 <td>
                                     @if (Auth::guard('admin')->user()->can('admin.edit'))
                                     <a class="btn btn-warning text-white" href="{{ route('admin.admins.edit', $admin->id) }}">Edit</a>
@@ -90,7 +86,7 @@
                                         </form><!-- .modal-footer -->
                                     </div><!-- /.modal-content -->
                                 </div><!-- /.modal-dialog -->
-                            </div><!-- /.modal --> 
+                            </div><!-- /.modal -->
                             @endforeach
                         </tbody>
                     </table>

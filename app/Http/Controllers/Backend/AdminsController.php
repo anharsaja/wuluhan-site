@@ -26,7 +26,7 @@ class AdminsController extends Controller
         if (is_null($this->user) || !$this->user->can('admin.view')) {
             abort(403, 'Sorry !! You are Unauthorized to view any admin !');
         }
-        
+
         $title = 'Admins';
         $admins = Admin::all();
         return view('backend2.pages.admins.index', compact('admins', 'title'));
@@ -37,7 +37,7 @@ class AdminsController extends Controller
         if (is_null($this->user) || !$this->user->can('admin.create')) {
             abort(403, 'Sorry !! You are Unauthorized to create any admin !');
         }
-        
+
         $title = 'Create Admins';
         $roles  = Role::all();
         return view('backend2.pages.admins.create', compact('roles', 'title'));
@@ -52,7 +52,6 @@ class AdminsController extends Controller
         // Validation Data
         $request->validate([
             'name' => 'required|max:50',
-            'email' => 'required|max:100|email|unique:admins',
             'username' => 'required|max:100|unique:admins',
             'password' => 'required|min:6|confirmed',
         ]);
@@ -61,6 +60,8 @@ class AdminsController extends Controller
         $admin = new Admin();
         $admin->name = $request->name;
         $admin->username = $request->username;
+        $admin->nip = $request->nip;
+        $admin->description = $request->description;
         $admin->email = $request->email;
         $admin->password = Hash::make($request->password);
         $admin->save();
@@ -83,7 +84,7 @@ class AdminsController extends Controller
         if (is_null($this->user) || !$this->user->can('admin.edit')) {
             abort(403, 'Sorry !! You are Unauthorized to edit any admin !');
         }
-        
+
         $title = 'Admins Edit';
         $admin = Admin::find($id);
         $roles  = Role::all();

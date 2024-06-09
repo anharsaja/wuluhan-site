@@ -18,6 +18,7 @@
     <link rel="icon" type="image/png" href="{{ asset('img/favicon/favicon-32x32.png') }}">
     <link rel="shortcut icon" href="{{ asset('img/favicon/favicon.ico') }}" type="image/x-icon">
     <link rel="manifest" href="{{ asset('img/favicon/site.webmanifest') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @yield('styles')
     <!-- icon -->
@@ -84,7 +85,7 @@
                                 aria-haspopup="true"
                                 aria-expanded="false">{{ Auth::guard('admin')->user()->name }}</button>
                             <div class="dropdown-menu" aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">Profiles</a>
+                                <a class="dropdown-item" href="{{ route('admin.profile')}}">Profiles</a>
                                 {{-- <a class="dropdown-item" href="#">Setting</a> --}}
                                 <a class="dropdown-item" href="{{ route('admin.logout.submit') }}">log out</a>
                             </div>

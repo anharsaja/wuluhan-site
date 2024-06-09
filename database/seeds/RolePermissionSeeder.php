@@ -18,6 +18,7 @@ class RolePermissionSeeder extends Seeder
                     'admin.create',
                     'admin.view',
                     'admin.edit',
+                    'admin.delete',
                 ]
             ],
             [
@@ -27,6 +28,7 @@ class RolePermissionSeeder extends Seeder
                     'role.create',
                     'role.view',
                     'role.edit',
+                    'role.delete',
                 ]
             ],
             [
@@ -43,6 +45,7 @@ class RolePermissionSeeder extends Seeder
                     'sekretariat.create',
                     'sekretariat.view',
                     'sekretariat.edit',
+                    'sekretariat.delete',
                 ]
             ],
             [
@@ -52,6 +55,7 @@ class RolePermissionSeeder extends Seeder
                     'pemerintahan.create',
                     'pemerintahan.view',
                     'pemerintahan.edit',
+                    'pemerintahan.delete',
                 ]
             ],
             [
@@ -61,6 +65,7 @@ class RolePermissionSeeder extends Seeder
                     'pelum.create',
                     'pelum.view',
                     'pelum.edit',
+                    'pelum.delete',
                 ]
             ],
             [
@@ -70,6 +75,7 @@ class RolePermissionSeeder extends Seeder
                     'pmks.create',
                     'pmks.view',
                     'pmks.edit',
+                    'pmks.delete',
                 ]
             ],
             [
@@ -79,6 +85,7 @@ class RolePermissionSeeder extends Seeder
                     'trantib.create',
                     'trantib.view',
                     'trantib.edit',
+                    'trantib.delete',
                 ]
             ]
         ];

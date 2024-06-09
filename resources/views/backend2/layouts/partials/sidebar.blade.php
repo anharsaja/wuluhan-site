@@ -55,7 +55,7 @@
 {{-- Trantib --}}
 @can('trantib.view')
     <li class="nav-item"><a href="#trantib" class="nav-link collapsed {{ Route::is('admin.trantib.*') || Route::is('admin.trantib.dokumentasi.*') ? 'active' : '' }}" data-toggle="collapse"><i
-        class="fa fa-handshake"></i>TRANTIB<span class="sub-ico">
+        class="fa fa-fire"></i>TRANTIB<span class="sub-ico">
             <i class="fa fa-angle-down"></i></span></a></li>
     <li class="sub collapse {{ Route::is('admin.trantib.*') || Route::is('admin.trantib.dokumentasi.*') ? 'show' : '' }}" id="trantib">
         <a href="{{ route('admin.trantib.surat.index') }}" class="nav-link {{ Route::is('admin.trantib.surat.index') || Route::is('admin.trantib.surat.public') || Route::is('admin.trantib.surat.private') || Route::is('admin.trantib.surat.category') ? 'active' : '' }}" data-parent="#sekretariat">Kelola Dokumen</a>

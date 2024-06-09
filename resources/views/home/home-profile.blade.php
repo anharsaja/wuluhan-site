@@ -14,12 +14,12 @@
         </div>
     </div> -->
 </div><!--==============================
-Service Area  
+Service Area
 ==============================-->
 
 <section class="service-area4 th-radius5 space" id="service-sec">
 <div class="container th-container4">
-    <div class="row justify-content-center">
+    <div class="row justify-content-betweennt-center">
         <div class="col-lg-6">
             <div class="title-area text-center me-xl-5 ms-xl-5">
                 <span class="sub-title sub-title3">Our Services</span>
@@ -57,7 +57,7 @@ Service Area
                 </div>
             </div>
         </div>
-        
+
         <div class="col-md-6 col-xl-3">
             <div class="service-box2 wow fadeInRight">
                 <div class="service-box2_shape" data-bg-src="{{asset('img/shape/ser_shape_1.png')}}"></div>
@@ -203,7 +203,7 @@ Service Area
 </section>
 
 <!--==============================
-Cta Area  
+Cta Area
 ==============================-->
 <section class="position-relative space">
     <div class="th-bg-img" data-bg-src="{{asset('img/bg/papuma.jpg')}}" style="filter: brightness(50%)">
@@ -500,7 +500,7 @@ Cta Area
 </div> --}}
 
 <!--==============================
-Contact Area  
+Contact Area
 ==============================-->
 {{-- <div class="bg-smoke space" id="contact-sec">
     <div class="container">
@@ -559,5 +559,5 @@ Contact Area
 <div class="map mb-5 mt-5" style="height: 800px">
     <iframe height="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126319.71459821571!2d113.45383307415831!3d-8.353254933051847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6837b1ab28437%3A0x4027a76e3530e20!2sKec.%20Wuluhan%2C%20Kabupaten%20Jember%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1716481411623!5m2!1sid!2sid" allowfullscreen="" loading="lazy"></iframe>
 </div>
-    
+
 @endsection

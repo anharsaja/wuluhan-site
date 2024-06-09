@@ -63,6 +63,9 @@ Route::controller(HomeController::class)->group(function () {
 Route::group(['prefix' => 'admin'], function () {
     Route::middleware('auth:admin')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+        Route::get('/profile', [DashboardController::class, 'profile'])->name('admin.profile');
+        Route::post('/profile/edit/{id}', [DashboardController::class, 'storeProfile'])->name('admin.profile.edit');
+        Route::post('/profile/upload', [DashboardController::class, 'uploadProfile'])->name('admin.avatar.edit');
         Route::resource('roles', RolesController::class, ['names' => 'admin.roles']);
         Route::resource('users', UsersController::class, ['names' => 'admin.users']);
         Route::resource('admins', AdminsController::class, ['names' => 'admin.admins']);
