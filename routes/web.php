@@ -5,47 +5,49 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\RolesController;
 use App\Http\Controllers\Backend\UsersController;
 use App\Http\Controllers\Backend\AdminsController;
-use App\Http\Controllers\Backend\Auth\LoginController;
+use App\Http\Controllers\LandingPage\HomeController;
 use App\Http\Controllers\Backend\DashboardController;
 /***  Sekretariat -- umpeg */
-use App\Http\Controllers\Backend\sekretariat_controller\umpeg\CategoryUmpegController;
-use App\Http\Controllers\Backend\sekretariat_controller\umpeg\UmpegController;
-/***  ekretariat -- plk */
-use App\Http\Controllers\Backend\sekretariat_controller\plk\CategoryPlkController;
-use App\Http\Controllers\Backend\sekretariat_controller\plk\PlkController;
-/*** Pemerintahan -- RAPBDES */
-use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\CategoryRapbdesController;
-use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\RapbdesController;
-/*** Pemerintahan -- Desa */
-use App\Http\Controllers\Backend\pemerintahan_controller\desa\CategoryDesaController;
-use App\Http\Controllers\Backend\pemerintahan_controller\desa\DesaController;
-/*** Pemerintahan -- Produk Hukum */
-use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\CategoryProdukHukumController;
-use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHukumController;
-/*** Pelum - Adminduk */
-use App\Http\Controllers\Backend\pelum_controller\adminduk\CategoryAdmindukController;
-use App\Http\Controllers\Backend\pelum_controller\adminduk\AdmindukController;
-use App\Http\Controllers\Backend\pmks_controller\agama\AgamaController;
-use App\Http\Controllers\Backend\pmks_controller\agama\CategoryAgamaController;
-use App\Http\Controllers\Backend\pmks_controller\budaya\BudayaController;
-use App\Http\Controllers\Backend\pmks_controller\budaya\CategoryBudayaController;
-use App\Http\Controllers\Backend\pmks_controller\kencana\CategoryKencanaController;
-use App\Http\Controllers\Backend\pmks_controller\kencana\KencanaController;
-use App\Http\Controllers\Backend\pmks_controller\osjj\CategoryOsjjController;
-use App\Http\Controllers\Backend\pmks_controller\osjj\OsjjController;
-use App\Http\Controllers\Backend\pmks_controller\pkk\CategoryPkkController;
+use App\Http\Controllers\Backend\Auth\LoginController;
 use App\Http\Controllers\Backend\pmks_controller\pkk\PkkController;
-use App\Http\Controllers\Backend\pmks_controller\wisata\CategoryWisataController;
+/***  ekretariat -- plk */
+use App\Http\Controllers\Backend\pmks_controller\osjj\OsjjController;
+use App\Http\Controllers\Backend\pmks_controller\agama\AgamaController;
+/*** Pemerintahan -- RAPBDES */
+use App\Http\Controllers\Backend\pmks_controller\budaya\BudayaController;
 use App\Http\Controllers\Backend\pmks_controller\wisata\WisataController;
-use App\Http\Controllers\Backend\trantib_controller\dokumentasi\CategoryDokumentasiTantribController;
-use App\Http\Controllers\Backend\trantib_controller\dokumentasi\DokumentasiTantribController;
-use App\Http\Controllers\Backend\trantib_controller\surat\CategorySuratTrantibController;
+/*** Pemerintahan -- Desa */
+use App\Http\Controllers\Backend\sekretariat_controller\plk\PlkController;
+use App\Http\Controllers\Backend\pmks_controller\kencana\KencanaController;
+/*** Pemerintahan -- Produk Hukum */
+use App\Http\Controllers\Backend\pmks_controller\pkk\CategoryPkkController;
+use App\Http\Controllers\Backend\pemerintahan_controller\desa\DesaController;
+/*** Pelum - Adminduk */
+use App\Http\Controllers\Backend\pmks_controller\osjj\CategoryOsjjController;
+use App\Http\Controllers\Backend\pelum_controller\adminduk\AdmindukController;
+use App\Http\Controllers\Backend\sekretariat_controller\umpeg\UmpegController;
+use App\Http\Controllers\Backend\pmks_controller\agama\CategoryAgamaController;
+use App\Http\Controllers\Backend\pmks_controller\budaya\CategoryBudayaController;
+use App\Http\Controllers\Backend\pmks_controller\wisata\CategoryWisataController;
 use App\Http\Controllers\Backend\trantib_controller\surat\SuratTrantibController;
+use App\Http\Controllers\Backend\sekretariat_controller\plk\CategoryPlkController;
+use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\RapbdesController;
+use App\Http\Controllers\Backend\pmks_controller\kencana\CategoryKencanaController;
+use App\Http\Controllers\Backend\pemerintahan_controller\desa\CategoryDesaController;
+use App\Http\Controllers\Backend\pelum_controller\adminduk\CategoryAdmindukController;
+use App\Http\Controllers\Backend\sekretariat_controller\umpeg\CategoryUmpegController;
+use App\Http\Controllers\Backend\trantib_controller\surat\CategorySuratTrantibController;
+use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\CategoryRapbdesController;
+use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHukumController;
+use App\Http\Controllers\Backend\trantib_controller\dokumentasi\DokumentasiTantribController;
+use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\CategoryProdukHukumController;
+use App\Http\Controllers\Backend\sekretariat_controller\dokumentasi\CategoryDokumentasiSekretariatController;
 
 /*** Pelum - PMKS */
 
 
-use App\Http\Controllers\LandingPage\HomeController;
+use App\Http\Controllers\Backend\sekretariat_controller\dokumentasi\DokumentasiSekretariatController;
+use App\Http\Controllers\Backend\trantib_controller\dokumentasi\CategoryDokumentasiTantribController;
 
 Auth::routes();
 
@@ -80,7 +82,11 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/sekretariatan/umpeg/category/store', 'store')->name('admin.umpeg.category.store');
             Route::post('/sekretariatan/umpeg/category/update/{id}', 'update')->name('admin.umpeg.category.update');
             Route::get('/sekretariatan/umpeg/category/delete/{id}', 'delete')->name('admin.umpeg.category.delete');
+
         });
+        // Dokumentasi
+
+
         
         /*** SEKRETARIAT - PLK */
         Route::resource('/sekretariatan/plk', PlkController::class, ['names' => 'admin.plk']);
@@ -114,7 +120,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/pemerintahan/desa/category/update/{id}', 'update')->name('admin.desa.category.update');
             Route::get('/pemerintahan/desa/category/delete/{id}', 'delete')->name('admin.desa.category.delete');
         });
-
+        
         /*** PEMERINTAHAN - PRODUK HUKUM */
         Route::resource('/pemerintahan/produkhukum', ProdukHukumController::class, ['names' => 'admin.produkhukum']);
         Route::get('/pemerintahan/produkhukum/category/{id}', [ProdukHukumController::class, 'category'])->name('admin.produkhukum.category');
