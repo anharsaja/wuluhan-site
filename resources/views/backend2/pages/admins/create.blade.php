@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group col-md-6 col-sm-12">
                             <label for="description">Description</label>
-                            <input type="text" class="form-control" id="nip" name="nip" placeholder="Description">
+                            <input type="text" class="form-control" id="description" name="description" placeholder="Description">
                         </div>
                     </div>
 

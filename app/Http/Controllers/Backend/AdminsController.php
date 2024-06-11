@@ -119,6 +119,8 @@ class AdminsController extends Controller
         $admin->name = $request->name;
         $admin->email = $request->email;
         $admin->username = $request->username;
+        $admin->nip = $request->nip;
+        $admin->description = $request->description;
         if ($request->password) {
             $admin->password = Hash::make($request->password);
         }

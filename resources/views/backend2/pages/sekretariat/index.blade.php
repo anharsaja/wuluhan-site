@@ -27,7 +27,7 @@
                         </div><!-- .action-panel-toggle -->
                             <div class="m-b-lg">
                                 <a href="#" data-toggle="modal" data-target="#contactModal"
-                                    class="btn btn-primary btn-block">New Contact</a>
+                                    class="btn btn-primary btn-block">Upload File</a>
                             </div>
                         <!-- contact category list -->
                         <div id="categories-list" class="app-actions-list scrollable-container">

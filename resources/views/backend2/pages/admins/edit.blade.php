@@ -33,6 +33,14 @@
                             <label for="email">Admin Email</label>
                             <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email" value="{{ $admin->email }}">
                         </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="nip">NIP</label>
+                            <input type="text" class="form-control" id="nip" name="nip" placeholder="Enter nip" value="{{ $admin->nip }}">
+                        </div>
+                        <div class="form-group col-md-6 col-sm-12">
+                            <label for="description">Deskripsi</label>
+                            <textarea type="text" class="form-control" id="description" name="description" placeholder="Enter description" value="{{ $admin->descripion }}" cols="30" rows="4">{{ $admin->description }}</textarea>
+                        </div>
                     </div>
 
                     <div class="form-row">

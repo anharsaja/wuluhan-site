@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\LandingPage;
 
-use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use App\Models\FotoWisata;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -15,10 +16,12 @@ class HomeController extends Controller
 
     public function team()
     {
-        return view('home.team');
+        $superadmin = Admin::find(1);
+        $admins = Admin::where('id' ,'!=', 1)->get();
+        return view('home.team', compact('superadmin', 'admins'));
     }
 
-    public function teamdetails()
+    public function teamdetails($id)
     {
         return view('home.team-details');
     }
