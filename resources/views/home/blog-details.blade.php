@@ -78,7 +78,7 @@
                                     <a href="blog.html">Online</a>
                                 </div>
                             </div>
-                            <div class="col-sm-auto text-xl-end">
+                            {{-- <div class="col-sm-auto text-xl-end">
                                 <span class="share-links-title">Share:</span>
                                 <ul class="social-links">
                                     <li><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
@@ -86,7 +86,7 @@
                                     <li><a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
                                     <li><a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a></li>
                                 </ul><!-- End Social Share -->
-                            </div><!-- Share Links Area end -->
+                            </div><!-- Share Links Area end --> --}}
                         </div>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                         </li>
                     </ul>
                 </div> <!-- Comment end --> <!-- Comment Form -->
-                <div class="th-comment-form ">
+                {{-- <div class="th-comment-form ">
                     <div class="form-title">
                         <h3 class="blog-inner-title mb-2"><i class="fa-solid fa-reply"></i> Leave a Comment</h3>
                         <p class="form-text">Your email address will not be published. Required fields are marked *</p>
@@ -169,7 +169,7 @@
                             <button class="th-btn">Post Comment</button>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="col-xxl-4 col-lg-5">
                 <aside class="sidebar-area">

@@ -19,63 +19,13 @@
                             <a href="blog.html"><i class="fa-light fa-calendar-days"></i>21 June, 2024</a>
                             <a href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
                         </div>
-                        <h2 class="blog-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a>
+                        <h2 class="blog-title"><a href="{{route('home.blogdetails')}}">Unsatiable entreaties may collecting Power.</a>
                         </h2>
                         <p class="blog-text">Progressively plagiarize quality metrics for impactful data. Assertively. Holisticly leverage existing magnetic functionalities. Assertively orchestrate high-quality customer service vis-a-vis intuitive interfaces. Conveniently enhance highly efficient infomediaries.</p>
-                        <a href="blog-details.html" class="line-btn">Read More</a>
+                        <a href="{{route('home.blogdetails')}}" class="line-btn">Read More</a>
                     </div>
                 </div>
 
-                <div class="th-blog blog-single has-post-thumbnail">
-                    <div class="blog-img">
-                        <a href="blog-details.html"><img src="{{asset('img/blog/blog-s-1-1.jpg')}}" alt="Blog Image"></a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <a class="author" href="blog.html"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
-                            <a href="blog.html"><i class="fa-light fa-calendar-days"></i>21 June, 2024</a>
-                            <a href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
-                        </div>
-                        <h2 class="blog-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a>
-                        </h2>
-                        <p class="blog-text">Progressively plagiarize quality metrics for impactful data. Assertively. Holisticly leverage existing magnetic functionalities. Assertively orchestrate high-quality customer service vis-a-vis intuitive interfaces. Conveniently enhance highly efficient infomediaries.</p>
-                        <a href="blog-details.html" class="line-btn">Read More</a>
-                    </div>
-                </div>
-
-                <div class="th-blog blog-single has-post-thumbnail">
-                    <div class="blog-img">
-                        <a href="blog-details.html"><img src="{{asset('img/blog/blog-s-1-1.jpg')}}" alt="Blog Image"></a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <a class="author" href="blog.html"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
-                            <a href="blog.html"><i class="fa-light fa-calendar-days"></i>21 June, 2024</a>
-                            <a href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
-                        </div>
-                        <h2 class="blog-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a>
-                        </h2>
-                        <p class="blog-text">Progressively plagiarize quality metrics for impactful data. Assertively. Holisticly leverage existing magnetic functionalities. Assertively orchestrate high-quality customer service vis-a-vis intuitive interfaces. Conveniently enhance highly efficient infomediaries.</p>
-                        <a href="blog-details.html" class="line-btn">Read More</a>
-                    </div>
-                </div>
-
-                <div class="th-blog blog-single has-post-thumbnail">
-                    <div class="blog-img">
-                        <a href="blog-details.html"><img src="{{asset('img/blog/blog-s-1-1.jpg')}}" alt="Blog Image"></a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <a class="author" href="blog.html"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
-                            <a href="blog.html"><i class="fa-light fa-calendar-days"></i>21 June, 2024</a>
-                            <a href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
-                        </div>
-                        <h2 class="blog-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a>
-                        </h2>
-                        <p class="blog-text">Progressively plagiarize quality metrics for impactful data. Assertively. Holisticly leverage existing magnetic functionalities. Assertively orchestrate high-quality customer service vis-a-vis intuitive interfaces. Conveniently enhance highly efficient infomediaries.</p>
-                        <a href="blog-details.html" class="line-btn">Read More</a>
-                    </div>
-                </div>
 
                 <div class="th-pagination text-center">
                     <ul>
