@@ -52,7 +52,7 @@ Auth::routes();
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
     Route::get('/team', 'team')->name('home.team');
-    Route::get('/team/details', 'teamdetails')->name('home.teamdetails');
+    Route::get('/team/details/{id}', 'teamdetails')->name('home.teamdetails');
     Route::get('/team/blog', 'blog')->name('home.blog');
     Route::get('/team/blog/details', 'blogdetails')->name('home.blogdetails');
     Route::get('/team/contact', 'contact')->name('home.contact');

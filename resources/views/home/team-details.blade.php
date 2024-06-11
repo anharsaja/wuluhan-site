@@ -6,13 +6,17 @@
     <div class="container">
         <div class="about-card">
             <div class="about-card_img">
-                <img class="w-100" src="{{asset('img/team/team_details.jpg')}}" alt="team image">
+                <img class="w-100" src="{{ $admin->foto ? $admin->foto : asset('img/avatar/avatar.png') }}" alt="team image">
             </div>
             <div class="about-card_box">
                 <div class="about-card_top">
                     <div class="media-body">
-                        <h2 class="about-card_title">Rayan Athels</h2>
-                        <p class="about-card_desig">UI/UX Designer</p>
+                        <h2 class="about-card_title">{{$admin->name}}</h2>
+                        <p class="about-card_desig">
+                            @foreach ($admin->roles as $role)
+                                {{$role->name}}
+                            @endforeach
+                        </p>
                     </div>
                     <div class="header-social">
                         <a target="_blank" href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a>
@@ -21,24 +25,15 @@
                         <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <p class="about-card_text">Continually utilize 24/365 bandwidth before real-time interfaces. Credibly grow team core competencies with pandemic commerce. Objectively initiate pandemic users with deliver bricks clicks meta services for bricks-and-clicks innovation streamline front end aradigms expedite granular human capital rather than intuitive testing.</p>
+                <p class="about-card_text">{{ $admin->description }}</p>
                 <div class="team-info-wrap">
                     <div class="contact-feature">
                         <div class="icon-btn">
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="media-body">
-                            <p class="contact-feature_label">Experience</p>
-                            <span class="contact-feature_link">More Than 10 Yearsn</span>
-                        </div>
-                    </div>
-                    <div class="contact-feature">
-                        <div class="icon-btn">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div class="media-body">
-                            <p class="contact-feature_label">Phone</p>
-                            <a href="tel:+19088006987" class="contact-feature_link">+(190)-8800-6987</a>
+                            <p class="contact-feature_label">NIP</p>
+                            <span class="contact-feature_link">{{ $admin->nip }}Yearsn</span>
                         </div>
                     </div>
                     <div class="contact-feature">
@@ -47,23 +42,14 @@
                         </div>
                         <div class="media-body">
                             <p class="contact-feature_label">Email</p>
-                            <a href="mailto:info@webteck.com" class="contact-feature_link">info@webteck.com</a>
+                            <a href="mailto:info@webteck.com" class="contact-feature_link">{{ $admin->email }}</a>
                         </div>
                     </div>
-                    {{-- <div class="contact-feature">
-                        <div class="icon-btn">
-                            <i class="fa-solid fa-calendar-days"></i>
-                        </div>
-                        <div class="media-body">
-                            <p class="contact-feature_label">Fax</p>
-                            <span class="contact-feature_link">+265478962</span>
-                        </div>
-                    </div> --}}
                 </div>
                 {{-- <a href="about.html" class="th-btn">GET IN TOUCH<i class="fa-regular fa-arrow-right ms-2"></i></a> --}}
             </div>
         </div>
-        {{-- <div class="row mt-5 pt-10">
+        <div class="row mt-5 pt-10">
             <div class="col-xl-6 mb-xl-0">
                 <h4 class="border-title">Personal Biography</h4>
                 <p class="mb-40">Conveniently innovate professional initiatives whereas virtual information. Compellingly network resource maximizing materials without premier benefits. Phosfluorescently synthesize wireless solutions with robust e-business. Monotonectally implement functionalized ideas with technically sound process improvements. Dramatically disseminate vertical systems after.</p>
@@ -138,7 +124,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </div>
 </section>
     

@@ -23,7 +23,8 @@ class HomeController extends Controller
 
     public function teamdetails($id)
     {
-        return view('home.team-details');
+        $admin = Admin::find($id);
+        return view('home.team-details', compact('admin'));
     }
 
     public function blog()

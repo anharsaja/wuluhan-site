@@ -17,8 +17,7 @@ class AdminSeeder extends Seeder
             $admin->nip      = '321231234421';
             $admin->email    = "superadmin@example.com";
             $admin->username = "superadmin";
-            $admin->description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, obcaecati inventore. Laudantium ratione adipisci voluptate quo quod nisi ex tempore error quidem, placeat excepturi laboriosam iste quae culpa cum eaque!';
-            $admin->foto = "/img/model_sementara/model1.jpeg";
+            $admin->description = 'Tugas pelayanan kecamatan meliputi berbagai aspek yang bertujuan untuk memberikan layanan administratif dan publik kepada masyarakat di tingkat kecamatan';
             $admin->password = Hash::make('123123');
             $admin->save();
         }

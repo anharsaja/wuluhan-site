@@ -18,7 +18,7 @@
                                 <a href="#">Pages</a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ route('home.team') }}">Team</a></li>
-                                    <li><a href="{{ route('home.teamdetails') }}">Team Details</a></li>
+                                    {{-- <li><a href="{{ route('home.teamdetails') }}">Team Details</a></li> --}}
                                     <li><a href="project.html">Project</a></li>
                                     <li><a href="project-details.html">Project Details</a></li>
                                     <li><a href="{{route('home.gallery')}}">Gallery</a></li>

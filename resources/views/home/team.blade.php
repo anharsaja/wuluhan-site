@@ -7,7 +7,7 @@
         <div class="row gy-40 align-items-center">
             <div class="col-xl-5">
                 <div class="team-featured-img" style="width: 494px; height: 468px;">
-                    <img src="{{$superadmin->foto}}" alt="Team">
+                    <img src="{{ asset($superadmin->foto ? $superadmin->foto : 'img/avatar/avatar.png')}}" alt="Team">
                 </div>
             </div>
             <div class="col-xl-7">
@@ -26,7 +26,7 @@
                             </div>
                             <div class="media-body">
                                 <h6 class="team-contact_label">Phone Number</h6>
-                                {{-- <a class="team-contact_link" href="tel:+19356542587">{{Auth::guard('admin')->user()->nip}}</a> --}}
+                                <a class="team-contact_link" href="tel:+19356542587">{{$superadmin->nip}}</a>
                             </div>
                         </div>
                         <div class="team-contact">
@@ -35,11 +35,11 @@
                             </div>
                             <div class="media-body">
                                 <h6 class="team-contact_label">Email Address</h6>
-                                {{-- <a class="team-contact_link" href="mailto:info@rachna.com">{{Auth::guard('admin')->user()->email}}</a> --}}
+                                <a class="team-contact_link" href="mailto:info@rachna.com">{{$superadmin->email}}</a>
                             </div>
                         </div>
                     </div>
-                    <a href="{{route('home.teamdetails')}}" class="th-btn">MAKE AN APPOINTMENT<i class="fa-regular fa-arrow-right ms-2"></i></a>
+                    <a href="{{route('home.teamdetails', $superadmin->id)}}" class="th-btn">MAKE AN APPOINTMENT<i class="fa-regular fa-arrow-right ms-2"></i></a>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="th-team team-card">
                     <div class="team-img" style="width: 287px; height: 320px;">
-                        <img src="{{$admin->foto}}" alt="Team">
+                        <img src="{{$admin->foto ? $admin->foto : asset('img/avatar/avatar.png')}}" alt="Team">
                     </div>
                     <div class="team-content">
                         <div class="box-particle" id="team-p1"></div>
@@ -76,7 +76,7 @@
                             <a target="_blank" href="https://instagram.com/"><i class="fab fa-instagram"></i></a>
                             <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
-                        <h3 class="box-title"><a href="{{route('home.teamdetails')}}">{{ $admin-> name }}</a></h3>
+                        <h3 class="box-title"><a href="{{route('home.teamdetails', $admin->id)}}">{{ $admin-> name }}</a></h3>
                         <span class="team-desig">
                             @foreach ($admin->roles as $role)
                                 {{$role->name}}
