@@ -29,12 +29,11 @@
                             <li class="menu-item-has-children">
                                 <a href="#">Blog</a>
                                 <ul class="sub-menu">
-                                    <li><a href="{{ route('home.blog') }}">Blog Sekretariat</a></li>
-                                    <li><a href="{{ route('home.blog') }}">Blog Pelum</a></li>
-                                    <li><a href="{{ route('home.blog') }}">Blog Pemerintahan</a></li>
-                                    <li><a href="{{ route('home.blog') }}">Blog PMKS</a></li>
-                                    <li><a href="{{ route('home.blog') }}">Blog Trantib</a></li>
-                                    <li><a href="{{route('home.blogdetails')}}">Blog Details</a></li>
+                                    <li><a href="{{ route('home.blog.sekretariat') }}">Blog Sekretariat</a></li>
+                                    <li><a href="">Blog Pelum</a></li>
+                                    <li><a href="">Blog Pemerintahan</a></li>
+                                    <li><a href="">Blog PMKS</a></li>
+                                    <li><a href="">Blog Trantib</a></li>
                                 </ul>
                             </li>
                             <li>

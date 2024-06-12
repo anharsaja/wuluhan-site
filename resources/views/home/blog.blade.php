@@ -9,21 +9,21 @@
             <div class="col-xxl-8 col-lg-7">
 
 
-                @foreach ($sekret as $sek)
+                @foreach ($blogs as $blog)
                 <div class="th-blog blog-single has-post-thumbnail">
                     <div class="blog-img">
-                        <a href="blog-details.html"><img src="{{ $sek->foto1 }}" alt="Blog Image" style="width: 100%; height: 600px; object-fit: cover; object-position: center"></a>
+                        <a href={{route('home.blogdetails.'.$name.'', $blog->id)}}><img src="{{ $blog->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
-                                <a class="author" href="{{ route('home.blog') }}"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater">{{ $sek->penulis }}</a>
-                            <a href="blog.html"><i class="fa-light fa-calendar-days"></i>21 June, 2024</a>
-                            <a href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
+                                <a class="author" href="{{route('home.blogdetails.'.$name.'', $blog->id)}}">{{ $blog->penulis }}</a>
+                            <a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}"><i class="fa-light fa-calendar-days"></i>{{ $blogs->created_at }}</a>
+                            <a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
                             </div>
-                            <h2 class="blog-title"><a href="{{route('home.blogdetails')}}">{{ $sek->judul }}</a>
+                            <h2 class="blog-title"><a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}">{{ $blog->judul }}</a>
                         </h2>
-                        <p class="blog-text">{{ $sek->description1 }}</p>
-                        <a href="{{route('home.blogdetails', )}}" class="line-btn">Read More</a>
+                        <p class="blog-text">{{ $blog->description1 }}</p>
+                        <a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}" class="line-btn">Read More</a>
                     </div>
                 </div>
                 @endforeach

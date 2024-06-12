@@ -20,8 +20,11 @@
                 <li class="menu-item-has-children">
                     <a href="#">Blog</a>
                     <ul class="sub-menu">
-                        <li><a href="{{route('home.blog')}}">Blog</a></li>
-                        <li><a href="{{route('home.blogdetails')}}">Blog Details</a></li>
+                        <li><a href="{{route('home.blog.sekretariat')}}">Blog Pemerintahan</a></li>
+                        {{-- <li><a href="{{route('home.blog.pelum')}}">Blog</a></li>
+                        <li><a href="{{route('home.blog.pemerintahan')}}">Blog</a></li>
+                        <li><a href="{{route('home.blog.pmks')}}">Blog</a></li>
+                        <li><a href="{{route('home.blog.trantib')}}">Blog</a></li> --}}
                     </ul>
                 </li>
                 <li>

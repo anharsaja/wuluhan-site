@@ -19,7 +19,7 @@ Service Area
 
 <section class="service-area4 th-radius5 space" id="service-sec">
 <div class="container th-container4">
-    <div class="row justify-content-betweennt-center">
+    <div class="row justify-content-center t-center">
         <div class="col-lg-6">
             <div class="title-area text-center me-xl-5 ms-xl-5">
                 <span class="sub-title sub-title3">Our Services</span>

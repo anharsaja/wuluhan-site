@@ -320,11 +320,11 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input name="tag1" type="text" id="contactName" class="form-control"
+                            <input name="tags1" type="text" id="contactName" class="form-control"
                             placeholder="Tag 1">
                         </div>
                         <div class="form-group">
-                            <input name="tag2" type="text" id="contactName" class="form-control"
+                            <input name="tags2" type="text" id="contactName" class="form-control"
                             placeholder="Tag 2">
                         </div>
                     </div><!-- .modal-body -->

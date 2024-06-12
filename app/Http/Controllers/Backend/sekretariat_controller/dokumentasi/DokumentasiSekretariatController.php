@@ -13,22 +13,22 @@ class DokumentasiSekretariatController extends Controller
     public function index()
     {
         $category = CategoryDokumentasiSekretariat::get();
-        $blog = DokumentasiSekretariat::get();
-        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'blogs' => $blog, 'title' => 'Dokumentasi', 'name' => 'sekretariat.dokumentasi']);
+        $surat = DokumentasiSekretariat::get();
+        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi', 'name' => 'sekretariat.dokumentasi']);
     }
 
     public function indexPublic()
     {
         $category = CategoryDokumentasiSekretariat::get();
-        $blog = DokumentasiSekretariat::where('status', 'public')->get();
-        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'blogs' => $blog, 'title' => 'Dokumentasi - Public', 'name' => 'sekretariat.dokumentasi']);
+        $surat = DokumentasiSekretariat::where('status', 'public')->get();
+        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi - Public', 'name' => 'sekretariat.dokumentasi']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryDokumentasiSekretariat::get();
-        $blog = DokumentasiSekretariat::where('status', 'private')->get();
-        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'blogs' => $blog, 'title' => 'Dokumentasi - Private', 'name' => 'sekretariat.dokumentasi']);
+        $surat = DokumentasiSekretariat::where('status', 'private')->get();
+        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi - Private', 'name' => 'sekretariat.dokumentasi']);
     }
 
     public function category($id)
@@ -36,10 +36,27 @@ class DokumentasiSekretariatController extends Controller
         try {
             $categoryName = CategoryDokumentasiSekretariat::findOrFail($id)->name;
             $category = CategoryDokumentasiSekretariat::get();
-            $blog = DokumentasiSekretariat::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'blogs' => $blog, 'title' => 'Dokumentasi', 'categoryName' => $categoryName, 'name' => 'sekretariat.dokumentasi']);
+            $surat = DokumentasiSekretariat::where('category_id', $id)->get();
+            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi', 'categoryName' => $categoryName, 'name' => 'sekretariat.dokumentasi']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.sekretariat.dokumentasi.index');
+        }
+    }
+
+    public function blogShow () {
+        $blogs = DokumentasiSekretariat::get();
+        $name = 'sekretariat';
+        return view('home.blog', compact('blogs', 'name'));
+    }
+
+    public function blogDetails($id)
+    {
+        try {
+            $blogs = DokumentasiSekretariat::findOrfail($id);
+            $name = 'sekretariat';
+            return view('home.blog-details', compact('blogs', 'name'));
+        } catch (\Throwable $th) {
+            return back();
         }
     }
 
@@ -76,8 +93,8 @@ class DokumentasiSekretariatController extends Controller
                 'quotesby' => $request->quotesby,
                 'penulis' => $request->penulis,
                 'subjudul' => $request->subjudul,
-                'tag1' => $request->tag1,
-                'tag2' => $request->tag2,
+                'tags1' => $request->tags1,
+                'tags2' => $request->tags2,
                 'description1' => $request->description1,
                 'description2' => $request->description2,
                 'description3' => $request->description3,
@@ -110,11 +127,11 @@ class DokumentasiSekretariatController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $blog = DokumentasiSekretariat::find($id);
-        $blog->name = $request->name;
-        $blog->description = $request->description;
-        $blog->category_id = $request->category;
-        $blog->status = $request->status;
+        $surat = DokumentasiSekretariat::find($id);
+        $surat->name = $request->name;
+        $surat->description = $request->description;
+        $surat->category_id = $request->category;
+        $surat->status = $request->status;
 
         if ($request->hasFile('file')) {
             $allowedfileExtension = ['pdf', 'docx', 'doc', 'xlsx', 'xls', 'jpg'];
@@ -127,26 +144,26 @@ class DokumentasiSekretariatController extends Controller
                 $filename = time() . '.' . $extension;
                 $files->move(public_path() . '/kumpulan_surat/file_dokumentasi_sekretariat', $filename);
 
-                $filesLama = public_path($blog->path_file);
+                $filesLama = public_path($surat->path_file);
                 if (File::exists($filesLama)) {
                     File::delete($filesLama);
                 };
 
-                $blog->path_file = '/kumpulan_surat/file_dokumentasi_sekretariat/' . $filename;
+                $surat->path_file = '/kumpulan_surat/file_dokumentasi_sekretariat/' . $filename;
             }
         };
 
-        $blog->save();
+        $surat->save();
         return back();
     }
 
 
     public function destroy(string $id)
     {
-        $blog = DokumentasiSekretariat::find($id);
-        $filesLama1 = public_path($blog->foto1);
-        $filesLama2 = public_path($blog->subfoto1);
-        $filesLama3 = public_path($blog->subfoto2);
+        $surat = DokumentasiSekretariat::find($id);
+        $filesLama1 = public_path($surat->foto1);
+        $filesLama2 = public_path($surat->subfoto1);
+        $filesLama3 = public_path($surat->subfoto2);
         if (File::exists($filesLama1)) {
             File::delete($filesLama1);
         }
@@ -156,7 +173,7 @@ class DokumentasiSekretariatController extends Controller
         else if (File::exists($filesLama3)) {
             File::delete($filesLama3);
         };
-        $blog->delete();
+        $surat->delete();
         return back();
     }
 }

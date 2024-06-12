@@ -47,6 +47,16 @@
 
     @yield('styles')
 
+    <style>
+        .sidebar-gallery .gallery-thumb.customBefore:before {
+            width: 100% !important;
+            height: 100% !important;
+            top: 0 !important;
+            left: 0 !important;
+            border: none !important;
+        }
+    </style>
+
 </head>
 
 <body>

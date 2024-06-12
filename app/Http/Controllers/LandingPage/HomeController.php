@@ -28,11 +28,11 @@ class HomeController extends Controller
         return view('home.team-details', compact('admin'));
     }
 
-    public function blog()
-    {
-        $sekret = DokumentasiSekretariat::get();
-        return view('home.blog', compact('sekret'));
-    }
+    // public function blog()
+    // {
+    //     $blogs = DokumentasiSekretariat::get();
+    //     return view('home.blog', compact('blogs'));
+    // }
 
     public function blogdetails()
     {

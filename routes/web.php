@@ -55,11 +55,15 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
     Route::get('/team', 'team')->name('home.team');
     Route::get('/team/details/{id}', 'teamdetails')->name('home.teamdetails');
-    Route::get('/team/blog/sekretariatan', 'blog')->name('home.blog');
     Route::get('/team/blog/details', 'blogdetails')->name('home.blogdetails');
     Route::get('/team/contact', 'contact')->name('home.contact');
     Route::get('/gallery', 'gallery')->name('home.gallery');
-});
+    
+    });
+
+    // blog sekretariat - details
+    Route::get('/blog/sekretariatan', [DokumentasiSekretariatController::class, 'blogShow'])->name('home.blog.sekretariat');
+    Route::get('/blog/sekretariatan/details/{id}', [DokumentasiSekretariatController::class, 'blogDetails'])->name('home.blogdetails.sekretariat');
 
 /*** Admin routes */
 Route::group(['prefix' => 'admin'], function () {

@@ -8,74 +8,41 @@
             <div class="col-xxl-8 col-lg-7">
                 <div class="th-blog blog-single">
                     <div class="blog-img">
-                        <img src="{{asset('img/blog/blog-s-1-1.jpg')}}" alt="Blog Image">
+                        <img src="{{$blogs->foto1}}" alt="Blog Image" style="width: 100%; height: 800px; object-fit: cover; object-position: center">
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <a class="author" href="blog.html"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
-                            <a href="blog.html"><i class="fa-light fa-calendar-days"></i>21 June, 2024</a>
-                            <a href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
+                            <a class="author" href="#">{{$blogs->penulis}}</a>
+                            <a href="#"><i class="fa-light fa-calendar-days"></i>21 June, 2024</a>
+                            <a href="#"><i class="fa-regular fa-comments"></i>Comments (3)</a>
                         </div>
-                        <h2 class="blog-title">Unsatiable entreaties may collecting Power.</h2>
-                        <p>Rapidiously repurpose leading edge growth strategies with just in time web readiness service
-                            Objectively communicate timely meta services for synergistic initiatives functionalities.
-                        </p>
-                        <p>Uniquely pursue emerging experiences before emerging content. Efficiently underwhelm customer
-                            directed total linkage after B2C synergy. Dynamically simplify superior human capital
-                            whereas efficient infrastructures. Authoritatively generate e-business web-readiness after
-                            wireless outsourcing. Seamlessly evisculate visionary scenarios for resource maximizing
-                            mindshare.</p>
-                        <p>Assertively recaptiualize interdependent alignments via backend leadership skills.
-                            Monotonectally formulate focused quality vectors whereas proactive infomediaries.
-                            Energistically utilize ethical initiatives without impactful applications. Authoritatively
-                            coordinate seamless e-services and user friendly information. Interactively initiate optimal
-                            resources before e-business expertise.</p>
+                        <h2 class="blog-title">{{$blogs->judul}}.</h2>
+                        <p>{{ $blogs->description1 }}</p>
+                        @isset($blogs->quotes)
                         <blockquote>
-                            <p>“IT IS A LONG FACT THAT A READER WILL BE DISTRACTED BY THE READABLE CONTENT OF A PAGE WHEN LOOKING AT ITS LAYOUT.”</p>
-                            <cite>Md Sumon Mia</cite>
+                            <p>“{{ $blogs->quotes }}”</p>
+                            <cite>{{$blogs->quotesby}}Mia</cite>
                         </blockquote>
-                        <p>Appropriately mesh standards compliant communities vis-a-vis client-centric channels.
-                            Seamlessly reinvent open-source data via bricks-and-clicks bandwidth. Globally leverage
-                            other's inexpensive technologies vis-a-vis user friendly systems. Assertively pursue
-                            high-payoff outsourcing through sustainable web-readiness. Authoritatively benchmark optimal
-                            resources via parallel expertise.</p>
-                        <p>Uniquely seize open-source synergy without leveraged functionalities. Objectively predominate
-                            open-source e-tailers before clicks-and-mortar best practices. Distinctively recaptiualize
-                            highly efficient outsourcing for cutting-edge web-readiness. Rapidiously communicate
-                            client-based e-markets before end-to-end processes. Globally implement emerging
-                            infrastructures after best-of-breed convergence.</p>
-                        <h3 class="h4 mt-40">Dalky is the only theme you will ever need</h3>
-                        <p>Phosfluorescently incubate market-driven networks and synergistic e-services. Collaboratively
-                            harness ubiquitous applications via accurate results. Conveniently incubate mission-critical
-                            e-business with high-quality systems. Interactively provide access to open-source e-business
-                            without compelling e-markets. Intrinsicly visualize user-centric meta-services after
-                            vertical e-business.</p>
+                        @endisset
+                        <p>{{ $blogs->description2 }}</p>
+                        <h3 class="h4 mt-40">{{ $blogs->subjudul }}</h3>
                         <div class="row mt-15">
                             <div class="col-md-6 mb-4">
-                                <img class="w-100 rounded-3" src="{{asset('img/blog/blog_inner_1.jpg')}}" alt="Blog Image">
+                                <img class="w-100 rounded-3" src="{{ $blogs->subfoto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <img class="w-100 rounded-3" src="{{ $blogs->subfoto2 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center">
                             </div>
-                            <div class="col-md-6 mb-4">
-                                <img class="w-100 rounded-3" src="{{asset('img/blog/blog_inner_2.jpg')}}" alt="Blog Image">
                             </div>
-                        </div>
-                        <p>Globally cultivate ubiquitous growth strategies before team building users. Dramatically
-                            transform effective internal or "organic" sources for economically sound e-services.
-                            Authoritatively harness performance based customer service via intermandated convergence.
-                            Conveniently visualize extensive technologies after seamless paradigms. Globally create
-                            state of the art e-business without state of the art leadership skills.</p>
-                        <p class="mb-n2">Completely seize seamless e-tailers whereas mission-critical ideas. Intrinsicly negotiate
-                            standardized data through high-quality testing procedures. Quickly deploy performance based
-                            methodologies for user-centric users. Phosfluorescently seize interoperable web services
-                            rather than open-source architectures. Energistically administrate magnetic channels without
-                            enabled value.</p>
+                        <p>{{ $blogs->description3 }}</p>
                     </div>
                     <div class="share-links clearfix ">
                         <div class="row justify-content-between">
                             <div class="col-sm-auto">
                                 <span class="share-links-title">Tags:</span>
                                 <div class="tagcloud">
-                                    <a href="blog.html">Education</a>
-                                    <a href="blog.html">Online</a>
+                                    <a href="blog.html">{{ $blogs->tags1 }}</a>
+                                    <a href="blog.html">{{ $blogs->tags2 }}</a>
                                 </div>
                             </div>
                             {{-- <div class="col-sm-auto text-xl-end">
@@ -204,12 +171,20 @@
                     </div>
                     <div class="widget  ">
                         <h3 class="widget_title">Gallery Post</h3>
-                        <div class="sidebar-gallery">
-                            <div class="gallery-thumb">
-                                <img src="{{asset('img/widget/gallery_1_1.jpg')}}" alt="Gallery Image">
-                                <a href="{{asset('img/widget/gallery_1_1.jpg')}}" class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
+                        <div class="sidebar-gallery" style="height: 90px">
+                            <div class="gallery-thumb customBefore">
+                                <img src="{{ $blogs->foto1 }}" alt="Gallery Image" style="height: 100% !important; object-fit: cover;">
+                                <a href="{{ $blogs->foto1 }}" class="gallery-btn popup-image" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;"><i class="fas fa-eyes"></i></a>
                             </div>
-                            <div class="gallery-thumb">
+                            <div class="gallery-thumb customBefore">
+                                <img src="{{ $blogs->subfoto1 }}" alt="Gallery Image" style="height: 100% !important; object-fit: cover;">
+                                <a href="{{ $blogs->subfoto1 }}" class="gallery-btn popup-image" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;"><i class="fas fa-eyes"></i></a>
+                            </div>
+                            <div class="gallery-thumb customBefore">
+                                <img src="{{ $blogs->subfoto2 }}" alt="Gallery Image" style="height: 100% !important; object-fit: cover;">
+                                <a href="{{ $blogs->subfoto2 }}" class="gallery-btn popup-image" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;"><i class="fas fa-eyes"></i></a>
+                            </div>
+                            {{-- <div class="gallery-thumb">
                                 <img src="{{asset('img/widget/gallery_1_2.jpg')}}" alt="Gallery Image">
                                 <a href="{{asset('img/widget/gallery_1_2.jpg')}}" class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
                             </div>
@@ -228,10 +203,10 @@
                             <div class="gallery-thumb">
                                 <img src="{{asset('img/widget/gallery_1_6.jpg')}}" alt="Gallery Image">
                                 <a href="{{asset('img/widget/gallery_1_6.jpg')}}" class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
-                    <div class="widget  ">
+                    {{-- <div class="widget  ">
                         <h3 class="widget_title">Recent Posts</h3>
                         <div class="recent-post-wrap">
                             <div class="recent-post">
@@ -268,19 +243,19 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="widget widget_tag_cloud   ">
                         <h3 class="widget_title">Popular Tags</h3>
                         <div class="tagcloud">
-                            <a href="blog.html">Technology</a>
-                            <a href="blog.html">Advice</a>
-                            <a href="blog.html">Solution</a>
-                            <a href="blog.html">Consultion</a>
+                            <a href="#">{{ $blogs->tags1 }}</a>
+                            <a href="#">{{ $blogs->tags2 }}</a>
+                            {{-- <a href="blog.html">Solution</a> --}}
+                            {{-- <a href="blog.html">Consultion</a>
                             <a href="blog.html">Business</a>
                             <a href="blog.html">Services</a>
                             <a href="blog.html">Start Up</a>
                             <a href="blog.html">Agency</a>
-                            <a href="blog.html">Software</a>
+                            <a href="blog.html">Software</a> --}}
                         </div>
                     </div>
                 </aside>

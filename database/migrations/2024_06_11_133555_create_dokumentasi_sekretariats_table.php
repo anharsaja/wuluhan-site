@@ -16,17 +16,17 @@ return new class extends Migration
             $table->string('foto1');
             $table->string('judul');
             $table->string('penulis');
-            $table->string('description1');
-            $table->string('quotes');
-            $table->string('quotesby');
-            $table->string('description2');
-            $table->string('subjudul');
-            $table->string('subfoto1');
-            $table->string('subfoto2');
-            $table->string('description3');
+            $table->text('description1');
+            $table->string('quotes')->nullable();
+            $table->string('quotesby')->nullable();
+            $table->text('description2')->nullable();
+            $table->string('subjudul')->nullable();
+            $table->string('subfoto1')->nullable();
+            $table->string('subfoto2')->nullable();
+            $table->text('description3')->nullable();
             $table->string('tags1')->nullable();
             $table->string('tags2')->nullable();
-            $table->string('status');
+            $table->enum('status', ['private', 'public'])->default('public');
             $table->timestamps();
         });
     }
