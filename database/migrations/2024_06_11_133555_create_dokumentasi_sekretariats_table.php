@@ -13,19 +13,20 @@ return new class extends Migration
     {
         Schema::create('dokumentasi_sekretariats', function (Blueprint $table) {
             $table->id();
-            $table->string('foto');
+            $table->string('foto1');
             $table->string('judul');
+            $table->string('penulis');
             $table->string('description1');
             $table->string('quotes');
             $table->string('quotesby');
             $table->string('description2');
             $table->string('subjudul');
-            $table->string('description3');
             $table->string('subfoto1');
             $table->string('subfoto2');
-            $table->string('description4');
-            $table->string('tags1');
-            $table->string('tags');
+            $table->string('description3');
+            $table->string('tags1')->nullable();
+            $table->string('tags2')->nullable();
+            $table->string('status');
             $table->timestamps();
         });
     }

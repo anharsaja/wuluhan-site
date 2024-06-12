@@ -9,23 +9,25 @@
             <div class="col-xxl-8 col-lg-7">
 
 
+                @foreach ($sekret as $sek)
                 <div class="th-blog blog-single has-post-thumbnail">
                     <div class="blog-img">
-                        <a href="blog-details.html"><img src="{{asset('img/blog/blog-s-1-1.jpg')}}" alt="Blog Image"></a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <a class="author" href="blog.html"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater"> By Themeholy</a>
+                        <a href="blog-details.html"><img src="{{ $sek->foto1 }}" alt="Blog Image" style="width: 100%; height: 600px; object-fit: cover; object-position: center"></a>
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <a class="author" href="{{ route('home.blog') }}"><img src="{{asset('img/blog/author-1-1.png')}}" alt="avater">{{ $sek->penulis }}</a>
                             <a href="blog.html"><i class="fa-light fa-calendar-days"></i>21 June, 2024</a>
                             <a href="blog-details.html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
-                        </div>
-                        <h2 class="blog-title"><a href="{{route('home.blogdetails')}}">Unsatiable entreaties may collecting Power.</a>
+                            </div>
+                            <h2 class="blog-title"><a href="{{route('home.blogdetails')}}">{{ $sek->judul }}</a>
                         </h2>
-                        <p class="blog-text">Progressively plagiarize quality metrics for impactful data. Assertively. Holisticly leverage existing magnetic functionalities. Assertively orchestrate high-quality customer service vis-a-vis intuitive interfaces. Conveniently enhance highly efficient infomediaries.</p>
-                        <a href="{{route('home.blogdetails')}}" class="line-btn">Read More</a>
+                        <p class="blog-text">{{ $sek->description1 }}</p>
+                        <a href="{{route('home.blogdetails', )}}" class="line-btn">Read More</a>
                     </div>
                 </div>
-
+                @endforeach
+                
 
                 <div class="th-pagination text-center">
                     <ul>
@@ -33,10 +35,10 @@
                         <li><a href="blog.html">2</a></li>
                         <li><a href="blog.html">3</a></li>
                         <li><a href="blog.html"><i class="far fa-arrow-right"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-xxl-4 col-lg-5">
+                        </ul>
+                        </div>
+                        </div>
+                        <div class="col-xxl-4 col-lg-5">
                 <aside class="sidebar-area">
                     <div class="widget widget_search   ">
                         <form class="search-form">

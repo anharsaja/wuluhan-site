@@ -55,7 +55,7 @@ Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
     Route::get('/team', 'team')->name('home.team');
     Route::get('/team/details/{id}', 'teamdetails')->name('home.teamdetails');
-    Route::get('/team/blog', 'blog')->name('home.blog');
+    Route::get('/team/blog/sekretariatan', 'blog')->name('home.blog');
     Route::get('/team/blog/details', 'blogdetails')->name('home.blogdetails');
     Route::get('/team/contact', 'contact')->name('home.contact');
     Route::get('/gallery', 'gallery')->name('home.gallery');
@@ -85,7 +85,15 @@ Route::group(['prefix' => 'admin'], function () {
 
         });
         // Dokumentasi
-
+        Route::resource('/sekretariat/dokumentasi', DokumentasiSekretariatController::class, ['names' => 'admin.sekretariat.dokumentasi']);
+        Route::get('/sekretariat/dokumentasi/category/{id}', [DokumentasiSekretariatController::class, 'category'])->name('admin.sekretariat.dokumentasi.category');
+        Route::get('/sekretariat/dokumentasi/public', [DokumentasiSekretariatController::class, 'indexPublic'])->name('admin.sekretariat.dokumentasi.public');
+        Route::get('/sekretariat/dokumentasi/private', [DokumentasiSekretariatController::class, 'indexPrivate'])->name('admin.sekretariat.dokumentasi.private');
+        Route::controller(CategoryDokumentasiSekretariatController::class)->group(function () {
+            Route::post('/sekretariat/dokumentasi/category/store', 'store')->name('admin.sekretariat.dokumentasi.category.store');
+            Route::post('/sekretariat/dokumentasi/category/update/{id}', 'update')->name('admin.sekretariat.dokumentasi.category.update');
+            Route::get('/sekretariat/dokumentasi/category/delete/{id}', 'delete')->name('admin.sekretariat.dokumentasi.category.delete');
+        });
 
         
         /*** SEKRETARIAT - PLK */

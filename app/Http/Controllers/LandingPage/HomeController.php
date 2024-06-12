@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\FotoWisata;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Sekretariat\Dokumentasi\DokumentasiSekretariat;
 
 class HomeController extends Controller
 {
@@ -29,7 +30,8 @@ class HomeController extends Controller
 
     public function blog()
     {
-        return view('home.blog');
+        $sekret = DokumentasiSekretariat::get();
+        return view('home.blog', compact('sekret'));
     }
 
     public function blogdetails()

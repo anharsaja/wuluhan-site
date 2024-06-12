@@ -5,10 +5,11 @@
 
 {{-- Sekretariat --}}
 @can('sekretariat.view')
-    <li class="nav-item"><a href="#sekretariat" class="nav-link collapsed {{ Route::is('admin.umpeg.*') || Route::is('admin.plk.*') ? 'active' : '' }}" data-toggle="collapse"><i
+    <li class="nav-item"><a href="#sekretariat" class="nav-link collapsed {{ Route::is('admin.umpeg.*') || Route::is('admin.plk.*') || Route::is('admin.sekretariat.dokumentasi.*') ? 'active' : '' }}" data-toggle="collapse"><i
         class="fa fa-book"></i>Sekretariat<span class="sub-ico">
             <i class="fa fa-angle-down"></i></span></a></li>
-    <li class="sub collapse {{ Route::is('admin.umpeg.*') || Route::is('admin.plk.*') || Route::is('sekretariat.dokumentasi.*') ? 'show' : '' }}" id="sekretariat">
+    <li class="sub collapse {{ Route::is('admin.umpeg.*') || Route::is('admin.plk.*') || Route::is('sekretariat.dokumentasi.*') || Route::is('admin.sekretariat.dokumentasi.*') ? 'show' : '' }}" id="sekretariat">
+        <a href="{{ route('admin.sekretariat.dokumentasi.index') }}" class="nav-link {{ Route::is('admin.sekretariat.dokumentasi.index') || Route::is('admin.sekretariat.dokumentasi.public') || Route::is('admin.sekretariat.dokumentasi.private') || Route::is('admin.sekretariat.dokumentasi.category') ? 'active' : '' }}" data-parent="#sekretariat">Dokumentasi</a>
         <a href="{{ route('admin.umpeg.index') }}" class="nav-link {{ Route::is('admin.umpeg.index') || Route::is('admin.umpeg.public') || Route::is('admin.umpeg.private') || Route::is('admin.umpeg.category') ? 'active' : '' }}" data-parent="#sekretariat">UMPEG</a>
         <a href="{{ route('admin.plk.index') }}" class="nav-link {{ Route::is('admin.plk.index') || Route::is('admin.plk.public') || Route::is('admin.plk.private') || Route::is('admin.plk.category') ? 'active' : '' }}" data-parent="#sekretariat">Perencanaan Keuangan</a>
     </li>
