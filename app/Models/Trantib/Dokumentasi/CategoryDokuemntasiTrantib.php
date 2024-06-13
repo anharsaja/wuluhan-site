@@ -5,7 +5,7 @@ namespace App\Models\Trantib\Dokumentasi;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DokumentasiTrantib extends Model
+class CategoryDokuemntasiTrantib extends Model
 {
     use HasFactory;
 

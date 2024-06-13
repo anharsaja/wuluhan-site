@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\Backend\trantib_controller\dokumentasi;
 
 use App\Http\Controllers\Controller;
-use App\Models\Trantib\Dokumentasi\CategoryDokumentasiTrantib;
+use App\Models\Sekretariat\Dokumentasi\CategoryDokumentasiSekretariat;
+use App\Models\Trantib\Dokumentasi\CategoryDokuemntasiTrantib;
 use Illuminate\Http\Request;
 
 class CategoryDokumentasiTantribController extends Controller
 {
     public function store(Request $request)
     {
-        CategoryDokumentasiTrantib::create([
+        CategoryDokuemntasiTrantib::create([
             'name' => $request->name
         ]);
         return back();
@@ -18,7 +19,7 @@ class CategoryDokumentasiTantribController extends Controller
 
     public function update(Request $request, $id)
     {
-        $category = CategoryDokumentasiTrantib::find($id);
+        $category = CategoryDokumentasiSekretariat::find($id);
         $category->name = $request->name;
         $category->save();
         return back();
@@ -26,7 +27,7 @@ class CategoryDokumentasiTantribController extends Controller
 
     public function delete($id)
     {
-        $category = CategoryDokumentasiTrantib::find($id);
+        $category = CategoryDokumentasiSekretariat::find($id);
         $category->delete();
         return back();
     }
