@@ -26,6 +26,7 @@ return new class extends Migration
             $table->text('description3')->nullable();
             $table->string('tags1')->nullable();
             $table->string('tags2')->nullable();
+            $table->unsignedBigInteger('category_id');
             $table->enum('status', ['private', 'public'])->default('public');
             $table->timestamps();
         });

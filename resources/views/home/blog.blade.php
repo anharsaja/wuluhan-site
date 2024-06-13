@@ -17,7 +17,11 @@
                         <div class="blog-content">
                             <div class="blog-meta">
                                 <a class="author" href="{{route('home.blogdetails.'.$name.'', $blog->id)}}">{{ $blog->penulis }}</a>
-                            <a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}"><i class="fa-light fa-calendar-days"></i>{{ $blogs->created_at }}</a>
+                            <a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}"><i class="fa-light fa-calendar-days"></i>
+                                @foreach ($blogs as $blog)
+                                    {{ $blog->created_at->format('d-m-Y') }}
+                                @endforeach
+                            </a>
                             <a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
                             </div>
                             <h2 class="blog-title"><a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}">{{ $blog->judul }}</a>

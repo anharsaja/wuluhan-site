@@ -163,8 +163,6 @@
                                                 data-target="#deletesuratsotk{{ $surat->id }}"><i
                                                     class="fa fa-trash"></i></a>
                                         @endcan
-                                        <a href="{{ asset($surat->path_file) }}" target="blank"
-                                            class="btn btn-warning"><i class="fa fa-eye"></i></a>
                                     </div><!-- .contact-item-actions -->
                                 </div><!-- card user-card -->
                             </div><!-- END column -->
@@ -184,35 +182,68 @@
                                             @method('put')
                                             @csrf
                                             <div class="modal-body">
-                                                <div class="form-group">
-                                                    <input name="name" type="text" id="name"
-                                                        class="form-control" placeholder="Name"
-                                                        value="{{ $surat->name }}">
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <input name="judul" type="text" id="contactName" class="form-control"
+                                                    placeholder="Judul" value="{{$surat->judul}}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="foto1" type="file" class="form-control" placeholder="File">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="penulis" type="text" id="contactName" class="form-control"
+                                                        placeholder="Penulis" value="{{$surat->penulis}}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea name="description1" class="form-control" placeholder="Deskripsi Paragraf 1">{{ $surat->description1 }}</textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="quotes" type="text" id="contactName" class="form-control"
+                                                        placeholder="Quotes" value="{{$surat->quotes}}">
+                                                        </div>
+                                                    <div class="form-group">
+                                                        <input name="quotesby" type="text" id="contactName" class="form-control"
+                                                        placeholder="Penulis QUotes" value="{{$surat->quotesby}}">
+                                                        </div>
+                                                    <div class="form-group">
+                                                        <textarea name="description2" class="form-control" placeholder="Deskripsi Paragraf 2">{{$surat->description2}}</textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="subfoto1" type="file" class="form-control" placeholder="File">
+                                                    </div>
+                                                    <div class="form-group">
+                                                            <input name="subfoto2" type="file" class="form-control" placeholder="File">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <textarea name="description3" class="form-control" placeholder="Deskripsi Paragraf 3">{{$surat->description3}}</textarea>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <select name="category_id" class="form-control" required>
+                                                            <option value="" selected disabled>Pilih Category</option>
+                                                            @foreach ($categories as $category)
+                                                                <option value="{{ $category->id }}"
+                                                                    @selected($category->id == $surat->category_id)>{{ $category->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <select name="status" class="form-control" required>
+                                                            <option value="" selected disabled>Pilih Jenis Surat</option>
+                                                            <option value="private" @selected($surat->status == 'private')>Private</option>
+                                                            <option value="public" @selected($surat->status == 'public')>Public</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="tags1" type="text" id="contactName" class="form-control"
+                                                        placeholder="Tag 1" value="{{$surat->tags1}}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <input name="tags2" type="text" id="contactName" class="form-control"
+                                                        placeholder="Tag 2" value="{{$surat->tags2}}">
+                                                    </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <textarea name="description" class="form-control" placeholder="Deskripsi Surat">{{ $surat->description }}</textarea>
-                                                </div>
-                                                <div class="form-group">
-                                                    <select name="category" class="form-control" required>
-                                                        <option value="" selected disabled>Pilih Kategory</option>
-                                                        @foreach ($categories as $category)
-                                                            <option value="{{ $category->id }}"
-                                                                @selected($category->id == $surat->category_id)>{{ $category->name }}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <select name="status" class="form-control" required>
-                                                        <option value="" selected disabled>Pilih Jenis Surat</option>
-                                                        <option value="private" @selected($surat->status == 'private')>Private</option>
-                                                        <option value="public" @selected($surat->status == 'public')>Public</option>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input name="file" type="file" class="form-control"
-                                                        placeholder="File"><br>
-                                                </div>
-                                                <a href="{{ asset($surat->path_file) }}" target="blank" class="btn btn-warning" style="width: 30%"><i class="fa fa-eye"></i></a>
                                             </div><!-- .modal-body -->
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-danger"

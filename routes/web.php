@@ -77,17 +77,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::resource('admins', AdminsController::class, ['names' => 'admin.admins']);
 
         
-        /*** SEKRETARIAT - UMPEG */
-        Route::resource('/sekretariatan/umpeg', UmpegController::class, ['names' => 'admin.umpeg']);
-        Route::get('/sekretariatan/umpeg/category/{id}', [UmpegController::class, 'category'])->name('admin.umpeg.category');
-        Route::get('/sekretariatan/umpeg/surat/public', [UmpegController::class, 'indexPublic'])->name('admin.umpeg.public');
-        Route::get('/sekretariatan/umpeg/surat/private', [UmpegController::class, 'indexPrivate'])->name('admin.umpeg.private');
-        Route::controller(CategoryUmpegController::class)->group(function () {
-            Route::post('/sekretariatan/umpeg/category/store', 'store')->name('admin.umpeg.category.store');
-            Route::post('/sekretariatan/umpeg/category/update/{id}', 'update')->name('admin.umpeg.category.update');
-            Route::get('/sekretariatan/umpeg/category/delete/{id}', 'delete')->name('admin.umpeg.category.delete');
-
-        });
+        // =================================================================================================
         // Dokumentasi
         Route::resource('/sekretariat/dokumentasi', DokumentasiSekretariatController::class, ['names' => 'admin.sekretariat.dokumentasi']);
         Route::get('/sekretariat/dokumentasi/category/{id}', [DokumentasiSekretariatController::class, 'category'])->name('admin.sekretariat.dokumentasi.category');
@@ -98,8 +88,17 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/sekretariat/dokumentasi/category/update/{id}', 'update')->name('admin.sekretariat.dokumentasi.category.update');
             Route::get('/sekretariat/dokumentasi/category/delete/{id}', 'delete')->name('admin.sekretariat.dokumentasi.category.delete');
         });
-
         
+        /*** SEKRETARIAT - UMPEG */
+        Route::resource('/sekretariatan/umpeg', UmpegController::class, ['names' => 'admin.umpeg']);
+        Route::get('/sekretariatan/umpeg/category/{id}', [UmpegController::class, 'category'])->name('admin.umpeg.category');
+        Route::get('/sekretariatan/umpeg/surat/public', [UmpegController::class, 'indexPublic'])->name('admin.umpeg.public');
+        Route::get('/sekretariatan/umpeg/surat/private', [UmpegController::class, 'indexPrivate'])->name('admin.umpeg.private');
+        Route::controller(CategoryUmpegController::class)->group(function () {
+            Route::post('/sekretariatan/umpeg/category/store', 'store')->name('admin.umpeg.category.store');
+            Route::post('/sekretariatan/umpeg/category/update/{id}', 'update')->name('admin.umpeg.category.update');
+            Route::get('/sekretariatan/umpeg/category/delete/{id}', 'delete')->name('admin.umpeg.category.delete');
+        });
         /*** SEKRETARIAT - PLK */
         Route::resource('/sekretariatan/plk', PlkController::class, ['names' => 'admin.plk']);
         Route::get('/sekretariatan/plk/category/{id}', [PlkController::class, 'category'])->name('admin.plk.category');
@@ -109,7 +108,8 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/sekretariatan/plk/category/store', 'store')->name('admin.plk.category.store');
             Route::post('/sekretariatan/plk/category/update/{id}', 'update')->name('admin.plk.category.update');
             Route::get('/sekretariatan/plk/category/delete/{id}', 'delete')->name('admin.plk.category.delete');
-        });
+            });
+        // =================================================================================================
         
         /*** PEMERINTAHAN - RAPBDES */
         Route::resource('/pemerintahan/rapbdes', RapbdesController::class, ['names' => 'admin.rapbdes']);
