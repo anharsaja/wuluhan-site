@@ -14,21 +14,21 @@ class ProdukHukumController extends Controller
     {
         $category = CategoryProdukHukum::get();
         $surat = SuratProdukHukum::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Produk Hukum', 'name' => 'produkhukum']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Produk Hukum', 'name' => 'produkhukum']);
     }
 
     public function indexPublic()
     {
         $category = CategoryProdukHukum::get();
         $surat = SuratProdukHukum::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Produk Hukum - Public', 'name' => 'produkhukum']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Produk Hukum - Public', 'name' => 'produkhukum']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryProdukHukum::get();
         $surat = SuratProdukHukum::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Produk Hukum - Private', 'name' => 'produkhukum']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Produk Hukum - Private', 'name' => 'produkhukum']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class ProdukHukumController extends Controller
             $categoryName = CategoryProdukHukum::findOrFail($id)->name;
             $category = CategoryProdukHukum::get();
             $surat = SuratProdukHukum::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Produk Hukum', 'categoryName' => $categoryName, 'name' => 'produkhukum']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Produk Hukum', 'categoryName' => $categoryName, 'name' => 'produkhukum']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.produkhukum.index');
         }

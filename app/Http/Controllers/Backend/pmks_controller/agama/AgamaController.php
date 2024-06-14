@@ -14,21 +14,21 @@ class AgamaController extends Controller
     {
         $category = CategoryAgama::get();
         $surat = SuratAgama::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'AGAMA', 'name' => 'agama']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'AGAMA', 'name' => 'agama']);
     }
 
     public function indexPublic()
     {
         $category = CategoryAgama::get();
         $surat = SuratAgama::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'AGAMA - Public', 'name' => 'agama']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'AGAMA - Public', 'name' => 'agama']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryAgama::get();
         $surat = SuratAgama::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'AGAMA - Private', 'name' => 'agama']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'AGAMA - Private', 'name' => 'agama']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class AgamaController extends Controller
             $categoryName = CategoryAgama::findOrFail($id)->name;
             $category = CategoryAgama::get();
             $surat = SuratAgama::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'AGAMA', 'categoryName' => $categoryName, 'name' => 'agama']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'AGAMA', 'categoryName' => $categoryName, 'name' => 'agama']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.agama.index');
         }

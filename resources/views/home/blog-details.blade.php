@@ -13,7 +13,7 @@
                     <div class="blog-content">
                         <div class="blog-meta">
                             <a class="author" href="#">{{$blogs->penulis}}</a>
-                            <a href="#"><i class="fa-light fa-calendar-days"></i>21 June, 2024</a>
+                            <a href="#"><i class="fa-light fa-calendar-days"></i>{{ $blogs->created_at->format('d-m-Y') }}</a>
                             <a href="#"><i class="fa-regular fa-comments"></i>Comments (3)</a>
                         </div>
                         <h2 class="blog-title">{{$blogs->judul}}.</h2>
@@ -57,7 +57,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="th-comments-wrap ">
+                {{-- <div class="th-comments-wrap ">
                     <h2 class="blog-inner-title h3"><i class="far fa-comments"></i> Comments (03)</h2>
                     <ul class="comment-list">
                         <li class="th-comment-item">
@@ -109,7 +109,7 @@
                             </div>
                         </li>
                     </ul>
-                </div> <!-- Comment end --> <!-- Comment Form -->
+                </div> <!-- Comment end --> <!-- Comment Form --> --}}
                 {{-- <div class="th-comment-form ">
                     <div class="form-title">
                         <h3 class="blog-inner-title mb-2"><i class="fa-solid fa-reply"></i> Leave a Comment</h3>

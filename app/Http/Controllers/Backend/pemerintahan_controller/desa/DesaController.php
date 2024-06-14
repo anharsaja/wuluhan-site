@@ -14,21 +14,21 @@ class DesaController extends Controller
     {
         $category = CategoryDesa::get();
         $surat = SuratDesa::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA', 'name' => 'desa']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA', 'name' => 'desa']);
     }
 
     public function indexPublic()
     {
         $category = CategoryDesa::get();
         $surat = SuratDesa::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA - Public', 'name' => 'desa']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA - Public', 'name' => 'desa']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryDesa::get();
         $surat = SuratDesa::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA - Private', 'name' => 'desa']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA - Private', 'name' => 'desa']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class DesaController extends Controller
             $categoryName = CategoryDesa::findOrFail($id)->name;
             $category = CategoryDesa::get();
             $surat = SuratDesa::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA', 'categoryName' => $categoryName, 'name' => 'desa']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DESA', 'categoryName' => $categoryName, 'name' => 'desa']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.desa.index');
         }

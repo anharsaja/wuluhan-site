@@ -14,21 +14,21 @@ class PlkController extends Controller
     {
         $category = CategoryPlk::get();
         $surat = SuratPlk::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan', 'name' => 'plk']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan', 'name' => 'plk']);
     }
 
     public function indexPublic()
     {
         $category = CategoryPlk::get();
         $surat = SuratPlk::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan - Public', 'name' => 'plk']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan - Public', 'name' => 'plk']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryPlk::get();
         $surat = SuratPlk::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan - Private', 'name' => 'plk']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan - Private', 'name' => 'plk']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class PlkController extends Controller
             $categoryName = CategoryPlk::findOrFail($id)->name;
             $category = CategoryPlk::get();
             $surat = SuratPlk::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan', 'categoryName' => $categoryName, 'name' => 'plk']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Perencanaan Keuangan', 'categoryName' => $categoryName, 'name' => 'plk']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.plk.index');
         }

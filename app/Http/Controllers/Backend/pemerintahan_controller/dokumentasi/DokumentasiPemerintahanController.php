@@ -1,59 +1,59 @@
 <?php
 
-namespace App\Http\Controllers\Backend\sekretariat_controller\dokumentasi;
+namespace App\Http\Controllers\Backend\pemerintahan_controller\dokumentasi;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use App\Models\Sekretariat\Dokumentasi\DokumentasiSekretariat;
-use App\Models\Sekretariat\Dokumentasi\CategoryDokumentasiSekretariat;
+use App\Models\Pemerintahan\Dokumentasi\DokumentasiPemerintahan;
+use App\Models\Pemerintahan\Dokumentasi\CategoryDokumentasiPemerintahan;
 
-class DokumentasiSekretariatController extends Controller
+class DokumentasiPemerintahanController extends Controller
 {
     public function index()
     {
-        $category = CategoryDokumentasiSekretariat::get();
-        $surat = DokumentasiSekretariat::get();
-        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi', 'name' => 'sekretariat.dokumentasi']);
+        $category = CategoryDokumentasiPemerintahan::get();
+        $surat = DokumentasiPemerintahan::get();
+        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi', 'name' => 'pemerintahan.dokumentasi']);
     }
 
     public function indexPublic()
     {
-        $category = CategoryDokumentasiSekretariat::get();
-        $surat = DokumentasiSekretariat::where('status', 'public')->get();
-        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi - Public', 'name' => 'sekretariat.dokumentasi']);
+        $category = CategoryDokumentasiPemerintahan::get();
+        $surat = DokumentasiPemerintahan::where('status', 'public')->get();
+        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi - Public', 'name' => 'pemerintahan.dokumentasi']);
     }
 
         public function indexPrivate()
     {
-        $category = CategoryDokumentasiSekretariat::get();
-        $surat = DokumentasiSekretariat::where('status', 'private')->get();
-        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi - Private', 'name' => 'sekretariat.dokumentasi']);
+        $category = CategoryDokumentasiPemerintahan::get();
+        $surat = DokumentasiPemerintahan::where('status', 'private')->get();
+        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi - Private', 'name' => 'pemerintahan.dokumentasi']);
     }
 
     public function category($id)
     {
         try {
-            $categoryName = CategoryDokumentasiSekretariat::findOrFail($id)->name;
-            $category = CategoryDokumentasiSekretariat::get();
-            $surat = DokumentasiSekretariat::where('category_id', $id)->get();
-            return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi', 'categoryName' => $categoryName, 'name' => 'sekretariat.dokumentasi']);
+            $categoryName = CategoryDokumentasiPemerintahan::findOrFail($id)->name;
+            $category = CategoryDokumentasiPemerintahan::get();
+            $surat = DokumentasiPemerintahan::where('category_id', $id)->get();
+            return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi', 'categoryName' => $categoryName, 'name' => 'pemerintahan.dokumentasi']);
         } catch (\Throwable $th) {
-            return redirect()->route('admin.sekretariat.dokumentasi.index');
+            return redirect()->route('admin.pemerintahan.dokumentasi.index');
         }
     }
 
     public function blogShow () {
-        $blogs = DokumentasiSekretariat::where('status', 'public')->get();
-        $name = 'sekretariat';
+        $blogs = DokumentasiPemerintahan::where('status', 'public')->get();
+        $name = 'pemerintahan';
         return view('home.blog', compact('blogs', 'name'));
     }
 
     public function blogDetails($id)
     {
         try {
-            $blogs = DokumentasiSekretariat::findOrfail($id);
-            $name = 'sekretariat';
+            $blogs = DokumentasiPemerintahan::findOrfail($id);
+            $name = 'pemerintahan';
             return view('home.blog-details', compact('blogs', 'name'));
         } catch (\Throwable $th) {
             return back();
@@ -81,13 +81,13 @@ class DokumentasiSekretariatController extends Controller
 
         if ($check1 || $check2 || $check3) {
             $filename1 = time() . '_1.' . $extension1;
-            $files1->move(public_path() . '/kumpulan_surat/file_dokumentasi_sekretariat', $filename1);
+            $files1->move(public_path() . '/kumpulan_surat/file_dokumentasi_pemerintahan', $filename1);
             $filename2 = time() . '_2.' . $extension2;
-            $files2->move(public_path() . '/kumpulan_surat/file_dokumentasi_sekretariat', $filename2);
+            $files2->move(public_path() . '/kumpulan_surat/file_dokumentasi_pemerintahan', $filename2);
             $filename3 = time() . '_3.' . $extension3;
-            $files3->move(public_path() . '/kumpulan_surat/file_dokumentasi_sekretariat', $filename3);
+            $files3->move(public_path() . '/kumpulan_surat/file_dokumentasi_pemerintahan', $filename3);
 
-            DokumentasiSekretariat::create([
+            DokumentasiPemerintahan::create([
                 'judul' => $request->judul,
                 'quotes' => $request->quotes,
                 'quotesby' => $request->quotesby,
@@ -99,9 +99,9 @@ class DokumentasiSekretariatController extends Controller
                 'description2' => $request->description2,
                 'description3' => $request->description3,
                 'category_id' => $request->category_id,
-                'foto1' => '/kumpulan_surat/file_dokumentasi_sekretariat/' . $filename1,
-                'subfoto1' => '/kumpulan_surat/file_dokumentasi_sekretariat/' . $filename2,
-                'subfoto2' => '/kumpulan_surat/file_dokumentasi_sekretariat/' . $filename3,
+                'foto1' => '/kumpulan_surat/file_dokumentasi_pemerintahan/' . $filename1,
+                'subfoto1' => '/kumpulan_surat/file_dokumentasi_pemerintahan/' . $filename2,
+                'subfoto2' => '/kumpulan_surat/file_dokumentasi_pemerintahan/' . $filename3,
                 'status' => $request->status
             ]);
             return back();
@@ -126,7 +126,7 @@ class DokumentasiSekretariatController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $surat = DokumentasiSekretariat::find($id);
+        $surat = DokumentasiPemerintahan::find($id);
         $surat->judul = $request->judul;
         $surat->quotes = $request->quotes;
         $surat->quotesby = $request->quotesby;
@@ -148,14 +148,14 @@ class DokumentasiSekretariatController extends Controller
     
             if ($check) {
                 $filename = time() . '_foto1.' . $extension;
-                $file->move(public_path() . '/kumpulan_surat/file_dokumentasi_sekretariat', $filename);
+                $file->move(public_path() . '/kumpulan_surat/file_dokumentasi_pemerintahan', $filename);
     
                 // Delete old foto1 file
                 if (File::exists(public_path($surat->foto1))) {
                     File::delete(public_path($surat->foto1));
                 }
     
-                $surat->foto1 = '/kumpulan_surat/file_dokumentasi_sekretariat/' . $filename;
+                $surat->foto1 = '/kumpulan_surat/file_dokumentasi_pemerintahan/' . $filename;
             }
         }
     
@@ -169,14 +169,14 @@ class DokumentasiSekretariatController extends Controller
     
             if ($check) {
                 $filename = time() . '_subfoto1.' . $extension;
-                $file->move(public_path() . '/kumpulan_surat/file_dokumentasi_sekretariat', $filename);
+                $file->move(public_path() . '/kumpulan_surat/file_dokumentasi_pemerintahan', $filename);
     
                 // Delete old subfoto1 file
                 if (File::exists(public_path($surat->subfoto1))) {
                     File::delete(public_path($surat->subfoto1));
                 }
     
-                $surat->subfoto1 = '/kumpulan_surat/file_dokumentasi_sekretariat/' . $filename;
+                $surat->subfoto1 = '/kumpulan_surat/file_dokumentasi_pemerintahan/' . $filename;
             }
         }
     
@@ -190,14 +190,14 @@ class DokumentasiSekretariatController extends Controller
     
             if ($check) {
                 $filename = time() . '_subfoto2.' . $extension;
-                $file->move(public_path() . '/kumpulan_surat/file_dokumentasi_sekretariat', $filename);
+                $file->move(public_path() . '/kumpulan_surat/file_dokumentasi_pemerintahan', $filename);
     
                 // Delete old subfoto2 file
                 if (File::exists(public_path($surat->subfoto2))) {
                     File::delete(public_path($surat->subfoto2));
                 }
     
-                $surat->subfoto2 = '/kumpulan_surat/file_dokumentasi_sekretariat/' . $filename;
+                $surat->subfoto2 = '/kumpulan_surat/file_dokumentasi_pemerintahan/' . $filename;
             }
         }
     
@@ -209,7 +209,7 @@ class DokumentasiSekretariatController extends Controller
 
     public function destroy(string $id)
     {
-        $surat = DokumentasiSekretariat::find($id);
+        $surat = DokumentasiPemerintahan::find($id);
         if (File::exists(public_path($surat->foto1))) {
             File::delete(public_path($surat->foto1));
         }

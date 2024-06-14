@@ -14,21 +14,21 @@ class PkkController extends Controller
     {
         $category = CategoryPkk::get();
         $surat = SuratPkk::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK', 'name' => 'pkk']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK', 'name' => 'pkk']);
     }
 
     public function indexPublic()
     {
         $category = CategoryPkk::get();
         $surat = SuratPkk::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK - Public', 'name' => 'pkk']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK - Public', 'name' => 'pkk']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryPkk::get();
         $surat = SuratPkk::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK - Private', 'name' => 'pkk']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK - Private', 'name' => 'pkk']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class PkkController extends Controller
             $categoryName = CategoryPkk::findOrFail($id)->name;
             $category = CategoryPkk::get();
             $surat = SuratPkk::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK', 'categoryName' => $categoryName, 'name' => 'pkk']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'PKK', 'categoryName' => $categoryName, 'name' => 'pkk']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.pkk.index');
         }

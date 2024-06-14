@@ -14,21 +14,21 @@ class BudayaController extends Controller
     {
         $category = CategoryBudaya::get();
         $surat = SuratBudaya::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'BUDAYA', 'name' => 'budaya']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'BUDAYA', 'name' => 'budaya']);
     }
 
     public function indexPublic()
     {
         $category = CategoryBudaya::get();
         $surat = SuratBudaya::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'BUDAYA - Public', 'name' => 'budaya']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'BUDAYA - Public', 'name' => 'budaya']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryBudaya::get();
         $surat = SuratBudaya::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'BUDAYA - Private', 'name' => 'budaya']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'BUDAYA - Private', 'name' => 'budaya']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class BudayaController extends Controller
             $categoryName = CategoryBudaya::findOrFail($id)->name;
             $category = CategoryBudaya::get();
             $surat = SuratBudaya::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'BUDAYA', 'categoryName' => $categoryName, 'name' => 'budaya']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'BUDAYA', 'categoryName' => $categoryName, 'name' => 'budaya']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.budaya.index');
         }

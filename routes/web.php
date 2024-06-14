@@ -109,7 +109,19 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/sekretariatan/plk/category/update/{id}', 'update')->name('admin.plk.category.update');
             Route::get('/sekretariatan/plk/category/delete/{id}', 'delete')->name('admin.plk.category.delete');
             });
+        
         // =================================================================================================
+        
+        // Dokumentasi
+        Route::resource('/sekretariat/dokumentasi', DokumentasiSekretariatController::class, ['names' => 'admin.sekretariat.dokumentasi']);
+        Route::get('/sekretariat/dokumentasi/category/{id}', [DokumentasiSekretariatController::class, 'category'])->name('admin.sekretariat.dokumentasi.category');
+        Route::get('/sekretariat/dokumentasi/public', [DokumentasiSekretariatController::class, 'indexPublic'])->name('admin.sekretariat.dokumentasi.public');
+        Route::get('/sekretariat/dokumentasi/private', [DokumentasiSekretariatController::class, 'indexPrivate'])->name('admin.sekretariat.dokumentasi.private');
+        Route::controller(CategoryDokumentasiSekretariatController::class)->group(function () {
+            Route::post('/sekretariat/dokumentasi/category/store', 'store')->name('admin.sekretariat.dokumentasi.category.store');
+            Route::post('/sekretariat/dokumentasi/category/update/{id}', 'update')->name('admin.sekretariat.dokumentasi.category.update');
+            Route::get('/sekretariat/dokumentasi/category/delete/{id}', 'delete')->name('admin.sekretariat.dokumentasi.category.delete');
+        });
         
         /*** PEMERINTAHAN - RAPBDES */
         Route::resource('/pemerintahan/rapbdes', RapbdesController::class, ['names' => 'admin.rapbdes']);
@@ -144,6 +156,8 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/pemerintahan/produkhukum/category/delete/{id}', 'delete')->name('admin.produkhukum.category.delete');
         });
 
+        // =================================================================================================
+        
         /*** PELUM - ADMINDUK */
         Route::resource('/pelum/adminduk', AdmindukController::class, ['names' => 'admin.adminduk']);
         Route::get('/pelum/adminduk/category/{id}', [AdmindukController::class, 'category'])->name('admin.adminduk.category');
@@ -154,6 +168,8 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('/pelum/adminduk/category/update/{id}', 'update')->name('admin.adminduk.category.update');
             Route::get('/pelum/adminduk/category/delete/{id}', 'delete')->name('admin.adminduk.category.delete');
         });
+
+        // =================================================================================================
 
         /*** PMKS - PKK */
         Route::resource('/pmks/pkk', PkkController::class, ['names' => 'admin.pkk']);
@@ -221,6 +237,8 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/pmks/agama/category/delete/{id}', 'delete')->name('admin.agama.category.delete');
         });
 
+        // =================================================================================================
+        
         /*** TRANTIB - Surat */
         Route::resource('/trantib/surat', SuratTrantibController::class, ['names' => 'admin.trantib.surat']);
         Route::get('/trantib/surat/category/{id}', [SuratTrantibController::class, 'category'])->name('admin.trantib.surat.category');

@@ -14,21 +14,21 @@ class RapbdesController extends Controller
     {
         $category = CategoryRapbdes::get();
         $surat = SuratRapbdes::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'RAPBDES', 'name' => 'rapbdes']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'RAPBDES', 'name' => 'rapbdes']);
     }
 
     public function indexPublic()
     {
         $category = CategoryRapbdes::get();
         $surat = SuratRapbdes::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'RAPBDES - Public', 'name' => 'rapbdes']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'RAPBDES - Public', 'name' => 'rapbdes']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryRapbdes::get();
         $surat = SuratRapbdes::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'RAPBDES - Private', 'name' => 'rapbdes']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'RAPBDES - Private', 'name' => 'rapbdes']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class RapbdesController extends Controller
             $categoryName = CategoryRapbdes::findOrFail($id)->name;
             $category = CategoryRapbdes::get();
             $surat = SuratRapbdes::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'RAPBDES', 'categoryName' => $categoryName, 'name' => 'rapbdes']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'RAPBDES', 'categoryName' => $categoryName, 'name' => 'rapbdes']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.rapbdes.index');
         }

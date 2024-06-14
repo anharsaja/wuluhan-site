@@ -14,21 +14,21 @@ class AdmindukController extends Controller
     {
         $category = CategoryAdminduk::get();
         $surat = SuratAdminduk::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'ADMINDUK', 'name' => 'adminduk']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'ADMINDUK', 'name' => 'adminduk']);
     }
 
     public function indexPublic()
     {
         $category = CategoryAdminduk::get();
         $surat = SuratAdminduk::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'ADMINDUK - Public', 'name' => 'adminduk']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'ADMINDUK - Public', 'name' => 'adminduk']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryAdminduk::get();
         $surat = SuratAdminduk::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'ADMINDUK - Private', 'name' => 'adminduk']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'ADMINDUK - Private', 'name' => 'adminduk']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class AdmindukController extends Controller
             $categoryName = CategoryAdminduk::findOrFail($id)->name;
             $category = CategoryAdminduk::get();
             $surat = SuratAdminduk::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'ADMINDUK', 'categoryName' => $categoryName, 'name' => 'adminduk']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'ADMINDUK', 'categoryName' => $categoryName, 'name' => 'adminduk']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.adminduk.index');
         }

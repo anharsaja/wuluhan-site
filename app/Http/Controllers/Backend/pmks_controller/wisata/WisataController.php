@@ -14,21 +14,21 @@ class WisataController extends Controller
     {
         $category = CategoryWisata::get();
         $surat = SuratWisata::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA', 'name' => 'wisata']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA', 'name' => 'wisata']);
     }
 
     public function indexPublic()
     {
         $category = CategoryWisata::get();
         $surat = SuratWisata::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA - Public', 'name' => 'wisata']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA - Public', 'name' => 'wisata']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryWisata::get();
         $surat = SuratWisata::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA - Private', 'name' => 'wisata']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA - Private', 'name' => 'wisata']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class WisataController extends Controller
             $categoryName = CategoryWisata::findOrFail($id)->name;
             $category = CategoryWisata::get();
             $surat = SuratWisata::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA', 'categoryName' => $categoryName, 'name' => 'wisata']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'WISATA', 'categoryName' => $categoryName, 'name' => 'wisata']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.wisata.index');
         }

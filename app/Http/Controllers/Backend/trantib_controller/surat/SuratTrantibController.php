@@ -14,21 +14,21 @@ class SuratTrantibController extends Controller
     {
         $category = CategorySuratTrantib::get();
         $surat = SuratTrantib::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB', 'name' => 'trantib.surat']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB', 'name' => 'trantib.surat']);
     }
 
     public function indexPublic()
     {
         $category = CategorySuratTrantib::get();
         $surat = SuratTrantib::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB - Public', 'name' => 'trantib.surat']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB - Public', 'name' => 'trantib.surat']);
     }
 
         public function indexPrivate()
     {
         $category = CategorySuratTrantib::get();
         $surat = SuratTrantib::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB - Private', 'name' => 'trantib.surat']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB - Private', 'name' => 'trantib.surat']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class SuratTrantibController extends Controller
             $categoryName = CategorySuratTrantib::findOrFail($id)->name;
             $category = CategorySuratTrantib::get();
             $surat = SuratTrantib::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB', 'categoryName' => $categoryName, 'name' => 'trantib.surat']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'DOKUMEN TANTRIB', 'categoryName' => $categoryName, 'name' => 'trantib.surat']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.trantib.surat.index');
         }

@@ -49,7 +49,8 @@
                 {{-- <a href="about.html" class="th-btn">GET IN TOUCH<i class="fa-regular fa-arrow-right ms-2"></i></a> --}}
             </div>
         </div>
-        <div class="row mt-5 pt-10">
+        <div style="height: 100px;"></div>
+        {{-- <div class="row mt-5 pt-10">
             <div class="col-xl-6 mb-xl-0">
                 <h4 class="border-title">Personal Biography</h4>
                 <p class="mb-40">Conveniently innovate professional initiatives whereas virtual information. Compellingly network resource maximizing materials without premier benefits. Phosfluorescently synthesize wireless solutions with robust e-business. Monotonectally implement functionalized ideas with technically sound process improvements. Dramatically disseminate vertical systems after.</p>
@@ -124,7 +125,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </section>
     

@@ -18,9 +18,7 @@
                             <div class="blog-meta">
                                 <a class="author" href="{{route('home.blogdetails.'.$name.'', $blog->id)}}">{{ $blog->penulis }}</a>
                             <a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}"><i class="fa-light fa-calendar-days"></i>
-                                @foreach ($blogs as $blog)
-                                    {{ $blog->created_at->format('d-m-Y') }}
-                                @endforeach
+                                {{ $blog->created_at->format('d-m-Y')}}
                             </a>
                             <a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
                             </div>
@@ -33,14 +31,14 @@
                 @endforeach
                 
 
-                <div class="th-pagination text-center">
+                {{-- <div class="th-pagination text-center">
                     <ul>
                         <li><a href="blog.html">1</a></li>
                         <li><a href="blog.html">2</a></li>
                         <li><a href="blog.html">3</a></li>
                         <li><a href="blog.html"><i class="far fa-arrow-right"></i></a></li>
                         </ul>
-                        </div>
+                        </div> --}}
                         </div>
                         <div class="col-xxl-4 col-lg-5">
                 <aside class="sidebar-area">
@@ -73,7 +71,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="widget  ">
+                    {{-- <div class="widget  ">
                         <h3 class="widget_title">Recent Posts</h3>
                         <div class="recent-post-wrap">
                             <div class="recent-post">
@@ -110,8 +108,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="widget  ">
+                    </div> --}}
+                    {{-- <div class="widget">
                         <h3 class="widget_title">Gallery Post</h3>
                         <div class="sidebar-gallery">
                             <div class="gallery-thumb">
@@ -139,8 +137,8 @@
                                 <a href="{{asset('img/widget/gallery_1_6.jpg')}}" class="gallery-btn popup-image"><i class="fab fa-instagram"></i></a>
                             </div>
                         </div>
-                    </div>
-                    <div class="widget widget_tag_cloud   ">
+                    </div> --}}
+                    {{-- <div class="widget widget_tag_cloud   ">
                         <h3 class="widget_title">Popular Tags</h3>
                         <div class="tagcloud">
                             <a href="blog.html">Technology</a>
@@ -153,7 +151,7 @@
                             <a href="blog.html">Agency</a>
                             <a href="blog.html">Software</a>
                         </div>
-                    </div>
+                    </div> --}}
                 </aside>
             </div>
         </div>

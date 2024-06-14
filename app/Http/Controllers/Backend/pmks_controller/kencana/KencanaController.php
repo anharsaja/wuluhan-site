@@ -14,21 +14,21 @@ class KencanaController extends Controller
     {
         $category = CategoryKencana::get();
         $surat = SuratKencana::get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'KENCANA', 'name' => 'kencana']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'KENCANA', 'name' => 'kencana']);
     }
 
     public function indexPublic()
     {
         $category = CategoryKencana::get();
         $surat = SuratKencana::where('status', 'public')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'KENCANA - Public', 'name' => 'kencana']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'KENCANA - Public', 'name' => 'kencana']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryKencana::get();
         $surat = SuratKencana::where('status', 'private')->get();
-        return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'KENCANA - Private', 'name' => 'kencana']);
+        return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'KENCANA - Private', 'name' => 'kencana']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class KencanaController extends Controller
             $categoryName = CategoryKencana::findOrFail($id)->name;
             $category = CategoryKencana::get();
             $surat = SuratKencana::where('category_id', $id)->get();
-            return view('backend2.pages.sekretariat.index', ['categories' => $category, 'surats' => $surat, 'title' => 'KENCANA', 'categoryName' => $categoryName, 'name' => 'kencana']);
+            return view('backend2.pages.berkas.index', ['categories' => $category, 'surats' => $surat, 'title' => 'KENCANA', 'categoryName' => $categoryName, 'name' => 'kencana']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.kencana.index');
         }
