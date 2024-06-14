@@ -35,6 +35,8 @@ use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\RapbdesControll
 use App\Http\Controllers\Backend\pmks_controller\kencana\CategoryKencanaController;
 use App\Http\Controllers\Backend\pemerintahan_controller\desa\CategoryDesaController;
 use App\Http\Controllers\Backend\pelum_controller\adminduk\CategoryAdmindukController;
+use App\Http\Controllers\Backend\pemerintahan_controller\dokumentasi\CategoryDokumentasiPemerintahanController;
+use App\Http\Controllers\Backend\pemerintahan_controller\dokumentasi\DokumentasiPemerintahanController;
 use App\Http\Controllers\Backend\sekretariat_controller\umpeg\CategoryUmpegController;
 use App\Http\Controllers\Backend\trantib_controller\surat\CategorySuratTrantibController;
 use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\CategoryRapbdesController;
@@ -64,6 +66,11 @@ Route::controller(HomeController::class)->group(function () {
     // blog sekretariat - details
     Route::get('/blog/sekretariatan', [DokumentasiSekretariatController::class, 'blogShow'])->name('home.blog.sekretariat');
     Route::get('/blog/sekretariatan/details/{id}', [DokumentasiSekretariatController::class, 'blogDetails'])->name('home.blogdetails.sekretariat');
+    
+    // blog pemerintahan - details
+    Route::get('/blog/pemerintahan', [DokumentasiPemerintahanController::class, 'blogShow'])->name('home.blog.pemerintahan');
+    Route::get('/blog/pemerintahan/details/{id}', [DokumentasiPemerintahanController::class, 'blogDetails'])->name('home.blogdetails.pemerintahan');
+    
 
 /*** Admin routes */
 Route::group(['prefix' => 'admin'], function () {
@@ -113,14 +120,14 @@ Route::group(['prefix' => 'admin'], function () {
         // =================================================================================================
         
         // Dokumentasi
-        Route::resource('/sekretariat/dokumentasi', DokumentasiSekretariatController::class, ['names' => 'admin.sekretariat.dokumentasi']);
-        Route::get('/sekretariat/dokumentasi/category/{id}', [DokumentasiSekretariatController::class, 'category'])->name('admin.sekretariat.dokumentasi.category');
-        Route::get('/sekretariat/dokumentasi/public', [DokumentasiSekretariatController::class, 'indexPublic'])->name('admin.sekretariat.dokumentasi.public');
-        Route::get('/sekretariat/dokumentasi/private', [DokumentasiSekretariatController::class, 'indexPrivate'])->name('admin.sekretariat.dokumentasi.private');
-        Route::controller(CategoryDokumentasiSekretariatController::class)->group(function () {
-            Route::post('/sekretariat/dokumentasi/category/store', 'store')->name('admin.sekretariat.dokumentasi.category.store');
-            Route::post('/sekretariat/dokumentasi/category/update/{id}', 'update')->name('admin.sekretariat.dokumentasi.category.update');
-            Route::get('/sekretariat/dokumentasi/category/delete/{id}', 'delete')->name('admin.sekretariat.dokumentasi.category.delete');
+        Route::resource('/pemerintahan/dokumentasi', DokumentasiPemerintahanController::class, ['names' => 'admin.pemerintahan.dokumentasi']);
+        Route::get('/pemerintahan/dokumentasi/category/{id}', [DokumentasiPemerintahanController::class, 'category'])->name('admin.pemerintahan.dokumentasi.category');
+        Route::get('/pemerintahan/dokumentasi/public', [DokumentasiPemerintahanController::class, 'indexPublic'])->name('admin.pemerintahan.dokumentasi.public');
+        Route::get('/pemerintahan/dokumentasi/private', [DokumentasiPemerintahanController::class, 'indexPrivate'])->name('admin.pemerintahan.dokumentasi.private');
+        Route::controller(CategoryDokumentasiPemerintahanController::class)->group(function () {
+            Route::post('/pemerintahan/dokumentasi/category/store', 'store')->name('admin.pemerintahan.dokumentasi.category.store');
+            Route::post('/pemerintahan/dokumentasi/category/update/{id}', 'update')->name('admin.pemerintahan.dokumentasi.category.update');
+            Route::get('/pemerintahan/dokumentasi/category/delete/{id}', 'delete')->name('admin.pemerintahan.dokumentasi.category.delete');
         });
         
         /*** PEMERINTAHAN - RAPBDES */

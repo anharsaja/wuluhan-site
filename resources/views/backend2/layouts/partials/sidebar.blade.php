@@ -17,10 +17,11 @@
 
 {{-- Pemerintahan --}}
 @can('pemerintahan.view')
-    <li class="nav-item"><a href="#pemerintahan" class="nav-link collapsed {{ Route::is('admin.rapbdes.*') || Route::is('admin.desa.*') || Route::is('admin.produkhukum.*') ? 'active' : '' }}" data-toggle="collapse"><i
+    <li class="nav-item"><a href="#pemerintahan" class="nav-link collapsed {{ Route::is('admin.rapbdes.*') || Route::is('admin.desa.*') || Route::is('admin.produkhukum.*') || Route::is('admin.pemerintahan.dokumentasi.*') ? 'active' : '' }}" data-toggle="collapse"><i
         class="fa fa-envelope"></i>Pemerintahan<span class="sub-ico">
             <i class="fa fa-angle-down"></i></span></a></li>
-    <li class="sub collapse {{ Route::is('admin.rapbdes.*') || Route::is('admin.desa.*') || Route::is('admin.produkhukum.*') ? 'show' : '' }}" id="pemerintahan">
+    <li class="sub collapse {{ Route::is('admin.rapbdes.*') || Route::is('admin.desa.*') || Route::is('admin.produkhukum.*') || Route::is('admin.pemerintahan.dokumentasi.*') ? 'show' : '' }}" id="pemerintahan">
+        <a href="{{ route('admin.pemerintahan.dokumentasi.index') }}" class="nav-link {{ Route::is('admin.pemerintahan.dokumentasi.index') || Route::is('admin.pemerintahan.dokumentasi.public') || Route::is('admin.pemerintahan.dokumentasi.private') || Route::is('admin.pemerintahan.dokumentasi.category') ? 'active' : '' }}" data-parent="#sekretariat">Dokumentasi</a>
         <a href="{{ route('admin.rapbdes.index') }}" class="nav-link {{ Route::is('admin.rapbdes.index') || Route::is('admin.rapbdes.public') || Route::is('admin.rapbdes.private') || Route::is('admin.rapbdes.category') ? 'active' : '' }}" data-parent="#sekretariat">RAPBDES</a>
         <a href="{{ route('admin.desa.index') }}" class="nav-link {{ Route::is('admin.desa.index') || Route::is('admin.desa.public') || Route::is('admin.desa.private') || Route::is('admin.desa.category') ? 'active' : '' }}" data-parent="#sekretariat">Desa</a>
         <a href="{{ route('admin.produkhukum.index') }}" class="nav-link {{ Route::is('admin.produkhukum.index') || Route::is('admin.produkhukum.public') || Route::is('admin.produkhukum.private') || Route::is('admin.produkhukum.category') ? 'active' : '' }}" data-parent="#sekretariat">Produk Hukum</a>

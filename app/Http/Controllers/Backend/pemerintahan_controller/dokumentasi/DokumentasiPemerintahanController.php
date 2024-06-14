@@ -14,21 +14,21 @@ class DokumentasiPemerintahanController extends Controller
     {
         $category = CategoryDokumentasiPemerintahan::get();
         $surat = DokumentasiPemerintahan::get();
-        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi', 'name' => 'pemerintahan.dokumentasi']);
+        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi Pemerintahan', 'name' => 'pemerintahan.dokumentasi']);
     }
 
     public function indexPublic()
     {
         $category = CategoryDokumentasiPemerintahan::get();
         $surat = DokumentasiPemerintahan::where('status', 'public')->get();
-        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi - Public', 'name' => 'pemerintahan.dokumentasi']);
+        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi Pemerintahan - Public', 'name' => 'pemerintahan.dokumentasi']);
     }
 
         public function indexPrivate()
     {
         $category = CategoryDokumentasiPemerintahan::get();
         $surat = DokumentasiPemerintahan::where('status', 'private')->get();
-        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi - Private', 'name' => 'pemerintahan.dokumentasi']);
+        return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi Pemerintahan - Private', 'name' => 'pemerintahan.dokumentasi']);
     }
 
     public function category($id)
@@ -37,7 +37,7 @@ class DokumentasiPemerintahanController extends Controller
             $categoryName = CategoryDokumentasiPemerintahan::findOrFail($id)->name;
             $category = CategoryDokumentasiPemerintahan::get();
             $surat = DokumentasiPemerintahan::where('category_id', $id)->get();
-            return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi', 'categoryName' => $categoryName, 'name' => 'pemerintahan.dokumentasi']);
+            return view('backend2.pages.dokumentasi.index', ['categories' => $category, 'surats' => $surat, 'title' => 'Dokumentasi Pemerintahan', 'categoryName' => $categoryName, 'name' => 'pemerintahan.dokumentasi']);
         } catch (\Throwable $th) {
             return redirect()->route('admin.pemerintahan.dokumentasi.index');
         }
@@ -110,8 +110,6 @@ class DokumentasiPemerintahanController extends Controller
         }
     }
 
-
-
     public function show(string $id)
     {
         //
@@ -122,7 +120,6 @@ class DokumentasiPemerintahanController extends Controller
     {
         //
     }
-
 
     public function update(Request $request, string $id)
     {

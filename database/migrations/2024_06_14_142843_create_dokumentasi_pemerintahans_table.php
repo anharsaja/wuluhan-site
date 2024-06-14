@@ -13,6 +13,21 @@ return new class extends Migration
     {
         Schema::create('dokumentasi_pemerintahans', function (Blueprint $table) {
             $table->id();
+            $table->string('foto1');
+            $table->string('judul');
+            $table->string('penulis');
+            $table->text('description1');
+            $table->string('quotes')->nullable();
+            $table->string('quotesby')->nullable();
+            $table->text('description2')->nullable();
+            $table->string('subjudul')->nullable();
+            $table->string('subfoto1')->nullable();
+            $table->string('subfoto2')->nullable();
+            $table->text('description3')->nullable();
+            $table->string('tags1')->nullable();
+            $table->string('tags2')->nullable();
+            $table->unsignedBigInteger('category_id');
+            $table->enum('status', ['private', 'public'])->default('public');
             $table->timestamps();
         });
     }

@@ -18,7 +18,7 @@
                             <div class="blog-meta">
                                 <a class="author" href="{{route('home.blogdetails.'.$name.'', $blog->id)}}">{{ $blog->penulis }}</a>
                             <a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}"><i class="fa-light fa-calendar-days"></i>
-                                {{ $blog->created_at->format('d-m-Y')}}
+                                {{ \Carbon\Carbon::parse($blog->created_at)->locale('id')->translatedFormat('d F Y') }}
                             </a>
                             <a href="{{route('home.blogdetails.'.$name.'', $blog->id)}}html"><i class="fa-regular fa-comments"></i>Comments (3)</a>
                             </div>
