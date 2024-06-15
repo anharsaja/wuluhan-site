@@ -35,6 +35,8 @@ use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\RapbdesControll
 use App\Http\Controllers\Backend\pmks_controller\kencana\CategoryKencanaController;
 use App\Http\Controllers\Backend\pemerintahan_controller\desa\CategoryDesaController;
 use App\Http\Controllers\Backend\pelum_controller\adminduk\CategoryAdmindukController;
+use App\Http\Controllers\Backend\pelum_controller\dokumentasi\CategoryDokumentasiPelumController;
+use App\Http\Controllers\Backend\pelum_controller\dokumentasi\DokumentasiPelumController;
 use App\Http\Controllers\Backend\pemerintahan_controller\dokumentasi\CategoryDokumentasiPemerintahanController;
 use App\Http\Controllers\Backend\pemerintahan_controller\dokumentasi\DokumentasiPemerintahanController;
 use App\Http\Controllers\Backend\sekretariat_controller\umpeg\CategoryUmpegController;
@@ -70,6 +72,10 @@ Route::controller(HomeController::class)->group(function () {
     // blog pemerintahan - details
     Route::get('/blog/pemerintahan', [DokumentasiPemerintahanController::class, 'blogShow'])->name('home.blog.pemerintahan');
     Route::get('/blog/pemerintahan/details/{id}', [DokumentasiPemerintahanController::class, 'blogDetails'])->name('home.blogdetails.pemerintahan');
+    
+    // blog pelum - details
+    Route::get('/blog/pelum', [DokumentasiPelumController::class, 'blogShow'])->name('home.blog.pelum');
+    Route::get('/blog/pelum/details/{id}', [DokumentasiPelumController::class, 'blogDetails'])->name('home.blogdetails.pelum');
     
 
 /*** Admin routes */
@@ -164,6 +170,17 @@ Route::group(['prefix' => 'admin'], function () {
         });
 
         // =================================================================================================
+        
+        // Dokumentasi
+        Route::resource('/pelum/dokumentasi', DokumentasiPelumController::class, ['names' => 'admin.pelum.dokumentasi']);
+        Route::get('/pelum/dokumentasi/category/{id}', [DokumentasiPelumController::class, 'category'])->name('admin.pelum.dokumentasi.category');
+        Route::get('/pelum/dokumentasi/public', [DokumentasiPelumController::class, 'indexPublic'])->name('admin.pelum.dokumentasi.public');
+        Route::get('/pelum/dokumentasi/private', [DokumentasiPelumController::class, 'indexPrivate'])->name('admin.pelum.dokumentasi.private');
+        Route::controller(CategoryDokumentasiPelumController::class)->group(function () {
+            Route::post('/pelum/dokumentasi/category/store', 'store')->name('admin.pelum.dokumentasi.category.store');
+            Route::post('/pelum/dokumentasi/category/update/{id}', 'update')->name('admin.pelum.dokumentasi.category.update');
+            Route::get('/pelum/dokumentasi/category/delete/{id}', 'delete')->name('admin.pelum.dokumentasi.category.delete');
+        });
         
         /*** PELUM - ADMINDUK */
         Route::resource('/pelum/adminduk', AdmindukController::class, ['names' => 'admin.adminduk']);

@@ -30,12 +30,12 @@
 
 {{-- Pelayanan Umum --}}
 @can('pelum.view')
-    <li class="nav-item"><a href="#pelum" class="nav-link collapsed {{ Route::is('admin.adminduk.*') ? 'active' : '' }}" data-toggle="collapse"><i
+    <li class="nav-item"><a href="#pelum" class="nav-link collapsed {{ Route::is('admin.adminduk.*') || Route::is('admin.pelum.dokumentasi.*') ? 'active' : '' }}" data-toggle="collapse"><i
         class="fa fa-headphones"></i>Pelayanan Umum<span class="sub-ico">
             <i class="fa fa-angle-down"></i></span></a></li>
-    <li class="sub collapse {{ Route::is('admin.adminduk.*') ? 'show' : '' }}" id="pelum">
+    <li class="sub collapse {{ Route::is('admin.adminduk.*') || Route::is('admin.pelum.dokumentasi.*') ? 'show' : '' }}" id="pelum">
+        <a href="{{ route('admin.pelum.dokumentasi.index') }}" class="nav-link {{ Route::is('admin.pelum.dokumentasi.index') || Route::is('admin.pelum.dokumentasi.public') || Route::is('admin.pelum.dokumentasi.private') || Route::is('admin.pelum.dokumentasi.category') ? 'active' : '' }}" data-parent="#sekretariat">Dokumentasi</a>
         <a href="{{ route('admin.adminduk.index') }}" class="nav-link {{ Route::is('admin.adminduk.index') || Route::is('admin.adminduk.public') || Route::is('admin.adminduk.private') || Route::is('admin.adminduk.category') ? 'active' : '' }}" data-parent="#sekretariat">ADMINDUK</a>
-        <a href="{{ route('admin.adminduk.index') }}" class="nav-link {{ Route::is('admin.adminduk.index') || Route::is('admin.adminduk.public') || Route::is('admin.adminduk.private') || Route::is('admin.adminduk.category') ? 'active' : '' }}" data-parent="#sekretariat">Dokumentasi</a>
     </li>
 @endcan
 
