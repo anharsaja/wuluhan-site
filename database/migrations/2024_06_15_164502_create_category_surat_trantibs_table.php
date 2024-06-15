@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dokumentasi_trantibs', function (Blueprint $table) {
+        Schema::create('category_surat_trantibs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
-            $table->string('path_file');
-            $table->unsignedBigInteger('category_id');
-            $table->enum('status', ['private', 'public'])->default('private');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dokumentasi_trantibs');
+        Schema::dropIfExists('category_surat_trantibs');
     }
 };

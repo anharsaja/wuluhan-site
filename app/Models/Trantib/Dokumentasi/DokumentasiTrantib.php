@@ -5,9 +5,9 @@ namespace App\Models\Trantib\Dokumentasi;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CategoryDokuemntasiTrantib extends Model
+class DokumentasiTrantib extends Model
 {
     use HasFactory;
-
+    
     protected $guarded = ['id'];
 }

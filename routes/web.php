@@ -9,10 +9,12 @@ use App\Http\Controllers\LandingPage\HomeController;
 use App\Http\Controllers\Backend\DashboardController;
 /***  Sekretariat -- umpeg */
 use App\Http\Controllers\Backend\Auth\LoginController;
-use App\Http\Controllers\Backend\pmks_controller\pkk\PkkController;
 /***  ekretariat -- plk */
 use App\Http\Controllers\Backend\pmks_controller\osjj\OsjjController;
 use App\Http\Controllers\Backend\pmks_controller\agama\AgamaController;
+use App\Http\Controllers\Backend\pmks_controller\pkk\PkkController;
+
+
 /*** Pemerintahan -- RAPBDES */
 use App\Http\Controllers\Backend\pmks_controller\budaya\BudayaController;
 use App\Http\Controllers\Backend\pmks_controller\wisata\WisataController;
@@ -22,6 +24,8 @@ use App\Http\Controllers\Backend\pmks_controller\kencana\KencanaController;
 /*** Pemerintahan -- Produk Hukum */
 use App\Http\Controllers\Backend\pmks_controller\pkk\CategoryPkkController;
 use App\Http\Controllers\Backend\pemerintahan_controller\desa\DesaController;
+
+
 /*** Pelum - Adminduk */
 use App\Http\Controllers\Backend\pmks_controller\osjj\CategoryOsjjController;
 use App\Http\Controllers\Backend\pelum_controller\adminduk\AdmindukController;
@@ -29,7 +33,6 @@ use App\Http\Controllers\Backend\sekretariat_controller\umpeg\UmpegController;
 use App\Http\Controllers\Backend\pmks_controller\agama\CategoryAgamaController;
 use App\Http\Controllers\Backend\pmks_controller\budaya\CategoryBudayaController;
 use App\Http\Controllers\Backend\pmks_controller\wisata\CategoryWisataController;
-use App\Http\Controllers\Backend\trantib_controller\surat\SuratTrantibController;
 use App\Http\Controllers\Backend\sekretariat_controller\plk\CategoryPlkController;
 use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\RapbdesController;
 use App\Http\Controllers\Backend\pmks_controller\kencana\CategoryKencanaController;
@@ -40,10 +43,8 @@ use App\Http\Controllers\Backend\pelum_controller\dokumentasi\DokumentasiPelumCo
 use App\Http\Controllers\Backend\pemerintahan_controller\dokumentasi\CategoryDokumentasiPemerintahanController;
 use App\Http\Controllers\Backend\pemerintahan_controller\dokumentasi\DokumentasiPemerintahanController;
 use App\Http\Controllers\Backend\sekretariat_controller\umpeg\CategoryUmpegController;
-use App\Http\Controllers\Backend\trantib_controller\surat\CategorySuratTrantibController;
 use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\CategoryRapbdesController;
 use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHukumController;
-use App\Http\Controllers\Backend\trantib_controller\dokumentasi\DokumentasiTantribController;
 use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\CategoryProdukHukumController;
 use App\Http\Controllers\Backend\pmks_controller\dokumentasi\CategoryDokumentasiPmksController;
 use App\Http\Controllers\Backend\pmks_controller\dokumentasi\DokumentasiPmksController;
@@ -53,7 +54,10 @@ use App\Http\Controllers\Backend\sekretariat_controller\dokumentasi\CategoryDoku
 
 
 use App\Http\Controllers\Backend\sekretariat_controller\dokumentasi\DokumentasiSekretariatController;
-use App\Http\Controllers\Backend\trantib_controller\dokumentasi\CategoryDokumentasiTantribController;
+use App\Http\Controllers\Backend\trantib_controller\dokumentasi\CategoryDokumentasiTrantibController;
+use App\Http\Controllers\Backend\trantib_controller\dokumentasi\DokumentasiTrantibController;
+use App\Http\Controllers\Backend\trantib_controller\surat\CategorySuratTrantibController;
+use App\Http\Controllers\Backend\trantib_controller\surat\SuratTrantibController;
 
 Auth::routes();
 
@@ -82,6 +86,10 @@ Route::controller(HomeController::class)->group(function () {
     // blog pmks - details
     Route::get('/blog/pmks', [DokumentasiPmksController::class, 'blogShow'])->name('home.blog.pmks');
     Route::get('/blog/pmks/details/{id}', [DokumentasiPmksController::class, 'blogDetails'])->name('home.blogdetails.pmks');
+    
+    // blog trabtib - details
+    Route::get('/blog/trantib', [DokumentasiTrantibController::class, 'blogShow'])->name('home.blog.trantib');
+    Route::get('/blog/trantib/details/{id}', [DokumentasiTrantibController::class, 'blogDetails'])->name('home.blogdetails.trantib');
     
 
 /*** Admin routes */
@@ -279,6 +287,16 @@ Route::group(['prefix' => 'admin'], function () {
         });
 
         // =================================================================================================
+        // Dokumentasi
+        Route::resource('/trantib/dokumentasi', DokumentasiTrantibController::class, ['names' => 'admin.trantib.dokumentasi']);
+        Route::get('/trantib/dokumentasi/category/{id}', [DokumentasiTrantibController::class, 'category'])->name('admin.trantib.dokumentasi.category');
+        Route::get('/trantib/dokumentasi/public', [DokumentasiTrantibController::class, 'indexPublic'])->name('admin.trantib.dokumentasi.public');
+        Route::get('/trantib/dokumentasi/private', [DokumentasiTrantibController::class, 'indexPrivate'])->name('admin.trantib.dokumentasi.private');
+        Route::controller(CategoryDokumentasiTrantibController::class)->group(function () {
+            Route::post('/trantib/dokumentasi/category/store', 'store')->name('admin.trantib.dokumentasi.category.store');
+            Route::post('/trantib/dokumentasi/category/update/{id}', 'update')->name('admin.trantib.dokumentasi.category.update');
+            Route::get('/trantib/dokumentasi/category/delete/{id}', 'delete')->name('admin.trantib.dokumentasi.category.delete');
+        });
         
         /*** TRANTIB - Surat */
         Route::resource('/trantib/surat', SuratTrantibController::class, ['names' => 'admin.trantib.surat']);
@@ -291,16 +309,6 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('/trantib/surat/category/delete/{id}', 'delete')->name('admin.trantib.surat.category.delete');
         });
 
-        /*** TRANTIB - Dokumentasi */
-        Route::resource('/trantib/dokumentasi', DokumentasiTantribController::class, ['names' => 'admin.trantib.dokumentasi']);
-        Route::get('/trantib/dokumentasi/category/{id}', [DokumentasiTantribController::class, 'category'])->name('admin.trantib.dokumentasi.category');
-        Route::get('/trantib/dokumentasi/public', [DokumentasiTantribController::class, 'indexPublic'])->name('admin.trantib.dokumentasi.public');
-        Route::get('/trantib/dokumentasi/private', [DokumentasiTantribController::class, 'indexPrivate'])->name('admin.trantib.dokumentasi.private');
-        Route::controller(CategoryDokumentasiTantribController::class)->group(function () {
-            Route::post('/trantib/dokumentasi/category/store', 'store')->name('admin.trantib.dokumentasi.category.store');
-            Route::post('/trantib/dokumentasi/category/update/{id}', 'update')->name('admin.trantib.dokumentasi.category.update');
-            Route::get('/trantib/dokumentasi/category/delete/{id}', 'delete')->name('admin.trantib.dokumentasi.category.delete');
-        });
 
 
     });
