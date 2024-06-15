@@ -45,6 +45,8 @@ use App\Http\Controllers\Backend\pemerintahan_controller\rapbdes\CategoryRapbdes
 use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\ProdukHukumController;
 use App\Http\Controllers\Backend\trantib_controller\dokumentasi\DokumentasiTantribController;
 use App\Http\Controllers\Backend\pemerintahan_controller\produk_hukum\CategoryProdukHukumController;
+use App\Http\Controllers\Backend\pmks_controller\dokumentasi\CategoryDokumentasiPmksController;
+use App\Http\Controllers\Backend\pmks_controller\dokumentasi\DokumentasiPmksController;
 use App\Http\Controllers\Backend\sekretariat_controller\dokumentasi\CategoryDokumentasiSekretariatController;
 
 /*** Pelum - PMKS */
@@ -76,6 +78,10 @@ Route::controller(HomeController::class)->group(function () {
     // blog pelum - details
     Route::get('/blog/pelum', [DokumentasiPelumController::class, 'blogShow'])->name('home.blog.pelum');
     Route::get('/blog/pelum/details/{id}', [DokumentasiPelumController::class, 'blogDetails'])->name('home.blogdetails.pelum');
+    
+    // blog pmks - details
+    Route::get('/blog/pmks', [DokumentasiPmksController::class, 'blogShow'])->name('home.blog.pmks');
+    Route::get('/blog/pmks/details/{id}', [DokumentasiPmksController::class, 'blogDetails'])->name('home.blogdetails.pmks');
     
 
 /*** Admin routes */
@@ -194,6 +200,17 @@ Route::group(['prefix' => 'admin'], function () {
         });
 
         // =================================================================================================
+        // Dokumentasi
+        Route::resource('/pmks/dokumentasi', DokumentasiPmksController::class, ['names' => 'admin.pmks.dokumentasi']);
+        Route::get('/pmks/dokumentasi/category/{id}', [DokumentasiPmksController::class, 'category'])->name('admin.pmks.dokumentasi.category');
+        Route::get('/pmks/dokumentasi/public', [DokumentasiPmksController::class, 'indexPublic'])->name('admin.pmks.dokumentasi.public');
+        Route::get('/pmks/dokumentasi/private', [DokumentasiPmksController::class, 'indexPrivate'])->name('admin.pmks.dokumentasi.private');
+        Route::controller(CategoryDokumentasiPmksController::class)->group(function () {
+            Route::post('/pmks/dokumentasi/category/store', 'store')->name('admin.pmks.dokumentasi.category.store');
+            Route::post('/pmks/dokumentasi/category/update/{id}', 'update')->name('admin.pmks.dokumentasi.category.update');
+            Route::get('/pmks/dokumentasi/category/delete/{id}', 'delete')->name('admin.pmks.dokumentasi.category.delete');
+        });
+        
 
         /*** PMKS - PKK */
         Route::resource('/pmks/pkk', PkkController::class, ['names' => 'admin.pkk']);

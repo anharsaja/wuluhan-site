@@ -32,7 +32,7 @@
                                     <li><a href="{{ route('home.blog.sekretariat') }}">Blog Sekretariat</a></li>
                                     <li><a href="{{ route('home.blog.pemerintahan') }}">Blog Pemerintahan</a></li>
                                     <li><a href="{{ route('home.blog.pelum') }}">Blog Pelum</a></li>
-                                    <li><a href="">Blog PMKS</a></li>
+                                    <li><a href="{{ route('home.blog.pmks') }}">Blog PMKS</a></li>
                                     <li><a href="">Blog Trantib</a></li>
                                 </ul>
                             </li>
