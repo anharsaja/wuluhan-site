@@ -20,9 +20,9 @@
             <div class="row">
                 <div class="col-md-2">
                     <div class="app-action-panel" id="contacts-action-panel">
-                        <div class="action-panel-toggle" data-toggle="class" data-target="#contacts-action-panel"
+                        {{-- <div class="action-panel-toggle" data-toggle="class" data-target="#contacts-action-panel"
                             data-class="open">
-                            <i class="fa fa-chevron-right"></i>
+                            <i class="fa fa-chevron-right"></i> --}}
                             <i class="fa fa-chevron-left"></i>
                         </div><!-- .action-panel-toggle -->
                             <div class="m-b-lg">
@@ -143,7 +143,7 @@
                                     <div class="media">
                                         <div class="media-left">
                                             <div class="avatar avatar-xl avatar-circle">
-                                                <img src="{{ asset('img/icon/pdf.png') }}" alt="contact image">
+                                                <img src="{{ asset('img/image.jpg') }}" alt="contact image">
                                             </div>
                                         </div>
                                         <div class="media-body">

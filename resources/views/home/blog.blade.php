@@ -49,25 +49,22 @@
                         </form>
                     </div>
                     <div class="widget widget_categories  ">
-                        <h3 class="widget_title">Categories</h3>
+                        <h3 class="widget_title">Blog Spot</h3>
                         <ul>
                             <li>
-                                <a href="blog.html">IT Solution</a>
+                                <a href="{{route('home.blog.sekretariat')}}">Blog Sekretariat</a>
                             </li>
                             <li>
-                                <a href="blog.html">SEO Marketing</a>
+                                <a href="{{route('home.blog.pemerintahan')}}">Blog Pemerintahan</a>
                             </li>
                             <li>
-                                <a href="blog.html">Web Development</a>
+                                <a href="{{route('home.blog.pelum')}}">Blog PELUM</a>
                             </li>
                             <li>
-                                <a href="blog.html">Cloud Solution</a>
+                                <a href="{{route('home.blog.pmks')}}">Blog PMKS</a>
                             </li>
                             <li>
-                                <a href="blog.html">Network Marketing</a>
-                            </li>
-                            <li>
-                                <a href="blog.html">UI/UX Design</a>
+                                <a href="{{route('home.blog.trantib')}}">Blog TRANTIB</a>
                             </li>
                         </ul>
                     </div>
