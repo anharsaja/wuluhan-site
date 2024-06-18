@@ -212,15 +212,12 @@ Cta Area
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-7 col-md-9 text-center">
                 <div class="title-area mb-35">
-                    <span class="sub-title">
-                        <div class="icon-masking me-2">
-                            <span class="mask-icon" data-mask-src="{{asset('img/theme-img/title_shape_2.svg')}}"></span>
-                        </div>
-                        CONTACT US
+                    <span class="sub-title" style="height: 250px">
+                        <span class="mask-icon" data-mask-src="{{asset('img/theme-img/title_shape_2.svg')}}" style="height: 100%"></span>
                     </span>
-                    <h2 class="sec-title text-white">Need Any Kind Of IT Solution For <span class="text-theme fw-normal">Your Business?</span></h2>
+                    {{-- <h2 class="sec-title text-white">Need Any Kind Of IT Solution For <span class="text-theme fw-normal">Your Business?</span></h2> --}}
                 </div>
-                <a href="contact.html" class="th-btn style6">Get In Touch</a>
+                {{-- <a href="contact.html" class="th-btn style6">Get In Touch</a> --}}
             </div>
         </div>
     </div>
@@ -236,7 +233,7 @@ Cta Area
                 </div>
                 NEWS & ARTICLES
             </span>
-            <h2 class="sec-title">Artikel Wisata <span class="text-theme">Wuluhan</span></h2>
+            <h2 class="sec-title">Artikel <span class="text-theme">Wuluhan</span></h2>
         </div>
 
         <div class="slider-area">
@@ -244,99 +241,103 @@ Cta Area
                 <div class="swiper-wrapper">
 
                     {{-- tempat wisata --}}
-                    <div class="swiper-slide">
+                    @foreach ($model1 as $model)
+                    <div class="swiper-slide" style="width: 300px">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <img src="{{asset('img/fotowisata/1.jpg')}}" alt="blog image">
+                                <a href=""><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>15 Jan, 2024</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
                                     <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
                                 </div>
-                                <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
+                                <h3 class="box-title"><a href="blog-details.html">{{ $model->judul }}</a></h3>
                                 <div class="blog-bottom">
                                     <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="swiper-slide">
+                    @endforeach
+                    @foreach ($model2 as $model)
+                    <div class="swiper-slide" style="width: 300px">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <img src="{{asset('img/fotowisata/1.jpg')}}" alt="blog image">
+                                <a href=""><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>15 Jan, 2024</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
                                     <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
                                 </div>
-                                <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
+                                <h3 class="box-title"><a href="blog-details.html">{{ $model->judul }}</a></h3>
                                 <div class="blog-bottom">
                                     <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="swiper-slide">
+                    @endforeach
+                    @foreach ($model3 as $model)
+                    <div class="swiper-slide" style="width: 300px">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <img src="{{asset('img/fotowisata/1.jpg')}}" alt="blog image">
+                                <a href=""><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>15 Jan, 2024</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
                                     <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
                                 </div>
-                                <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
+                                <h3 class="box-title"><a href="blog-details.html">{{ $model->judul }}</a></h3>
                                 <div class="blog-bottom">
                                     <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="swiper-slide">
+                    @endforeach
+                    @foreach ($model4 as $model)
+                    <div class="swiper-slide" style="width: 300px">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <img src="{{asset('img/fotowisata/1.jpg')}}" alt="blog image">
+                                <a href=""><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>15 Jan, 2024</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
                                     <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
                                 </div>
-                                <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
+                                <h3 class="box-title"><a href="blog-details.html">{{ $model->judul }}</a></h3>
                                 <div class="blog-bottom">
                                     <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="swiper-slide">
+                    @endforeach
+                    @foreach ($model5 as $model)
+                    <div class="swiper-slide" style="width: 300px">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <img src="{{asset('img/fotowisata/1.jpg')}}" alt="blog image">
+                                <a href=""><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>15 Jan, 2024</a>
+                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
                                     <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
                                 </div>
-                                <h3 class="box-title"><a href="blog-details.html">Unsatiable entreaties may collecting Power.</a></h3>
+                                <h3 class="box-title"><a href="blog-details.html">{{ $model->judul }}</a></h3>
                                 <div class="blog-bottom">
                                     <a href="blog-details.html" class="line-btn">Read More<i class="fas fa-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-
-
+                    @endforeach
                 </div>
+
             </div>
             <button data-slider-prev="#blogSlider1" class="slider-arrow style3 slider-prev"><i class="far fa-arrow-left"></i></button>
             <button data-slider-next="#blogSlider1" class="slider-arrow style3 slider-next"><i class="far fa-arrow-right"></i></button>
@@ -347,7 +348,8 @@ Cta Area
     </div>
 </section>
 
-<section class="project-area-5 th-radius3 m-4 mt-0 mb-0 overflow-hidden space" id="project-sec">
+{{-- Dokumen --}}
+{{-- <section class="project-area-5 th-radius3 m-4 mt-0 mb-0 overflow-hidden space" id="project-sec">
     <div class="container th-container4">
         <div class="row justify-content-lg-between justify-content-center align-items-center">
             <div class="col-lg-6 mb-n2 mb-lg-0">
@@ -451,7 +453,7 @@ Cta Area
             <button data-slider-next="#projectSlider5" class="slider-arrow slider-next"><i class="far fa-arrow-right"></i></button>
         </div>
     </div>
-</section>
+</section> --}}
 
 {{-- <div class="space">
     <div class="container">

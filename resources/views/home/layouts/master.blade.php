@@ -55,6 +55,7 @@
             left: 0 !important;
             border: none !important;
         }
+
     </style>
 
 </head>

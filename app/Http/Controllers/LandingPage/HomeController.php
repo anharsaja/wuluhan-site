@@ -6,13 +6,22 @@ use App\Models\Admin;
 use App\Models\FotoWisata;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Pelum\Dokumentasi\DokumentasiPelum;
+use App\Models\Pemerintahan\Dokumentasi\DokumentasiPemerintahan;
+use App\Models\Pmks\Dokumentasi\DokumentasiPmks;
 use App\Models\Sekretariat\Dokumentasi\DokumentasiSekretariat;
+use App\Models\Trantib\Dokumentasi\DokumentasiTrantib;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home.home-profile');
+        $model1 = DokumentasiSekretariat::where('status', 'public')->get();
+        $model2 = DokumentasiTrantib::where('status', 'public')->get();
+        $model3 = DokumentasiPemerintahan::where('status', 'public')->get();
+        $model4 = DokumentasiPelum::where('status', 'public')->get();
+        $model5 = DokumentasiPmks::where('status', 'public')->get();
+        return view('home.home-profile', compact('model1', 'model2', 'model3', 'model4', 'model5'));
     }
 
     public function team()
