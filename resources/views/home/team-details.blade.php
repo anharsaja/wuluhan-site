@@ -5,8 +5,8 @@
 <section class="space">
     <div class="container">
         <div class="about-card">
-            <div class="about-card_img">
-                <img class="w-100" src="{{ $admin->foto ? $admin->foto : asset('img/avatar/avatar.png') }}" alt="team image">
+            <div class="about-card_img" style="height: 450px">
+                <img src="{{ $admin->foto ? $admin->foto : asset('img/avatar/avatar.png') }}" alt="team image" style="height: 100% !important; object-fit: cover;">
             </div>
             <div class="about-card_box">
                 <div class="about-card_top">
@@ -49,7 +49,7 @@
                 {{-- <a href="about.html" class="th-btn">GET IN TOUCH<i class="fa-regular fa-arrow-right ms-2"></i></a> --}}
             </div>
         </div>
-        <div style="height: 100px;"></div>
+        <div style="height: 150px;"></div>
         {{-- <div class="row mt-5 pt-10">
             <div class="col-xl-6 mb-xl-0">
                 <h4 class="border-title">Personal Biography</h4>

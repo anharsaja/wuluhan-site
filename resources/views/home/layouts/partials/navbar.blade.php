@@ -12,9 +12,10 @@
                     <nav class="main-menu d-none d-lg-inline-block">
                         <ul>
                             <li><a href="{{route('home')}}">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li class="menu-item-has-children">
+                            <li><a href="{{route('home.about')}}">About Us</a></li>
+                            {{-- <li><a href="#">Services</a></li> --}}
+                            <li><a href="{{route('home.team')}}">Team</a></li>
+                            {{-- <li class="menu-item-has-children">
                                 <a href="#">Pages</a>
                                 <ul class="sub-menu">
                                     <li><a href="{{ route('home.team') }}">Team</a></li>
@@ -25,7 +26,7 @@
                                     <li><a href="faq.html">Faq Page</a></li>
                                     <li><a href="error.html">Error Page</a></li>
                                 </ul>
-                            </li>
+                            </li> --}}
                             <li class="menu-item-has-children">
                                 <a href="#">Blog</a>
                                 <ul class="sub-menu">

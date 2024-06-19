@@ -66,7 +66,8 @@
             <div class="col-lg-3 col-md-6">
                 <div class="th-team team-card">
                     <div class="team-img" style="width: 287px; height: 320px;">
-                        <img src="{{$admin->foto ? $admin->foto : asset('img/avatar/avatar.png')}}" alt="Team">
+                        <a href={{route('home.teamdetails', $admin->id)}}><img src="{{$admin->foto ? $admin->foto : asset('img/avatar/avatar.png')}}" alt="Blog Image" style="height: 100% !important; object-fit: cover;"></a>
+
                     </div>
                     <div class="team-content">
                         <div class="box-particle" id="team-p1"></div>
@@ -77,11 +78,13 @@
                             <a target="_blank" href="https://linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                         <h3 class="box-title"><a href="{{route('home.teamdetails', $admin->id)}}">{{ $admin-> name }}</a></h3>
-                        <span class="team-desig">
-                            @foreach ($admin->roles as $role)
-                                {{$role->name}}
-                            @endforeach
-                        </span>
+                        <a href="{{route('home.teamdetails', $admin->id)}}">
+                            <span class="team-desig">
+                                @foreach ($admin->roles as $role)
+                                    {{$role->name}}
+                                @endforeach
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>

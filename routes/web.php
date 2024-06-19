@@ -63,12 +63,13 @@ Auth::routes();
 
 Route::controller(HomeController::class)->group(function () {
     Route::get('/', 'index')->name('home');
+    Route::get('/about', 'about')->name('home.about');
     Route::get('/team', 'team')->name('home.team');
     Route::get('/team/details/{id}', 'teamdetails')->name('home.teamdetails');
     Route::get('/team/blog/details', 'blogdetails')->name('home.blogdetails');
     Route::get('/team/contact', 'contact')->name('home.contact');
     Route::get('/gallery', 'gallery')->name('home.gallery');
-    
+
     });
 
     // blog sekretariat - details
@@ -90,7 +91,7 @@ Route::controller(HomeController::class)->group(function () {
     // blog trabtib - details
     Route::get('/blog/trantib', [DokumentasiTrantibController::class, 'blogShow'])->name('home.blog.trantib');
     Route::get('/blog/trantib/details/{id}', [DokumentasiTrantibController::class, 'blogDetails'])->name('home.blogdetails.trantib');
-    
+
 
 /*** Admin routes */
 Route::group(['prefix' => 'admin'], function () {

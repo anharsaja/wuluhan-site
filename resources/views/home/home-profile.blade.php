@@ -37,9 +37,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_1.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Pembuatan Kartu Keluarga</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Pembuatan Kartu Keluarga</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -51,9 +51,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_2.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Kartu Tanda Penduduk</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Kartu Tanda Penduduk</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -65,9 +65,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_3.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Pendaftaran Akta Kelahiran</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Pendaftaran Akta Kelahiran</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -79,9 +79,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_4.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Pendaftaran Akta Kematian</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Pendaftaran Akta Kematian</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -93,9 +93,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_5.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Pengajuan Surat Pindah</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Pengajuan Surat Pindah</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -107,9 +107,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_6.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Permohonan Tidak Mampu</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Permohonan Tidak Mampu</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -121,9 +121,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_7.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Rekomendasi Surat Izin Usaha</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Rekomendasi Surat Izin Usaha</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -135,9 +135,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Pembaharuan Kependudukan</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Pembaharuan Kependudukan</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -149,9 +149,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Pelayanan Bantuan Sosial</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Pelayanan Bantuan Sosial</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -163,9 +163,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Pengaduan Masyarakat</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Pengaduan Masyarakat</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -177,9 +177,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Pelayanan NCR</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Pelayanan NCR</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -191,9 +191,9 @@ Service Area
                     <div class="service-box2_icon">
                         <img src="{{asset('img/icon/service_3_8.svg')}}" alt="Icon">
                     </div>
-                    <h3 class="box-title"><a href="service-details.html">Pelayanan Perizinan Lainnya</a></h3>
+                    <h3 class="box-title"><a href="{{ route('home') }}">Pelayanan Perizinan Lainnya</a></h3>
                     <p class="service-box2_text">Building a cybersecurity culture within organizations is essential to promoting security.</p>
-                    <a href="service-details.html" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
+                    <a href="{{ route('home') }}" class="icon-btn"><i class="fa-regular fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -245,12 +245,12 @@ Cta Area
                     <div class="swiper-slide" style="width: 300px">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <a href=""><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
+                                <a href="{{ route('home.blogdetails.sekretariat', $model->id) }}"><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
-                                    <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
+                                    <a href="{{ route('home.blogdetails.sekretariat', $model->id) }}"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
+                                    <a href="{{ route('home.blogdetails.sekretariat', $model->id) }}"><i class="fal fa-comments"></i>2 Comments</a>
                                 </div>
                                 <h3 class="box-title"><a href="blog-details.html">{{ $model->judul }}</a></h3>
                                 <div class="blog-bottom">
@@ -264,12 +264,12 @@ Cta Area
                     <div class="swiper-slide" style="width: 300px">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <a href=""><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
+                                <a href="{{ route('home.blogdetails.trantib', $model->id) }}"><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
-                                    <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
+                                    <a href="{{ route('home.blogdetails.trantib', $model->id) }}"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
+                                    <a href="{{ route('home.blogdetails.trantib', $model->id) }}"><i class="fal fa-comments"></i>2 Comments</a>
                                 </div>
                                 <h3 class="box-title"><a href="blog-details.html">{{ $model->judul }}</a></h3>
                                 <div class="blog-bottom">
@@ -283,12 +283,12 @@ Cta Area
                     <div class="swiper-slide" style="width: 300px">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <a href=""><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
+                                <a href="{{ route('home.blogdetails.pemerintahan', $model->id) }}"><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
-                                    <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
+                                    <a href="{{ route('home.blogdetails.pemerintahan', $model->id) }}"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
+                                    <a href="{{ route('home.blogdetails.pemerintahan', $model->id) }}"><i class="fal fa-comments"></i>2 Comments</a>
                                 </div>
                                 <h3 class="box-title"><a href="blog-details.html">{{ $model->judul }}</a></h3>
                                 <div class="blog-bottom">
@@ -302,12 +302,12 @@ Cta Area
                     <div class="swiper-slide" style="width: 300px">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <a href=""><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
+                                <a href="{{ route('home.blogdetails.pelum', $model->id) }}"><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
-                                    <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
+                                    <a href="{{ route('home.blogdetails.pelum', $model->id) }}"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
+                                    <a href="{{ route('home.blogdetails.pelum', $model->id) }}"><i class="fal fa-comments"></i>2 Comments</a>
                                 </div>
                                 <h3 class="box-title"><a href="blog-details.html">{{ $model->judul }}</a></h3>
                                 <div class="blog-bottom">
@@ -321,12 +321,12 @@ Cta Area
                     <div class="swiper-slide" style="width: 300px">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <a href=""><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
+                                <a href="{{ route('home.blogdetails.pmks', $model->id) }}"><img src="{{ $model->foto1 }}" alt="Blog Image" style="width: 100%; height: 400px; object-fit: cover; object-position: center"></a>
                             </div>
                             <div class="blog-content">
                                 <div class="blog-meta">
-                                    <a href="blog.html"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
-                                    <a href="blog.html"><i class="fal fa-comments"></i>2 Comments</a>
+                                    <a href="{{ route('home.blogdetails.pmks', $model->id) }}"><i class="fal fa-calendar-days"></i>{{ \Carbon\Carbon::parse($model->created_at)->locale('id')->translatedFormat('d F Y') }}</a>
+                                    <a href="{{ route('home.blogdetails.pmks', $model->id) }}"><i class="fal fa-comments"></i>2 Comments</a>
                                 </div>
                                 <h3 class="box-title"><a href="blog-details.html">{{ $model->judul }}</a></h3>
                                 <div class="blog-bottom">

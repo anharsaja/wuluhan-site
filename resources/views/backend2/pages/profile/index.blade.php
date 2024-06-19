@@ -11,8 +11,8 @@ justify-content: center;
 ">
                 <div>
                     <div class="avatar avatar-xl avatar-circle">
-                        <label for="fileUpload">
-                            <img id="avatarImage" class="img-responsive" src="{{ asset(Auth::user()->foto ? Auth::user()->foto : 'img/avatar/avatar.png') }}" alt="Avatar" />
+                        <label for="fileUpload" style="width: 90px; height: 90px">
+                            <img id="avatarImage" class="img-responsive" src="{{ asset(Auth::user()->foto ? Auth::user()->foto : 'img/avatar/avatar.png') }}" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover; object-position: center"/>
                         </label>
                         <input type="file" id="fileUpload" style="display:none;" accept="image/*">
                     </div><!-- .avatar -->
